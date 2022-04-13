@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,OAAO;EACL,SAAS,EAAE,CAAC;EACZ,KAAK,EAAE,KAAK;EACZ,gBAAgB,EAAE,OAAO;EACzB,UAAU,EAAE,IAAI;EAChB,QAAQ,EAAE,IAAI;EACd,WAAW,EAAE,IAAI",
+"sources": ["BlocksPageComponent.module.scss"],
+"names": [],
+"file": "BlocksPageComponent.module.css"
+}

@@ -1,0 +1,12 @@
+.coin {
+  grid-area: c;
+  color: black;
+  background-color: white;
+  margin-top: 90px;
+  overflow: auto;
+  user-select: none; }
+  .coin .coin_center {
+    width: 95%;
+    margin: 0 auto; }
+
+/*# sourceMappingURL=SelectedCoin.module.css.map */

@@ -1,0 +1,16 @@
+.content{
+  grid-area: c;
+  color: black;
+  background-color: white;
+  margin-top: 90px;
+  overflow: auto;
+  user-select: none;
+
+
+  .content_center{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+
+}
