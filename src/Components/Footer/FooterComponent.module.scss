@@ -1,8 +1,11 @@
 .footer {
   grid-area: f;
-  background-color: #727270;
-  color: white;
+  background-color: #757573;
+  position: fixed;
+  top: 96%;
   width: 100%;
+  z-index: 98;
+
 
   a{
     float: left;

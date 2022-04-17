@@ -1,0 +1,9 @@
+.coin {
+  grid-area: c;
+  color: black;
+  background-color: white;
+  user-select: none;
+  height: 100vh;
+  padding: 110px 30px 55px 30px; }
+
+/*# sourceMappingURL=CoinPage.module.css.map */

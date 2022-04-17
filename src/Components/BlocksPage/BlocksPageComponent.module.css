@@ -1,9 +1,10 @@
 .blocks {
   grid-area: c;
   color: black;
-  background-color: #eaeaea;
-  margin-top: 90px;
-  overflow: auto;
-  user-select: none; }
+  background-color: white;
+  user-select: none;
+  height: 100vh; }
+  .blocks .blocks_center {
+    padding: 100px 40px 55px 40px; }
 
 /*# sourceMappingURL=BlocksPageComponent.module.css.map */

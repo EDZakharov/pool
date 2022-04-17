@@ -1,76 +1,74 @@
-.wrapper {
-  display: flex;
-  cursor: pointer;
-  float: left;
-  margin: 20px auto 10px 28px;
+.coinCard {
+  display: grid;
+  width: 350px;
+  grid-template-areas: 'h' 'm' 'f';
+  grid-template-rows: 1fr auto 1fr;
+  grid-template-columns: 350px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.36);
   border-radius: 7px;
-  transition: transform .3s ease-in-out; }
-  .wrapper:hover {
+  transition: transform .3s ease-in-out;
+  z-index: 10; }
+  .coinCard:hover {
     box-shadow: 0 0 60px #27847B;
     transform: scale(1.05);
     transition: transform .3s ease-in-out; }
-  .wrapper .coinCard {
-    display: grid;
-    width: 350px;
-    grid-template-areas: 'h' 'm' 'f';
-    grid-template-rows: 1fr auto 1fr;
-    grid-template-columns: 350px; }
-    .wrapper .coinCard .coinCard_header {
-      grid-area: h;
-      border-bottom: 0.2px solid rgba(0, 0, 0, 0.51); }
-      .wrapper .coinCard .coinCard_header span {
-        float: left;
-        margin: 35px 0 0 35px;
-        font-size: 21px;
-        font-weight: 700;
-        text-transform: uppercase; }
-      .wrapper .coinCard .coinCard_header .wrapper {
-        display: flex;
-        float: right;
-        background-color: #fff;
-        justify-content: center;
-        align-items: center;
-        margin: 10px 10px 10px 0;
-        border-radius: 50%;
-        height: 70px;
-        width: 70px; }
-        .wrapper .coinCard .coinCard_header .wrapper:hover {
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.36); }
-        .wrapper .coinCard .coinCard_header .wrapper .ETH_logo {
-          height: 60px;
-          background-color: #ffffff;
-          border-radius: 50%; }
-    .wrapper .coinCard .coinCard_main {
-      grid-area: m;
-      padding: 20px 10px; }
-      .wrapper .coinCard .coinCard_main div {
-        color: #4b4b4b;
-        margin-top: 6px;
-        font-weight: 400; }
-        .wrapper .coinCard .coinCard_main div .text {
-          font-size: 16px;
-          color: #479790;
-          font-weight: bold; }
-    .wrapper .coinCard .coinCard_footer {
-      grid-area: f;
-      margin-top: 10px;
-      border-top: 0.2px solid rgba(0, 0, 0, 0.51); }
-      .wrapper .coinCard .coinCard_footer .start_btn {
-        background-color: #27847B;
-        margin: 20px auto;
-        width: 175px;
-        height: 25px;
-        text-align: center;
+  .coinCard .coinCard_header {
+    grid-area: h;
+    border-bottom: 0.2px solid rgba(0, 0, 0, 0.51); }
+    .coinCard .coinCard_header span {
+      float: left;
+      margin: 35px 0 0 35px;
+      font-size: 21px;
+      font-weight: 700;
+      text-transform: uppercase; }
+    .coinCard .coinCard_header .wrapper {
+      display: flex;
+      float: right;
+      background-color: #fff;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 10px 10px 0;
+      border-radius: 50%;
+      height: 70px;
+      width: 70px; }
+      .coinCard .coinCard_header .wrapper:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.36); }
+        .coinCard .coinCard_header .wrapper:hover:hover {
+          box-shadow: none; }
+      .coinCard .coinCard_header .wrapper .logo {
+        height: 60px;
+        background-color: #ffffff;
+        border-radius: 50%; }
+  .coinCard .coinCard_main {
+    grid-area: m;
+    padding: 20px 10px; }
+    .coinCard .coinCard_main div {
+      color: #4b4b4b;
+      margin-top: 6px;
+      font-weight: 400; }
+      .coinCard .coinCard_main div .text {
+        font-size: 16px;
+        color: #479790;
+        font-weight: bold; }
+  .coinCard .coinCard_footer {
+    grid-area: f;
+    margin-top: 10px;
+    border-top: 0.2px solid rgba(0, 0, 0, 0.51); }
+    .coinCard .coinCard_footer .start_btn {
+      background-color: #27847B;
+      margin: 20px auto;
+      width: 175px;
+      height: 25px;
+      text-align: center;
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+      text-transform: uppercase; }
+      .coinCard .coinCard_footer .start_btn .link {
         color: white;
-        padding: 10px;
-        border-radius: 8px; }
-        .wrapper .coinCard .coinCard_footer .start_btn .link {
-          text-transform: uppercase;
-          color: white;
-          text-decoration: none; }
-        .wrapper .coinCard .coinCard_footer .start_btn:hover {
-          background-color: #1e635c;
-          cursor: pointer; }
+        text-decoration: none; }
+      .coinCard .coinCard_footer .start_btn:hover {
+        background-color: #1e635c;
+        cursor: pointer; }
 
 /*# sourceMappingURL=Coincard.module.css.map */

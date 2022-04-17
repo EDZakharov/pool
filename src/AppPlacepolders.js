@@ -1,7 +1,8 @@
 import HeaderContainer from "./Components/Header/headerComponentContainer";
 import {Outlet} from "react-router";
 import React from "react";
-import SelectedCoinHeader from "./Components/Coins/SelectedCoin/Header/SelectedCoinHeader";
+import CoinHeaderContainer from "./Components/CoinHeader/CoinHeaderContainer";
+
 
 export const AppPlaceHolder = () => {
     return (
@@ -13,7 +14,7 @@ export const AppPlaceHolder = () => {
 export const AppPlaceHolder2 = (props) => {
     return (
         <>
-            <SelectedCoinHeader fullName={props.fullName}/>
+            <CoinHeaderContainer/>
             <Outlet/>
         </>
     )

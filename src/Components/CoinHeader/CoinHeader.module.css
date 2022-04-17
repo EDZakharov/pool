@@ -1,4 +1,4 @@
-.header {
+.coin_header {
   grid-area: h;
   background-color: #727270;
   color: #d7d7d7;
@@ -7,15 +7,23 @@
   width: 100%;
   user-select: none;
   z-index: 100; }
-  .header .logo {
+  .coin_header .coin_logo {
+    height: 60px;
+    margin: 12px 20px;
+    float: right; }
+    @media (max-width: 1170px) {
+      .coin_header .coin_logo {
+        margin: 18px 10px;
+        height: 50px; } }
+  .coin_header .siteLogo {
     height: 60px;
     margin: 12px 20px;
     float: left; }
     @media (max-width: 1170px) {
-      .header .logo {
+      .coin_header .siteLogo {
         margin: 18px 10px;
         height: 50px; } }
-  .header span {
+  .coin_header span {
     color: white;
     float: left;
     font-size: 26px;
@@ -23,35 +31,42 @@
     cursor: pointer;
     text-transform: uppercase; }
     @media (max-width: 1170px) {
-      .header span {
+      .coin_header span {
         font-size: 18px;
         margin: 30px 10px; } }
-  .header .headerLinks {
+  .coin_header .currentCoin {
+    color: white;
+    float: left;
+    font-size: 26px;
+    margin-top: 22px;
+    cursor: pointer;
+    text-transform: uppercase; }
+  .coin_header .coin_header_Links {
     float: right;
     margin: 26px 32px 0 65px; }
-    .header .headerLinks .active {
+    .coin_header .coin_header_Links .active {
       color: #ffffff; }
-    .header .headerLinks i {
+    .coin_header .coin_header_Links i {
       margin-left: 5px; }
-    .header .headerLinks a {
+    .coin_header .coin_header_Links a {
       margin-left: 50px;
       color: #c9c9c9;
       text-decoration: none;
       font-size: 22px; }
       @media (max-width: 1350px) {
-        .header .headerLinks a {
+        .coin_header .coin_header_Links a {
           margin-left: 15px; } }
       @media (max-width: 1170px) {
-        .header .headerLinks a {
+        .coin_header .coin_header_Links a {
           font-size: 18px;
           margin-left: 15px; } }
-      .header .headerLinks a:hover {
+      .coin_header .coin_header_Links a:hover {
         color: #dedede; }
     @media (max-width: 1350px) {
-      .header .headerLinks {
+      .coin_header .coin_header_Links {
         margin-top: 26px; } }
     @media (max-width: 1170px) {
-      .header .headerLinks {
+      .coin_header .coin_header_Links {
         margin-top: 30px; } }
 
-/*# sourceMappingURL=HeaderComponent.module.css.map */
+/*# sourceMappingURL=CoinHeader.module.css.map */

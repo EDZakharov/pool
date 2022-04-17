@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,KAAK;EACH,SAAS,EAAE,CAAC;EACZ,KAAK,EAAE,KAAK;EACZ,gBAAgB,EAAE,KAAK;EACvB,UAAU,EAAE,IAAI;EAChB,QAAQ,EAAE,IAAI;EACd,WAAW,EAAE,IAAI;EAGjB,kBAAY;IACV,KAAK,EAAE,GAAG;IACV,MAAM,EAAE,MAAM",
-"sources": ["SelectedCoin.module.scss"],
-"names": [],
-"file": "SelectedCoin.module.css"
-}

@@ -1,4 +1,4 @@
-.header {
+.coin_header {
   grid-area: h;
   background-color: #727270;
   color: #d7d7d7;
@@ -8,17 +8,25 @@
   user-select: none;
   z-index: 100;
 
+  .coin_logo {
+    height: 60px;
+    margin: 12px 20px;
+    float: right;
 
-  .logo {
+    @media (max-width: 1170px) {
+      margin: 18px 10px;
+      height: 50px;
+    }
+  }
+  .siteLogo{
     height: 60px;
     margin: 12px 20px;
     float: left;
 
-    @media (max-width: 1170px){
+    @media (max-width: 1170px) {
       margin: 18px 10px;
       height: 50px;
     }
-
   }
 
   span {
@@ -33,19 +41,26 @@
       font-size: 18px;
       margin: 30px 10px;
     }
-
-
   }
 
-  .headerLinks {
+  .currentCoin{
+    color: white;
+    float: left;
+    font-size: 26px;
+    margin-top: 22px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .coin_header_Links {
     float: right;
     margin: 26px 32px 0 65px;
 
-    .active{
+    .active {
       color: #ffffff;
     }
 
-    i{
+    i {
       margin-left: 5px;
     }
 
@@ -55,10 +70,10 @@
       text-decoration: none;
       font-size: 22px;
 
-      @media (max-width: 1350px){
+      @media (max-width: 1350px) {
         margin-left: 15px;
       }
-      @media (max-width: 1170px){
+      @media (max-width: 1170px) {
         font-size: 18px;
         margin-left: 15px;
       }
@@ -67,14 +82,13 @@
         color: #dedede;
       }
     }
-    @media (max-width: 1350px){
+
+    @media (max-width: 1350px) {
       margin-top: 26px;
     }
-    @media (max-width: 1170px){
+    @media (max-width: 1170px) {
       margin-top: 30px;
     }
 
   }
-
-
 }

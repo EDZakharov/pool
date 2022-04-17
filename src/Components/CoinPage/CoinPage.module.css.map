@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,KAAK;EACH,SAAS,EAAE,CAAC;EACZ,KAAK,EAAE,KAAK;EACZ,gBAAgB,EAAE,KAAK;EAEvB,WAAW,EAAE,IAAI;EACjB,MAAM,EAAE,KAAK;EATb,OAAO,EAAE,oBAAoB",
+"sources": ["CoinPage.module.scss"],
+"names": [],
+"file": "CoinPage.module.css"
+}

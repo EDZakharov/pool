@@ -1,8 +1,9 @@
-import React from "react";
 import {connect} from "react-redux";
 import Content from "./ContentComponent";
-import {addCoinData} from "../../redux/contentReducer";
-import {addCoins, addCoinStatus} from "../../redux/ethReducer";
+import {selectCoin} from "../../redux/contentReducer";
+import {addCoinThunk} from "../../redux/addCoinThunk";
+import {withDataSet} from "../../HOC/withDataSet";
+
 
 
 
@@ -11,16 +12,9 @@ let mapStateToProps = (state) => {
     return {content: state.content}
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        addCoinDataAC: (coin)=>{dispatch(addCoinData(coin))},
-        addCoinsDataAC: (coin)=>{dispatch(addCoins(coin))},
-        addStatusAC: (coinName)=>{dispatch(addCoinStatus(coinName))}
-    }
-}
-
-
-let ContentContainer = connect(mapStateToProps, mapDispatchToProps)(Content);
+let ContentContainer = connect(mapStateToProps, {addCoinThunk, selectCoin})(withDataSet(Content));
 
 
 export default ContentContainer;
+
+

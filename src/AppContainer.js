@@ -1,21 +1,11 @@
-import React from "react";
-import {connect} from "react-redux";
 import App from "./App";
-// import {reloadAC} from "./redux/contentReducer";
+import {connect} from "react-redux";
 
 
-let mapStateToProps = (state) => {
-    return {path: state.eth.selectedCoin}
-}
+const mapStateToProps = (state) =>{
+    return {content: state.content}
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        // reload: () => {dispatch(reloadAC())}
-    }
 }
 
 
-let AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);
-
-
-export default AppContainer;
+export let AppContainer = connect(mapStateToProps,)(App)

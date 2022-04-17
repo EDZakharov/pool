@@ -1,12 +1,14 @@
 .App {
     display: grid;
 
-    grid-template-areas: 'h h'
-                        'c c'
-                        'f f';
-    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 'h'
+                        'c'
+                        'f';
     height: 100vh;
+
 
 }::-webkit-scrollbar {
      display: none;
  }
+
+[title] { pointer-events: none; }

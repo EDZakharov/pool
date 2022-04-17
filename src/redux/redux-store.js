@@ -1,16 +1,12 @@
-import {combineReducers, createStore} from "redux";
-import headerReducer from "./headerReducer";
+import {applyMiddleware, combineReducers, createStore} from "redux";
 import contentReducer from "./contentReducer";
-import ethReducer from "./ethReducer";
+import thunkCreator from 'redux-thunk'
 
 
 let reducers = combineReducers({
-    header: headerReducer,
     content: contentReducer,
-    eth: ethReducer,
 });
 
-let store = createStore(reducers);
-window.store = store;
+let store = createStore(reducers, applyMiddleware(thunkCreator));
 
 export default store;
