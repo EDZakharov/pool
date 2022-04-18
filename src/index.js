@@ -2,7 +2,7 @@ import React from 'react';
 import store from './redux/redux-store'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter, HashRouter} from "react-router-dom";
 import {createRoot} from "react-dom/client";
 import {Provider} from "react-redux";
 
@@ -14,9 +14,9 @@ const root = createRoot(container);
 
 root.render(
     <Provider store={store}>
-        <BrowserRouter>
+        <HashRouter>
             <AppContainer/>
-        </BrowserRouter>
+        </HashRouter>
     </Provider>,
 );
 
