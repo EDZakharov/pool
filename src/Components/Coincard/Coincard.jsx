@@ -1,12 +1,6 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import style from "./Coincard.module.scss"
 import {NavLink} from "react-router-dom";
-
-// import etcLogo from '../../img/etc.png'
-// import burstLogo from '../../img/burst.png'
-// import evoxLogo from '../../img/evox-prop.png'
-// import ergoLogo from '../../img/ergo.png'
-// import kevaLogo from '../../img/keva-prop.png'
 import {coinNamesFilter, hashFilter, imgFilter} from "../../Filters";
 
 
@@ -15,12 +9,13 @@ const CoinCard = (props) => {
     let adr = props.fullName.toString()
     let name = coinNamesFilter(props.fullName);
     let hashes = hashFilter(props.hashrate);
-    let image = imgFilter(`/${props.fullName}`);
+    let image = imgFilter(`${props.fullName}`);
 
     const onButtonLinkClick = () => {
+        localStorage.setItem('selectedCoin', adr)
+        props.isFetching(true)
         props.selectCoin(adr)
     }
-
 
     return (
 

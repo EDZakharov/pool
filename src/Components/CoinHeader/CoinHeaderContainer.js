@@ -1,5 +1,6 @@
 import {connect} from "react-redux";
 import CoinHeader from "./CoinHeader";
+import {selectCoin} from "../../redux/contentReducer";
 
 
 

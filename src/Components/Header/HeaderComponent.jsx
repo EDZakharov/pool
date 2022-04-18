@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import style from "./HeaderComponent.module.scss"
 import {NavLink} from "react-router-dom";
 import {imgFilter} from "../../Filters";
 
-const Header = () => {
-    let onClickActiveStatus = ({ isActive }) => (isActive ? style.active : 'inactive');
+const Header = (props) => {
 
+    let onClickActiveStatus = ({ isActive }) => (isActive ? style.active : 'inactive');
     return (
         <div className={style.header}>
             <NavLink to="/" ><img src={imgFilter('logo')} className={style.logo}/></NavLink>

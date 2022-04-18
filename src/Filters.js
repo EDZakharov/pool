@@ -49,23 +49,23 @@ export const coinNamesFilter = (data) => {
 
 export const imgFilter = (data => {
     switch (data) {
-        case '/eth':
+        case 'eth':
             return images.ethLogo
-        case '/etc':
+        case 'etc':
             return images.etcLogo
-        case '/etc-solo':
+        case 'etc-solo':
             return images.etcLogo
-        case '/burst':
+        case 'burst':
             return images.burstLogo
-        case '/keva-prop':
+        case 'keva-prop':
             return images.kevaLogo
-        case '/evox-solo':
+        case 'evox-solo':
             return images.evoxLogo
-        case '/evox-prop':
+        case 'evox-prop':
             return images.evoxLogo
-        case '/ergo':
+        case 'ergo':
             return images.ergoLogo
-        case '/logo':
+        case 'logo':
             return images.siteLogo
         default:
             return images.siteLogo

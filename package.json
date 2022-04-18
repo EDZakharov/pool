@@ -1,7 +1,7 @@
 {
-  "homepage": "https://EDZakharov.github.io/pool",
   "name": "pool",
   "version": "0.1.0",
+  "homepage": "https://EDZakharov.github.io/pool",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",

@@ -1,7 +1,8 @@
 const ADD_COIN = 'ADD_COIN';
 const SELECT_COIN = 'SELECT_COIN';
 const ADD_MINERS = 'ADD_MINERS';
-const RERENDER = 'RERENDER';
+const STATUS_CODE = 'STATUS_CODE';
+const FETCHING = 'FETCHING';
 
 
 let initialState = {
@@ -12,7 +13,9 @@ let initialState = {
         miners: {},
         minersTotal: 0,
         now: 0
-    }
+    },
+    statusCode: 0,
+    isFetching: true
 }
 
 const contentReducer = (state = initialState, action) => {
@@ -48,8 +51,13 @@ const contentReducer = (state = initialState, action) => {
 
             return stateCopy
         }
-        case RERENDER: {
-            stateCopy.miners = []
+        case STATUS_CODE: {
+            stateCopy.statusCode = action.statusCode
+
+            return stateCopy
+        }
+        case FETCHING: {
+            stateCopy.isFetching = action.status
             return stateCopy
         }
         default: {
@@ -68,8 +76,11 @@ export const selectCoin = (coinName) => {
 export const addMiners = (miners) => {
     return {type: ADD_MINERS, miners}
 }
-export const rerender = () => {
-    return {type: RERENDER}
+export const statusCode = (statusCode) => {
+    return {type: STATUS_CODE, statusCode}
+}
+export const fetching = (status) => {
+    return {type: FETCHING, status}
 }
 export default contentReducer;
 
