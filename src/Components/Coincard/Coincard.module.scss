@@ -78,6 +78,10 @@
     margin-top: 10px;
     border-top: 0.2px solid rgba(0, 0, 0, 0.51);
 
+    a{
+      text-decoration: none;
+    }
+
     .start_btn {
       background-color: #27847B;
       margin: 20px auto;
@@ -88,16 +92,15 @@
       padding: 10px;
       border-radius: 8px;
       text-transform: uppercase;
+      text-decoration: none;
 
-      .link {
-
-        color: white;
-        text-decoration: none;
-      }
 
       &:hover {
-        background-color: #1e635c;
+        transition: 0.2s ease-in-out;
+        background-color: #25786f;
         cursor: pointer;
+        color: #f7a81a;
+
       }
 
     }

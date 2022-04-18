@@ -54,6 +54,8 @@
     grid-area: f;
     margin-top: 10px;
     border-top: 0.2px solid rgba(0, 0, 0, 0.51); }
+    .coinCard .coinCard_footer a {
+      text-decoration: none; }
     .coinCard .coinCard_footer .start_btn {
       background-color: #27847B;
       margin: 20px auto;
@@ -63,12 +65,12 @@
       color: white;
       padding: 10px;
       border-radius: 8px;
-      text-transform: uppercase; }
-      .coinCard .coinCard_footer .start_btn .link {
-        color: white;
-        text-decoration: none; }
+      text-transform: uppercase;
+      text-decoration: none; }
       .coinCard .coinCard_footer .start_btn:hover {
-        background-color: #1e635c;
-        cursor: pointer; }
+        transition: 0.2s ease-in-out;
+        background-color: #25786f;
+        cursor: pointer;
+        color: #f7a81a; }
 
 /*# sourceMappingURL=Coincard.module.css.map */

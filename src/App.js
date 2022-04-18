@@ -18,7 +18,7 @@ function App() {
             <Routes>
                 <Route path='/' element={<AppPlaceHolder/>}>
                     <Route index element={<ContentContainer/>}/>
-                    <Route path='/blocks' element={<BlocksPageContainer/>}/>
+                    {/*<Route path='/blocks' element={<BlocksPageContainer/>}/>*/}
                     <Route path='/forum' element={<BlocksPageContainer/>}/>
                     <Route path='/chat' element={<BlocksPageContainer/>}/>
                     <Route path='/shop' element={<BlocksPageContainer/>}/>

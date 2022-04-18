@@ -1,4 +1,4 @@
-import {addCoinData, addMiners} from "./contentReducer";
+import {addCoinData, addMiners, rerender} from "./contentReducer";
 import io from "socket.io-client";
 import {getMinersFromPool} from "../DAL/minersAPI";
 
@@ -27,6 +27,7 @@ export const addMinersThunk = (pool) => (dispatch) => {
         let arr = [];
         arr.push(res.data)
         dispatch(addMiners(arr))
+        // console.log(arr)
     })
 
 }

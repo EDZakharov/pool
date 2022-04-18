@@ -30,7 +30,10 @@
     float: right;
     margin: 26px 32px 0 65px; }
     .header .headerLinks .active {
-      color: #ffffff; }
+      color: #f7a81a; }
+      .header .headerLinks .active:hover {
+        color: #f7a81a;
+        transition: 0.2s ease-in-out; }
     .header .headerLinks i {
       margin-left: 5px; }
     .header .headerLinks a {
@@ -46,7 +49,8 @@
           font-size: 18px;
           margin-left: 15px; } }
       .header .headerLinks a:hover {
-        color: #dedede; }
+        color: #ffffff;
+        transition: 0.2s ease-in-out; }
     @media (max-width: 1350px) {
       .header .headerLinks {
         margin-top: 26px; } }

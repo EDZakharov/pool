@@ -1,15 +1,104 @@
 @mixin coinMargin {
-  padding: 110px 30px 55px 30px;
+  padding: 84.4px 0 55px 0;
 }
 
 .coin{
   grid-area: c;
   color: black;
   background-color: white;
-  //overflow: auto;
+  overflow: auto;
   user-select: none;
   height: 100vh;
   @include coinMargin;
+
+
+
+  .coinData{
+    display: grid;
+    grid-template-areas: 'stats''graph''search';
+    margin: 0 0 5px 0;
+
+
+    .stats{
+      grid-area: stats;
+      background-color: #ffffff;
+      color: #000000;
+      //border: 0.5px solid #ff2f82;
+      padding: 10px;
+      width: 100%;
+      height: 150px;
+
+
+      //margin: 0 10px 0 10px;
+
+    }
+    .graph{
+      grid-area: graph;
+      background-color: #ffffff;
+      color: #000000;
+      //border: 0.5px solid #ff2f82;
+      padding: 10px;
+      width: 100%;
+      height: 240px;
+
+    }
+    .search{
+      grid-area: search;
+      background-color: #ffffff;
+      color: #000000;
+      //margin: 0 10px 0 10px;
+      //border: 0.5px solid #ff2f82;
+      //padding: 5px 10px;
+      width: 100%;
+      height: 25px;
+      margin: 10px 0;
+
+      input{
+        width: 320px;
+        margin-left: 10px;
+        float: left;
+        height: 20px;
+      }
+      .inputText{
+        float: left;
+        //border: 1px solid black;
+        //height: 100%;
+        //margin: 2px 2px;
+        //padding-right: 4px;
+        margin-left: 10px;
+      }
+      .inputBtn{
+        border: 0.5px solid rgba(0, 0, 0, 0.5);
+        float: left;
+        //padding-right: 10px;
+        margin-left: 5px;
+        //height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-weight: 600;
+        padding: 1.5px 6px;
+
+        &:hover{
+          border: 0.5px solid #23c911;
+          background-color: #23c911;
+          color: #ffffff;
+          //transition: 0.2s ease-in-out;
+          transform: scale(1.02);
+          transition: transform .2s ease-in-out;
+        }
+
+
+
+
+      }
+
+
+    }
+
+  }
+
+
+
 
   //.content_center{
   //  display: flex;
@@ -18,6 +107,10 @@
   //  gap: 30px;
   //  @include contentMargin;
   //}
+
+  .totalHashrate{
+    margin: 10px 10px 5px 10px;
+  }
 
 
 }

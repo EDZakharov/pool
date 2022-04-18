@@ -1,19 +1,25 @@
 const ADD_COIN = 'ADD_COIN';
 const SELECT_COIN = 'SELECT_COIN';
 const ADD_MINERS = 'ADD_MINERS';
-// const RERENDER = 'RERENDER';
+const RERENDER = 'RERENDER';
 
 
 let initialState = {
     coins: [],
     selectedCoin: '',
-    miners:[]
+    miners: {
+        hashrate : 0,
+        miners: {},
+        minersTotal: 0,
+        now: 0
+    }
 }
 
 const contentReducer = (state = initialState, action) => {
     let stateCopy = {...state};
     stateCopy.coins = [...state.coins];
-    stateCopy.miners = [...state.miners];
+    stateCopy.miners = {...state.miners};
+    stateCopy.miners.miners = {...state.miners.miners}
 
     switch (action.type) {
         case ADD_COIN: {
@@ -31,13 +37,19 @@ const contentReducer = (state = initialState, action) => {
             return stateCopy
         }
         case ADD_MINERS: {
-            stateCopy.miners = []
-            let b = {
-                miners: {...action.miners[0]}
-            }
-            stateCopy.miners.push(Object.getOwnPropertyNames(b.miners.miners))
-            console.log(stateCopy.miners)
+            let b = {miners: {...action.miners[0]}}
+            let c = {miners: {...b.miners.miners}}
+            let k = Object.keys(c.miners)
+            let miners = k.map(el => { return {
+                [el]: c.miners[el]
+            }})
+            stateCopy.miners.miners = {...miners}
 
+
+            return stateCopy
+        }
+        case RERENDER: {
+            stateCopy.miners = []
             return stateCopy
         }
         default: {
@@ -56,9 +68,9 @@ export const selectCoin = (coinName) => {
 export const addMiners = (miners) => {
     return {type: ADD_MINERS, miners}
 }
-// export const rerender = () => {
-//     return {type: RERENDER}
-// }
+export const rerender = () => {
+    return {type: RERENDER}
+}
 export default contentReducer;
 
 

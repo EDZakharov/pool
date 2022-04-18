@@ -42,7 +42,11 @@
     margin: 26px 32px 0 65px;
 
     .active{
-      color: #ffffff;
+      color: #f7a81a;
+      &:hover {
+        color: #f7a81a;
+        transition: 0.2s ease-in-out;
+      }
     }
 
     i{
@@ -64,7 +68,8 @@
       }
 
       &:hover {
-        color: #dedede;
+        color: #ffffff;
+        transition: 0.2s ease-in-out;
       }
     }
     @media (max-width: 1350px){

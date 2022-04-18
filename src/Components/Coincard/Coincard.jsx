@@ -42,7 +42,7 @@ const CoinCard = (props) => {
             </div>
             <div className={style.coinCard_footer}>
                 <NavLink className={style.link} onClick={onButtonLinkClick} to={`${adr}`}>
-                    <div className={style.start_btn}>Start Mining</div>
+                    <div className={style.start_btn}>Show More</div>
                 </NavLink>
 
             </div>

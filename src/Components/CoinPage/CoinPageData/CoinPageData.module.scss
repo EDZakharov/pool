@@ -1,0 +1,138 @@
+
+.grid_data {
+  display: grid;
+  grid-template-areas: 'ms hs ss sts''m h s st';
+  grid-template-columns: 4fr 2fr 2fr 1fr;
+  -moz-user-select: text;
+  //margin: 0 10px 0 10px;
+  &:hover {
+    //border: .1px solid black;
+
+
+
+    &:first-child>div{
+      background-color: rgba(45, 43, 43, 0.41);
+      color: #ffffff;
+      div{
+        color: white;
+      }
+
+
+
+
+    }
+  }
+
+  .miner_s {
+    grid-area: ms;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(229, 229, 229, 0.52);
+    font-weight: bold;
+    color: black;
+
+
+    .miner {
+      grid-area: m;
+      margin: 10px 0;
+      color: black;
+      font-weight: 400;
+
+
+      span{
+        &:hover{
+          user-select: all;
+          cursor: pointer;
+          text-decoration: underline;
+        }
+        &::selection{
+          background-color: black;
+        }
+      }
+
+    }
+
+  }
+
+  .hashrate_s {
+    grid-area: hs;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(229, 229, 229, 0.52);
+    color: black;
+    font-weight: bold;
+
+    .hashrate {
+      grid-area: h;
+      margin-top: 10px;
+      color: black;
+      font-weight: 400;
+
+
+    }
+
+  }
+
+  .shares_s {
+    grid-area: ss;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(229, 229, 229, 0.52);
+    font-weight: bold;
+    color: black;
+
+    .shares {
+      grid-area: s;
+      margin-top: 10px;
+      color: black;
+      font-weight: 400;
+
+
+
+    }
+
+  }
+  .status_s{
+    grid-area: sts;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(229, 229, 229, 0.52);
+    font-weight: bold;
+    color: black;
+
+    .status_offline{
+      grid-area: st;
+      margin-top: 10px;
+      color: black;
+      font-weight: 400;
+
+      span{
+        background-color: #cb2410;
+        border: 0.2px solid rgba(118, 110, 110, 0.17);
+        border-radius: 5px;
+        padding: 3px;
+        font-weight: 500;
+        color: white;
+        }
+      }
+
+
+
+    .status_online{
+      grid-area: st;
+      margin-top: 10px;
+      color: black;
+      font-weight: 400;
+
+      span{
+        background-color: #23cb10;
+        border: 0.2px solid rgba(118, 110, 110, 0.17);
+        border-radius: 5px;
+        padding: 3px;
+        font-weight: 500;
+        color: #ffffff;
+      }
+    }
+  }
+
+}

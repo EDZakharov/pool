@@ -11,14 +11,10 @@ export const withDataSet = (Component) => {
 }
 export const withDataMinersSet = (Component) => {
     return (props) => {
-        // console.log(props.content.miners)
         if(props.content.miners.length === 0){
             props.addMinersThunk(window.location.pathname.slice(1))
             return <Component {...props}/>
         } else {
-            setInterval(()=>{
-                // props.addMinersThunk(window.location.pathname.slice(1))
-            },2000)
             return <Component {...props}/>
         }
 

@@ -1,0 +1,85 @@
+.grid_data {
+  display: grid;
+  grid-template-areas: "ms hs ss sts" "m h s st";
+  grid-template-columns: 4fr 2fr 2fr 1fr;
+  -moz-user-select: text; }
+  .grid_data:hover:first-child > div {
+    background-color: rgba(45, 43, 43, 0.41);
+    color: #ffffff; }
+    .grid_data:hover:first-child > div div {
+      color: white; }
+  .grid_data .miner_s {
+    grid-area: ms;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(229, 229, 229, 0.52);
+    font-weight: bold;
+    color: black; }
+    .grid_data .miner_s .miner {
+      grid-area: m;
+      margin: 10px 0;
+      color: black;
+      font-weight: 400; }
+      .grid_data .miner_s .miner span:hover {
+        user-select: all;
+        cursor: pointer;
+        text-decoration: underline; }
+      .grid_data .miner_s .miner span::selection {
+        background-color: black; }
+  .grid_data .hashrate_s {
+    grid-area: hs;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(229, 229, 229, 0.52);
+    color: black;
+    font-weight: bold; }
+    .grid_data .hashrate_s .hashrate {
+      grid-area: h;
+      margin-top: 10px;
+      color: black;
+      font-weight: 400; }
+  .grid_data .shares_s {
+    grid-area: ss;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(229, 229, 229, 0.52);
+    font-weight: bold;
+    color: black; }
+    .grid_data .shares_s .shares {
+      grid-area: s;
+      margin-top: 10px;
+      color: black;
+      font-weight: 400; }
+  .grid_data .status_s {
+    grid-area: sts;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(229, 229, 229, 0.52);
+    font-weight: bold;
+    color: black; }
+    .grid_data .status_s .status_offline {
+      grid-area: st;
+      margin-top: 10px;
+      color: black;
+      font-weight: 400; }
+      .grid_data .status_s .status_offline span {
+        background-color: #cb2410;
+        border: 0.2px solid rgba(118, 110, 110, 0.17);
+        border-radius: 5px;
+        padding: 3px;
+        font-weight: 500;
+        color: white; }
+    .grid_data .status_s .status_online {
+      grid-area: st;
+      margin-top: 10px;
+      color: black;
+      font-weight: 400; }
+      .grid_data .status_s .status_online span {
+        background-color: #23cb10;
+        border: 0.2px solid rgba(118, 110, 110, 0.17);
+        border-radius: 5px;
+        padding: 3px;
+        font-weight: 500;
+        color: #ffffff; }
+
+/*# sourceMappingURL=CoinPageData.module.css.map */
