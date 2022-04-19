@@ -15,7 +15,7 @@ const Header = (props) => {
                 {/*<NavLink to="/blocks" className={onClickActiveStatus}><i className="fas fa-cubes"/> Found Blocks</NavLink>*/}
                 <NavLink to="/forum" className={onClickActiveStatus}><i className="fa-solid fa-rectangle-list"/> Forum</NavLink>
                 <NavLink to="/chat" className={onClickActiveStatus}><i className="fa-solid fa-comments"/> Mining Chat</NavLink>
-                <NavLink to="/shop" className={onClickActiveStatus}><i className="fa-solid fa-basket-shopping"/> Shop</NavLink></div>
+                <NavLink to="/e4pizor" className={onClickActiveStatus}><i className="fa-solid fa-basket-shopping"/> E4pizor</NavLink></div>
         </div>
     );
 }

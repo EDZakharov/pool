@@ -1,0 +1,53 @@
+.e4pizor {
+  grid-area: c;
+  position: relative;
+  overflow-y: hidden;
+  pointer-events: none;
+
+  .player {
+    position: absolute;
+    top: 28%;
+    left: 41%;
+    box-shadow: 0 0 40px black;
+    border: 10px solid red;
+    border-radius: 8px;
+    pointer-events: all;
+
+  }
+
+  .btn {
+    background-color: #7d0000;
+    pointer-events: all;
+    position: absolute;
+    top: 81%;
+    left: 53%;
+    z-index: 100;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px black;
+
+
+    a{
+      text-decoration: none;
+      color: #c7c7c7;
+
+
+    }
+    &:hover{
+      background-color: #c90303;
+      transition: 0.3s;
+      color: white;
+
+    }
+    &:hover>a{
+      background-color: #c90303;
+      transition: 0.3s;
+      color: white;
+
+    }
+  }
+}

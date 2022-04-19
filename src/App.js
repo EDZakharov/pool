@@ -7,6 +7,7 @@ import {AppPlaceHolder, AppPlaceHolder2} from "./AppPlacepolders";
 import BlocksPageContainer from "./Components/BlocksPage/BlocksPageComponentContainer";
 import CoinPageContainer from "./Components/CoinPage/CoinPageContainer";
 import Err404 from "./Components/404/404";
+import E4Pizor from "./Components/e4pizor/E4pizor";
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
                     {/*<Route path='/blocks' element={<BlocksPageContainer/>}/>*/}
                     <Route path='/forum' element={<BlocksPageContainer/>}/>
                     <Route path='/chat' element={<BlocksPageContainer/>}/>
-                    <Route path='/shop' element={<BlocksPageContainer/>}/>
+                    <Route path='/e4pizor' element={<E4Pizor/>}/>
                 </Route>
 
                 <Route path={path} element={<AppPlaceHolder2/>}>
