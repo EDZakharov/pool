@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./CoinHeader.module.scss"
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {coinNamesFilter, imgFilter} from "../../Filters";
 
 const CoinHeader = () => {
@@ -16,8 +16,9 @@ const CoinHeader = () => {
             <NavLink to="/" ><span className={style.currentCoin}>{coinNamesFilter(CoinName)}</span></NavLink>
             <NavLink to={'/'}><img src={coinLogo} alt='logo' className={style.coin_logo}/></NavLink>
             <div className={style.coin_header_Links}>
+                <Link to={`/${CoinName}/payments`} ><div className={style.inputBtn}><i className="fa-solid fa-magnifying-glass"> </i></div></Link>
                 <NavLink to="/"  className={onClickActiveStatus}><i className="fas fa-home"/> Home</NavLink>
-                <NavLink to={`${CoinName}/stats`} className={onClickActiveStatus}><i className="fas fa-cubes"/> Stats</NavLink>
+                <NavLink to={`/stats`} className={onClickActiveStatus}><i className="fas fa-cubes"/> Stats</NavLink>
             </div>
         </div>
     );

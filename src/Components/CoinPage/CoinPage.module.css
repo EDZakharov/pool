@@ -39,20 +39,6 @@
       .coin .coinData .search .inputText {
         float: left;
         margin-left: 10px; }
-      .coin .coinData .search .inputBtn {
-        border: 0.5px solid rgba(0, 0, 0, 0.5);
-        float: left;
-        margin-left: 5px;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        font-weight: 600;
-        padding: 1.5px 6px; }
-        .coin .coinData .search .inputBtn:hover {
-          border: 0.5px solid #23c911;
-          background-color: #23c911;
-          color: #ffffff;
-          transform: scale(1.02);
-          transition: transform .2s ease-in-out; }
   .coin .totalHashrate {
     margin: 10px 10px 5px 10px; }
 

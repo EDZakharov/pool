@@ -3,6 +3,7 @@ const SELECT_COIN = 'SELECT_COIN';
 const ADD_MINERS = 'ADD_MINERS';
 const STATUS_CODE = 'STATUS_CODE';
 const FETCHING = 'FETCHING';
+const PAYMENTS = 'PAYMENTS';
 
 
 let initialState = {
@@ -15,13 +16,15 @@ let initialState = {
         now: 0
     },
     statusCode: 0,
-    isFetching: true
+    isFetching: true,
+    payments: []
 }
 
 const contentReducer = (state = initialState, action) => {
     let stateCopy = {...state};
     stateCopy.coins = [...state.coins];
     stateCopy.miners = {...state.miners};
+    stateCopy.payments = [...state.payments];
     stateCopy.miners.miners = {...state.miners.miners}
 
     switch (action.type) {
@@ -56,6 +59,10 @@ const contentReducer = (state = initialState, action) => {
 
             return stateCopy
         }
+        case PAYMENTS: {
+            console.log(action.payments)
+            return stateCopy
+        }
         case FETCHING: {
             stateCopy.isFetching = action.status
             return stateCopy
@@ -79,6 +86,14 @@ export const addMiners = (miners) => {
 export const statusCode = (statusCode) => {
     return {type: STATUS_CODE, statusCode}
 }
+export const addPayments = (payments) => {
+    return {type: PAYMENTS, payments}
+}
+
+
+
+
+
 export const fetching = (status) => {
     return {type: FETCHING, status}
 }

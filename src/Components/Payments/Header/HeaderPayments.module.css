@@ -1,4 +1,4 @@
-.coin_header {
+.headerPayments {
   grid-area: h;
   background-color: #727270;
   color: #d7d7d7;
@@ -7,23 +7,23 @@
   width: 100%;
   user-select: none;
   z-index: 100; }
-  .coin_header .coin_logo {
+  .headerPayments .coin_logo {
     height: 60px;
     margin: 12px 20px;
     float: right; }
     @media (max-width: 1170px) {
-      .coin_header .coin_logo {
+      .headerPayments .coin_logo {
         margin: 18px 10px;
         height: 50px; } }
-  .coin_header .siteLogo {
+  .headerPayments .siteLogo {
     height: 60px;
     margin: 12px 20px;
     float: left; }
     @media (max-width: 1170px) {
-      .coin_header .siteLogo {
+      .headerPayments .siteLogo {
         margin: 18px 10px;
         height: 50px; } }
-  .coin_header span {
+  .headerPayments span {
     color: white;
     float: left;
     font-size: 26px;
@@ -31,22 +31,22 @@
     cursor: pointer;
     text-transform: uppercase; }
     @media (max-width: 1170px) {
-      .coin_header span {
+      .headerPayments span {
         font-size: 18px;
         margin: 30px 10px; } }
-  .coin_header .currentCoin {
+  .headerPayments .currentCoin {
     color: white;
     float: left;
     font-size: 26px;
     margin-top: 22px;
     cursor: pointer;
     text-transform: uppercase; }
-  .coin_header .coin_header_Links {
+  .headerPayments .coin_header_Links {
     float: right;
     margin: 26px 32px 0 65px; }
-    .coin_header .coin_header_Links .active {
+    .headerPayments .coin_header_Links .active {
       color: #ffffff; }
-    .coin_header .coin_header_Links .inputBtn {
+    .headerPayments .coin_header_Links .inputBtn {
       border: 0.5px solid rgba(0, 0, 0, 0.5);
       float: left;
       margin-left: 5px;
@@ -54,33 +54,33 @@
       color: white;
       font-weight: 600;
       padding: 1.5px 6px; }
-      .coin_header .coin_header_Links .inputBtn:hover {
+      .headerPayments .coin_header_Links .inputBtn:hover {
         border: 0.5px solid #23c911;
         background-color: #23c911;
         color: #ffffff;
         transform: scale(1.02);
         transition: transform .2s ease-in-out; }
-    .coin_header .coin_header_Links i {
+    .headerPayments .coin_header_Links i {
       margin-left: 5px; }
-    .coin_header .coin_header_Links a {
+    .headerPayments .coin_header_Links a {
       margin-left: 50px;
       color: #c9c9c9;
       text-decoration: none;
       font-size: 22px; }
       @media (max-width: 1350px) {
-        .coin_header .coin_header_Links a {
+        .headerPayments .coin_header_Links a {
           margin-left: 15px; } }
       @media (max-width: 1170px) {
-        .coin_header .coin_header_Links a {
+        .headerPayments .coin_header_Links a {
           font-size: 18px;
           margin-left: 15px; } }
-      .coin_header .coin_header_Links a:hover {
+      .headerPayments .coin_header_Links a:hover {
         color: #dedede; }
     @media (max-width: 1350px) {
-      .coin_header .coin_header_Links {
+      .headerPayments .coin_header_Links {
         margin-top: 26px; } }
     @media (max-width: 1170px) {
-      .coin_header .coin_header_Links {
+      .headerPayments .coin_header_Links {
         margin-top: 30px; } }
 
-/*# sourceMappingURL=CoinHeader.module.css.map */
+/*# sourceMappingURL=HeaderPayments.module.css.map */

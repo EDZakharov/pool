@@ -13,7 +13,7 @@ const root = createRoot(container);
 
 root.render(
     <Provider store={store}>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter>
             <AppContainer/>
         </BrowserRouter>
     </Provider>,

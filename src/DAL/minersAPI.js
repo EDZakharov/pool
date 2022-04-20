@@ -7,3 +7,8 @@ export const getMinersFromPool = (pool) => {
 
 }
 
+
+
+export const getMinersPaymentsData= (pool) => {
+        return axios.get(`https://api.e4pool.com/${pool}/payments`)
+}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,SAAS;EACP,SAAS,EAAE,CAAC",
+"sources": ["Payments.module.scss"],
+"names": [],
+"file": "Payments.module.css"
+}

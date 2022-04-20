@@ -7,17 +7,18 @@ import Fetcher from "../Fetcher/Fetcher";
 
 
 export const CoinPage = (props) => {
-
+    // props.fetching(true)
     const index = props.content.coins.findIndex(el => `/${el.pool}` === window.location.pathname)
     const coin = props.content.coins[index]
-
+    let path = localStorage.getItem('selectedCoin')
     useEffect(() => {
-        props.addMinersThunk(localStorage.getItem('selectedCoin'))
+        props.addMinersThunk(path)
     }, [])
 
     let x = {...props.content.miners}
     let c = {miners: {...x.miners}}
     let keys = Object.keys(c.miners)
+
 
     return (props.content.isFetching === true ? <Fetcher/> : (props.content.statusCode !== 404 ?
         <div className={style.coin}>
@@ -27,7 +28,6 @@ export const CoinPage = (props) => {
                 <div className={style.search}>
                     <div className={style.inputText}>Введите адрес майнера:</div>
                     <input/>
-                    <div className={style.inputBtn}><i className="fa-solid fa-magnifying-glass"> </i></div>
                 </div>
             </div>
             <div className={style.totalHashrate}>

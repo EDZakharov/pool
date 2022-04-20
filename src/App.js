@@ -3,11 +3,12 @@ import './App.css';
 import Footer from "./Components/Footer/FooterComponent";
 import {Routes, Route} from "react-router-dom";
 import ContentContainer from "./Components/Content/ContentComponentContainer";
-import {AppPlaceHolder, AppPlaceHolder2} from "./AppPlacepolders";
+import {AppPlaceHolder, AppPlaceHolder2, AppPlaceHolder3} from "./AppPlacepolders";
 import BlocksPageContainer from "./Components/BlocksPage/BlocksPageComponentContainer";
 import CoinPageContainer from "./Components/CoinPage/CoinPageContainer";
 import Err404 from "./Components/404/404";
 import E4Pizor from "./Components/e4pizor/E4pizor";
+import {PaymentsContainer} from "./Components/Payments/PaymentsContainer";
 
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
 
                 <Route path={path} element={<AppPlaceHolder2/>}>
                     <Route index element={<CoinPageContainer/>}/>
+                </Route>
+                <Route path={`/${path}/payments`} element={<AppPlaceHolder3/>}>
+                    <Route index element={<PaymentsContainer/>}/>
                 </Route>
                 <Route path='*' element={<AppPlaceHolder/>}>
                     <Route  path='*' element={<Err404/>}/>

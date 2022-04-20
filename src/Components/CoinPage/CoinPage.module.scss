@@ -67,30 +67,7 @@
         //padding-right: 4px;
         margin-left: 10px;
       }
-      .inputBtn{
-        border: 0.5px solid rgba(0, 0, 0, 0.5);
-        float: left;
-        //padding-right: 10px;
-        margin-left: 5px;
-        //height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        font-weight: 600;
-        padding: 1.5px 6px;
 
-        &:hover{
-          border: 0.5px solid #23c911;
-          background-color: #23c911;
-          color: #ffffff;
-          //transition: 0.2s ease-in-out;
-          transform: scale(1.02);
-          transition: transform .2s ease-in-out;
-        }
-
-
-
-
-      }
 
 
     }

@@ -1,0 +1,1 @@
+export let selectedCoin = localStorage.getItem('selectedCoin')
