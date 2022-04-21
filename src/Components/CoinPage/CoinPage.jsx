@@ -7,57 +7,40 @@ import Fetcher from "../Fetcher/Fetcher";
 
 
 export const CoinPage = (props) => {
-    // props.fetching(true)
     const index = props.content.coins.findIndex(el => `/${el.pool}` === window.location.pathname)
     const coin = props.content.coins[index]
     let path = localStorage.getItem('selectedCoin')
-    useEffect(() => {
-        props.addMinersThunk(path)
-    }, [])
-
+    useEffect(() => {props.addMinersThunk(path)}, [])
     let x = {...props.content.miners}
     let c = {miners: {...x.miners}}
     let keys = Object.keys(c.miners)
-
 
     return (props.content.isFetching === true ? <Fetcher/> : (props.content.statusCode !== 404 ?
         <div className={style.coin}>
             <div className={style.coinData}>
                 <div className={style.stats}>Статистика</div>
                 <div className={style.graph}>График</div>
-                <div className={style.search}>
-                    <div className={style.inputText}>Введите адрес майнера:</div>
-                    <input/>
-                </div>
             </div>
             <div className={style.totalHashrate}>
-                Общий хешрейт
-                пула {index === -1 ? '' : coinNamesFilter(coin.data.pool)}: {index === -1 ? '' : hashFilter(coin.data.hashrate)}
+                <span className={style.totalHashrate_span}>Общий хешрейт
+                пула {index === -1 ? '' : coinNamesFilter(coin.data.pool)}: <span className={style.totalHashrate_span_span}>{index === -1 ? '' : hashFilter(coin.data.hashrate)}</span></span>
+                <div className={style.coin_column_grid}>
+                    <div className={style.wallet}>Кошелек: </div>
+                    <div className={style.hashrate}>Хэшрейт: </div>
+                    <div className={style.shares}>Последняя шара: </div>
+                    <div className={style.status}>Статус: </div>
+                </div>
                 {props.content.miners.miners[0] === undefined ? '' : keys.map(el => {
-
-                        let obj = {
-                            [el]: c.miners[el]
-                        }
-
-
+                        let obj = {[el]: c.miners[el]}
                         let element = Object.values(obj[el])
-                        // let element2 = {...element}
-
-                        let obj2 = {
-                            data: {...element[0]}
-                        }
-                        // console.log(obj2.data)
+                        let obj2 = {data: {...element[0]}}
                         return <div key={el}>
                             <CoinPageData miner={Object.keys(obj[el])}
                                           hashrate={hashFilter(obj2.data.hr)}
                                           lastShare={obj2.data.lastBeat}
                                           offline={obj2.data.offline}/>
                         </div>
-
-                    }
-                )}
-
-
+                    })}
             </div>
         </div> : <Err404/>));
 };

@@ -46,36 +46,37 @@
     margin: 26px 32px 0 65px; }
     .headerPayments .coin_header_Links .active {
       color: #ffffff; }
+    .headerPayments .coin_header_Links input {
+      float: right;
+      height: 28px;
+      width: 400px;
+      font-size: 17px;
+      border-radius: 8px;
+      padding-left: 6px;
+      border: 0.2px solid; }
+      .headerPayments .coin_header_Links input:focus {
+        outline: none;
+        border: 0.2px solid;
+        color: white;
+        opacity: .97; }
     .headerPayments .coin_header_Links .inputBtn {
       border: 0.5px solid rgba(0, 0, 0, 0.5);
-      float: left;
-      margin-left: 5px;
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      font-weight: 600;
-      padding: 1.5px 6px; }
+      float: right;
+      margin-left: 2px;
+      border-radius: 8px;
+      background-color: white;
+      color: #000000;
+      width: 35px;
+      height: 30px;
+      text-align: center; }
       .headerPayments .coin_header_Links .inputBtn:hover {
-        border: 0.5px solid #23c911;
-        background-color: #23c911;
+        border: 0.5px solid #000000;
+        background-color: #000000;
         color: #ffffff;
-        transform: scale(1.02);
-        transition: transform .2s ease-in-out; }
-    .headerPayments .coin_header_Links i {
-      margin-left: 5px; }
-    .headerPayments .coin_header_Links a {
-      margin-left: 50px;
-      color: #c9c9c9;
-      text-decoration: none;
-      font-size: 22px; }
-      @media (max-width: 1350px) {
-        .headerPayments .coin_header_Links a {
-          margin-left: 15px; } }
-      @media (max-width: 1170px) {
-        .headerPayments .coin_header_Links a {
-          font-size: 18px;
-          margin-left: 15px; } }
-      .headerPayments .coin_header_Links a:hover {
-        color: #dedede; }
+        transition: .1s ease-in-out; }
+      .headerPayments .coin_header_Links .inputBtn i {
+        margin-top: 18%;
+        font-size: 20px; }
     @media (max-width: 1350px) {
       .headerPayments .coin_header_Links {
         margin-top: 26px; } }

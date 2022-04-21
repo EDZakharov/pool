@@ -41,7 +41,7 @@ export const addMinersThunk = (pool) => (dispatch) => {
 export const addMinersPaymentsData = (pool) => (dispatch) => {
     dispatch(fetching(true))
     setTimeout(()=> {getMinersPaymentsData(pool).then(res => {
-        console.log(res)
+        // console.log(res)
         dispatch(addPayments(res))
         dispatch(fetching(false))
     }).catch(err => {

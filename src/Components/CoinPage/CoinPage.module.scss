@@ -87,6 +87,52 @@
 
   .totalHashrate{
     margin: 10px 10px 5px 10px;
+    .totalHashrate_span{
+      font-weight: 600;
+      font-size: 18px;
+
+      .totalHashrate_span_span{
+        color: #f32222;
+        font-size: 20px;
+      }
+    }
+
+    .coin_column_grid{
+      display: grid;
+      grid-template-areas: 'w h s ss';
+      font-weight: bold;
+      grid-template-columns: 4fr 2fr 2fr 1fr;
+      -moz-user-select: text;
+      margin-top: 10px;
+      background-color: grey;
+      color: white;
+      padding: 13px 0;
+
+
+      .wallet{
+        grid-area: w;
+        padding-left: 10px;
+
+      }
+      .hashrate{
+        grid-area: h;
+        padding-left: 10px;
+      }
+      .shares{
+        grid-area: s;
+        padding-left: 10px;
+      }
+      .status{
+        grid-area: ss;
+        padding-left: 10px;
+      }
+
+
+
+    }
+
+
+
   }
 
 

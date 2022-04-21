@@ -10,14 +10,14 @@
       color: white; }
   .grid_data .miner_s {
     grid-area: ms;
-    margin: 10px 0;
+    margin: 4px 0;
     padding: 10px;
     background-color: rgba(229, 229, 229, 0.52);
     font-weight: bold;
     color: black; }
     .grid_data .miner_s .miner {
       grid-area: m;
-      margin: 10px 0;
+      margin: 4px 0;
       color: black;
       font-weight: 400; }
       .grid_data .miner_s .miner span:hover {
@@ -28,58 +28,58 @@
         background-color: black; }
   .grid_data .hashrate_s {
     grid-area: hs;
-    margin: 10px 0;
+    margin: 4px 0;
     padding: 10px;
     background-color: rgba(229, 229, 229, 0.52);
     color: black;
     font-weight: bold; }
     .grid_data .hashrate_s .hashrate {
       grid-area: h;
-      margin-top: 10px;
+      margin-top: 4px;
       color: black;
       font-weight: 400; }
   .grid_data .shares_s {
     grid-area: ss;
-    margin: 10px 0;
+    margin: 4px 0;
     padding: 10px;
     background-color: rgba(229, 229, 229, 0.52);
     font-weight: bold;
     color: black; }
     .grid_data .shares_s .shares {
       grid-area: s;
-      margin-top: 10px;
+      margin-top: 4px;
       color: black;
       font-weight: 400; }
   .grid_data .status_s {
     grid-area: sts;
-    margin: 10px 0;
+    margin: 4px 0;
     padding: 10px;
     background-color: rgba(229, 229, 229, 0.52);
     font-weight: bold;
     color: black; }
     .grid_data .status_s .status_offline {
       grid-area: st;
-      margin-top: 10px;
+      margin-top: 4px;
       color: black;
       font-weight: 400; }
       .grid_data .status_s .status_offline span {
         background-color: #cb2410;
         border: 0.2px solid rgba(118, 110, 110, 0.17);
         border-radius: 5px;
-        padding: 3px;
-        font-weight: 500;
+        padding: 2px;
+        font-weight: 400;
         color: white; }
     .grid_data .status_s .status_online {
       grid-area: st;
-      margin-top: 10px;
+      margin-top: 4px;
       color: black;
       font-weight: 400; }
       .grid_data .status_s .status_online span {
-        background-color: #23cb10;
+        background-color: #1ca00d;
         border: 0.2px solid rgba(118, 110, 110, 0.17);
         border-radius: 5px;
-        padding: 3px;
-        font-weight: 500;
+        padding: 2px;
+        font-weight: 400;
         color: #ffffff; }
 
 /*# sourceMappingURL=CoinPageData.module.css.map */
