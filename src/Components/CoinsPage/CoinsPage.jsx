@@ -1,10 +1,12 @@
 import CoinCard from "../Coincard/Coincard";
-import React from "react";
+import React, {useEffect} from "react";
 import Fetcher from "../Fetcher/Fetcher";
 
 export let CoinsPage = (props) => {
 
-    console.log(props.content.coins)
+
+
+    // console.log(props.content.coins)
 
     if (props.content.coins.length !== 0){
         return props.content.coins.map(c => {
@@ -20,5 +22,7 @@ export let CoinsPage = (props) => {
                 maturedTotal={c.maturedTotal}
                 difficulty={' '}/>)
         })
-    } else return <Fetcher/>
+    } else {
+        return <Fetcher/>
+    }
 }

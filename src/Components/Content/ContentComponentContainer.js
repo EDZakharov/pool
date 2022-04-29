@@ -5,9 +5,6 @@ import {addCoinThunk} from "../../redux/addCoinThunk";
 import {withDataSet} from "../../HOC/withDataSet";
 
 
-
-
-
 let mapStateToProps = (state) => {
     return {content: state.content}
 }

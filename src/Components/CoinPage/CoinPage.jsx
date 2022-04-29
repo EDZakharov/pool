@@ -9,8 +9,7 @@ import Fetcher from "../Fetcher/Fetcher";
 export const CoinPage = (props) => {
     const index = props.content.coins.findIndex(el => `/${el.pool}` === window.location.pathname)
     const coin = props.content.coins[index]
-    let path = localStorage.getItem('selectedCoin')
-    useEffect(() => {props.addMinersThunk(path)}, [])
+
     let x = {...props.content.miners}
     let c = {miners: {...x.miners}}
     let keys = Object.keys(c.miners)

@@ -6,7 +6,9 @@ export const withDataSet = (Component) => {
             props.addCoinThunk()
             return <Component {...props}/>
         } else
-            return <Component {...props}/>
+
+                return <Component {...props}/>
+
     }
 }
 

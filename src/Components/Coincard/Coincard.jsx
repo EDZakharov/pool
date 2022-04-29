@@ -17,6 +17,8 @@ const CoinCard = (props) => {
         props.selectCoin(adr)
     }
 
+
+
     return (
 
         <div className={style.coinCard}>

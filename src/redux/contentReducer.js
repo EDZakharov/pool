@@ -9,12 +9,7 @@ const PAYMENTS = 'PAYMENTS';
 let initialState = {
     coins: [],
     selectedCoin: '',
-    miners: {
-        hashrate : 0,
-        miners: {},
-        minersTotal: 0,
-        now: 0
-    },
+    miners: [],
     statusCode: 0,
     isFetching: true,
     payments: []
@@ -23,7 +18,7 @@ let initialState = {
 const contentReducer = (state = initialState, action) => {
     let stateCopy = {...state};
     stateCopy.coins = [...state.coins];
-    stateCopy.miners = {...state.miners};
+    stateCopy.miners = [...state.miners];
     stateCopy.payments = [...state.payments];
     stateCopy.miners.miners = {...state.miners.miners}
 
@@ -32,19 +27,17 @@ const contentReducer = (state = initialState, action) => {
             const index = stateCopy.coins.findIndex(el => el.pool === action.coin.pool)
             if (index === -1){
                 stateCopy.coins.push(action.coin)
-                return stateCopy
             } else {
                 stateCopy.coins[index] = action.coin
-                return stateCopy
             }
+            return stateCopy
         }
         case SELECT_COIN: {
             stateCopy.selectedCoin = action.coinName
             return stateCopy
         }
         case ADD_MINERS: {
-            let miners2 = sortMinersToHashrate(action)
-            stateCopy.miners.miners = {...miners2}
+            stateCopy.miners.miners = action.miners[0].miners
             return stateCopy
         }
         case STATUS_CODE: {
@@ -89,23 +82,23 @@ export default contentReducer;
 
 
 // Сортировка майнеро по хэшрейту
-let sortMinersToHashrate = (action) => {
-    let b = {miners: {...action.miners[0].miners}}
-    let k = Object.keys(b.miners)
-    let miners = k.map(el => {
-        return {[el]: b.miners[el]}})
-    let minersSorted = miners.sort((el1, el2) => {
-        let key = Object.keys(el1);
-        let newKey = key[0]
-        let key2 = Object.keys(el2);
-        let newKey2 = key2[0]
-        if (el1[newKey].hr > el2[newKey2].hr) {return -1}})
-    return minersSorted.map(res => {
-        let x = {};
-        let keys = Object.getOwnPropertyNames(res)
-        for(const i in res) {x = res[i]}
-        return {[keys[0]]: x}})
-}
+// let sortMinersToHashrate = (action) => {
+//     let b = {miners: {...action.miners[0].miners}}
+//     let k = Object.keys(b.miners)
+//     let miners = k.map(el => {
+//         return {[el]: b.miners[el]}})
+//     let minersSorted = miners.sort((el1, el2) => {
+//         let key = Object.keys(el1);
+//         let newKey = key[0]
+//         let key2 = Object.keys(el2);
+//         let newKey2 = key2[0]
+//         if (el1[newKey].hr > el2[newKey2].hr) {return -1}})
+//     return minersSorted.map(res => {
+//         let x = {};
+//         let keys = Object.getOwnPropertyNames(res)
+//         for(const i in res) {x = res[i]}
+//         return {[keys[0]]: x}})
+// }
 
 
 
