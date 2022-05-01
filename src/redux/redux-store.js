@@ -1,12 +1,16 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
 import contentReducer from "./contentReducer";
-import thunkCreator from 'redux-thunk'
+
+import coinPageReducer from "./coinPageReducer";
+import {socketMiddleware} from "./socketMiddleware";
 
 
 let reducers = combineReducers({
     content: contentReducer,
+    coinPage: coinPageReducer
+
 });
 
-let store = createStore(reducers, applyMiddleware(thunkCreator));
+let store = createStore(reducers, applyMiddleware(socketMiddleware));
 
 export default store;

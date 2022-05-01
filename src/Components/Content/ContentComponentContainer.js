@@ -1,18 +1,15 @@
 import {connect} from "react-redux";
 import Content from "./ContentComponent";
-import {fetching, selectCoin} from "../../redux/contentReducer";
-import {addCoinThunk} from "../../redux/addCoinThunk";
-import {withDataSet} from "../../HOC/withDataSet";
-
-
-
+import { selectCoin} from "../../redux/contentReducer";
+import {dellCoinData, showCoins} from "../../redux/socketMiddleware";
+import {fetching} from "../../redux/coinPageReducer";
 
 
 let mapStateToProps = (state) => {
     return {content: state.content}
 }
 
-let ContentContainer = connect(mapStateToProps, {addCoinThunk, selectCoin, fetching})(withDataSet(Content));
+let ContentContainer = connect(mapStateToProps, {selectCoin, fetching, showCoins, dellCoinData})(Content);
 
 
 export default ContentContainer;

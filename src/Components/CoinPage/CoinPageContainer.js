@@ -1,17 +1,15 @@
 import {connect} from "react-redux";
 import {CoinPage} from "./CoinPage";
-import {addCoinThunk, addMinersThunk} from "../../redux/addCoinThunk";
-import {fetching} from "../../redux/contentReducer";
-
-
+import {dellMinersData, showMiners} from "../../redux/socketMiddleware";
+import {fetching} from "../../redux/coinPageReducer";
 
 
 let mapStateToProps = (state) => {
     return {
-        content:state.content
+        coinPage:state.coinPage
     }
 }
 
-let CoinPageContainer = connect(mapStateToProps, {addCoinThunk, addMinersThunk, fetching})(CoinPage)
+let CoinPageContainer = connect(mapStateToProps, {fetching, showMiners,dellMinersData})(CoinPage)
 
 export default CoinPageContainer;
