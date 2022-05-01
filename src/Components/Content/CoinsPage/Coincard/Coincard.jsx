@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import style from "./Coincard.module.scss"
 import {NavLink} from "react-router-dom";
-import {coinNamesFilter, hashFilter, imgFilter} from "../../Filters";
+import {coinNamesFilter, hashFilter, imgFilter} from "../../../../Filters";
 
 
 const CoinCard = (props) => {

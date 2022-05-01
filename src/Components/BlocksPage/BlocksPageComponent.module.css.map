@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAIA,OAAQ;EACN,SAAS,EAAE,CAAC;EACZ,KAAK,EAAE,KAAK;EACZ,gBAAgB,EAAE,KAAK;EAEvB,WAAW,EAAE,IAAI;EACjB,MAAM,EAAE,KAAK;EAEb,sBAAe;IAXf,OAAO,EAAE,oBAAoB",
-"sources": ["BlocksPageComponent.module.scss"],
-"names": [],
-"file": "BlocksPageComponent.module.css"
-}

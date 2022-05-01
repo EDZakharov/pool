@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {addCoinData, addMiners, addPayments, fetching, statusCode} from "./contentReducer";
 import io from "socket.io-client";
 import {getMinersPaymentsData} from "../DAL/minersAPI";
@@ -79,3 +80,5 @@ const responseFilter = (dispatch, response) => {
 
 
 
+=======
+>>>>>>> 71e8514da567b6dab1ed89278cf1204ffb95682a

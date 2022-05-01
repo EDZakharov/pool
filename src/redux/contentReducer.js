@@ -1,23 +1,26 @@
-const ADD_COIN = 'ADD_COIN';
 const SELECT_COIN = 'SELECT_COIN';
-const ADD_MINERS = 'ADD_MINERS';
-const STATUS_CODE = 'STATUS_CODE';
 const FETCHING = 'FETCHING';
-const PAYMENTS = 'PAYMENTS';
+
+const ADD_COIN = 'ADD_COIN';
 
 
 let initialState = {
     coins: [],
     selectedCoin: '',
+<<<<<<< HEAD
     miners: [],
     statusCode: 0,
+=======
+>>>>>>> 71e8514da567b6dab1ed89278cf1204ffb95682a
     isFetching: true,
-    payments: []
 }
+
+let count = 0
 
 const contentReducer = (state = initialState, action) => {
     let stateCopy = {...state};
     stateCopy.coins = [...state.coins];
+<<<<<<< HEAD
     stateCopy.miners = [...state.miners];
     stateCopy.payments = [...state.payments];
     stateCopy.miners.miners = {...state.miners.miners}
@@ -30,12 +33,18 @@ const contentReducer = (state = initialState, action) => {
             } else {
                 stateCopy.coins[index] = action.coin
             }
+=======
+    switch (action.type) {
+        case ADD_COIN: {
+            stateCopy.coins = [...action.payload]
+>>>>>>> 71e8514da567b6dab1ed89278cf1204ffb95682a
             return stateCopy
         }
         case SELECT_COIN: {
             stateCopy.selectedCoin = action.coinName
             return stateCopy
         }
+<<<<<<< HEAD
         case ADD_MINERS: {
             stateCopy.miners.miners = action.miners[0].miners
             return stateCopy
@@ -49,6 +58,8 @@ const contentReducer = (state = initialState, action) => {
             stateCopy.payments = action.payments.data.payments
             return stateCopy
         }
+=======
+>>>>>>> 71e8514da567b6dab1ed89278cf1204ffb95682a
         case FETCHING: {
             stateCopy.isFetching = action.status
             return stateCopy
@@ -60,20 +71,8 @@ const contentReducer = (state = initialState, action) => {
     }
 }
 
-export const addCoinData = (coin) => {
-    return {type: ADD_COIN, coin}
-}
 export const selectCoin = (coinName) => {
     return {type: SELECT_COIN, coinName}
-}
-export const addMiners = (miners) => {
-    return {type: ADD_MINERS, miners}
-}
-export const statusCode = (statusCode) => {
-    return {type: STATUS_CODE, statusCode}
-}
-export const addPayments = (payments) => {
-    return {type: PAYMENTS, payments}
 }
 export const fetching = (status) => {
     return {type: FETCHING, status}
@@ -81,6 +80,7 @@ export const fetching = (status) => {
 export default contentReducer;
 
 
+<<<<<<< HEAD
 // Сортировка майнеро по хэшрейту
 // let sortMinersToHashrate = (action) => {
 //     let b = {miners: {...action.miners[0].miners}}
@@ -99,6 +99,8 @@ export default contentReducer;
 //         for(const i in res) {x = res[i]}
 //         return {[keys[0]]: x}})
 // }
+=======
+>>>>>>> 71e8514da567b6dab1ed89278cf1204ffb95682a
 
 
 

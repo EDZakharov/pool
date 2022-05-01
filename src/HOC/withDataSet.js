@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 
 export const withDataSet = (Component) => {
@@ -14,3 +15,5 @@ export const withDataSet = (Component) => {
 
 
 
+=======
+>>>>>>> 71e8514da567b6dab1ed89278cf1204ffb95682a

@@ -35,7 +35,7 @@ export const coinNamesFilter = (data) => {
             return 'Etc-solo'
         case 'burst':
             return 'Burst'
-        case 'keva-prop':
+        case 'keva':
             return 'Keva-prop'
         case 'evox-solo':
             return 'Evox-solo'
@@ -57,7 +57,7 @@ export const imgFilter = (data => {
             return images.etcLogo
         case 'burst':
             return images.burstLogo
-        case 'keva-prop':
+        case 'keva':
             return images.kevaLogo
         case 'evox-solo':
             return images.evoxLogo
