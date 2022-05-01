@@ -8,16 +8,7 @@ import {hashFilter} from "../../Filters";
 
 
 export const CoinPage = (props) => {
-<<<<<<< HEAD
-    const index = props.content.coins.findIndex(el => `/${el.pool}` === window.location.pathname)
-    const coin = props.content.coins[index]
-
-    let x = {...props.content.miners}
-    let c = {miners: {...x.miners}}
-    let keys = Object.keys(c.miners)
-=======
     let thisPool = localStorage.getItem('selectedCoin')
->>>>>>> 71e8514da567b6dab1ed89278cf1204ffb95682a
 
     useEffect(()=>{
         if(props.coinPage.isFetching){

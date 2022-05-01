@@ -1,10 +1,8 @@
 import React, {useEffect} from "react";
 import style from "./ContentComponent.module.scss"
-<<<<<<< HEAD
-import {CoinsPage} from "../CoinsPage/CoinsPage";
-=======
+
 import {CoinsPage} from "./CoinsPage/CoinsPage";
->>>>>>> 71e8514da567b6dab1ed89278cf1204ffb95682a
+
 
 const Content = (props) => {
 
