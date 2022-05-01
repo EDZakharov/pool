@@ -38,6 +38,14 @@ export let socketMiddleware = store => next => action => {
     if (action.type === 'SHOW_COINS') {
         socket.emit('startStats')
         action.type = 'ADD_COIN'
+        storage.coins.sort((el1,el2)=>{
+                if(el1.pool > el2.pool){
+                    return 1
+                }
+                if(el1.pool < el2.pool){
+                    return -1
+                }
+            })
         action.payload = storage.coins;
         return next(action)
     }
@@ -49,14 +57,6 @@ export let socketMiddleware = store => next => action => {
     if (action.type === 'SHOW_MINERS') {
         socket.emit('startPoolStats', {pool:action.payload, method:'miners'})
         action.type = 'ADD_MINERS'
-        storage.miners.sort((el1,el2)=>{
-            if(el1.pool > el2.pool){
-                return 1
-            }
-            if(el1.pool < el2.pool){
-                return -1
-            }
-        })
         action.payload = storage.miners;
         return next(action)
     }
