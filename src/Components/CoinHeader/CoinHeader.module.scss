@@ -1,3 +1,4 @@
+
 .coin_header {
   grid-area: h;
   background-color: #727270;
@@ -57,62 +58,87 @@
     float: right;
     margin: 26px 32px 0 65px;
 
-    input {
-      float: left;
-      height: 26px;
-      width: 105px;
-      font-size: 17px;
-      //border-radius: 8px;
-      padding-left: 6px;
-      border: 2px solid #ffffff;
-      background-color: rgba(255, 255, 255, 0);
-      color: white;
-      &::placeholder{
-        color: white;
-      }
-      &:focus{
-        outline:none;
-        border: 2px solid #ffffff;
-        //background-color: rgba(255, 255, 255, 0);
-        width: 400px;
-        transition: 0.5s ease-in-out;
-        opacity: .97;
-        &::placeholder{
+
+
+    .inputForm {
+      overflow: hidden;
+      user-select: none;
+      position: absolute;
+      top: 95px;
+      right: 0px;
+      margin-right: -5px;
+      z-index: 100;
+
+
+
+
+      input {
+        position: relative;
+        width: 2px;
+        left: 2px;
+        margin-right: -15px;
+        outline: none;
+        float: left;
+        height: 26px;
+        font-size: 17px;
+        padding-left: 6px;
+        border: 2px solid rgba(0, 0, 0, 0);
+        background-color: #727270;
+        opacity: 0;
+        transition:  opacity .5s, visibility 0s 1s;
+        color: #000000;
+
+        &::placeholder {
           color: #ffffff;
-          transition: 0.5s ease-in-out;
         }
+
       }
-    }
 
-    .inputBtn {
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      float: left;
-      margin-left: 2px;
-      //border-radius: 8px;
-      background-color: rgb(255, 255, 255);
-      color: #000000;
-      width: 35px;
-      height: 30px;
-      text-align: center;
+      .inputBtn {
+        position: relative;
+        right: 0px;
+        border: 1px solid rgba(255, 255, 255, 0);
+        float: left;
+        margin-left: 2px;
+        background-color: #585858;
+        z-index: 100;
+        color: #000000;
+        width: 35px;
+        height: 29.5px;
+        text-align: center;
 
+        i {
+          margin-left: 0;
+          margin-top: 18%;
+          font-size: 20px;
+          color: #c9c8c8;
+        }
+
+      }
 
       &:hover {
-        border: 0.5px solid #000000;
-        background-color: #000000;
-        color: #ffffff;
-        transition: .1s ease-in-out;
-      }
+        input {
+          border: 2px solid #000000;
+          width: 400px;
+          transition-property: width, opacity;
+          transition: 1s;
+          opacity: 1;
+          //transition: opacity .5s, visibility 0s;
+          color: white;
+        }
 
-      i {
-        margin-left: 0;
-        margin-top: 18%;
-        font-size: 20px;
-        //width: 100%;
-        //height: 100%;
-      }
+        .inputBtn {
+          background-color: #000000;
 
+          i {
+            color: #ffffff;
+          }
+
+        }
+
+
+      }
     }
-
 
 
     a {
@@ -120,6 +146,7 @@
       color: #c9c9c9;
       text-decoration: none;
       font-size: 22px;
+
       i {
         margin-left: 5px;
       }

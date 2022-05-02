@@ -7,11 +7,13 @@ import {AppPlaceHolder, AppPlaceHolder2, AppPlaceHolder3} from "./AppPlacepolder
 import CoinPageContainer from "./Components/CoinPage/CoinPageContainer";
 import Err404 from "./Components/404/404";
 import E4Pizor from "./Components/e4pizor/E4pizor";
-import {PaymentsContainer} from "./Components/Payments/PaymentsContainer";
+import {AccountContainer} from "./Components/Account/AccountContainer";
+
 
 
 function App() {
     let path = localStorage.getItem('selectedCoin');
+    let addr = localStorage.getItem('account')
 
     return (
         <div className='App'>
@@ -24,8 +26,8 @@ function App() {
                 <Route path={path} element={<AppPlaceHolder2/>}>
                     <Route index element={<CoinPageContainer/>}/>
                 </Route>
-                <Route path={`/${path}/payments`} element={<AppPlaceHolder3/>}>
-                    <Route index element={<PaymentsContainer/>}/>
+                <Route path={`/${addr}/stats`} element={<AppPlaceHolder3/>}>
+                    <Route index element={<AccountContainer/>}/>
                 </Route>
                 <Route path='*' element={<AppPlaceHolder/>}>
                     <Route  path='*' element={<Err404/>}/>

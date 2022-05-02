@@ -2,7 +2,8 @@ import HeaderContainer from "./Components/Header/headerComponentContainer";
 import {Outlet} from "react-router";
 import React from "react";
 import CoinHeaderContainer from "./Components/CoinHeader/CoinHeaderContainer";
-import HeaderPaymentsContainer from "./Components/Payments/Header/HeaderPaymentsContainer";
+import HeaderAccountContainer from "./Components/Account/Header/HeaderAccountContainer";
+
 
 
 export const AppPlaceHolder = () => {
@@ -23,7 +24,7 @@ export const AppPlaceHolder2 = (props) => {
 export const AppPlaceHolder3 = (props) => {
     return (
         <>
-            <HeaderPaymentsContainer/>
+            <HeaderAccountContainer/>
             <Outlet/>
         </>
     )

@@ -11,12 +11,13 @@ export const CoinPage = (props) => {
     let thisPool = localStorage.getItem('selectedCoin')
 
     useEffect(()=>{
+        props.ShowMinersOnce(thisPool)
         if(props.coinPage.isFetching){
             setTimeout(()=>{props.fetching(false)},1000)
         }
         let start = setInterval(()=>{
             props.showMiners(thisPool)
-        },100)
+        },1000)
         return () => {
             clearInterval(start)
             props.dellMinersData()

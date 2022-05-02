@@ -1,7 +1,7 @@
 {
 "version": 3,
 "mappings": "AAAA,SAAS;EACP,SAAS,EAAE,CAAC",
-"sources": ["Payments.module.scss"],
+"sources": ["AccountData.module.scss"],
 "names": [],
-"file": "Payments.module.css"
+"file": "AccountData.module.css"
 }

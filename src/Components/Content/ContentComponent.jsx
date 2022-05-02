@@ -5,6 +5,7 @@ import {CoinsPage} from "./CoinsPage/CoinsPage";
 const Content = (props) => {
 
     useEffect(()=>{
+        props.showCoinsOnce()
         let start = setInterval(()=>{
             props.showCoins()
         },500)

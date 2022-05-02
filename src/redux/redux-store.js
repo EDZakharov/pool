@@ -3,11 +3,13 @@ import contentReducer from "./contentReducer";
 
 import coinPageReducer from "./coinPageReducer";
 import {socketMiddleware} from "./socketMiddleware";
+import accountReducer from "./accountReducer";
 
 
 let reducers = combineReducers({
     content: contentReducer,
-    coinPage: coinPageReducer
+    coinPage: coinPageReducer,
+    account: accountReducer,
 
 });
 
