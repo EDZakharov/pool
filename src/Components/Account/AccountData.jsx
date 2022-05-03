@@ -1,6 +1,10 @@
 import React, {useEffect} from 'react';
 import style from './AccountData.module.scss'
 import Fetcher from "../Fetcher/Fetcher";
+import {hashFilter, showDate} from "../../Filters";
+
+
+let count = 0
 
 const AccountData = (props) => {
 
@@ -12,21 +16,44 @@ const AccountData = (props) => {
             props.showAccountData(pool)
         }, 500)
         return () => {
+            count = 0
             clearInterval(interval)
             props.dellAccountData()
         }
     }, [])
 
 
+    let countChecker = () => {
+        if(props.account.isAccountData === false){
+            return count++
+        }
+    }
+    countChecker()
+
+    let divReturner = () => {
+        if(count >= 4){
+            return <div className={style.payments}>Страница не найдена</div>
+        }
+        if(count < 4){
+            return <Fetcher/>
+        }
+    }
+
+    let pageNotFound = divReturner()
 
 
-    return (props.account.isFetching ?
-            <Fetcher/>
-            :
-            <div className={style.payments}>
-                1423423
+    return (props.account.isAccountData ?
+        <div className={style.payments}>
+            <div className={style.graph}>График</div>
+            <div className={style.menu}>
+                <div>Unpaid balance: {props.account.accountData.balance}</div>
+                <div>Hashrate: {hashFilter(props.account.accountData.hr)}</div>
+                <div>LastBeat: {showDate(props.account.accountData.lastBeat)}</div>
+
+
+
             </div>
-    )
+        </div> : pageNotFound)
 };
 
 export default AccountData;

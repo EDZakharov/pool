@@ -51,6 +51,16 @@
     margin-top: 22px;
     cursor: pointer;
     text-transform: uppercase;
+
+    @media (max-width: 1170px) {
+      font-size: 18px;
+      margin: 30px 10px;
+    }
+    @media (max-width: 525px) {
+      display: none;
+    }
+
+
   }
 
   .coin_header_Links {

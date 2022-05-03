@@ -26,7 +26,7 @@ function App() {
                 <Route path={path} element={<AppPlaceHolder2/>}>
                     <Route index element={<CoinPageContainer/>}/>
                 </Route>
-                <Route path={`/${addr}/stats`} element={<AppPlaceHolder3/>}>
+                <Route path={`${path}/account/${addr}`} element={<AppPlaceHolder3/>}>
                     <Route index element={<AccountContainer/>}/>
                 </Route>
                 <Route path='*' element={<AppPlaceHolder/>}>

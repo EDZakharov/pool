@@ -41,6 +41,13 @@
     margin-top: 22px;
     cursor: pointer;
     text-transform: uppercase; }
+    @media (max-width: 1170px) {
+      .headerPayments .currentCoin {
+        font-size: 18px;
+        margin: 30px 10px; } }
+    @media (max-width: 525px) {
+      .headerPayments .currentCoin {
+        display: none; } }
   .headerPayments .coin_header_Links {
     float: right;
     margin: 26px 32px 0 65px; }

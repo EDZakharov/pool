@@ -1,16 +1,16 @@
 import {connect} from "react-redux";
 import CoinHeader from "./CoinHeader";
-import {selectCoin} from "../../redux/contentReducer";
+import {addAccountAddress} from "../../redux/accountReducer";
 
 
 
 
 let mapStateToProps = (state) => {
-    return {content: state.content}
+    return {account: state.account}
 }
 
 
-let CoinHeaderContainer = connect(mapStateToProps, null)(CoinHeader);
+let CoinHeaderContainer = connect(mapStateToProps, {addAccountAddress})(CoinHeader);
 
 
 export default CoinHeaderContainer;

@@ -8,7 +8,7 @@ import HeaderAccount from "./HeaderAccount";
 
 
 let mapStateToProps = (state) => {
-    return {content: state.content}
+    return {account: state.account}
 }
 
 let HeaderAccountContainer = connect(mapStateToProps, {fetching})(HeaderAccount);

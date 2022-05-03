@@ -4,26 +4,32 @@ import {Link, NavLink} from "react-router-dom";
 import {coinNamesFilter, imgFilter} from "../../Filters";
 import {selectedCoin} from "../../GlobalVars";
 
-const CoinHeader = () => {
+const CoinHeader = (props) => {
     let onClickActiveStatus = ({isActive}) => (isActive ? style.active : 'inactive');
 
     let CoinName = localStorage.getItem('selectedCoin')
     let coinLogo = imgFilter(localStorage.getItem('selectedCoin'))
-    let x = localStorage.getItem('account')
 
-    let addrFilter = (x = '') => {
-        if (x === '') {
+
+    let addrFilter = () => {
+        let x = props.account.accountAddress
+        if (x === null){
             return `/${CoinName}`
+        } else {
+            return `/${CoinName}/account/${x}`
         }
-        if (x !== '') {
-            return `/${x}/stats`
-        }
-
     }
+
+    useEffect(()=>{
+        return () => {
+            props.addAccountAddress(null)
+        }
+    },[])
+
+
     let setAddr = (e) => {
-        if(e.target.value !== ''){
-            localStorage.setItem('account', e.target.value)
-            console.log(e.target.value)
+        if (e.target.value !== '') {
+            props.addAccountAddress(e.target.value)
         }
     }
 
@@ -35,7 +41,7 @@ const CoinHeader = () => {
             <div className={style.coin_header_Links}>
                 <div className={style.inputForm}>
                     <input onChange={setAddr} type='text' autoComplete='off' placeholder={`miner address`}/>
-                    <Link to={addrFilter(x)} >
+                    <Link to={addrFilter()}>
                         <div className={style.inputBtn}><i className="fa-solid fa-magnifying-glass"> </i></div>
                     </Link>
                 </div>

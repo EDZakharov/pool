@@ -1,6 +1,6 @@
 import AccountData from "./AccountData";
 import {connect} from "react-redux";
-import {fetchingAccount} from "../../redux/accountReducer";
+import {addAccountAddress, fetchingAccount} from "../../redux/accountReducer";
 import {dellAccountData, showAccountData, showAccountDataOnce} from "../../redux/socketMiddleware";
 
  let mapStateToProps = (state) => {
@@ -9,4 +9,4 @@ import {dellAccountData, showAccountData, showAccountDataOnce} from "../../redux
     }
 }
 
-export let AccountContainer = connect(mapStateToProps, {fetchingAccount,showAccountDataOnce,showAccountData,dellAccountData})(AccountData)
+export let AccountContainer = connect(mapStateToProps, {fetchingAccount,showAccountDataOnce,showAccountData,dellAccountData,addAccountAddress})(AccountData)

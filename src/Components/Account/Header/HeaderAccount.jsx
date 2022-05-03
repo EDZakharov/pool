@@ -3,14 +3,14 @@ import style from './HeaderAccount.module.scss'
 import { imgFilter} from "../../../Filters";
 import {NavLink} from "react-router-dom";
 
-const HeaderAccount = () => {
+const HeaderAccount = (props) => {
     let selectedCoin = localStorage.getItem('selectedCoin')
-    let address = localStorage.getItem('address')
+    let account = localStorage.getItem('account')
 
     return (
         <div className={style.headerPayments}>
             <NavLink to={'/'}><img src={imgFilter(selectedCoin)} alt='logo' className={style.siteLogo}/></NavLink>
-            <NavLink to="/" ><span className={style.currentCoin}>{address}</span></NavLink>
+            <NavLink to="/" ><span className={style.currentCoin}>{account}</span></NavLink>
         </div>
     );
 };

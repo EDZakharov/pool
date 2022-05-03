@@ -1,4 +1,19 @@
 .payments {
-  grid-area: c; }
+  grid-area: c;
+  background-color: #554d4d;
+  display: grid;
+  grid-template-areas: 'g g' 'm m';
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  color: white;
+  overflow-x: hidden;
+  height: 88vh;
+  padding-top: 100px; }
+  .payments .graph {
+    border: 1px solid grey;
+    grid-area: g; }
+  .payments .menu {
+    grid-area: m;
+    border: 1px solid grey; }
 
 /*# sourceMappingURL=AccountData.module.css.map */
