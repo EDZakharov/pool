@@ -36,7 +36,7 @@ const AccountData = (props) => {
             return <div className={style.payments}>Страница не найдена</div>
         }
         if(count < 4){
-            return <Fetcher
+            return <Fetcher/>
         }
     }
 

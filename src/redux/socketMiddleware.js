@@ -107,7 +107,7 @@ export let dellMinersData = () => {
     return {type: DELL_MINERS}
 }
 
-<<<<<<< HEAD
+
 //ACCOUNT______________________________
 export let showAccountDataOnce = (pool,account) => {
     socket.emit('startPoolStats', {
@@ -124,5 +124,3 @@ export let dellAccountData = () => {
     socket.emit('stopStats')
     return {type: DELL_ACCOUNT_DATA}
 }
-=======
->>>>>>> 29c0ea50a38d1f371f0c4e161c2c8339286bb20e
