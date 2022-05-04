@@ -144,7 +144,7 @@ let setupOptions = (props) => {
         // console.log(hashFilter(el.hr))
         // let newDate = new Date(el.timestamp * 1000)
         // console.log({x:el.hr , y:el.timestamp})
-        return {x:el.hr , y:el.timestamp}
+        return el.hr
                 // return Math.ceil(el.hr/1000000)
 
 
