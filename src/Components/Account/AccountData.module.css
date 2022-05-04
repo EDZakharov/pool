@@ -10,8 +10,9 @@
   height: 88vh;
   padding-top: 100px; }
   .payments .graph {
-    border: 1px solid grey;
     grid-area: g; }
+    .payments .graph .chartsGraph {
+      margin: 0 30px; }
   .payments .menu {
     grid-area: m;
     border: 1px solid grey; }

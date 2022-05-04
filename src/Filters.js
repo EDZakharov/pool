@@ -12,13 +12,13 @@ export const images = {ethLogo,etcLogo,burstLogo,kevaLogo,evoxLogo,ergoLogo,site
 export const hashFilter = (data) => {
     if(data){
         if (data <= 1000) {
-            return Math.ceil(data) + ' Hs'
+            return data.toFixed(2) + ' Hs'
         } else if(data > 1000 && data <= 1000000){
-            return Math.ceil(data / 1000) + ' kHs'
+            return (data / 1000).toFixed(2) + ' kHs'
         } else if(data > 1000000 && data <= 1000000000){
-            return Math.ceil(data / 1000000) + ' MHs'
+            return (data / 1000000).toFixed(2) + ' MHs'
         } else if (data > 1000000000) {
-            return Math.ceil(data / 1000000000)+ ' GHs'
+            return (data/ 1000000000).toFixed(2) + ' GHs'
         }
     } else return 0
 
