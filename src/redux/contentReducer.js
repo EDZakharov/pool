@@ -7,14 +7,13 @@ const ADD_COIN = 'ADD_COIN';
 let initialState = {
     coins: [],
     selectedCoin: '',
-    isFetching: true,
 }
 
-let count = 0
+
 
 const contentReducer = (state = initialState, action) => {
     let stateCopy = {...state};
-    stateCopy.coins = [...state.coins];
+    stateCopy.coins = [...state.coins]
     switch (action.type) {
         case ADD_COIN: {
             stateCopy.coins = [...action.payload]
@@ -24,6 +23,7 @@ const contentReducer = (state = initialState, action) => {
             stateCopy.selectedCoin = action.coinName
             return stateCopy
         }
+
         case FETCHING: {
             stateCopy.isFetching = action.status
             return stateCopy
