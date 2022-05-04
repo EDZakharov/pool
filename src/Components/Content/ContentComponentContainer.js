@@ -1,8 +1,10 @@
 import {connect} from "react-redux";
 import Content from "./ContentComponent";
+
 import { selectCoin} from "../../redux/contentReducer";
 import {dellCoinData, showCoins, showCoinsOnce} from "../../redux/socketMiddleware";
 import {fetching} from "../../redux/coinPageReducer";
+
 
 
 let mapStateToProps = (state) => {

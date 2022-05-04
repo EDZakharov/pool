@@ -4,12 +4,14 @@ import {dellMinersData, showMiners, ShowMinersOnce} from "../../redux/socketMidd
 import {fetching} from "../../redux/coinPageReducer";
 
 
+
 let mapStateToProps = (state) => {
     return {
         coinPage:state.coinPage
     }
 }
 
-let CoinPageContainer = connect(mapStateToProps, {fetching, ShowMinersOnce,showMiners,dellMinersData})(CoinPage)
+
+let CoinPageContainer = connect(mapStateToProps, {fetching, showMiners,dellMinersData,ShowMinersOnce})(CoinPage)
 
 export default CoinPageContainer;

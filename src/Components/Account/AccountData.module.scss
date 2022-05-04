@@ -12,8 +12,13 @@
 
 
   .graph{
-    border: 1px solid grey;
+    //border: 1px solid grey;
     grid-area: g;
+
+
+    .chartsGraph{
+      margin: 0 30px;
+    }
   }
 
   .menu{

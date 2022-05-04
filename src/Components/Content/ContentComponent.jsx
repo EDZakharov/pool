@@ -1,6 +1,8 @@
 import React, {useEffect} from "react";
 import style from "./ContentComponent.module.scss"
+
 import {CoinsPage} from "./CoinsPage/CoinsPage";
+
 
 const Content = (props) => {
 

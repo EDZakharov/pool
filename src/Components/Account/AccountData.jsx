@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import style from './AccountData.module.scss'
 import Fetcher from "../Fetcher/Fetcher";
 import {hashFilter, showDate} from "../../Filters";
+import Charts from "../Charts/Charts";
 
 
 let count = 0
@@ -41,10 +42,14 @@ const AccountData = (props) => {
 
     let pageNotFound = divReturner()
 
-
+    // console.log(props.account.accountData.charts)
     return (props.account.isAccountData ?
         <div className={style.payments}>
-            <div className={style.graph}>График</div>
+            <div className={style.graph}>
+                <div className={style.chartsGraph}><Charts account={localStorage.getItem('account')}
+                             charts={props.account.accountData.charts}/></div>
+
+            </div>
             <div className={style.menu}>
                 <div>Unpaid balance: {props.account.accountData.balance}</div>
                 <div>Hashrate: {hashFilter(props.account.accountData.hr)}</div>
