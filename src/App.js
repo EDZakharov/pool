@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import './App.css';
 import Footer from "./Components/Footer/FooterComponent";
 import {Routes, Route} from "react-router-dom";
@@ -10,10 +10,11 @@ import E4Pizor from "./Components/e4pizor/E4pizor";
 import {AccountContainer} from "./Components/Account/AccountContainer";
 
 
-
 function App() {
     let path = localStorage.getItem('selectedCoin');
     let addr = localStorage.getItem('account')
+
+
 
     return (
         <div className='App'>

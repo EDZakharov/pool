@@ -1,9 +1,11 @@
 const ADD_MINERS = 'ADD_MINERS';
+const SHOW_FULL_STATS_DATA = 'SHOW_FULL_STATS_DATA';
 const FETCHING = 'FETCHING';
 
 
 let initialState = {
     miners: [],
+    fullStats: false,
     isFetching: true
 }
 
@@ -14,6 +16,11 @@ const coinPageReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_MINERS: {
             stateCopy.miners = [...action.payload]
+            return stateCopy
+        }
+        case SHOW_FULL_STATS_DATA: {
+            stateCopy.fullStats = action.payload
+            // console.log(stateCopy.fullStats)
             return stateCopy
         }
         case FETCHING: {

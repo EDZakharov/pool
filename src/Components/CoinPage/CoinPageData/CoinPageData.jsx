@@ -6,6 +6,7 @@ export const CoinPageData = (props) => {
     let timestamp = new Date(props.lastShare * 1000);
     let setEnd = timestamp.getSeconds().toString().slice(-1)
 
+
     let checkEnd = (setEnd) => {
         switch (setEnd) {
             case '0':

@@ -3,6 +3,7 @@ import io from 'socket.io-client'
 export const socket = io('https://ws.e4pool.com/');
 
 const SHOW_COINS = 'SHOW_COINS';
+const SHOW_FULL_STATS = 'SHOW_FULL_STATS';
 const DELL_COINS = 'DELL_COINS';
 const SHOW_MINERS = 'SHOW_MINERS';
 const DELL_MINERS = 'DELL_MINERS';
@@ -13,6 +14,7 @@ const DELL_ACCOUNT_DATA = 'DELL_ACCOUNT_DATA';
 let storage = {
     coins: [],
     miners: [],
+    fullStats:{},
     accountData: null
 }
 
@@ -30,6 +32,10 @@ socket.on('update', res => {
         }
     }
 
+    if (res.method === 'fullStats') {
+        storage.fullStats = {...res.data}
+    }
+
     if (res.method === 'miners') {
         storage.miners = [...res.data.miners]
     }
@@ -44,11 +50,9 @@ socket.on('update', res => {
 
 
 export let socketMiddleware = store => next => action => {
-
     if (typeof action === 'function') {
         return next(action)
     }
-
     if (action.type === 'SHOW_COINS') {
         action.type = 'ADD_COIN'
         storage.coins.sort((el1, el2) => {
@@ -60,6 +64,11 @@ export let socketMiddleware = store => next => action => {
             }
         })
         action.payload = storage.coins
+        return next(action)
+    }
+    if (action.type === 'SHOW_FULL_STATS') {
+        action.type = 'SHOW_FULL_STATS_DATA'
+        action.payload = storage.fullStats
         return next(action)
     }
 
@@ -83,6 +92,16 @@ export let showCoinsOnce = () => {
     socket.emit('startStats')
     return {type: SHOW_COINS}
 }
+
+export let showFullStats = () => {
+    let CoinName = localStorage.getItem('selectedCoin')
+    socket.emit('startPoolStats', {
+        pool:CoinName,
+        method: 'fullStats'
+    })
+    return {type: SHOW_FULL_STATS}
+}
+
 export let showCoins = () => {
     return {type: SHOW_COINS}
 }

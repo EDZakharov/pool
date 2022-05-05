@@ -23,8 +23,8 @@ const CoinCard = (props) => {
 
         <div className={style.coinCard}>
             <div className={style.coinCard_header}>
-                <span>{name}</span>
                 <div className={style.wrapper}>
+                    <span>{name}</span>
                     <img src={image} alt='logo'
                          className={style.logo}/>
                 </div>

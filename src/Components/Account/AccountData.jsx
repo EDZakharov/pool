@@ -45,7 +45,7 @@ const AccountData = (props) => {
     return (props.account.isAccountData ?
         <div className={style.payments}>
             <div className={style.graph}>
-                <div className={style.chartsGraph}><Charts account={localStorage.getItem('account')}
+                <div className={style.chartsGraph}><Charts text={`Account: ${localStorage.getItem('account')}`}
                              charts={props.account.accountData.charts}/></div>
 
             </div>
