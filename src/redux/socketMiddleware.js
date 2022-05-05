@@ -109,12 +109,14 @@ export let dellMinersData = () => {
 
 
 //ACCOUNT______________________________
-export let showAccountDataOnce = (pool,account) => {
+export let showAccountDataOnce = (pool, account) => {
     socket.emit('startPoolStats', {
         pool: pool,
         method: 'account',
         address: account
     })
+
+
     return {type: SHOW_ACCOUNT_DATA, pool}
 }
 export let showAccountData = (pool) => {
