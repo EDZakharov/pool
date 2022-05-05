@@ -41,7 +41,6 @@ const AccountData = (props) => {
     }
 
     let pageNotFound = divReturner()
-
     // console.log(props.account.accountData.charts)
     return (props.account.isAccountData ?
         <div className={style.payments}>
