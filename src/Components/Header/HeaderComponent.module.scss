@@ -7,59 +7,57 @@
   width: 100%;
   user-select: none;
   z-index: 100;
+  display: grid;
+  grid-template-areas: 'l s n';
+  grid-template-columns: .01fr 1fr auto;
+  align-items: center;
 
+  a{
+    text-decoration: none;
+  }
 
   .logo {
+    grid-area: l;
     height: 60px;
-    margin: 12px 20px;
-    float: left;
-
-    @media (max-width: 1170px) {
-      margin: 18px 10px;
-      height: 50px;
-    }
+    margin: 10px;
 
   }
 
   span {
+    grid-area: s;
     color: white;
-    float: left;
     font-size: 26px;
-    margin-top: 22px;
     cursor: pointer;
     text-transform: uppercase;
 
-    @media (max-width: 1170px) {
-      font-size: 18px;
-      margin: 30px 10px;
+    @media (min-width: 560px) {
+      font-size: 12px;
+    }
+
+    @media (min-width: 650px) {
+      font-size: 15px;
+    }
+
+    @media (min-width: 820px) {
+      font-size: 20px;
+    }
+
+    @media (min-width: 1000px) {
+      font-size: 25px;
     }
 
 
   }
 
   .headerLinks {
-    float: right;
-    margin: 26px 32px 0 65px;
+    grid-area: n;
 
     .active {
       color: #f7a81a;
-      position: relative;
 
       &:hover {
         color: #f7a81a;
         transition: 0.2s ease-in-out;
-      }
-      &::after {
-        position: absolute;
-        top: 100%;
-        left: 3.5px;
-        color: #f7a81a;
-        content: ' ';
-        width: 100%;
-        height: 1.5px;
-        //z-index: 101;
-        background-color: #f7a81a;
-
       }
     }
 
@@ -68,18 +66,40 @@
     }
 
     a {
-      margin-left: 50px;
+      //margin-left: 50px;
       color: #c9c9c9;
       text-decoration: none;
       font-size: 22px;
 
-      @media (max-width: 1350px) {
-        margin-left: 15px;
+      @media (min-width: 1px) {
+        display: none;
       }
-      @media (max-width: 1170px) {
-        font-size: 18px;
-        margin-left: 15px;
+
+      @media (min-width: 560px) {
+        display: inline-block;
+        font-size: 12px;
+        margin: 0 3px;
       }
+
+      @media (min-width: 650px) {
+        display: inline-block;
+        font-size: 15px;
+        margin: 0 5px;
+      }
+
+      @media (min-width: 820px) {
+        display: inline-block;
+        font-size: 20px;
+        margin: 0 10px;
+      }
+
+      @media (min-width: 1000px) {
+        display: inline-block;
+        font-size: 22px;
+        margin: 0 20px;
+      }
+
+
 
 
 
@@ -89,12 +109,6 @@
       }
     }
 
-    @media (max-width: 1350px) {
-      margin-top: 26px;
-    }
-    @media (max-width: 1170px) {
-      margin-top: 30px;
-    }
 
   }
 
