@@ -8,16 +8,20 @@
   width: 30%;
   grid-template-areas: 'h' 'm' 'f';
   grid-template-rows: auto auto auto;
-  //grid-template-columns: 350px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.36);
   border-radius: 7px;
   transition: transform .3s ease-in-out;
   z-index: 10;
 
-  &:hover {
-    box-shadow: 0 0 60px #27847B;
-    transform: scale(1.05);
-    transition: transform .3s ease-in-out;
+  &:hover{
+    
+    @media (pointer: fine){
+      box-shadow: 0 0 60px #27847B;
+      transform: scale(1.05);
+      transition: transform .3s ease-in-out;
+
+    }
+
   }
 
   .coinCard_header {
@@ -42,11 +46,12 @@
         margin: 0 10px;
 
         @media screen and (max-width: 1500px) {
-          margin: 0 5px;
+          margin: 0 10px;
         }
 
         @media screen and (max-width: 1280px) {
-          font-size: 14px;
+          margin: 0 10px;
+          font-size: 16px;
         }
 
       }
@@ -55,13 +60,33 @@
         grid-area: logo;
         background-color: #ffffff;
         border-radius: 50%;
+        width: 60px;
+
+
+        @media screen and (max-width: 1px) {
+          width: 60px;
+          margin: 0 auto;
+        }
+
+
+        @media screen and (max-width: 350px) {
+          width: 50px;
+          margin: 0 auto;
+        }
+
 
         @media screen and (max-width: 800px) {
           width: 40px;
+          margin: 0 auto;
         }
 
         @media screen and (max-width: 1280px) {
           width: 40px;
+          margin: 0 auto;
+        }
+
+        @media screen and (max-width: 1600px) {
+          width: 50px;
           margin: 0 auto;
         }
 
@@ -94,11 +119,11 @@
     }
 
     @media screen and (max-width: 1280px) {
-      font-size: 10px;
+      font-size: 12px;
     }
 
     @media screen and (max-width: 1350px) {
-      font-size: 13px;
+      font-size: 14px;
     }
     div {
       margin: 10px;
@@ -117,11 +142,11 @@
         }
 
         @media screen and (max-width: 1280px) {
-          font-size: 10px;
+          font-size: 12px;
         }
 
         @media screen and (max-width: 1350px) {
-          font-size: 13px;
+          font-size: 14px;
         }
 
 
@@ -166,35 +191,60 @@
         width: 110px;
         height: 20px;
       }
+      @media (max-width: 1550px) {
+        font-size: 13px;
+        margin: 10px auto;
+        width: 130px;
+        height: 20px;
+      }
 
     }
 
   }
+
   @media screen and (min-width: 0px) {
-    width: 100%;
+    opacity: 0;
+  }
+
+  @media screen and (min-width: 250px) {
+    width: 80%;
+    opacity: 1;
+    display: grid;
   }
 
   @media screen and (min-width: 450px) {
-    width: 80%;
+    width: 60%;
+    opacity: 1;
+    display: grid;
   }
 
   @media screen and (min-width: 600px) {
-    width: 65%;
+    width: 50%;
+    opacity: 1;
+    display: grid;
   }
 
   @media screen and (min-width: 700px) {
     width: 40%;
+    opacity: 1;
+    display: grid;
   }
 
   @media screen and (min-width: 820px) {
-    width: 30%;
+    width: 25%;
+    opacity: 1;
+    display: grid;
   }
   @media screen and (min-width: 1000px) {
     width: 20%;
+    opacity: 1;
+    display: grid;
   }
 
   @media screen and (min-width: 1280px) {
-    width: 17%;
+    width: 15%;
+    opacity: 1;
+    display: grid;
   }
 
 

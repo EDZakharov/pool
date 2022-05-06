@@ -5,7 +5,9 @@
   top: 96.2%;
   width: 100%;
   z-index: 98;
-
+  @media (pointer: coarse){
+    opacity: 0;
+  }
 
   a{
     float: left;

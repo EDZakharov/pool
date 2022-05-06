@@ -15,7 +15,15 @@ const Header = (props) => {
                 {/*<NavLink to="/blocks" className={onClickActiveStatus}><i className="fas fa-cubes"/> Found Blocks</NavLink>*/}
                 <NavLink to="/forum" className={onClickActiveStatus}><i className="fa-solid fa-rectangle-list"/> Forum</NavLink>
                 <NavLink to="/chat" className={onClickActiveStatus}><i className="fa-solid fa-comments"/> Mining Chat</NavLink>
-                <NavLink to="/e4pizor" className={onClickActiveStatus}><i className="fa-solid fa-basket-shopping"/> E4pizor</NavLink></div>
+                <NavLink to="/e4pizor" className={onClickActiveStatus}><i className="fa-solid fa-basket-shopping"/> E4pizor</NavLink>
+            </div>
+            {/*<ul className={style.menuBurger}>*/}
+            {/*    <li className={style.burgerItem}><NavLink to="/"  className={onClickActiveStatus}><i className="fas fa-home"/> Home</NavLink></li>*/}
+            {/*    <li className={style.burgerItem}><NavLink to="/forum" className={onClickActiveStatus}><i className="fa-solid fa-rectangle-list"/> Forum</NavLink></li>*/}
+            {/*    <li className={style.burgerItem}><NavLink to="/chat" className={onClickActiveStatus}><i className="fa-solid fa-comments"/> Mining Chat</NavLink></li>*/}
+            {/*    <li className={style.burgerItem}><NavLink to="/e4pizor" className={onClickActiveStatus}><i className="fa-solid fa-basket-shopping"/> E4pizor</NavLink></li>*/}
+            {/*</ul>*/}
+
         </div>
     );
 }

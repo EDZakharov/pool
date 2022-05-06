@@ -5,6 +5,9 @@
   top: 96.2%;
   width: 100%;
   z-index: 98; }
+  @media (pointer: coarse) {
+    .footer {
+      opacity: 0; } }
   .footer a {
     float: left;
     text-decoration: none;
