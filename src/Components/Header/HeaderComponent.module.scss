@@ -2,22 +2,29 @@
   grid-area: h;
   background-color: #727270;
   color: #d7d7d7;
-  opacity: .98;
   position: fixed;
   width: 100%;
   user-select: none;
-  z-index: 100;
   display: grid;
   grid-template-areas: 'l s n';
   grid-template-columns: .01fr 1fr auto;
   align-items: center;
+  z-index: 300;
 
-  a{
+  a {
     text-decoration: none;
   }
 
-  .logo {
+  .logo__wrapper{
     grid-area: l;
+    display: flex;
+    white-space: nowrap;
+    flex-direction: row;
+    align-items: center;
+    z-index: 300;
+  }
+
+  .logo {
     height: 60px;
     margin: 10px;
 
@@ -72,6 +79,7 @@
       font-size: 22px;
 
       @media (min-width: 1px) {
+        z-index: 100;
         display: none;
       }
 
@@ -95,12 +103,10 @@
 
       @media (min-width: 1000px) {
         display: inline-block;
+        z-index: 100;
         font-size: 22px;
         margin: 0 20px;
       }
-
-
-
 
 
       &:hover {
@@ -113,5 +119,67 @@
   }
 
 
-  
+  $right: 25px;
+
+  .burger_show{
+    position: absolute;
+    top: 27px;
+    right: $right;
+    height: 30px;
+    width: 30px;
+
+
+    &:hover{
+      cursor: pointer;
+    }
+
+    nav{
+      height: 30px;
+      position: relative;
+
+      .burger:before {
+        content: '';
+        position: absolute;
+        background-color: black;
+        top: 0;
+        width: 30px;
+        height: 5px;
+
+      }
+
+      .burger span {
+        position: absolute;
+        background-color: black;
+        top: 12.5px;
+        width: 30px;
+        height: 5px;
+      }
+
+      .burger:after {
+        content: '';
+        position: absolute;
+        background-color: black;
+        bottom: 0;
+        width: 30px;
+        height: 5px;
+
+      }
+
+
+    }
+
+    @media (max-width: 560px) {
+      display: inline-block;
+    }
+
+    @media (min-width: 560px) {
+      display: none;
+    }
+
+  }
+
+
+
+
+
 }

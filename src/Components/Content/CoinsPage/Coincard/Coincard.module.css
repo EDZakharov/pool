@@ -139,12 +139,12 @@
       opacity: 0; } }
   @media screen and (min-width: 250px) {
     .coinCard {
-      width: 80%;
+      width: 90%;
       opacity: 1;
       display: grid; } }
   @media screen and (min-width: 450px) {
     .coinCard {
-      width: 60%;
+      width: 80%;
       opacity: 1;
       display: grid; } }
   @media screen and (min-width: 600px) {
