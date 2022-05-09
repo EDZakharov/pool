@@ -1,0 +1,15 @@
+.Charts{
+    /*display: flex;*/
+    /*flex-direction: row;*/
+}
+
+
+.noData{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+}

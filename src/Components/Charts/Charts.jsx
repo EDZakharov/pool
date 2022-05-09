@@ -1,9 +1,14 @@
 import React from 'react'
 import Highcharts from 'highcharts'
+import './Charts.css'
 import HighchartsReact from 'highcharts-react-official'
 
 
 let setupOptions = (props) => {
+
+    if(props.charts === 'n/a'){
+        return 0
+    }
 
     let hashesData = 'Hs'
     let showHashes = (hashrate) => {
@@ -122,11 +127,11 @@ let setupOptions = (props) => {
 }
 const Charts = (props) => {
     if(props.charts){
-        return <div>
-            <HighchartsReact
-                highcharts={Highcharts}
-                options={setupOptions(props)}
-            />
+        return <div className='Charts'>{props.charts !== 'n/a' ? <HighchartsReact
+            highcharts={Highcharts}
+            options={setupOptions(props)}
+        />:<div className='noData'>Данные не загружены!</div>}
+
         </div>
     }
 }

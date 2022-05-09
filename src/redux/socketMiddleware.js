@@ -1,6 +1,7 @@
 import io from 'socket.io-client'
 
 export const socket = io('https://ws.e4pool.com/');
+export const socket2 = io('https://ws.e4pool.com/');
 
 const SHOW_COINS = 'SHOW_COINS';
 const SHOW_FULL_STATS = 'SHOW_FULL_STATS';
@@ -20,20 +21,17 @@ let storage = {
 
 
 socket.on('update', res => {
-
+    // console.log(res)
     storage.accountData = null
 
     if (res.method === 'stats') {
+
         let index = storage.coins.findIndex(el => el.pool === res.data.pool);
         if (index === -1) {
             storage.coins.push(res.data)
         } else {
             storage.coins[index] = res.data
         }
-    }
-
-    if (res.method === 'fullStats') {
-        storage.fullStats = {...res.data}
     }
 
     if (res.method === 'miners') {
@@ -45,6 +43,16 @@ socket.on('update', res => {
             storage.accountData = {...res.data}
         }
 
+    }
+})
+
+let storage2 = {
+    fullStats:{},
+}
+
+socket2.on('update', res => {
+    if (res.method === 'fullStats') {
+        storage2.fullStats = {...res.data}
     }
 })
 
@@ -68,7 +76,7 @@ export let socketMiddleware = store => next => action => {
     }
     if (action.type === 'SHOW_FULL_STATS') {
         action.type = 'SHOW_FULL_STATS_DATA'
-        action.payload = storage.fullStats
+        action.payload = storage2.fullStats
         return next(action)
     }
 
@@ -93,15 +101,6 @@ export let showCoinsOnce = () => {
     return {type: SHOW_COINS}
 }
 
-export let showFullStats = () => {
-    let CoinName = localStorage.getItem('selectedCoin')
-    socket.emit('startPoolStats', {
-        pool:CoinName,
-        method: 'fullStats'
-    })
-    return {type: SHOW_FULL_STATS}
-}
-
 export let showCoins = () => {
     return {type: SHOW_COINS}
 }
@@ -109,6 +108,22 @@ export let dellCoinData = () => {
     socket.emit('stopStats')
     return {type: DELL_COINS}
 }
+
+//FULL STATS
+
+export let showFullStatsOnce = () => {
+    let CoinName = localStorage.getItem('selectedCoin')
+    socket2.emit('startPoolStats', {
+        pool:CoinName,
+        method: 'fullStats'
+    })
+    return {type: SHOW_FULL_STATS}
+}
+export let showFullStats = () => {
+    return {type: SHOW_FULL_STATS}
+}
+
+
 
 //MINERS_______________________________
 export let ShowMinersOnce = (pool) => {
@@ -134,8 +149,6 @@ export let showAccountDataOnce = (pool, account) => {
         method: 'account',
         address: account
     })
-
-
     return {type: SHOW_ACCOUNT_DATA, pool}
 }
 export let showAccountData = (pool) => {

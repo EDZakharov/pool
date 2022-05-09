@@ -20,7 +20,6 @@ const coinPageReducer = (state = initialState, action) => {
         }
         case SHOW_FULL_STATS_DATA: {
             stateCopy.fullStats = action.payload
-            // console.log(stateCopy.fullStats)
             return stateCopy
         }
         case FETCHING: {

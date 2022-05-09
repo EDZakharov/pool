@@ -28,9 +28,9 @@ export const hashFilter = (data) => {
 export const coinNamesFilter = (data) => {
     switch (data) {
         case 'eth':
-            return 'Etherium'
+            return 'Ethereum'
         case 'etc':
-            return 'Etherium Classic'
+            return 'Ethereum Classic'
         case 'etc-solo':
             return 'Etc-solo'
         case 'burst':

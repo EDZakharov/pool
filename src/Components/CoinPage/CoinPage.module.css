@@ -5,7 +5,7 @@
   overflow: auto;
   user-select: none;
   height: 100vh;
-  padding: 84.4px 0 55px 0; }
+  padding: 110px 150px 55px 150px; }
   .coin .coinData {
     display: grid;
     grid-template-areas: "graph" "stats";
@@ -16,10 +16,165 @@
       background-color: #554d4d;
       margin: 0 10px; }
     .coin .coinData .stats {
+      text-align: center;
+      font-weight: bold;
+      font-size: 30px;
       grid-area: stats;
       background-color: #554d4d;
-      color: #ffffff;
-      margin: 0 10px; }
+      color: #ffffff; }
+      .coin .coinData .stats .stats__grid {
+        font-size: 16px;
+        margin: 20px 10px;
+        display: grid;
+        grid-template-areas: 'm h l' 'he fe ty' 'c min cha';
+        grid-template-columns: 1fr 1fr 1fr;
+        white-space: nowrap;
+        grid-gap: 20px 70px;
+        text-align: center; }
+        .coin .coinData .stats .stats__grid .miners {
+          grid-area: m;
+          background-color: #e3bd37;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          height: 60px;
+          font-weight: 700;
+          border: none;
+          color: black;
+          box-shadow: 0 0 5px rgba(35, 35, 35, 0.66); }
+          .coin .coinData .stats .stats__grid .miners:hover {
+            box-shadow: 0 0 10px #e3bd37;
+            transition: .3s ease-in-out; }
+        .coin .coinData .stats .stats__grid .hashrate {
+          grid-area: h;
+          background-color: #e3bd37;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          height: 60px;
+          font-weight: 700;
+          border: none;
+          color: black;
+          box-shadow: 0 0 5px rgba(35, 35, 35, 0.66); }
+          .coin .coinData .stats .stats__grid .hashrate:hover {
+            box-shadow: 0 0 10px #e3bd37;
+            transition: .3s ease-in-out; }
+        .coin .coinData .stats .stats__grid .lastBlockFound {
+          grid-area: l;
+          background-color: #e3bd37;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          height: 60px;
+          font-weight: 700;
+          border: none;
+          color: black;
+          box-shadow: 0 0 5px rgba(35, 35, 35, 0.66); }
+          .coin .coinData .stats .stats__grid .lastBlockFound:hover {
+            box-shadow: 0 0 10px #e3bd37;
+            transition: .3s ease-in-out; }
+        .coin .coinData .stats .stats__grid .height {
+          grid-area: he;
+          background-color: #e3bd37;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          height: 60px;
+          font-weight: 700;
+          border: none;
+          color: black;
+          box-shadow: 0 0 5px rgba(35, 35, 35, 0.66); }
+          .coin .coinData .stats .stats__grid .height:hover {
+            box-shadow: 0 0 10px #e3bd37;
+            transition: .3s ease-in-out; }
+        .coin .coinData .stats .stats__grid .fee {
+          grid-area: fe;
+          background-color: #e3bd37;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          height: 60px;
+          font-weight: 700;
+          border: none;
+          color: black;
+          box-shadow: 0 0 5px rgba(35, 35, 35, 0.66); }
+          .coin .coinData .stats .stats__grid .fee:hover {
+            box-shadow: 0 0 10px #e3bd37;
+            transition: .3s ease-in-out; }
+        .coin .coinData .stats .stats__grid .type {
+          grid-area: ty;
+          background-color: #e3bd37;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          height: 60px;
+          font-weight: 700;
+          border: none;
+          color: black;
+          box-shadow: 0 0 5px rgba(35, 35, 35, 0.66); }
+          .coin .coinData .stats .stats__grid .type:hover {
+            box-shadow: 0 0 10px #e3bd37;
+            transition: .3s ease-in-out; }
+        .coin .coinData .stats .stats__grid .currentEffort {
+          grid-area: c;
+          background-color: #e3bd37;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          height: 60px;
+          font-weight: 700;
+          border: none;
+          color: black;
+          box-shadow: 0 0 5px rgba(35, 35, 35, 0.66); }
+          .coin .coinData .stats .stats__grid .currentEffort:hover {
+            box-shadow: 0 0 10px #e3bd37;
+            transition: .3s ease-in-out; }
+        .coin .coinData .stats .stats__grid .minPayment {
+          grid-area: min;
+          background-color: #e3bd37;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          height: 60px;
+          font-weight: 700;
+          border: none;
+          color: black;
+          box-shadow: 0 0 5px rgba(35, 35, 35, 0.66); }
+          .coin .coinData .stats .stats__grid .minPayment:hover {
+            box-shadow: 0 0 10px #e3bd37;
+            transition: .3s ease-in-out; }
+        .coin .coinData .stats .stats__grid .charts {
+          grid-area: cha;
+          background-color: #e3bd37;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          height: 60px;
+          font-weight: 700;
+          border: none;
+          color: black;
+          box-shadow: 0 0 5px rgba(35, 35, 35, 0.66); }
+          .coin .coinData .stats .stats__grid .charts:hover {
+            box-shadow: 0 0 10px #e3bd37;
+            transition: .3s ease-in-out; }
   .coin .totalHashrate {
     margin: 10px 10px 5px 10px; }
     .coin .totalHashrate .totalHashrate_span {

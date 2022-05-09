@@ -1,5 +1,5 @@
 @mixin coinMargin {
-  padding: 84.4px 0 55px 0;
+  padding: 110px 150px 55px 150px;
 }
 
 .coin{
@@ -24,10 +24,100 @@
     }
 
     .stats{
+      text-align: center;
+      font-weight: bold;
+      font-size: 30px;
       grid-area: stats;
       background-color: #554d4d;
       color: #ffffff;
-      margin: 0 10px;
+      .stats__grid{
+        font-size: 16px;
+
+
+        margin: 20px 10px;
+        display: grid;
+        grid-template-areas:
+                'm h l'
+                'he fe ty'
+                'c min cha';
+        //grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        white-space: nowrap;
+        grid-gap: 20px 70px;
+        text-align: center;
+
+
+        @mixin addGridElem {
+          background-color: #e3bd37;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          height: 60px;
+          font-weight: 700;
+          border: none;
+          color: black;
+          box-shadow: 0 0 5px rgba(35, 35, 35, 0.66);
+
+          &:hover{
+            box-shadow: 0 0 10px rgb(227, 189, 55);
+            transition: .3s ease-in-out;
+          }
+
+        }
+
+        .miners{
+          grid-area: m;
+          @include addGridElem;
+
+        }
+
+        .hashrate{
+          grid-area: h;
+          @include addGridElem;
+        }
+
+        .lastBlockFound{
+          grid-area: l;
+          @include addGridElem;
+        }
+
+        .height{
+          grid-area: he;
+          @include addGridElem;
+        }
+
+        .fee{
+          grid-area: fe;
+          @include addGridElem;
+        }
+
+        .type {
+          grid-area: ty;
+          @include addGridElem;
+        }
+
+
+        .currentEffort{
+          grid-area: c;
+          @include addGridElem;
+        }
+
+        .minPayment{
+          grid-area: min;
+          @include addGridElem;
+        }
+
+        .charts{
+          grid-area: cha;
+          @include addGridElem;
+        }
+
+      }
+
+
+
     }
   }
 
