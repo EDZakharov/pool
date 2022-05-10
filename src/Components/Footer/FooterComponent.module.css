@@ -1,20 +1,24 @@
 .footer {
   grid-area: f;
-  background-color: #757573;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #525252;
   position: fixed;
-  top: 96.2%;
+  top: calc(100vh - 25px);
+  height: 15px;
   width: 100%;
-  z-index: 98; }
+  z-index: 98;
+  padding: 5px; }
   @media (pointer: coarse) {
     .footer {
       opacity: 0; } }
   .footer a {
-    float: left;
+    margin-left: 10px;
     text-decoration: none;
-    color: #c9c9c9;
-    margin: 10px 10px; }
+    color: #c9c9c9; }
   .footer :hover {
-    color: #dedede; }
+    color: #ffffff; }
   .footer .fa-telegram-plane {
     color: #FFF;
     margin-top: 5vw;

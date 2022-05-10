@@ -38,7 +38,7 @@ export const CoinPageData = (props) => {
 
     return (
         <div className={style.grid_data}>
-            <div className={style.miner_s}><div className={style.miner}><span>{props.miner}</span></div></div>
+            <div className={style.miner_s}><div className={style.miner}>{props.miner.toString().length > 60 ? <span className={style.longMiner}>{props.miner}</span> : <span className={style.shortMiner}>{props.miner}</span>}</div></div>
             <div className={style.hashrate_s}><div className={style.hashrate}><span>{props.hashrate}</span></div></div>
             <div className={style.shares_s}><div className={style.shares}><span>{`${timestamp.getSeconds()} секун${checkEnd(setEnd)} назад`}</span></div></div>
             <div className={style.status_s}><div className={props.offline? style.status_offline : style.status_online}><span>{`${props.offline ? 'Offline':'Online'}`}</span></div></div>

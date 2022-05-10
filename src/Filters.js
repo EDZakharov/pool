@@ -5,9 +5,11 @@ import kevaLogo from "./img/keva-prop.png";
 import evoxLogo from "./img/evox-prop.png";
 import ergoLogo from "./img/ergo.png";
 import siteLogo from "./img/logol.png";
+import etcRotate from "./img/Ethereum-classic--unscreen.gif"
+import ethRotate from "./img/Ethereum--unscreen.gif"
 
 
-export const images = {ethLogo,etcLogo,burstLogo,kevaLogo,evoxLogo,ergoLogo,siteLogo}
+export const images = {ethLogo,etcLogo,burstLogo,kevaLogo,evoxLogo,ergoLogo,siteLogo,etcRotate,ethRotate}
 
 export const hashFilter = (data) => {
     if(data){
@@ -50,11 +52,11 @@ export const coinNamesFilter = (data) => {
 export const imgFilter = (data => {
     switch (data) {
         case 'eth':
-            return images.ethLogo
+            return images.ethRotate
         case 'etc':
-            return images.etcLogo
+            return images.etcRotate
         case 'etc-solo':
-            return images.etcLogo
+            return images.etcRotate
         case 'burst':
             return images.burstLogo
         case 'keva':

@@ -1,5 +1,7 @@
+
+
 @mixin coinMargin {
-  padding: 110px 150px 55px 150px;
+  padding: 110px 70px 55px 70px;
 }
 
 .coin{
@@ -24,17 +26,20 @@
     }
 
     .stats{
+
       text-align: center;
       font-weight: bold;
-      font-size: 30px;
+      font-size: 17px;
+      width: 70%;
+      margin: 20px auto;
       grid-area: stats;
       background-color: #554d4d;
-      color: #ffffff;
       .stats__grid{
-        font-size: 16px;
 
 
-        margin: 20px 10px;
+
+        margin: 0 20px;
+
         display: grid;
         grid-template-areas:
                 'm h l'
@@ -43,28 +48,23 @@
         //grid-template-rows: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
         white-space: nowrap;
-        grid-gap: 20px 70px;
+        grid-gap: 10px 20px;
         text-align: center;
 
 
         @mixin addGridElem {
-          background-color: #e3bd37;
+
+          background-size: 390px 200px;
+          border: .1px solid rgb(227, 189, 55);
           border-radius: 5px;
           display: flex;
           flex-direction: row;
           align-items: center;
           justify-content: center;
-          height: 60px;
-          font-weight: 700;
-          border: none;
-          color: black;
-          box-shadow: 0 0 5px rgba(35, 35, 35, 0.66);
-
-          &:hover{
-            box-shadow: 0 0 10px rgb(227, 189, 55);
-            transition: .3s ease-in-out;
-          }
-
+          height: 70px;
+          color: rgb(231, 231, 231);
+          font-weight: 600;
+          box-shadow: 0 0 10px rgb(14, 14, 14);
         }
 
         .miners{
@@ -122,7 +122,8 @@
   }
 
   .totalHashrate{
-    margin: 10px 10px 5px 10px;
+    width: 70%;
+    margin: 0 auto;
     .totalHashrate_span{
       font-weight: 600;
       font-size: 18px;
@@ -135,9 +136,10 @@
 
     .coin_column_grid{
       display: grid;
+      font-size: 13px;
       grid-template-areas: 'w h s ss';
       font-weight: bold;
-      grid-template-columns: 4fr 2fr 2fr 1fr;
+      grid-template-columns: 6fr 2fr 2.3fr 1fr;
       -moz-user-select: text;
       margin-top: 10px;
       background-color: grey;

@@ -8,15 +8,15 @@
   width: 30%;
   grid-template-areas: 'h' 'm' 'f';
   grid-template-rows: auto auto auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.36);
   border-radius: 7px;
   transition: transform .3s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.93);
   z-index: 10;
 
   &:hover{
     
     @media (pointer: fine){
-      box-shadow: 0 0 60px #27847B;
+      box-shadow: 0 30px 30px -20px rgb(247, 166, 20);
       transform: scale(1.05);
       transition: transform .3s ease-in-out;
 
@@ -58,7 +58,7 @@
 
       .logo {
         grid-area: logo;
-        background-color: #ffffff;
+        background-color: rgb(241, 240, 241);
         border-radius: 50%;
         width: 60px;
 

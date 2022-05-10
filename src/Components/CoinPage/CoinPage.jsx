@@ -27,25 +27,26 @@ export const CoinPage = (props) => {
         }
     }, [])
 
-    return (<div className={style.coin}>
+    let lastBlockFound = `${new Date(props.coinPage.fullStats.lastBlockFound * 1000).getMinutes()} мин. назад`
+
+
+    return (props.coinPage.isFetching ? <Fetcher/> : <div className={style.coin}>
         <div className={style.coinData}>
             <div className={style.graph}>{props.coinPage.isFetching ? <Fetcher/> :
                 <Charts charts={props.coinPage.fullStats.charts} text={`Общая мощность ${thisPool} пула`}/>}</div>
             <div className={style.stats}>
-                {props.coinPage.isFetching? '':'POOL STATS'}
-                {props.coinPage.isFetching ? <Fetcher/>
-                    :
-                    <div className={style.stats__grid}>
-                        <div className={style.currentEffort}>CurrentEffort: {props.coinPage.fullStats.currentEffort}</div>
-                        <div className={style.fee}>Pool fee: {props.coinPage.fullStats.fee} %</div>
-                        <div className={style.hashrate}>Hashrate: {hashFilter(props.coinPage.fullStats.hashrate)}</div>
-                        <div className={style.height}>Block height: {props.coinPage.fullStats.height}</div>
-                        <div className={style.lastBlockFound}>LastBlockFound: {props.coinPage.fullStats.lastBlockFound}</div>
-                        <div className={style.minPayment}>MinPayment: {props.coinPage.fullStats.minPayment}</div>
-                        <div className={style.miners}>TotalMiners: {props.coinPage.fullStats.miners}</div>
-                        <div className={style.type}>Type: {props.coinPage.fullStats.type}</div>
-                        <div className={style.charts}>Charts: {props.coinPage.fullStats.charts !== 'n/a' ? 'online' : 'offline'}</div>
-                    </div>}
+                <div className={style.stats__grid}>
+                    <div className={style.currentEffort}>Усилие: {props.coinPage.fullStats.currentEffort}</div>
+                    <div className={style.fee}>Комиссия пула: {props.coinPage.fullStats.fee} %</div>
+                    <div className={style.hashrate}>Хэшрейт: {hashFilter(props.coinPage.fullStats.hashrate)}</div>
+                    <div className={style.height}>Решаем блок: {props.coinPage.fullStats.height}</div>
+                    <div className={style.lastBlockFound}>Последний блок: {lastBlockFound}</div>
+                    <div className={style.minPayment}>Минимальный вывод: {props.coinPage.fullStats.minPayment}</div>
+                    <div className={style.miners}>Майнеры: {props.coinPage.fullStats.miners}</div>
+                    <div className={style.type}>Тип пула: {props.coinPage.fullStats.type}</div>
+                    <div
+                        className={style.charts}>График: {props.coinPage.fullStats.charts !== 'n/a' ? 'online' : 'offline'}</div>
+                </div>
             </div>
 
         </div>
@@ -56,7 +57,7 @@ export const CoinPage = (props) => {
                 <div className={style.shares}>Последняя шара:</div>
                 <div className={style.status}>Статус:</div>
             </div>
-            {props.coinPage.isFetching ? <Fetcher/> : props.coinPage.miners.map(el => {
+            {props.coinPage.miners.map(el => {
                 return <div key={el.address}>
                     <CoinPageData miner={el.address}
                                   hashrate={hashFilter(el.hr)}

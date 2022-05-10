@@ -67,7 +67,7 @@ let setupOptions = (props) => {
     return {
         title: {
             text: `${props.text}`,
-            style: {color: '#fff'}
+            style: {color: '#fff', fontSize: '26px'}
         },
 
         plotOptions: {
@@ -130,7 +130,7 @@ const Charts = (props) => {
         return <div className='Charts'>{props.charts !== 'n/a' ? <HighchartsReact
             highcharts={Highcharts}
             options={setupOptions(props)}
-        />:<div className='noData'>Данные не загружены!</div>}
+        />:''}
 
         </div>
     }

@@ -7,15 +7,14 @@
 
 
 .grid_data {
+  width: 100%;
+  margin: 0 auto;
   display: grid;
   grid-template-areas: 'ms hs ss sts''m h s st';
-  grid-template-columns: 4fr 2fr 2fr 1fr;
+  grid-template-columns: 6fr 2fr 2.3fr 1fr;
   -moz-user-select: text;
-  //margin: 0 10px 0 10px;
+  font-size: 13px;
   &:hover {
-    //border: .1px solid black;
-
-
 
     &:first-child>div{
       background-color: rgba(45, 43, 43, 0.41);
@@ -24,9 +23,6 @@
         color: white;
       }
 
-
-
-
     }
   }
 
@@ -34,7 +30,7 @@
     grid-area: ms;
     @include addMargin1;
     padding: 10px;
-    background-color: rgba(229, 229, 229, 0.52);
+    background-color: rgb(219, 219, 219);
     font-weight: bold;
     color: black;
 
@@ -42,11 +38,25 @@
     .miner {
       grid-area: m;
       @include addMargin1;
+
       color: black;
       font-weight: 400;
 
 
-      span{
+      .longMiner{
+        font-size: 8px;
+        &:hover{
+          user-select: all;
+          cursor: pointer;
+          text-decoration: underline;
+        }
+        &::selection{
+          background-color: black;
+        }
+      }
+
+      .shortMiner{
+        font-size: 15px;
         &:hover{
           user-select: all;
           cursor: pointer;
@@ -65,7 +75,7 @@
     grid-area: hs;
     @include addMargin1;
     padding: 10px;
-    background-color: rgba(229, 229, 229, 0.52);
+    background-color: rgb(219, 219, 219);
     color: black;
     font-weight: bold;
 
@@ -84,7 +94,7 @@
     grid-area: ss;
     @include addMargin1;
     padding: 10px;
-    background-color: rgba(229, 229, 229, 0.52);
+    background-color: rgb(219, 219, 219);
     font-weight: bold;
     color: black;
 
@@ -103,7 +113,7 @@
     grid-area: sts;
     @include addMargin1;
     padding: 10px;
-    background-color: rgba(229, 229, 229, 0.52);
+    background-color: rgb(219, 219, 219);
     font-weight: bold;
     color: black;
 
