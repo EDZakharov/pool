@@ -1,7 +1,7 @@
 .fetcher {
   grid-area: c;
-  text-align: center;
-  left: 25%;
-  right: 25%; }
+  display: flex;
+  margin-top: 10%;
+  justify-content: center; }
 
 /*# sourceMappingURL=Fetcher.module.css.map */

@@ -5,6 +5,7 @@ import kevaLogo from "./img/keva-prop.png";
 import evoxLogo from "./img/evox-prop.png";
 import ergoLogo from "./img/ergo.png";
 import siteLogo from "./img/logo56.png";
+import style from "./Components/Content/ContentComponent.module.scss";
 
 
 
@@ -293,4 +294,21 @@ export const showDate = (data) => {
     }
 }
 
+
+export let showRandomBgcStyle = () => {
+    let x = Math.ceil(Math.random() * 10)
+    function random(x) {
+        if (x <= 3) {
+            return style.coin
+        }
+        if (x <= 7) {
+            return style.coin2
+        }
+        if (x <= 10) {
+            return style.coin3
+        }
+    }
+    let result = random(x)
+    localStorage.setItem('showRandomBgcStyle', result)
+}
 

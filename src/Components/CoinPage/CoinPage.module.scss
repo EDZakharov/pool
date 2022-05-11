@@ -1,9 +1,4 @@
 
-
-@mixin coinMargin {
-
-}
-
 @mixin addGridElem {
 
   background-size: 390px 200px;
@@ -27,7 +22,7 @@
   overflow: auto;
   user-select: none;
   height: 100vh;
-  @include coinMargin;
+
 
 
   .coinData{
@@ -65,21 +60,30 @@
         padding: 0 10px;
         font-size: 20px;
         outline:none;
+        border: .1px solid white;
         border-radius: 5px;
+        //background-color: rgba(255, 255, 255, 0);
+        background-color: rgba(29, 29, 29, 0.19);
+        backdrop-filter: blur(15px);
+        color: white;
 
       }
       .inputBtn{
-        padding: 12px;
+        //padding: 12px;
         display: flex;
-        height: 100%;
-        width: calc(100% - 20px);
-        background-color: #000000;
+        height: 40px;
+        //width: calc(100% - 20px);
+        background-color: rgba(29, 29, 29, 0.19);
+        backdrop-filter: blur(15px);
         border: .1px solid white;
         border-radius: 5px;
-
+        align-items: center;
 
         i{
+          font-size: 22px;
+          text-align: center;
           margin: 0 auto;
+          width: 40px;
           color: #ffffff;
 
         }
@@ -115,7 +119,8 @@
       grid-area: stats;
 
       .stats__grid{
-        background-color: #554d4d;
+        //background-color: rgba(29, 29, 29, 0.19);
+        backdrop-filter: blur(15px);
         margin: 0 20px;
 
         display: grid;
@@ -185,10 +190,11 @@
 
     .showMinersBtn{
       grid-area: showMinersBtn;
-      margin: 0 auto 10px;
+      margin: 0 auto 15px;
       color: #ffffff;
       border: 1px solid #ffffff;
-      background-color: #000000;
+      background-color: rgba(29, 29, 29, 0.19);
+      backdrop-filter: blur(15px);
       padding: 10px;
       border-radius: 5px;
       font-weight: 600;
@@ -266,28 +272,27 @@
 
 .coin{
   @include allData;
-  background: url(./../../img/octopus1.png) no-repeat;
-  //background-position: 25% 0;
-  background-size: cover;
+  background: url(./../../img/octopus1.png) no-repeat 50% 0;
+  background-size: 1500px;
+  z-index: 1;
 
 
 }
 
 .coin2{
   @include allData;
-  background: url(./../../img/octopus2.png) no-repeat;
-  //background-position: 25% 0;
-  background-size: cover;
+  background: url(./../../img/octopus2.png) no-repeat 50% 0;
+  background-size: 1500px;
+  z-index: 1;
 
 
 }
 
 .coin3{
   @include allData;
-  background: url(./../../img/octopus3.png) no-repeat;
-
-  //background-position: 25% 0;
-  background-size: cover;
+  background: url(./../../img/octopus3.png) no-repeat 50% 30%;
+  background-size: 1500px;
+  z-index: 1;
 
 
 }

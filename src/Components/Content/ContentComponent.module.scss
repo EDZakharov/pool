@@ -1,6 +1,3 @@
-@mixin contentMargin {
-  padding: 110px 30px 55px 30px;
-}
 
 .content{
   grid-area: c;
@@ -8,14 +5,32 @@
   background-color: #554d4d;
   //overflow: auto;
   user-select: none;
+  width: 100%;
   height: 100vh;
 
-  .content_center{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    @include contentMargin;
+  .coin{
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    background: url(./../../img/octopus1.png) no-repeat 50% 0;
+    background-size: 1400px;
+    z-index: 1;
+  }
+
+  .coin2{
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    background: url(./../../img/octopus2.png) no-repeat 50% 0;
+    background-size: 1200px;
+    z-index: 1;
+  }
+  .coin3{
+    width: 100vw;
+    height: 100vh;
+    background: url(./../../img/octopus3.png) no-repeat 50% 30%;
+    background-size: 1200px;
+    z-index: 1;
   }
 
 

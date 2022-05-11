@@ -1,5 +1,6 @@
 body{
     background-color: #554d4d;
+
 }
 
 
@@ -11,10 +12,12 @@ body{
                         'f';
     height: 100vh;
 
-
+    z-index: 900;
 
 }::-webkit-scrollbar {
      display: none;
  }
+
+
 
 [title] { pointer-events: none; }

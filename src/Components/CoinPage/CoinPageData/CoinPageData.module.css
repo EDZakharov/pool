@@ -5,22 +5,24 @@
   grid-template-areas: "ms hs ss sts" "m h s st";
   grid-template-columns: 6fr 2fr 2.3fr 1fr;
   -moz-user-select: text;
-  font-size: 13px; }
+  font-size: 13px;
+  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(15px); }
   .grid_data:hover:first-child > div {
-    background-color: rgba(45, 43, 43, 0.41);
+    background-color: rgba(29, 29, 29, 0.19);
+    backdrop-filter: blur(10px);
     color: #ffffff; }
     .grid_data:hover:first-child > div div {
       color: white; }
   .grid_data .miner_s {
     grid-area: ms;
     margin: 4px 0;
+    background-color: rgba(118, 111, 111, 0.82);
+    backdrop-filter: blur(15px);
     padding: 10px;
-    background-color: #dbdbdb;
-    font-weight: bold;
-    color: black; }
+    font-weight: bold; }
     .grid_data .miner_s .miner {
       grid-area: m;
-      margin: 4px 0;
       color: black;
       font-weight: 400; }
       .grid_data .miner_s .miner .longMiner {
@@ -42,9 +44,9 @@
   .grid_data .hashrate_s {
     grid-area: hs;
     margin: 4px 0;
+    background-color: rgba(118, 111, 111, 0.82);
+    backdrop-filter: blur(15px);
     padding: 10px;
-    background-color: #dbdbdb;
-    color: black;
     font-weight: bold; }
     .grid_data .hashrate_s .hashrate {
       grid-area: h;
@@ -54,8 +56,9 @@
   .grid_data .shares_s {
     grid-area: ss;
     margin: 4px 0;
+    background-color: rgba(118, 111, 111, 0.82);
+    backdrop-filter: blur(15px);
     padding: 10px;
-    background-color: #dbdbdb;
     font-weight: bold;
     color: black; }
     .grid_data .shares_s .shares {
@@ -66,8 +69,9 @@
   .grid_data .status_s {
     grid-area: sts;
     margin: 4px 0;
+    background-color: rgba(118, 111, 111, 0.82);
+    backdrop-filter: blur(15px);
     padding: 10px;
-    background-color: #dbdbdb;
     font-weight: bold;
     color: black; }
     .grid_data .status_s .status_offline {

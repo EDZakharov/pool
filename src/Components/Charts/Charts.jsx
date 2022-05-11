@@ -82,7 +82,7 @@ let setupOptions = (props) => {
         },
         chart: {
             type: 'spline',
-            backgroundColor: '#554d4d',
+            backgroundColor: 'rgba(85,77,77,0.56)',
         },
         series: [{
             showInLegend: false,

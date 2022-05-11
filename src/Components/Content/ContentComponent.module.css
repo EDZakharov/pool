@@ -3,12 +3,27 @@
   color: black;
   background-color: #554d4d;
   user-select: none;
+  width: 100%;
   height: 100vh; }
-  .content .content_center {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    padding: 110px 30px 55px 30px; }
+  .content .coin {
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    background: url(./../../img/octopus1.png) no-repeat 50% 0;
+    background-size: 1400px;
+    z-index: 1; }
+  .content .coin2 {
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    background: url(./../../img/octopus2.png) no-repeat 50% 0;
+    background-size: 1200px;
+    z-index: 1; }
+  .content .coin3 {
+    width: 100vw;
+    height: 100vh;
+    background: url(./../../img/octopus3.png) no-repeat 50% 30%;
+    background-size: 1200px;
+    z-index: 1; }
 
 /*# sourceMappingURL=ContentComponent.module.css.map */

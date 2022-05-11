@@ -1,22 +1,20 @@
 .coinCard {
   display: grid;
-  width: 30%;
   grid-template-areas: 'h' 'm' 'f';
   grid-template-rows: auto auto auto;
-  border-radius: 7px;
-  transition: transform .3s ease-in-out;
-  background-color: rgba(255, 255, 255, 0.93);
+  transition: transform 1.5s ease-in-out;
   z-index: 10; }
   @media (pointer: fine) {
     .coinCard:hover {
-      box-shadow: 0 30px 30px -20px #f7a614;
-      transform: scale(1.05);
+      transform: translateZ(100px) translateY(10px) translateX(2px);
       transition: transform .3s ease-in-out; } }
   .coinCard .coinCard_header {
     width: 100%;
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
     grid-area: h;
     border-bottom: 0.2px solid rgba(0, 0, 0, 0.51);
-    height: 100px; }
+    padding: 5px 0 5px 0; }
     .coinCard .coinCard_header .wrapper {
       display: grid;
       grid-template-areas: 'name logo';
@@ -63,15 +61,14 @@
           .coinCard .coinCard_header .wrapper .logo {
             width: 50px;
             margin: 0 auto; } }
-      .coinCard .coinCard_header .wrapper:hover {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.36); }
-        .coinCard .coinCard_header .wrapper:hover:hover {
-          box-shadow: none; }
+      .coinCard .coinCard_header .wrapper:hover:hover {
+        box-shadow: none; }
     @media screen and (max-width: 1280px) {
       .coinCard .coinCard_header {
         height: 70px; } }
   .coinCard .coinCard_main {
     width: 100%;
+    background-color: #fff;
     grid-area: m; }
     @media screen and (max-width: 1200px) {
       .coinCard .coinCard_main {
@@ -103,6 +100,8 @@
             font-size: 14px; } }
   .coinCard .coinCard_footer {
     width: 100%;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
     grid-area: f;
     border-top: 0.2px solid rgba(0, 0, 0, 0.51); }
     .coinCard .coinCard_footer a {

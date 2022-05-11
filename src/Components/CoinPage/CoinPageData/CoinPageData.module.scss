@@ -1,5 +1,8 @@
 @mixin addMargin1 {
   margin: 4px 0;
+  background-color: rgba(118, 111, 111, 0.82);
+  //border: .1px solid black;
+  backdrop-filter: blur(15px);
 }
 @mixin addMargin2 {
   margin-top: 4px;
@@ -14,10 +17,13 @@
   grid-template-columns: 6fr 2fr 2.3fr 1fr;
   -moz-user-select: text;
   font-size: 13px;
+  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(15px);
   &:hover {
 
     &:first-child>div{
-      background-color: rgba(45, 43, 43, 0.41);
+      background-color: rgba(29, 29, 29, 0.19);
+      backdrop-filter: blur(10px);
       color: #ffffff;
       div{
         color: white;
@@ -30,14 +36,14 @@
     grid-area: ms;
     @include addMargin1;
     padding: 10px;
-    background-color: rgb(219, 219, 219);
+
     font-weight: bold;
-    color: black;
+    //color: #ffffff;
 
 
     .miner {
       grid-area: m;
-      @include addMargin1;
+      //@include addMargin1;
 
       color: black;
       font-weight: 400;
@@ -75,8 +81,7 @@
     grid-area: hs;
     @include addMargin1;
     padding: 10px;
-    background-color: rgb(219, 219, 219);
-    color: black;
+
     font-weight: bold;
 
     .hashrate {
@@ -94,7 +99,6 @@
     grid-area: ss;
     @include addMargin1;
     padding: 10px;
-    background-color: rgb(219, 219, 219);
     font-weight: bold;
     color: black;
 
@@ -113,7 +117,6 @@
     grid-area: sts;
     @include addMargin1;
     padding: 10px;
-    background-color: rgb(219, 219, 219);
     font-weight: bold;
     color: black;
 
