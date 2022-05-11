@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/pool/static/css/main.04ac6abf.css",
-    "main.js": "/pool/static/js/main.7173d314.js",
+    "main.css": "/pool/static/css/main.ece64223.css",
+    "main.js": "/pool/static/js/main.ecd89a4a.js",
     "static/js/787.49970623.chunk.js": "/pool/static/js/787.49970623.chunk.js",
-    "static/media/octopus3.png": "/pool/static/media/octopus3.b50f927199820b6e3898.png",
     "static/media/fon.jpg": "/pool/static/media/fon.e793281eb6cf9e1a18d6.jpg",
-    "static/media/octopus2.png": "/pool/static/media/octopus2.d78cb8873dfea6583a64.png",
-    "static/media/octopus1.png": "/pool/static/media/octopus1.0fddcb1ad4ad236345a8.png",
+    "static/media/octopus3.png": "/pool/static/media/octopus3.df5b029418e2359f2a05.png",
+    "static/media/octopus2.png": "/pool/static/media/octopus2.5ed266a202777e32894b.png",
+    "static/media/octopus1.png": "/pool/static/media/octopus1.37648e3a145e953e361a.png",
     "static/media/logo56.png": "/pool/static/media/logo56.baf37f57f8007fec1947.png",
     "static/media/evox-prop.png": "/pool/static/media/evox-prop.ac28b74f9e6ea3693fa4.png",
     "static/media/loader.gif": "/pool/static/media/loader.90527d3e638231a0f785.gif",
     "index.html": "/pool/index.html",
-    "main.04ac6abf.css.map": "/pool/static/css/main.04ac6abf.css.map",
-    "main.7173d314.js.map": "/pool/static/js/main.7173d314.js.map",
+    "main.ece64223.css.map": "/pool/static/css/main.ece64223.css.map",
+    "main.ecd89a4a.js.map": "/pool/static/js/main.ecd89a4a.js.map",
     "787.49970623.chunk.js.map": "/pool/static/js/787.49970623.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.04ac6abf.css",
-    "static/js/main.7173d314.js"
+    "static/css/main.ece64223.css",
+    "static/js/main.ecd89a4a.js"
   ]
 }
