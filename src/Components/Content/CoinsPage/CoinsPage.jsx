@@ -8,6 +8,7 @@ export let CoinsPage = (props) => {
 
     if (props.content.coins.length !== 0) {
         return props.content.coins.map(c => {
+            console.log(c)
             return (<CoinCard
                 isFetching={props.fetching}
                 content={props.content}
@@ -18,7 +19,7 @@ export let CoinsPage = (props) => {
                 hashrate={c.hashrate}
                 minersTotal={c.miners}
                 maturedTotal={c.maturedTotal}
-                difficulty={' '}/>)
+                fee={c.fee}/>)
         })
     } else {
         return <Fetcher/>
