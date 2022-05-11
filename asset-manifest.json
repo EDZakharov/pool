@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/pool/static/css/main.1996237a.css",
-    "main.js": "/pool/static/js/main.53d37d63.js",
+    "main.css": "/pool/static/css/main.04ac6abf.css",
+    "main.js": "/pool/static/js/main.7173d314.js",
     "static/js/787.49970623.chunk.js": "/pool/static/js/787.49970623.chunk.js",
+    "static/media/octopus3.png": "/pool/static/media/octopus3.b50f927199820b6e3898.png",
     "static/media/fon.jpg": "/pool/static/media/fon.e793281eb6cf9e1a18d6.jpg",
-    "static/media/Ethereum--unscreen.gif": "/pool/static/media/Ethereum--unscreen.4c90623a3ebe76a9f30d.gif",
-    "static/media/logol.png": "/pool/static/media/logol.1e7915d0835f303dad1b.png",
-    "static/media/Ethereum-classic--unscreen.gif": "/pool/static/media/Ethereum-classic--unscreen.61d8a648b1687408f0a1.gif",
+    "static/media/octopus2.png": "/pool/static/media/octopus2.d78cb8873dfea6583a64.png",
+    "static/media/octopus1.png": "/pool/static/media/octopus1.0fddcb1ad4ad236345a8.png",
+    "static/media/logo56.png": "/pool/static/media/logo56.baf37f57f8007fec1947.png",
     "static/media/evox-prop.png": "/pool/static/media/evox-prop.ac28b74f9e6ea3693fa4.png",
     "static/media/loader.gif": "/pool/static/media/loader.90527d3e638231a0f785.gif",
     "index.html": "/pool/index.html",
-    "main.1996237a.css.map": "/pool/static/css/main.1996237a.css.map",
-    "main.53d37d63.js.map": "/pool/static/js/main.53d37d63.js.map",
+    "main.04ac6abf.css.map": "/pool/static/css/main.04ac6abf.css.map",
+    "main.7173d314.js.map": "/pool/static/js/main.7173d314.js.map",
     "787.49970623.chunk.js.map": "/pool/static/js/787.49970623.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1996237a.css",
-    "static/js/main.53d37d63.js"
+    "static/css/main.04ac6abf.css",
+    "static/js/main.7173d314.js"
   ]
 }
