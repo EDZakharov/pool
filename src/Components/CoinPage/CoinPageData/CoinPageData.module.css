@@ -26,21 +26,29 @@
       color: black;
       font-weight: 400; }
       .grid_data .miner_s .miner .longMiner {
-        font-size: 8px; }
+        font-size: 10px; }
         .grid_data .miner_s .miner .longMiner:hover {
-          user-select: all;
-          cursor: pointer;
-          text-decoration: underline; }
-        .grid_data .miner_s .miner .longMiner::selection {
-          background-color: black; }
+          cursor: pointer; }
+        .grid_data .miner_s .miner .longMiner i {
+          margin-left: 5px; }
+          .grid_data .miner_s .miner .longMiner i:active {
+            color: #e3bd37; }
+        .grid_data .miner_s .miner .longMiner .copy {
+          color: #e3bd37;
+          font-weight: 600;
+          font-size: 10px; }
       .grid_data .miner_s .miner .shortMiner {
         font-size: 15px; }
         .grid_data .miner_s .miner .shortMiner:hover {
-          user-select: all;
-          cursor: pointer;
-          text-decoration: underline; }
-        .grid_data .miner_s .miner .shortMiner::selection {
-          background-color: black; }
+          cursor: pointer; }
+        .grid_data .miner_s .miner .shortMiner i {
+          margin-left: 5px; }
+          .grid_data .miner_s .miner .shortMiner i:active {
+            color: #e3bd37; }
+        .grid_data .miner_s .miner .shortMiner .copy {
+          color: #e3bd37;
+          font-weight: 600;
+          font-size: 10px; }
   .grid_data .hashrate_s {
     grid-area: hs;
     margin: 4px 0;

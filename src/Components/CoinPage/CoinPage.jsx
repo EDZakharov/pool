@@ -9,13 +9,14 @@ import {Link} from "react-router-dom";
 
 export const CoinPage = (props) => {
 
-
-    let [checked, setChecked] = useState(false);
-
     let thisPool = localStorage.getItem('selectedCoin')
     let coinLogo = imgFilter(localStorage.getItem('selectedCoin'))
     let luck = props.coinPage.fullStats.currentEffort * 100;
     let lastBlockFound = `${new Date(props.coinPage.fullStats.lastBlockFound * 1000).getMinutes()} мин. назад`;
+
+
+    let [checked, setChecked] = useState(false);
+
     useEffect(() => {
 
         let showRandomBackStyle = () => {
@@ -44,6 +45,7 @@ export const CoinPage = (props) => {
         }, 1000)
 
         return () => {
+            props.addAccountAddress(null)
             clearInterval(start)
             props.dellMinersData()
 
@@ -55,16 +57,34 @@ export const CoinPage = (props) => {
     }
 
 
-    return (props.coinPage.isFetching ? <Fetcher/> : <div className={localStorage.getItem('showRandomBackStyle')}>
+    let setAddr = (e) => {
+        if (e.target.value !== '') {
+            props.addAccountAddress(e.target.value)
+        }
+    }
 
+    let addrFilter = (coinName) => {
+        let x = props.account.accountAddress
+        if (x === null){
+            return `/${coinName}`
+        } else {
+            return `/${coinName}/account/${x}`
+        }
+    }
+
+
+
+
+
+    return (props.coinPage.isFetching ? <Fetcher/> : <div className={localStorage.getItem('showRandomBackStyle')}>
         <div className={style.coinData}>
-            <div className={style.graph}>{props.coinPage.isFetching ? <Fetcher/> :
-                <Charts charts={props.coinPage.fullStats.charts} text={`Общая мощность ${thisPool} пула`}/>}
+            <div className={style.graph}>
+                <Charts charts={props.coinPage.fullStats.charts} text={`Общая мощность ${thisPool} пула`}/>
             </div>
             <div className={style.inputForm}>
                 <img src={coinLogo} alt='logo'/>
-                <input type='text' autoComplete='off' placeholder={`Введите адрес кошелька фермы`}/>
-                <Link to={'/'}>
+                <input type='text' autoComplete='off' placeholder={`Введите адрес кошелька фермы`} onChange={setAddr}/>
+                <Link to={addrFilter(thisPool)}>
                     <div className={style.inputBtn}><i className="fa-solid fa-magnifying-glass"></i></div>
                 </Link>
             </div>

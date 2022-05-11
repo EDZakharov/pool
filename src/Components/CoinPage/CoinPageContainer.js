@@ -8,17 +8,19 @@ import {
     ShowMinersOnce
 } from "../../redux/socketMiddleware";
 import {fetching} from "../../redux/coinPageReducer";
+import {addAccountAddress} from "../../redux/accountReducer";
 
 
 
 let mapStateToProps = (state) => {
     return {
-        coinPage:state.coinPage,
-        content:state.content
+        coinPage: state.coinPage,
+        content: state.content,
+        account: state.account
     }
 }
 
 
-let CoinPageContainer = connect(mapStateToProps, {fetching, showMiners,dellMinersData,ShowMinersOnce,showFullStatsOnce,showFullStats})(CoinPage)
+let CoinPageContainer = connect(mapStateToProps, {fetching, showMiners,dellMinersData,ShowMinersOnce,showFullStatsOnce,showFullStats,addAccountAddress})(CoinPage)
 
 export default CoinPageContainer;

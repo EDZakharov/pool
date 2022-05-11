@@ -24,6 +24,9 @@
       margin: 5px auto;
       padding-right: 5px;
       width: 68%; }
+      .coin .coinData .inputForm img {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
+        border-radius: 50%; }
       .coin .coinData .inputForm a {
         text-decoration: none; }
       .coin .coinData .inputForm input {
@@ -33,12 +36,17 @@
         height: 40px;
         padding: 0 10px;
         font-size: 20px;
-        outline: none;
         border: .1px solid white;
         border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
         background-color: rgba(29, 29, 29, 0.19);
         backdrop-filter: blur(15px);
         color: white; }
+        .coin .coinData .inputForm input:focus {
+          border: .1px solid #e5be36;
+          outline: .1px solid #e5be36; }
+        .coin .coinData .inputForm input::placeholder {
+          color: #6f6f6f; }
       .coin .coinData .inputForm .inputBtn {
         display: flex;
         height: 40px;
@@ -46,7 +54,8 @@
         backdrop-filter: blur(15px);
         border: .1px solid white;
         border-radius: 5px;
-        align-items: center; }
+        align-items: center;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55); }
         .coin .coinData .inputForm .inputBtn i {
           font-size: 22px;
           text-align: center;
@@ -193,6 +202,7 @@
           box-shadow: 0 0 10px #0e0e0e; }
     .coin .coinData .showMinersBtn {
       grid-area: showMinersBtn;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
       margin: 0 auto 15px;
       color: #ffffff;
       border: 1px solid #ffffff;
@@ -265,6 +275,9 @@
       margin: 5px auto;
       padding-right: 5px;
       width: 68%; }
+      .coin2 .coinData .inputForm img {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
+        border-radius: 50%; }
       .coin2 .coinData .inputForm a {
         text-decoration: none; }
       .coin2 .coinData .inputForm input {
@@ -274,12 +287,17 @@
         height: 40px;
         padding: 0 10px;
         font-size: 20px;
-        outline: none;
         border: .1px solid white;
         border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
         background-color: rgba(29, 29, 29, 0.19);
         backdrop-filter: blur(15px);
         color: white; }
+        .coin2 .coinData .inputForm input:focus {
+          border: .1px solid #e5be36;
+          outline: .1px solid #e5be36; }
+        .coin2 .coinData .inputForm input::placeholder {
+          color: #6f6f6f; }
       .coin2 .coinData .inputForm .inputBtn {
         display: flex;
         height: 40px;
@@ -287,7 +305,8 @@
         backdrop-filter: blur(15px);
         border: .1px solid white;
         border-radius: 5px;
-        align-items: center; }
+        align-items: center;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55); }
         .coin2 .coinData .inputForm .inputBtn i {
           font-size: 22px;
           text-align: center;
@@ -434,6 +453,7 @@
           box-shadow: 0 0 10px #0e0e0e; }
     .coin2 .coinData .showMinersBtn {
       grid-area: showMinersBtn;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
       margin: 0 auto 15px;
       color: #ffffff;
       border: 1px solid #ffffff;
@@ -506,6 +526,9 @@
       margin: 5px auto;
       padding-right: 5px;
       width: 68%; }
+      .coin3 .coinData .inputForm img {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
+        border-radius: 50%; }
       .coin3 .coinData .inputForm a {
         text-decoration: none; }
       .coin3 .coinData .inputForm input {
@@ -515,12 +538,17 @@
         height: 40px;
         padding: 0 10px;
         font-size: 20px;
-        outline: none;
         border: .1px solid white;
         border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
         background-color: rgba(29, 29, 29, 0.19);
         backdrop-filter: blur(15px);
         color: white; }
+        .coin3 .coinData .inputForm input:focus {
+          border: .1px solid #e5be36;
+          outline: .1px solid #e5be36; }
+        .coin3 .coinData .inputForm input::placeholder {
+          color: #6f6f6f; }
       .coin3 .coinData .inputForm .inputBtn {
         display: flex;
         height: 40px;
@@ -528,7 +556,8 @@
         backdrop-filter: blur(15px);
         border: .1px solid white;
         border-radius: 5px;
-        align-items: center; }
+        align-items: center;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55); }
         .coin3 .coinData .inputForm .inputBtn i {
           font-size: 22px;
           text-align: center;
@@ -675,6 +704,7 @@
           box-shadow: 0 0 10px #0e0e0e; }
     .coin3 .coinData .showMinersBtn {
       grid-area: showMinersBtn;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
       margin: 0 auto 15px;
       color: #ffffff;
       border: 1px solid #ffffff;

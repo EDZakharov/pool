@@ -50,27 +50,46 @@
 
 
       .longMiner{
-        font-size: 8px;
+        font-size: 10px;
         &:hover{
-          user-select: all;
+          //user-select: all;
           cursor: pointer;
-          text-decoration: underline;
+          //text-decoration: underline;
         }
-        &::selection{
-          background-color: black;
+
+        i{
+          margin-left: 5px;
+          &:active{
+            color: #e3bd37;
+          }
         }
+        .copy{
+          color: #e3bd37;
+          font-weight: 600;
+          font-size: 10px;
+        }
+
       }
 
       .shortMiner{
         font-size: 15px;
         &:hover{
-          user-select: all;
+          //user-select: all;
           cursor: pointer;
-          text-decoration: underline;
+          //text-decoration: underline;
         }
-        &::selection{
-          background-color: black;
+        i{
+          margin-left: 5px;
+          &:active{
+            color: #e3bd37;
+          }
         }
+        .copy{
+          color: #e3bd37;
+          font-weight: 600;
+          font-size: 10px;
+        }
+
       }
 
     }

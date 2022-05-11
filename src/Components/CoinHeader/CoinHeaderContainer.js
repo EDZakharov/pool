@@ -1,7 +1,6 @@
 import {connect} from "react-redux";
 import CoinHeader from "./CoinHeader";
-import {addAccountAddress} from "../../redux/accountReducer";
-import {dellCoinData} from "../../redux/socketMiddleware";
+
 
 
 
@@ -11,7 +10,7 @@ let mapStateToProps = (state) => {
 }
 
 
-let CoinHeaderContainer = connect(mapStateToProps, {addAccountAddress,dellCoinData})(CoinHeader);
+let CoinHeaderContainer = connect(mapStateToProps, null)(CoinHeader);
 
 
 export default CoinHeaderContainer;
