@@ -6,4 +6,5 @@
     -28px 0 35px -23px rgba(0, 0, 0, .8),
     28px 0 35px -23px rgba(0, 0, 0, .8),
     0 0 0 rgba(0, 0, 0, 0.1) inset;
+    z-index: 2000;
 }

@@ -37,7 +37,7 @@ const CoinHeader = (props) => {
         <div className={style.coin_header}>
             <NavLink to={'/'}><img src={imgFilter('logo')} alt='logo' className={style.siteLog_C}/></NavLink>
             <NavLink to="/"><span className={style.currentCoin}>{coinNamesFilter(CoinName)}</span></NavLink>
-            <NavLink to={'/'}><img src={coinLogo} alt='logo' className={style.coin_logo_C}/></NavLink>
+
             <div className={style.coin_header_Links}>
                 <div className={style.inputForm}>
                     <input onChange={setAddr} type='text' autoComplete='off' placeholder={`miner address`}/>

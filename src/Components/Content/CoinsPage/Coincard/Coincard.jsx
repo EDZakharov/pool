@@ -18,7 +18,6 @@ const CoinCard = (props) => {
     }
 
 
-
     return (
 
         <div className={style.coinCard}>
@@ -30,15 +29,15 @@ const CoinCard = (props) => {
                 </div>
             </div>
             <div className={style.coinCard_main}>
-                <div><b>Hashrate</b> <span className={style.text}>{hashes}</span></div>
-                <div><b>Miners:</b> <span className={style.text}>{props.minersTotal}</span></div>
-                <div><b>Luck:</b> <span className={style.text}>{props.difficulty}</span></div>
-                <div><b>Type:</b> <span className={style.text}>{props.poolType}</span></div>
+                <div><b>Хэшрейт пула</b> <span className={style.text}>{hashes}</span></div>
+                <div><b>Майнеры:</b> <span className={style.text}>{props.minersTotal}</span></div>
+                <div><b>Комиссия пула:</b> <span className={style.text}>{props.fee} %</span></div>
+                <div><b>Тип:</b> <span className={style.text}>{props.poolType}</span></div>
                 {/*<div><b>Найденных блоков:</b> <span className={style.text}>{props.maturedTotal}</span></div>*/}
             </div>
             <div className={style.coinCard_footer}>
                 <NavLink className={style.link} onClick={onButtonLinkClick} to={`${adr}`}>
-                    <div className={style.start_btn}>Show More</div>
+                    <div className={style.start_btn}>Подключиться</div>
                 </NavLink>
 
             </div>

@@ -113,8 +113,8 @@ let setupOptions = (props) => {
         yAxis: [{
             gridLineColor: '#747474',
             title: {
-                text: 'Hashrate',
-                style: {color: '#fff'}
+                text: hashesData,
+                style: {color: '#fff', fontSize:'20px'}
             },
             alternateGridColor: 'rgba(101,70,70,0.07)',
             labels: {
