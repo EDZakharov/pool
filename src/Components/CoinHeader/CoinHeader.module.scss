@@ -35,7 +35,7 @@
   .currentCoin {
     grid-area: s;
     font-size: 26px;
-    cursor: pointer;
+
     text-transform: uppercase;
 
     @media (min-width: 0px) {
@@ -61,6 +61,7 @@
 
     span {
       color: #ffffff;
+      cursor: pointer;
     }
 
   }

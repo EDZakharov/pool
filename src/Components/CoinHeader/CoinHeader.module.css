@@ -26,7 +26,6 @@
   .coin_header .currentCoin {
     grid-area: s;
     font-size: 26px;
-    cursor: pointer;
     text-transform: uppercase; }
     @media (min-width: 0px) {
       .coin_header .currentCoin {
@@ -44,7 +43,8 @@
       .coin_header .currentCoin {
         font-size: 25px; } }
     .coin_header .currentCoin span {
-      color: #ffffff; }
+      color: #ffffff;
+      cursor: pointer; }
   .coin_header .coin_header_Links {
     grid-area: n; }
     .coin_header .coin_header_Links .active {
