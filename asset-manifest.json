@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pool/static/css/main.88bb1e83.css",
-    "main.js": "/pool/static/js/main.2486b327.js",
+    "main.css": "/pool/static/css/main.9bd018b4.css",
+    "main.js": "/pool/static/js/main.d1c454b2.js",
     "static/js/787.49970623.chunk.js": "/pool/static/js/787.49970623.chunk.js",
     "static/media/fon.jpg": "/pool/static/media/fon.e793281eb6cf9e1a18d6.jpg",
     "static/media/octopus3.png": "/pool/static/media/octopus3.df5b029418e2359f2a05.png",
@@ -11,12 +11,12 @@
     "static/media/evox-prop.png": "/pool/static/media/evox-prop.ac28b74f9e6ea3693fa4.png",
     "static/media/loader.gif": "/pool/static/media/loader.90527d3e638231a0f785.gif",
     "index.html": "/pool/index.html",
-    "main.88bb1e83.css.map": "/pool/static/css/main.88bb1e83.css.map",
-    "main.2486b327.js.map": "/pool/static/js/main.2486b327.js.map",
+    "main.9bd018b4.css.map": "/pool/static/css/main.9bd018b4.css.map",
+    "main.d1c454b2.js.map": "/pool/static/js/main.d1c454b2.js.map",
     "787.49970623.chunk.js.map": "/pool/static/js/787.49970623.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.88bb1e83.css",
-    "static/js/main.2486b327.js"
+    "static/css/main.9bd018b4.css",
+    "static/js/main.d1c454b2.js"
   ]
 }
