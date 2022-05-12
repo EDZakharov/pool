@@ -23,8 +23,6 @@ const accountReducer = (state = initialState, action) => {
             if (action.payload !== null){
                 stateCopy.accountData = {...action.payload}
                 stateCopy.isAccountData = true;
-                stateCopy.isFetching = false;
-
             }
             return stateCopy
         }

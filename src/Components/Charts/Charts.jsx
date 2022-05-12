@@ -10,6 +10,14 @@ let setupOptions = (props) => {
         return 0
     }
 
+    let minutesFlor = (minutes) => {
+        if (minutes < 10) {
+            return '0' + minutes
+        } else {
+            return minutes
+        }
+    }
+
     let hashesData = 'Hs'
     let showHashes = (hashrate) => {
         if (hashrate === 1) {
@@ -24,45 +32,75 @@ let setupOptions = (props) => {
         if (hashrate === 4) {
             hashesData = ' GHs'
         }
-    }
-
-    let minutesFlor = (minutes) => {
-        if (minutes < 10) {
-            return '0' + minutes
-        } else {
-            return minutes
+        if (hashrate === 5) {
+            hashesData = ' THs'
         }
     }
 
     let arr1 = props.charts.map(el => {
         if (el !== undefined) {
-            if (el.hr.toString().length < 4) {
+            if (el.hr.toString().length <= 3) {
                 showHashes(1)
                 let x = el.hr
                 return Number(x.toFixed(2))
             }
-            if (el.hr.toString().length >= 4 && el.hr.toString().length < 9) {
-                showHashes(2)
+            if (el.hr.toString().length > 3 && el.hr.toString().length <= 6) {
+                let x = el.hr;
+                if(el.hr > 2000){
+                    x = el.hr / 1000
+                    showHashes(2)
+                    return Number(x.toFixed(0))
+                }
+                showHashes(1)
+                return Number(x.toFixed(0))
+            }
+            if (el.hr.toString().length > 6 && el.hr.toString().length <= 9) {
                 let x = el.hr / 1000
-                return Number(x.toFixed(0))
+                if(el.hr > 2000000){
+                    x = el.hr / 1000000
+                    showHashes(3)
+                    return Number(x.toFixed(2))
+                }
+                showHashes(2)
+                return Number(x.toFixed(1))
             }
-            if (el.hr.toString().length >= 9 && el.hr <= 2000000000) {
-                showHashes(3)
+            if (el.hr.toString().length > 9 && el.hr.toString().length <= 12) {
                 let x = el.hr / 1000000
-                return Number(x.toFixed(0))
+
+                if(el.hr > 2000000000){
+                    x = el.hr / 1000000000
+                    showHashes(4)
+                    return Number(x.toFixed(2))
+                }
+                showHashes(3)
+                return Number(x.toFixed(1))
             }
-            if (el.hr.toString().length >= 10 && el.hr > 2000000000) {
-                showHashes(4)
+            if (el.hr.toString().length > 12 && el.hr.toString().length <= 15) {
                 let x = el.hr / 1000000000
-                return Number(x.toFixed(2))
+                if(el.hr > 2000000000000){
+                    x = el.hr / 1000000000000
+                    showHashes(5)
+                    return Number(x.toFixed(2))
+                }
+                showHashes(4)
+                return Number(x.toFixed(0))
             }
         } else return 0
     })
-    let arr2 = arr1.filter((item, index)=>!((index+1)%3));
-    let arr3 = props.charts.map(el => {
+
+    const cutOffLastElem = (array,cut) => {
+        const [first, ...rest] = array;
+        return rest.slice(cut);
+    }
+
+
+    let arr2 = props.charts.map(el => {
         return new Date(el.timestamp * 1000).getHours() + ':' + minutesFlor(new Date(el.timestamp * 1000).getMinutes())
     })
-    let arr4 = arr3.filter((item, index)=>!((index+1)%3));
+
+    arr1 = cutOffLastElem(arr1,-96)
+    arr2 = cutOffLastElem(arr2,-96)
+
 
     return {
         title: {
@@ -88,7 +126,7 @@ let setupOptions = (props) => {
             showInLegend: false,
             type: 'spline',
             name: hashesData,
-            data: [...arr2],
+            data: [...arr1],
             color: '#e5bf36',
             dataLabels: {
                 style: {
@@ -101,7 +139,7 @@ let setupOptions = (props) => {
             enabled: false,
         },
         xAxis: {
-            categories: [...arr4],
+            categories: [...arr2],
 
             labels: {
                 style: {
@@ -131,7 +169,6 @@ const Charts = (props) => {
             highcharts={Highcharts}
             options={setupOptions(props)}
         />:''}
-
         </div>
     }
 }

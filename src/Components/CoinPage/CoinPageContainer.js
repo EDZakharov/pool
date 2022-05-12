@@ -9,7 +9,7 @@ import {
     ShowMinersOnce
 } from "../../redux/socketMiddleware";
 import {fetching} from "../../redux/coinPageReducer";
-import {addAccountAddress} from "../../redux/accountReducer";
+import {addAccountAddress, fetchingAccount} from "../../redux/accountReducer";
 
 
 

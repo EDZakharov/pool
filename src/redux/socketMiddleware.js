@@ -44,6 +44,7 @@ let storage2 = {
 }
 
 socket2.on('update', res => {
+
     if (res.method === 'fullStats') {
         storage2.fullStats = {...res.data}
     }
@@ -51,9 +52,7 @@ socket2.on('update', res => {
     if (res.method === 'account') {
         if (res.error !== 'Method not allowed') {
             if (res.data !== undefined) {
-                if (res.data.workers.length !== 0) {
                     storage2.accountData = {...res.data}
-                }
             }
 
         } else {

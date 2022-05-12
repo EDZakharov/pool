@@ -17,7 +17,7 @@ const CoinCard = (props) => {
         props.selectCoin(adr)
     }
 
-
+    // console.log(hashes)
     return (
 
         <div className={style.coinCard}>
@@ -29,7 +29,7 @@ const CoinCard = (props) => {
                 </div>
             </div>
             <div className={style.coinCard_main}>
-                <div><b>Хэшрейт пула</b> <span className={style.text}>{hashes}</span></div>
+                <div><b>Хэшрейт пула</b> <span className={style.text}>{!hashes? '' : hashes.hashrate} {!hashes? '' : hashes.unit}</span></div>
                 <div><b>Майнеры:</b> <span className={style.text}>{props.minersTotal}</span></div>
                 <div><b>Комиссия пула:</b> <span className={style.text}>{props.fee} %</span></div>
                 <div><b>Тип:</b> <span className={style.text}>{props.poolType}</span></div>

@@ -11,20 +11,33 @@ import style from "./Components/Content/ContentComponent.module.scss";
 
 export const images = {ethLogo,etcLogo,burstLogo,kevaLogo,evoxLogo,ergoLogo,siteLogo}
 
-export const hashFilter = (data) => {
-    if(data){
-        if (data <= 1000) {
-            return data.toFixed(2) + ' Hs'
-        } else if(data > 1000 && data <= 1000000){
-            return (data / 1000).toFixed(2) + ' kHs'
-        } else if(data > 1000000 && data <= 1000000000){
-            return (data / 1000000).toFixed(2) + ' MHs'
-        } else if (data > 1000000000) {
-            return (data/ 1000000000).toFixed(2) + ' GHs'
+export let hashFilter = (data) => {
+
+    if (data !== undefined) {
+        if (data.toString().length <= 3) {
+            return {hashrate: Number(data.toFixed(2)), unit:' Hs'}
         }
+        if (data.toString().length > 3 && data.toString().length <= 6) {
+            let x = data / 1000
+            return {hashrate: Number(x.toFixed(0)), unit:' kHs'}
+        }
+        if (data.toString().length > 6 && data.toString().length <= 9) {
+            let x = data / 1000000
+            return {hashrate: Number(x.toFixed(0)), unit:' MHs'}
+        }
+        if (data.toString().length > 9 && data.toString().length < 12) {
+            let x = data / 1000000000
+            return {hashrate: Number(x.toFixed(2)), unit:' GHs'}
+        }
+        if (data.toString().length > 12 && data.toString().length <= 15) {
+            let x = data / 1000000000
+            return {hashrate: Number(x.toFixed(0)), unit:' GHs'}
+        }
+
     } else return 0
 
 }
+
 
 
 export const coinNamesFilter = (data) => {

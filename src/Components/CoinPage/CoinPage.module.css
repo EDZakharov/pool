@@ -15,8 +15,10 @@
     grid-template-rows: 0.7fr 0.1fr 0.5fr 0.1fr; }
     .coin .coinData .graph {
       grid-area: graph;
-      color: #ffffff;
-      margin: 0 10px; }
+      color: #ffffff; }
+      .coin .coinData .graph span {
+        position: absolute;
+        left: 50%; }
     .coin .coinData .inputForm {
       grid-area: input;
       display: flex;
@@ -266,8 +268,10 @@
     grid-template-rows: 0.7fr 0.1fr 0.5fr 0.1fr; }
     .coin2 .coinData .graph {
       grid-area: graph;
-      color: #ffffff;
-      margin: 0 10px; }
+      color: #ffffff; }
+      .coin2 .coinData .graph span {
+        position: absolute;
+        left: 50%; }
     .coin2 .coinData .inputForm {
       grid-area: input;
       display: flex;
@@ -517,8 +521,10 @@
     grid-template-rows: 0.7fr 0.1fr 0.5fr 0.1fr; }
     .coin3 .coinData .graph {
       grid-area: graph;
-      color: #ffffff;
-      margin: 0 10px; }
+      color: #ffffff; }
+      .coin3 .coinData .graph span {
+        position: absolute;
+        left: 50%; }
     .coin3 .coinData .inputForm {
       grid-area: input;
       display: flex;
