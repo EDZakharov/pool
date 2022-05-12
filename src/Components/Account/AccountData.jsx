@@ -5,14 +5,13 @@ import {hashFilter, showDate} from "../../Filters";
 import Charts from "../Charts/Charts";
 
 
-let count = 0
-
 const AccountData = (props) => {
-
+    let count = 0
     useEffect(() => {
         let pool = localStorage.getItem('selectedCoin')
         let account = localStorage.getItem('account')
-        props.showAccountDataOnce(pool,account)
+        props.showAccountDataOnce(pool, account)
+
         let interval = setInterval(() => {
             props.showAccountData(pool)
         }, 500)
@@ -25,17 +24,17 @@ const AccountData = (props) => {
 
 
     let countChecker = () => {
-        if(props.account.isAccountData === false){
+        if (props.account.isAccountData === false) {
             return count++
         }
     }
     countChecker()
 
     let divReturner = () => {
-        if(count >= 4){
+        if (count >= 4) {
             return <div className={style.payments}>Страница не найдена</div>
         }
-        if(count < 4){
+        if (count < 4) {
             return <Fetcher/>
         }
     }
@@ -46,14 +45,13 @@ const AccountData = (props) => {
         <div className={style.payments}>
             <div className={style.graph}>
                 <div className={style.chartsGraph}><Charts text={`Account: ${localStorage.getItem('account')}`}
-                             charts={props.account.accountData.charts}/></div>
+                                                           charts={props.account.accountData.charts}/></div>
 
             </div>
             <div className={style.menu}>
                 <div>Unpaid balance: {props.account.accountData.balance}</div>
                 <div>Hashrate: {hashFilter(props.account.accountData.hr)}</div>
                 <div>LastBeat: {showDate(props.account.accountData.lastBeat)}</div>
-
 
 
             </div>

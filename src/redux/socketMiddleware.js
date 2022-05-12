@@ -1,13 +1,17 @@
 import io from 'socket.io-client'
 
-export const socket = io('https://ws.e4pool.com/');
-export const socket2 = io('https://ws.e4pool.com/');
+const socket = io('https://ws.e4pool.com/');
+const socket2 = io('https://ws.e4pool.com/');
 
 const SHOW_COINS = 'SHOW_COINS';
-const SHOW_FULL_STATS = 'SHOW_FULL_STATS';
 const DELL_COINS = 'DELL_COINS';
+
+const SHOW_FULL_STATS = 'SHOW_FULL_STATS';
+const DEL_FULLSTATS = 'DEL_FULLSTATS';
+
 const SHOW_MINERS = 'SHOW_MINERS';
 const DELL_MINERS = 'DELL_MINERS';
+
 const SHOW_ACCOUNT_DATA = 'SHOW_ACCOUNT_DATA';
 const DELL_ACCOUNT_DATA = 'DELL_ACCOUNT_DATA';
 
@@ -15,17 +19,12 @@ const DELL_ACCOUNT_DATA = 'DELL_ACCOUNT_DATA';
 let storage = {
     coins: [],
     miners: [],
-    fullStats:{},
-    accountData: null
+    fullStats: {},
 }
 
 
 socket.on('update', res => {
-    // console.log(res)
-    storage.accountData = null
-
     if (res.method === 'stats') {
-
         let index = storage.coins.findIndex(el => el.pool === res.data.pool);
         if (index === -1) {
             storage.coins.push(res.data)
@@ -37,23 +36,32 @@ socket.on('update', res => {
     if (res.method === 'miners') {
         storage.miners = [...res.data.miners]
     }
-
-    if (res.method === 'account') {
-        if (res.data.workers.length !== 0) {
-            storage.accountData = {...res.data}
-        }
-
-    }
 })
 
 let storage2 = {
-    fullStats:{},
+    fullStats: {},
+    accountData: null
 }
 
 socket2.on('update', res => {
     if (res.method === 'fullStats') {
         storage2.fullStats = {...res.data}
     }
+
+    if (res.method === 'account') {
+        if (res.error !== 'Method not allowed') {
+            if (res.data !== undefined) {
+                if (res.data.workers.length !== 0) {
+                    storage2.accountData = {...res.data}
+                }
+            }
+
+        } else {
+            console.log(res.error)
+        }
+    }
+
+
 })
 
 
@@ -88,7 +96,7 @@ export let socketMiddleware = store => next => action => {
 
     if (action.type === 'SHOW_ACCOUNT_DATA') {
         action.type = 'ADD_ACCOUNT_DATA'
-        action.payload = storage.accountData
+        action.payload = storage2.accountData
         return next(action)
     }
 
@@ -114,7 +122,7 @@ export let dellCoinData = () => {
 export let showFullStatsOnce = () => {
     let CoinName = localStorage.getItem('selectedCoin')
     socket2.emit('startPoolStats', {
-        pool:CoinName,
+        pool: CoinName,
         method: 'fullStats'
     })
     return {type: SHOW_FULL_STATS}
@@ -122,7 +130,10 @@ export let showFullStatsOnce = () => {
 export let showFullStats = () => {
     return {type: SHOW_FULL_STATS}
 }
-
+export let dellFullStats = () => {
+    socket2.emit('stopStats')
+    return {type: DEL_FULLSTATS}
+}
 
 
 //MINERS_______________________________
@@ -144,17 +155,19 @@ export let dellMinersData = () => {
 
 //ACCOUNT______________________________
 export let showAccountDataOnce = (pool, account) => {
-    socket.emit('startPoolStats', {
-        pool: pool,
-        method: 'account',
-        address: account
-    })
+    if (pool !== 'keva' || pool !== 'evox-prop' || pool !== 'evox-solo') {
+        socket2.emit('startPoolStats', {
+            pool: pool,
+            method: 'account',
+            address: account
+        })
+    }
     return {type: SHOW_ACCOUNT_DATA, pool}
 }
 export let showAccountData = (pool) => {
     return {type: SHOW_ACCOUNT_DATA, pool}
 }
 export let dellAccountData = () => {
-    socket.emit('stopStats')
+    socket2.emit('stopStats')
     return {type: DELL_ACCOUNT_DATA}
 }

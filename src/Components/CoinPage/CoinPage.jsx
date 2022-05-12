@@ -45,9 +45,10 @@ export const CoinPage = (props) => {
         }, 1000)
 
         return () => {
-            props.addAccountAddress(null)
             clearInterval(start)
+            props.dellFullStats()
             props.dellMinersData()
+            navigator.clipboard.writeText('')
 
         }
     }, [])
@@ -64,6 +65,7 @@ export const CoinPage = (props) => {
     }
 
     let addrFilter = (coinName) => {
+
         let x = props.account.accountAddress
         if (x === null){
             return `/${coinName}`
@@ -81,13 +83,14 @@ export const CoinPage = (props) => {
             <div className={style.graph}>
                 <Charts charts={props.coinPage.fullStats.charts} text={`Общая мощность ${thisPool} пула`}/>
             </div>
-            <div className={style.inputForm}>
+            {thisPool === 'evox-prop' || thisPool === 'evox-solo' || thisPool === 'keva'? <div className={style.inputForm}></div>: <div className={style.inputForm}>
                 <img src={coinLogo} alt='logo'/>
                 <input type='text' autoComplete='off' placeholder={`Введите адрес кошелька фермы`} onChange={setAddr}/>
                 <Link to={addrFilter(thisPool)}>
                     <div className={style.inputBtn}><i className="fa-solid fa-magnifying-glass"></i></div>
                 </Link>
-            </div>
+            </div>}
+
 
             <div className={style.stats}>
                 <div className={style.stats__grid}>
