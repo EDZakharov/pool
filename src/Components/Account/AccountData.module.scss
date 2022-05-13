@@ -17,7 +17,6 @@
 
 
   .graph{
-    //border: 1px solid grey;
     grid-area: g;
     width: 100%;
     display: flex;
@@ -27,11 +26,8 @@
 
     .chartsGraph{
       width: 100%;
-      margin: 30px 0 5px 0;
-      //padding: 20px 20px;
-      border: .1px solid rgba(0, 0, 0, 0);
+      margin: 30px 0 10px 0;
       border-radius: 15px;
-      //box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 
     }
   }
@@ -45,19 +41,13 @@
     .flexWrapper{
       display: flex;
       position: relative;
-      //align-items: center;
-      //justify-content: center;
       width: 100%;
       height: 60px;
 
-      //border: 1px solid white;
-
       .dropDown{
-        margin-right: 1px;
         display: flex;
         align-items: center;
         height: 60px;
-        //background-color: #fff;
         color: black;
         font-weight: 600;
         font-size: 17px;
@@ -74,22 +64,17 @@
 
         }
 
-        .dropbtn{
-          display: flex;
-          align-items: center;
-          height: 100%;
-          width: 100%;
-          padding: 0 20px;
-          background: linear-gradient(#ffffff, #e4be36);
-          //color: black;
-          //border: 1px solid white;
-          //white-space: nowrap;
-
-          &:hover{
-            transition: .4s all;
-            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(228, 190, 54, 0.8));
-          }
+        &:nth-last-child(1){
+          border-right: 1px solid white;
         }
+
+        &:nth-last-child(4){
+          border-left: 1px solid white;
+        }
+
+
+
+
 
         .dropdown__content{
           display: flex;
@@ -100,9 +85,8 @@
           position: absolute;
           width: 100%;
           pointer-events: none;
-          top: 70px;
+          top: 62px;
           left: 0;
-
           color: #ffffff;
           //border: .1px solid white;
 
@@ -123,76 +107,9 @@
 
             .dropText__data{
               padding: 10px;
-
-              .totalHashrate{
-                font-size: 20px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 0 0 15px 0;
-              }
-
-              .hashrate__grid{
-                display: grid;
-                grid-template-areas: 'name hashrate lastShare';
-                grid-template-columns: 1fr 1fr 1fr;
-                font-size: 20px;
-                align-items: center;
-                background-color: #7f7f7f;
-                height: 40px;
-                padding-bottom: 5px;
-
-                .hashrate__grid__worker{
-                  grid-area: name;
-                  margin: 0 auto;
-                }
-
-                .hashrate__grid__currentHashrate{
-                  grid-area: hashrate;
-                  margin: 0 auto;
-                }
-
-                .hashrate__grid__lastShare{
-                  grid-area: lastShare;
-                  margin: 0 auto;
-                }
-
-              }
-
-              .workers__data__grid{
-                display: grid;
-                grid-template-areas: 'name hashrate lastShare';
-                grid-template-columns: 1fr 1fr 1fr;
-                //align-items: center;
-                background-color: #6e6767;
-                color: #ffffff;
-                margin: 2px auto;
-                font-size: 15px;
-                
-
-                .workers__name{
-                  grid-area: name;
-                  align-items: center;
-                  margin: 0 auto;
-                  padding: 10px 0;
-                }
-
-                .workers__hashrate{
-                  grid-area: hashrate;
-                  margin: 0 auto;
-                  padding: 10px 0;
-                }
-
-                .workers__lastShare{
-                  grid-area: lastShare;
-                  margin: 0 auto;
-                  padding: 10px 0;
-                }
-
-
-              }
-
             }
+
+
           }
 
 

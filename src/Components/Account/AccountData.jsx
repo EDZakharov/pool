@@ -4,6 +4,10 @@ import Fetcher from "../Fetcher/Fetcher";
 import {checkEnd, hashFilter, showDate} from "../../Filters";
 import Charts from "../Charts/Charts";
 import Err404 from "../404/404";
+import InnerData from "./InnerData";
+import HeaderData from "./HeaderData";
+import Total from "./Total";
+import DropBtn from "./DropBtn";
 
 let count = 0
 const AccountData = (props) => {
@@ -12,7 +16,7 @@ const AccountData = (props) => {
 
     let [togglePayments, setTogglePayments] = useState(false)
     let [toggleHashrate, setToggleHashrate] = useState(false)
-    let [toggleBalance, setToggleBalance] = useState(false)
+    let [toggleBalance, setToggleBalance] = useState(true)
     let [toggleRewards, setToggleRewards] = useState(false)
 
 
@@ -24,7 +28,7 @@ const AccountData = (props) => {
         props.showAccountDataOnce(pool, account)
         let interval = setInterval(() => {
             props.showAccountData(pool)
-        }, 1000)
+        }, 1500)
         return () => {
             count = 0
             clearInterval(interval)
@@ -75,7 +79,6 @@ const AccountData = (props) => {
         }
         return summ
     }
-    console.log(props.account.accountData.workers)
 
     let dropDownPaymentsToggle = () => {
         setTogglePayments(!togglePayments)
@@ -104,7 +107,7 @@ const AccountData = (props) => {
         setToggleRewards(!toggleRewards)
     }
 
-
+    // console.log(props.account.accountData.payments)
 
     return (props.account.isFetching || !props.account.accountData.hr ? checkToErr() :
         <div className={style.account}>
@@ -118,63 +121,80 @@ const AccountData = (props) => {
                 <div className={style.accountData}>
                     <div className={style.flexWrapper}>
                         <div className={style.dropDown} onClick={dropDownBalanceToggle}>
-                            <div className={style.dropbtn}>Баланс</div>
+                            <DropBtn status={toggleBalance} text={'Баланс'}/>
                             {toggleBalance ? <div className={style.dropdown__content}>
                                 <div className={style.dropText}>
-                                    <div>Текущий
-                                        баланс: {(props.account.accountData.balance / 1000000000).toFixed(3)} {poolChecker(pool)}
+                                    <div className={style.dropText__data}>
+                                        <Total
+                                            text={`Текущий баланс: ${(props.account.accountData.balance / 1000000000).toFixed(3)} ${poolChecker(pool)}`}/>
                                     </div>
                                 </div>
                             </div> : ''}
                         </div>
                         <div className={style.dropDown} onClick={dropDownHashrateToggle}>
-                            <div className={style.dropbtn}>Воркеры</div>
+                            <DropBtn status={toggleHashrate} text={'Воркеры'}/>
                             {toggleHashrate ? <div className={style.dropdown__content}>
                                 <div className={style.dropText}>
                                     <div className={style.dropText__data}>
-                                        <div className={style.totalHashrate}>Общий хэшрейт: {hashFilter(summHashrate()).hashrate} {hashFilter(summHashrate()).unit}</div>
-                                        <div className={style.hashrate__grid}>
-                                            <div className={style.hashrate__grid__worker}>
-                                                Имя воркера
-                                            </div>
-                                            <div className={style.hashrate__grid__currentHashrate}>
-                                                Хэшрейт
-                                            </div>
-                                            <div className={style.hashrate__grid__lastShare}>
-                                                Последняя шара
-                                            </div>
-                                        </div>
+                                        <Total
+                                            text={`Общий хэшрейт: ${hashFilter(summHashrate()).hashrate} ${hashFilter(summHashrate()).unit}`}/>
+                                        <HeaderData
+                                            el1={'Имя воркера'}
+                                            el2={'Хэшрейт'}
+                                            el3={'Последняя шара'}
+                                            type={'workers'}
+                                        />
                                         {props.account.accountData.workers.map(el => {
                                             let timestamp = new Date(el.lastBeat * 1000);
                                             let hours = timestamp.getHours()
                                             let minutes = '0' + timestamp.getMinutes()
                                             let seconds = '0' + timestamp.getSeconds()
-                                            // let setEnd = timestamp.getSeconds().toString().slice(-1)
-                                            return <div className={style.workers__data__grid} key={el.name}>
-                                                <div className={style.workers__name}>{el.name}</div>
-                                                <div className={style.workers__hashrate}>{hashFilter(el.hr).hashrate} {hashFilter(el.hr).unit}</div>
-                                                <div className={style.workers__lastShare}>{`${hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2)}`}</div>
-                                            </div>
+                                            return <InnerData
+                                                key={el.name}
+                                                el1={el.name}
+                                                el2={hashFilter(el.hr).hashrate + ' ' + hashFilter(el.hr).unit}
+                                                el3={`${hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2)}`}
+                                                type={'workers'}
+                                            />
+
                                         })}
                                     </div>
                                 </div>
                             </div> : ''}
                         </div>
+
                         <div className={style.dropDown} onClick={dropDownPaymentsToggle}>
-                            <div className={style.dropbtn}>Выплаты</div>
+                            <DropBtn status={togglePayments} text={'Выплаты'}/>
                             {togglePayments ? <div className={style.dropdown__content}>
                                 <div className={style.dropText}>
-                                    <div>Всего
-                                        выплачено: {(summPayments() / 1000000000).toFixed(3)} {poolChecker(pool)}
+                                    <div className={style.dropText__data}>
+                                        <Total text={`Всего выплачено: ${(summPayments() / 1000000000).toFixed(3)} ${poolChecker(pool)}`}/>
+                                        <HeaderData
+                                            el1={'Количество'}
+                                            el2={'Номер транзакции'}
+                                            el3={'Дата'}
+                                            type={'payments'}
+                                        />
+                                        {props.account.accountData.payments.payments ? props.account.accountData.payments.payments.map(el => {
+                                            return <InnerData
+                                                key={el.tx}
+                                                el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
+                                                el2={el.tx}
+                                                el3={el.timestamp}
+                                                type={'payments'}
+                                            />
+                                        }) : ''}
                                     </div>
                                 </div>
                             </div> : ''}
                         </div>
                         <div className={style.dropDown} onClick={dropDownRewardsToggle}>
-                            <div className={style.dropbtn}>Награды</div>
+                            <DropBtn status={toggleRewards} text={'Награды'}/>
                             {toggleRewards ? <div className={style.dropdown__content}>
                                 <div className={style.dropText}>
-                                    <div>Всего наград: {props.account.accountData.rewards.rewardsTotal} lorem1000</div>
+                                    <div className={style.dropText__data}>
+                                        <Total text={`Всего наград: ${props.account.accountData.rewards.rewardsTotal}`}/>
+                                    </div>
                                 </div>
                             </div> : ''}
                         </div>
