@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import style from './AccountData.module.scss'
 import Fetcher from "../Fetcher/Fetcher";
-import {hashFilter, showDate} from "../../Filters";
+import {checkEnd, hashFilter, showDate} from "../../Filters";
 import Charts from "../Charts/Charts";
 import Err404 from "../404/404";
 
@@ -17,9 +17,10 @@ const AccountData = (props) => {
 
 
     useEffect(() => {
-        setTimeout(()=>{
+
+        setTimeout(() => {
             props.fetchingAccount(false)
-        },1000)
+        }, 1000)
         props.showAccountDataOnce(pool, account)
         let interval = setInterval(() => {
             props.showAccountData(pool)
@@ -33,37 +34,48 @@ const AccountData = (props) => {
     }, [])
 
     let poolChecker = (pool) => {
-        if (pool === 'etc' || pool === 'etc-solo'){
+        if (pool === 'etc' || pool === 'etc-solo') {
             return 'etc'
         }
-        if (pool === 'eth'){
+        if (pool === 'eth') {
             return 'eth'
         }
-        if (pool === 'keva'){
+        if (pool === 'keva') {
             return 'keva'
         }
-        if (pool === 'evox-prop' || pool === 'evox-solo'){
+        if (pool === 'evox-prop' || pool === 'evox-solo') {
             return 'evox'
         }
         return 'Coin'
     }
 
     let checkToErr = () => {
-        if (props.account.accountData.hr === 0){
-                return <Err404/>
+        if (props.account.accountData.hr === 0) {
+            return <Err404/>
         }
-            return <Fetcher/>
+        return <Fetcher/>
     }
 
     let summPayments = () => {
         let summ = 0
-        if(props.account.accountData.payments){
+        if (props.account.accountData.payments) {
             props.account.accountData.payments.payments.map(el => {
                 summ = summ + el.amount
             })
         }
         return summ
     }
+
+    let summHashrate = () => {
+        let summ = 0
+        if (props.account.accountData.workers) {
+            props.account.accountData.workers.map(el => {
+                summ = summ + el.hr
+            })
+        }
+        return summ
+    }
+    console.log(props.account.accountData.workers)
 
     let dropDownPaymentsToggle = () => {
         setTogglePayments(!togglePayments)
@@ -93,9 +105,8 @@ const AccountData = (props) => {
     }
 
 
-    console.log(props.account.accountData)
 
-    return (props.account.isFetching || !props.account.accountData.hr ?  checkToErr() :
+    return (props.account.isFetching || !props.account.accountData.hr ? checkToErr() :
         <div className={style.account}>
             <div className={style.graph}>
                 <div className={style.chartsGraph}>
@@ -107,27 +118,64 @@ const AccountData = (props) => {
                 <div className={style.accountData}>
                     <div className={style.flexWrapper}>
                         <div className={style.dropDown} onClick={dropDownBalanceToggle}>
-                            <div  className={style.dropbtn}>Баланс</div>
+                            <div className={style.dropbtn}>Баланс</div>
                             {toggleBalance ? <div className={style.dropdown__content}>
-                                <span>Текущий баланс: {(props.account.accountData.balance/1000000000).toFixed(3)} {poolChecker(pool)}</span>
+                                <div className={style.dropText}>
+                                    <div>Текущий
+                                        баланс: {(props.account.accountData.balance / 1000000000).toFixed(3)} {poolChecker(pool)}
+                                    </div>
+                                </div>
                             </div> : ''}
                         </div>
                         <div className={style.dropDown} onClick={dropDownHashrateToggle}>
-                            <div  className={style.dropbtn}>Воркеры</div>
+                            <div className={style.dropbtn}>Воркеры</div>
                             {toggleHashrate ? <div className={style.dropdown__content}>
-                                <span>Хэшрейт: {props.account.accountData.workers[0].name} {hashFilter(props.account.accountData.hr).hashrate}{hashFilter(props.account.accountData.hr).unit}</span>
+                                <div className={style.dropText}>
+                                    <div className={style.dropText__data}>
+                                        <div className={style.totalHashrate}>Общий хэшрейт: {hashFilter(summHashrate()).hashrate} {hashFilter(summHashrate()).unit}</div>
+                                        <div className={style.hashrate__grid}>
+                                            <div className={style.hashrate__grid__worker}>
+                                                Имя воркера
+                                            </div>
+                                            <div className={style.hashrate__grid__currentHashrate}>
+                                                Хэшрейт
+                                            </div>
+                                            <div className={style.hashrate__grid__lastShare}>
+                                                Последняя шара
+                                            </div>
+                                        </div>
+                                        {props.account.accountData.workers.map(el => {
+                                            let timestamp = new Date(el.lastBeat * 1000);
+                                            let hours = timestamp.getHours()
+                                            let minutes = '0' + timestamp.getMinutes()
+                                            let seconds = '0' + timestamp.getSeconds()
+                                            // let setEnd = timestamp.getSeconds().toString().slice(-1)
+                                            return <div className={style.workers__data__grid} key={el.name}>
+                                                <div className={style.workers__name}>{el.name}</div>
+                                                <div className={style.workers__hashrate}>{hashFilter(el.hr).hashrate} {hashFilter(el.hr).unit}</div>
+                                                <div className={style.workers__lastShare}>{`${hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2)}`}</div>
+                                            </div>
+                                        })}
+                                    </div>
+                                </div>
                             </div> : ''}
                         </div>
                         <div className={style.dropDown} onClick={dropDownPaymentsToggle}>
-                            <div  className={style.dropbtn}>Выплаты</div>
+                            <div className={style.dropbtn}>Выплаты</div>
                             {togglePayments ? <div className={style.dropdown__content}>
-                                <span>Всего выплачено: {(summPayments()/1000000000).toFixed(3)} {poolChecker(pool)} </span>
+                                <div className={style.dropText}>
+                                    <div>Всего
+                                        выплачено: {(summPayments() / 1000000000).toFixed(3)} {poolChecker(pool)}
+                                    </div>
+                                </div>
                             </div> : ''}
                         </div>
                         <div className={style.dropDown} onClick={dropDownRewardsToggle}>
-                            <div  className={style.dropbtn}>Награды</div>
+                            <div className={style.dropbtn}>Награды</div>
                             {toggleRewards ? <div className={style.dropdown__content}>
-                                <div>Всего наград: {props.account.accountData.rewards.rewardsTotal} lorem1000</div>
+                                <div className={style.dropText}>
+                                    <div>Всего наград: {props.account.accountData.rewards.rewardsTotal} lorem1000</div>
+                                </div>
                             </div> : ''}
                         </div>
                     </div>

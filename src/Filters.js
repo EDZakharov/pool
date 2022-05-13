@@ -39,6 +39,35 @@ export let hashFilter = (data) => {
 }
 
 
+export let checkEnd = (setEnd) => {
+    switch (setEnd) {
+        case '0':
+            return 'д'
+        case '1':
+            return 'ду'
+        case '2':
+            return 'ды'
+        case '3':
+            return 'ды'
+        case '4':
+            return 'ды'
+        case '5':
+            return 'д'
+        case '6':
+            return 'д'
+        case '7':
+            return 'д'
+        case '8':
+            return 'д'
+        case '9':
+            return 'д'
+        default:
+            return 'д'
+
+    }
+
+}
+
 
 export const coinNamesFilter = (data) => {
     switch (data) {
