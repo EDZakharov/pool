@@ -13,7 +13,7 @@
   color: white;
   overflow-x: hidden;
   height: 88vh;
-  padding-top: 100px;
+  padding-top: 50px;
 
 
   .graph{
@@ -27,7 +27,7 @@
 
     .chartsGraph{
       width: 100%;
-      margin: 30px 0 30px 0;
+      margin: 30px 0 5px 0;
       //padding: 20px 20px;
       border: .1px solid rgba(0, 0, 0, 0);
       border-radius: 15px;
@@ -40,6 +40,7 @@
     grid-area: m;
     width: 70%;
     margin: 0 auto;
+
 
     .flexWrapper{
       display: flex;
@@ -55,20 +56,39 @@
         margin-right: 1px;
         display: flex;
         align-items: center;
-        height: 100%;
-        background-color: #fff;
+        height: 60px;
+        //background-color: #fff;
         color: black;
         font-weight: 600;
         font-size: 17px;
-        padding: 0 20px;
+        padding: 0;
         cursor: pointer;
         user-select: none;
+
+        //&:hover{
+        //  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(228, 190, 54, 0.8));
+        //  transition: .2s ease-in-out;
+        //}
+
+        &:active{
+
+        }
+
         .dropbtn{
-          //height: 100%;
-          //width: 100%;
+          display: flex;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+          padding: 0 20px;
+          background: linear-gradient(#ffffff, #e4be36);
           //color: black;
           //border: 1px solid white;
           //white-space: nowrap;
+
+          &:hover{
+            transition: .4s all;
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(228, 190, 54, 0.8));
+          }
         }
 
         .dropdown__content{
@@ -76,20 +96,103 @@
           font-weight: 400;
           font-size: 16px;
           align-items: center;
-          user-select: auto;
           cursor: auto;
           position: absolute;
           width: 100%;
-          top: 61px;
-          //padding: 0;
+          pointer-events: none;
+          top: 70px;
           left: 0;
-          background-color: #fff;
-          color: black;
 
-          div{
+          color: #ffffff;
+          //border: .1px solid white;
+
+
+          .dropText{
             width: 100%;
-            //padding: 0;
-            //margin-left: 10px;
+            border-right: .2px solid white;
+            border-left: .2px solid white;
+            background-color: rgba(29, 29, 29, 0.19);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 0 0 rgba(0, 0, 0, .3),
+            -28px 0 25px -23px rgba(0, 0, 0, .8),
+            28px 0 35px -23px rgba(0, 0, 0, .8),
+            0 0 0 rgba(0, 0, 0, 0.1) inset;
+
+            //padding: 0 10px 40px 10px;
+            margin-bottom: 40px;
+
+            .dropText__data{
+              padding: 10px;
+
+              .totalHashrate{
+                font-size: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 0 15px 0;
+              }
+
+              .hashrate__grid{
+                display: grid;
+                grid-template-areas: 'name hashrate lastShare';
+                grid-template-columns: 1fr 1fr 1fr;
+                font-size: 20px;
+                align-items: center;
+                background-color: #7f7f7f;
+                height: 40px;
+                padding-bottom: 5px;
+
+                .hashrate__grid__worker{
+                  grid-area: name;
+                  margin: 0 auto;
+                }
+
+                .hashrate__grid__currentHashrate{
+                  grid-area: hashrate;
+                  margin: 0 auto;
+                }
+
+                .hashrate__grid__lastShare{
+                  grid-area: lastShare;
+                  margin: 0 auto;
+                }
+
+              }
+
+              .workers__data__grid{
+                display: grid;
+                grid-template-areas: 'name hashrate lastShare';
+                grid-template-columns: 1fr 1fr 1fr;
+                //align-items: center;
+                background-color: #6e6767;
+                color: #ffffff;
+                margin: 2px auto;
+                font-size: 15px;
+                
+
+                .workers__name{
+                  grid-area: name;
+                  align-items: center;
+                  margin: 0 auto;
+                  padding: 10px 0;
+                }
+
+                .workers__hashrate{
+                  grid-area: hashrate;
+                  margin: 0 auto;
+                  padding: 10px 0;
+                }
+
+                .workers__lastShare{
+                  grid-area: lastShare;
+                  margin: 0 auto;
+                  padding: 10px 0;
+                }
+
+
+              }
+
+            }
           }
 
 
