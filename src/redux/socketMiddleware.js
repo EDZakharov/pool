@@ -24,6 +24,7 @@ let storage = {
 
 
 socket.on('update', res => {
+
     if (res.method === 'stats') {
         let index = storage.coins.findIndex(el => el.pool === res.data.pool);
         if (index === -1) {
@@ -44,7 +45,7 @@ let storage2 = {
 }
 
 socket2.on('update', res => {
-
+    console.log(res)
     if (res.method === 'fullStats') {
         storage2.fullStats = {...res.data}
     }
@@ -154,13 +155,14 @@ export let dellMinersData = () => {
 
 //ACCOUNT______________________________
 export let showAccountDataOnce = (pool, account) => {
-    if (pool !== 'keva' || pool !== 'evox-prop' || pool !== 'evox-solo') {
-        socket2.emit('startPoolStats', {
-            pool: pool,
-            method: 'account',
-            address: account
-        })
+    if (pool === 'keva' || pool === 'evox-prop' || pool === 'evox-solo') {
+        return {type: SHOW_ACCOUNT_DATA, pool}
     }
+    socket2.emit('startPoolStats', {
+        pool: pool,
+        method: 'account',
+        address: account
+    })
     return {type: SHOW_ACCOUNT_DATA, pool}
 }
 export let showAccountData = (pool) => {

@@ -1,4 +1,12 @@
+a{
+  color: white;
+  text-decoration: none;
+  pointer-events: auto;
+  &:hover{
+    text-decoration: underline;
 
+  }
+}
 
 //DEFAULT
 .inner__data__grid{
@@ -11,6 +19,8 @@
   color: #ffffff;
   margin: 2px auto;
   font-size: 15px;
+  pointer-events: none;
+
 
   div{
     padding: 5px;
@@ -78,6 +88,8 @@
     //margin-left: 10.5%;
   }
 
+
+
   .inner__elem1{
     padding: 5px;
     width: 100%;
@@ -93,6 +105,7 @@
     grid-template-areas: '1 2 3';
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0 auto;
+
     .el2_gr{
       grid-area: 2;
       //padding-left: 25%;

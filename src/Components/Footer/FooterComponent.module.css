@@ -18,7 +18,8 @@
     text-decoration: none;
     color: #c9c9c9; }
   .footer :hover {
-    color: #ffffff; }
+    color: #ffffff;
+    text-decoration: none; }
   .footer .fa-telegram-plane {
     color: #FFF;
     margin-top: 5vw;

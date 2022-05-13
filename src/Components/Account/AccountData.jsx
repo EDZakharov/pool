@@ -109,6 +109,22 @@ const AccountData = (props) => {
 
     // console.log(props.account.accountData.payments)
 
+    let txChecker = (tx) => {
+        if(pool === 'eth'){
+            return `https://etherscan.io//tx/${tx}`
+        }
+        if(pool === 'etc'){
+            return `https://etc.tokenview.com/en/tx/${tx}`
+        }
+        if(pool === 'etc-solo'){
+            return `https://etc.tokenview.com/en/tx/${tx}`
+        }
+        else {
+            return '#'
+        }
+    }
+
+
     return (props.account.isFetching || !props.account.accountData.hr ? checkToErr() :
         <div className={style.account}>
             <div className={style.graph}>
@@ -145,6 +161,7 @@ const AccountData = (props) => {
                                             type={'workers'}
                                         />
                                         {props.account.accountData.workers.map(el => {
+                                            console.log(props.account.accountData)
                                             let timestamp = new Date(el.lastBeat * 1000);
                                             let hours = timestamp.getHours()
                                             let minutes = '0' + timestamp.getMinutes()
@@ -179,7 +196,7 @@ const AccountData = (props) => {
                                             return <InnerData
                                                 key={el.tx}
                                                 el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
-                                                el2={el.tx}
+                                                el2={<a onClick={event => event.stopPropagation()} href={txChecker(el.tx)}>{el.tx}</a>}
                                                 el3={el.timestamp}
                                                 type={'payments'}
                                             />

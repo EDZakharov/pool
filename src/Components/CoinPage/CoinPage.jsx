@@ -41,7 +41,7 @@ export const CoinPage = (props) => {
             props.showFullStats()
             props.showMiners(thisPool)
             props.fetching(false)
-        }, 1000)
+        }, 1500)
 
         return () => {
             clearInterval(start)
