@@ -21,19 +21,19 @@ let setupOptions = (props) => {
     let hashesData = 'Hs'
     let showHashes = (hashrate) => {
         if (hashrate === 1) {
-            hashesData = ' Hs'
+            hashesData = ' H/s'
         }
         if (hashrate === 2) {
-            hashesData = ' kHs'
+            hashesData = ' kH/s'
         }
         if (hashrate === 3) {
-            hashesData = ' MHs'
+            hashesData = ' MH/s'
         }
         if (hashrate === 4) {
-            hashesData = ' GHs'
+            hashesData = ' GH/s'
         }
         if (hashrate === 5) {
-            hashesData = ' THs'
+            hashesData = ' TH/s'
         }
     }
 

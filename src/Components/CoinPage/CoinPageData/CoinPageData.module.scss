@@ -1,60 +1,48 @@
 @mixin addMargin1 {
-  margin: 4px 0;
   background-color: rgba(118, 111, 111, 0.82);
-  //border: .1px solid black;
   backdrop-filter: blur(15px);
 }
-@mixin addMargin2 {
-  margin-top: 4px;
+@mixin addPadding {
+  padding: 5px;
 }
-
 
 .grid_data {
   width: 100%;
-  margin: 0 auto;
+  margin: 2px auto;
   display: grid;
   grid-template-areas: 'ms hs ss sts''m h s st';
   grid-template-columns: 6fr 2fr 2.3fr 1fr;
   -moz-user-select: text;
-  font-size: 13px;
+  font-size: 16px;
   background-color: rgba(255, 255, 255, 0);
   backdrop-filter: blur(15px);
-  &:hover {
+  color: #f5f5f5;
 
+  &:hover {
     &:first-child>div{
       background-color: rgba(29, 29, 29, 0.19);
       backdrop-filter: blur(10px);
       color: #ffffff;
+
       div{
         color: white;
       }
-
     }
   }
 
   .miner_s {
     grid-area: ms;
     @include addMargin1;
-    padding: 10px;
-
+    @include addPadding;
     font-weight: bold;
-    //color: #ffffff;
-
 
     .miner {
-      grid-area: m;
-      //@include addMargin1;
-
-      color: black;
       font-weight: 400;
-
 
       .longMiner{
         font-size: 10px;
         &:hover{
-          //user-select: all;
           cursor: pointer;
-          //text-decoration: underline;
         }
 
         i{
@@ -63,115 +51,91 @@
             color: #e3bd37;
           }
         }
+
         .copy{
           color: #e3bd37;
           font-weight: 600;
           font-size: 10px;
         }
-
       }
 
       .shortMiner{
         font-size: 15px;
+
         &:hover{
-          //user-select: all;
           cursor: pointer;
-          //text-decoration: underline;
         }
+
         i{
           margin-left: 5px;
           &:active{
             color: #e3bd37;
           }
         }
+
         .copy{
           color: #e3bd37;
           font-weight: 600;
           font-size: 10px;
         }
-
       }
-
     }
-
   }
 
   .hashrate_s {
     grid-area: hs;
     @include addMargin1;
-    padding: 10px;
-
+    @include addPadding;
     font-weight: bold;
 
     .hashrate {
       grid-area: h;
-      @include addMargin2;
-      color: black;
       font-weight: 400;
-
-
     }
-
   }
 
   .shares_s {
     grid-area: ss;
     @include addMargin1;
-    padding: 10px;
+    @include addPadding;
     font-weight: bold;
-    color: black;
 
     .shares {
       grid-area: s;
-      @include addMargin2;
-      color: black;
       font-weight: 400;
-
-
-
     }
-
   }
+
   .status_s{
     grid-area: sts;
     @include addMargin1;
-    padding: 10px;
+    @include addPadding;
     font-weight: bold;
-    color: black;
 
     .status_offline{
       grid-area: st;
-      @include addMargin2;
-      color: black;
       font-weight: 400;
 
       span{
         background-color: #cb2410;
         border: 0.2px solid rgba(118, 110, 110, 0.17);
         border-radius: 5px;
-        padding: 2px;
         font-weight: 400;
         color: white;
         }
       }
 
-
-
     .status_online{
       grid-area: st;
-      @include addMargin2;
-      color: black;
       font-weight: 400;
 
       span{
         background-color: #1ca00d;
         border: 0.2px solid rgba(118, 110, 110, 0.17);
         border-radius: 5px;
-        padding: 2px;
         font-weight: 400;
         color: #ffffff;
       }
     }
   }
-
 }

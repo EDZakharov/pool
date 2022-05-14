@@ -6,32 +6,96 @@ import evoxLogo from "./img/evox-prop.png";
 import ergoLogo from "./img/ergo.png";
 import siteLogo from "./img/logo56.png";
 import style from "./Components/Content/ContentComponent.module.scss";
-
-
-
 export const images = {ethLogo,etcLogo,burstLogo,kevaLogo,evoxLogo,ergoLogo,siteLogo}
 
-export let hashFilter = (data) => {
 
+export let convertTimestamp = (timestamp) => {
+    let d = new Date(timestamp * 1000), // Convert the passed timestamp to milliseconds
+        yyyy = d.getFullYear(),
+        mm = ('0' + (d.getMonth() + 1)).slice(-2),  // Months are zero based. Add leading 0.
+        dd = ('0' + d.getDate()).slice(-2),         // Add leading 0.
+        hh = ('0' + d.getHours()).slice(-2),
+        min = ('0' + d.getMinutes()).slice(-2),     // Add leading 0.
+        time;
+
+    time = hh + ':' + min + ', '+ dd + '-' + mm + '-' + yyyy
+    return time;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export let getLastBeat = (lastBeat) => {
+    let d = new Date(lastBeat * 1000),
+        hh = d.getHours(),
+        min = d.getMinutes(),
+        sec = d.getSeconds(),
+        time;
+
+        time = hh + ':' + min + ':' + sec
+
+    console.log(time)
+    return time
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export let hashFilter = (data) => {
     if (data !== undefined) {
         if (data.toString().length <= 3) {
-            return {hashrate: Number(data.toFixed(2)), unit:' Hs'}
+            return {hashrate: Number(data.toFixed(2)), unit:' H/s'}
         }
         if (data.toString().length > 3 && data.toString().length <= 6) {
             let x = data / 1000
-            return {hashrate: Number(x.toFixed(0)), unit:' kHs'}
+            return {hashrate: Number(x.toFixed(0)), unit:' kH/s'}
         }
         if (data.toString().length > 6 && data.toString().length <= 9) {
             let x = data / 1000000
-            return {hashrate: Number(x.toFixed(0)), unit:' MHs'}
+            return {hashrate: Number(x.toFixed(0)), unit:' MH/s'}
         }
         if (data.toString().length > 9 && data.toString().length < 12) {
             let x = data / 1000000000
-            return {hashrate: Number(x.toFixed(2)), unit:' GHs'}
+            return {hashrate: Number(x.toFixed(2)), unit:' GH/s'}
         }
         if (data.toString().length > 12 && data.toString().length <= 15) {
             let x = data / 1000000000
-            return {hashrate: Number(x.toFixed(0)), unit:' GHs'}
+            return {hashrate: Number(x.toFixed(0)), unit:' GH/s'}
         }
 
     } else return 0

@@ -15,6 +15,10 @@
   a {
     text-decoration: none;
     color: #c9c9c9;
+
+    &:hover{
+      text-decoration: none;
+    }
   }
 
   .coin_logo_C {
@@ -36,7 +40,7 @@
     grid-area: s;
     font-size: 26px;
 
-    text-transform: uppercase;
+    //text-transform: uppercase;
 
     @media (min-width: 0px) {
       font-size: 12px;

@@ -18,12 +18,11 @@ const Header = () => {
         {href: '/e4pizor', icon: <i className="fa-solid fa-basket-shopping"/>, text: 'E4pizor'},
     ]
 
-
     return (
         <div className={style.header}>
             <div className={style.logo__wrapper}>
                 <Link to="/"><img src={imgFilter('logo')} className={style.logo} alt='#'/></Link>
-                <Link to="/"><span>e4p1k0 mining pools</span></Link>
+                <Link to="/"><span>E4p1k0 mining pools</span></Link>
             </div>
             <div className={style.headerLinks}>
                 {menuList ? menuList.map(item => {

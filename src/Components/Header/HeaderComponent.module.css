@@ -12,6 +12,8 @@
   z-index: 300; }
   .header a {
     text-decoration: none; }
+    .header a:hover {
+      text-decoration: none; }
   .header .logo__wrapper {
     grid-area: l;
     display: flex;
@@ -26,8 +28,7 @@
     grid-area: s;
     color: white;
     font-size: 26px;
-    cursor: pointer;
-    text-transform: uppercase; }
+    cursor: pointer; }
     @media (min-width: 0px) {
       .header span {
         font-size: 12px; } }

@@ -1,6 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 
 @mixin addGridElem {
-
   background-size: 390px 200px;
   border: .1px solid rgb(227, 189, 55);
   border-radius: 5px;
@@ -14,34 +17,36 @@
   box-shadow: 0 0 10px rgb(14, 14, 14);
 }
 
+
+
+
+
 @mixin allData {
-
-
   color: black;
   background-size: 1000px 1000px;
   overflow: auto;
   user-select: none;
-  height: 100vh;
-
-
+  height: 88vh;
+  padding-top: 50px;
 
   .coinData{
-    margin: 110px 0 0 0;
     display: grid;
     grid-template-areas: 'graph''input''stats' 'showMinersBtn';
-    grid-template-rows: 0.7fr 0.1fr 0.5fr 0.1fr;
 
     .graph{
       grid-area: graph;
-      color: #ffffff;
-      //background-color: #554d4d;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-self: center;
+      justify-items: center;
 
-      //margin: 0 20px
-
-      span{
-        position: absolute;
-        left: 50%;
+      .chartsGraph{
+        width: 100%;
+        margin: 10px 0 10px 0;
+        border-radius: 15px;
       }
+
     }
 
     .inputForm{
@@ -74,7 +79,6 @@
         border-radius: 5px;
         //background-color: rgba(255, 255, 255, 0);
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-
         background-color: rgba(29, 29, 29, 0.19);
         backdrop-filter: blur(15px);
         color: white;
@@ -250,33 +254,36 @@
 
     .coin_column_grid{
       display: grid;
-      font-size: 13px;
+      font-size: 20px;
       grid-template-areas: 'w h s ss';
-      font-weight: bold;
+      //font-weight: bold;
       grid-template-columns: 6fr 2fr 2.3fr 1fr;
       -moz-user-select: text;
       //margin-top: 10px;
       background-color: grey;
       color: white;
-      padding: 13px 0;
+      //padding: 13px 0;
+      padding-bottom: 5px;
+      align-items: center;
+      height: 40px;
 
 
       .wallet{
         grid-area: w;
-        padding-left: 10px;
+        padding-left: 150px;
 
       }
       .hashrate{
         grid-area: h;
-        padding-left: 10px;
+        //padding-left: 10px;
       }
       .shares{
         grid-area: s;
-        padding-left: 10px;
+        //padding-left: 10px;
       }
       .status{
         grid-area: ss;
-        padding-left: 10px;
+        //padding-left: 10px;
       }
 
 

@@ -13,6 +13,9 @@
 
   a {
     text-decoration: none;
+    &:hover{
+      text-decoration: none;
+    }
   }
 
   .logo__wrapper{
@@ -35,7 +38,7 @@
     color: white;
     font-size: 26px;
     cursor: pointer;
-    text-transform: uppercase;
+    //text-transform: uppercase;
 
     @media (min-width: 0px) {
       font-size: 12px;

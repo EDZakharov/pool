@@ -77,11 +77,11 @@ export const CoinPage = (props) => {
 
     return (props.coinPage.isFetching ? <Fetcher/> : <div className={localStorage.getItem('showRandomBackStyle')}>
         <div className={style.coinData}>
-            {props.coinPage.fullStats.charts && props.coinPage.fullStats.charts.length !== 0 ?
-                <div className={style.graph}>
-                    <Charts charts={props.coinPage.fullStats.charts} text={`Общая мощность ${thisPool} пула`}/>
+            {props.coinPage.fullStats.charts && props.coinPage.fullStats.charts.length !== 0 ? <div className={style.graph}>
+                    <div className={style.chartsGraph}>
+                        <Charts charts={props.coinPage.fullStats.charts} text={`Общая мощность ${thisPool} пула`}/>
+                    </div>
                 </div> : <div className={style.graph}><span>Загрузка..</span></div>}
-
             {thisPool === 'evox-prop' || thisPool === 'evox-solo' || thisPool === 'keva' ?
                 <div className={style.inputForm}></div> : <div className={style.inputForm}>
                     <img src={coinLogo} alt='logo'/>
@@ -95,7 +95,7 @@ export const CoinPage = (props) => {
             <div className={style.stats}>
                 <div className={style.stats__grid}>
                     <div
-                        className={style.currentEffort}>Удача: {isNaN(luck) ? 'not found' : `${luck.toFixed(0)} %`}</div>
+                        className={style.currentEffort}>Текущая удача: {isNaN(luck) ? 'not found' : `${luck.toFixed(0)} %`}</div>
                     <div className={style.fee}>Комиссия пула: {props.coinPage.fullStats.fee} %</div>
                     <div
                         className={style.hashrate}>Хэшрейт: {hashFilter(props.coinPage.fullStats.hashrate).hashrate}{hashFilter(props.coinPage.fullStats.hashrate).unit}</div>
@@ -112,10 +112,10 @@ export const CoinPage = (props) => {
                  onClick={showMiners}>{!checked ? 'Показать список майнеров' : 'Убрать список майнеров'}</div>
             {checked ? <div className={style.totalHashrate} id='anchorBtn'>
                 <div className={style.coin_column_grid}>
-                    <div className={style.wallet}>Кошелек:</div>
-                    <div className={style.hashrate}>Хэшрейт:</div>
-                    <div className={style.shares}>Последняя шара:</div>
-                    <div className={style.status}>Статус:</div>
+                    <div className={style.wallet}>Кошелек</div>
+                    <div className={style.hashrate}>Хэшрейт</div>
+                    <div className={style.shares}>Последняя шара</div>
+                    <div className={style.status}>Статус</div>
                 </div>
                 <div className={style.minersWrapper}>
                     {props.coinPage.miners.map(el => {

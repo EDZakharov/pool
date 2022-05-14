@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import style from './AccountData.module.scss'
 import Fetcher from "../Fetcher/Fetcher";
-import {checkEnd, hashFilter, showDate} from "../../Filters";
+import {checkEnd, convertTimestamp, getLastBeat, hashFilter} from "../../Filters";
 import Charts from "../Charts/Charts";
 import Err404 from "../404/404";
 import InnerData from "./InnerData";
@@ -129,7 +129,7 @@ const AccountData = (props) => {
         <div className={style.account}>
             <div className={style.graph}>
                 <div className={style.chartsGraph}>
-                    <Charts text={`Account: ${localStorage.getItem('account')}`}
+                    <Charts text={`Кошелек: ${localStorage.getItem('account')}`}
                             charts={props.account.accountData.charts}/>
                 </div>
             </div>
@@ -161,16 +161,17 @@ const AccountData = (props) => {
                                             type={'workers'}
                                         />
                                         {props.account.accountData.workers.map(el => {
-                                            console.log(props.account.accountData)
                                             let timestamp = new Date(el.lastBeat * 1000);
-                                            let hours = timestamp.getHours()
-                                            let minutes = '0' + timestamp.getMinutes()
-                                            let seconds = '0' + timestamp.getSeconds()
+                                            let setEnd = timestamp.getSeconds().toString().slice(-1)
+
+
+
                                             return <InnerData
                                                 key={el.name}
                                                 el1={el.name}
                                                 el2={hashFilter(el.hr).hashrate + ' ' + hashFilter(el.hr).unit}
-                                                el3={`${hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2)}`}
+                                                // el3={`${timestamp.getSeconds()} секун${checkEnd(setEnd)} назад`}
+                                                el3={`${getLastBeat(el.lastBeat)}`}
                                                 type={'workers'}
                                             />
 
@@ -193,11 +194,14 @@ const AccountData = (props) => {
                                             type={'payments'}
                                         />
                                         {props.account.accountData.payments.payments ? props.account.accountData.payments.payments.map(el => {
+
+
+
                                             return <InnerData
                                                 key={el.tx}
                                                 el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
                                                 el2={<a onClick={event => event.stopPropagation()} href={txChecker(el.tx)}>{el.tx}</a>}
-                                                el3={el.timestamp}
+                                                el3={convertTimestamp(el.timestamp)}
                                                 type={'payments'}
                                             />
                                         }) : ''}

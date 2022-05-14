@@ -37,7 +37,7 @@ const CoinCard = (props) => {
             </div>
             <div className={style.coinCard_footer}>
                 <NavLink className={style.link} onClick={onButtonLinkClick} to={`${adr}`}>
-                    <div className={style.start_btn}>Подключиться</div>
+                    <div className={style.start_btn}>Перейти на пул</div>
                 </NavLink>
 
             </div>
