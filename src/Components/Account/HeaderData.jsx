@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './HeaderData.module.scss'
 
-const HeaderData = ({el1,el2,el3,type}) => {
+const HeaderData = ({el1,el2,el3,el4,type}) => {
 
     if(type === 'payments'){
         return (
@@ -11,7 +11,8 @@ const HeaderData = ({el1,el2,el3,type}) => {
                 <div className={style.headerData__el3}>{el3}</div>
             </div>
         );
-    }if(type === 'workers'){
+    }
+    if(type === 'workers'){
         return (
             <div className={style.headerData__grid__workers}>
                 <div className={style.headerData__el1}>{el1}</div>
@@ -37,6 +38,16 @@ const HeaderData = ({el1,el2,el3,type}) => {
 
                     </div>
                 </div>
+            </div>
+        );
+    }
+    if(type === 'rewards'){
+        return (
+            <div className={style.headerData__grid__rewards}>
+                <div className={style.headerData__el1}>{el1}</div>
+                <div className={style.headerData__el2}><div>{el2}</div></div>
+                <div className={style.headerData__el3}><div>{el3}</div></div>
+                <div className={style.headerData__el4}><div>{el4}</div></div>
             </div>
         );
     }

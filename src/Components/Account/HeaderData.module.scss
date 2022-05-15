@@ -103,3 +103,46 @@
 
   }
 }
+
+//REWARDS
+.headerData__grid__rewards{
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-size: 20px;
+  background-color: #7f7f7f;
+  height: 40px;
+  padding-bottom: 5px;
+
+  div{
+  }
+
+  .headerData__el1{
+    flex-grow: 4;
+    padding-left: 5%;
+  }
+
+  .headerData__el2{
+    flex-grow: 3;
+    div{
+      padding-left: 14%;
+    }
+  }
+
+  .headerData__el3{
+    flex-grow: 2;
+    width: 500px;
+    div{
+      padding-left: 49%;
+    }
+  }
+
+  .headerData__el4{
+    flex-grow: 1;
+    padding-right: 2%;
+    div{
+      padding-left: 16%;
+      white-space: nowrap;
+    }
+  }
+}

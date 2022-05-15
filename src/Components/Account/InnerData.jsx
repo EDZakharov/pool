@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './InnerData.module.scss'
 
-const InnerData = ({el1,el2,el3,type}) => {
+const InnerData = ({el1,el2,el3,el4,type}) => {
 
     if(type === 'payments'){
         return (
@@ -39,6 +39,16 @@ const InnerData = ({el1,el2,el3,type}) => {
 
                     </div>
                 </div>
+            </div>
+        );
+    }
+    if(type === 'rewards'){
+        return (
+            <div className={style.inner__data__grid__rewards}>
+                <div className={style.inner__elem1}>{el1}</div>
+                <div className={style.inner__elem2}>{el2}</div>
+                <div className={style.inner__elem3}>{el3}</div>
+                <div className={style.inner__elem4}>{el4}</div>
             </div>
         );
     }

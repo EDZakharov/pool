@@ -80,4 +80,25 @@ a {
     .inner__data__grid__workers .inner__elem3 .el3_gr {
       grid-area: 2; }
 
+.inner__data__grid__rewards {
+  display: flex;
+  align-items: center;
+  background-color: #6e6767;
+  color: #ffffff;
+  margin-top: 2px;
+  font-size: 15px; }
+  .inner__data__grid__rewards div {
+    padding: 5px 0 5px 0; }
+  .inner__data__grid__rewards .inner__elem1 {
+    flex-grow: 4;
+    padding-left: 5%; }
+  .inner__data__grid__rewards .inner__elem2 {
+    flex-grow: 3; }
+  .inner__data__grid__rewards .inner__elem3 {
+    flex-grow: 2;
+    width: 500px; }
+  .inner__data__grid__rewards .inner__elem4 {
+    flex-grow: 1;
+    padding-right: 2%; }
+
 /*# sourceMappingURL=InnerData.module.css.map */

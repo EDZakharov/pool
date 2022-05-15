@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import style from './AccountData.module.scss'
 import Fetcher from "../Fetcher/Fetcher";
-import {checkEnd, convertTimestamp, getLastBeat, hashFilter} from "../../Filters";
+import {convertTimestamp, getLastBeat, hashFilter} from "../../Filters";
 import Charts from "../Charts/Charts";
 import Err404 from "../404/404";
 import InnerData from "./InnerData";
@@ -113,6 +113,9 @@ const AccountData = (props) => {
         if(pool === 'eth'){
             return `https://etherscan.io//tx/${tx}`
         }
+        if(pool === 'eth-solo'){
+            return `https://etherscan.io//tx/${tx}`
+        }
         if(pool === 'etc'){
             return `https://etc.tokenview.com/en/tx/${tx}`
         }
@@ -123,6 +126,25 @@ const AccountData = (props) => {
             return '#'
         }
     }
+    let blockHashChecker = (blochHash) => {
+        if(pool === 'eth'){
+            return `https://etherscan.io/block/${blochHash}`
+        }
+        if(pool === 'eth-solo'){
+            return `https://etherscan.io/block/${blochHash}`
+        }
+        if(pool === 'etc'){
+            return `https://etc.tokenview.com/en/block/${blochHash}`
+        }
+        if(pool === 'etc-solo'){
+            return `https://etc.tokenview.com/en/block/${blochHash}`
+        }
+        else {
+            return '#'
+        }
+    }
+
+    console.log(props.account.accountData)
 
 
     return (props.account.isFetching || !props.account.accountData.hr ? checkToErr() :
@@ -153,7 +175,7 @@ const AccountData = (props) => {
                                 <div className={style.dropText}>
                                     <div className={style.dropText__data}>
                                         <Total
-                                            text={`Общий хэшрейт: ${hashFilter(summHashrate()).hashrate} ${hashFilter(summHashrate()).unit}`}/>
+                                            text={`Воркеров: ${props.account.accountData.workers.length} | Хэшрейт: ${hashFilter(summHashrate()).hashrate} ${hashFilter(summHashrate()).unit}`}/>
                                         <HeaderData
                                             el1={'Имя воркера'}
                                             el2={'Хэшрейт'}
@@ -161,9 +183,8 @@ const AccountData = (props) => {
                                             type={'workers'}
                                         />
                                         {props.account.accountData.workers.map(el => {
-                                            let timestamp = new Date(el.lastBeat * 1000);
-                                            let setEnd = timestamp.getSeconds().toString().slice(-1)
-
+                                            // let timestamp = new Date(el.lastBeat * 1000);
+                                            // let setEnd = timestamp.getSeconds().toString().slice(-1)
 
 
                                             return <InnerData
@@ -188,15 +209,12 @@ const AccountData = (props) => {
                                     <div className={style.dropText__data}>
                                         <Total text={`Всего выплачено: ${(summPayments() / 1000000000).toFixed(3)} ${poolChecker(pool)}`}/>
                                         <HeaderData
-                                            el1={'Количество'}
+                                            el1={'Cумма'}
                                             el2={'Номер транзакции'}
                                             el3={'Дата'}
                                             type={'payments'}
                                         />
                                         {props.account.accountData.payments.payments ? props.account.accountData.payments.payments.map(el => {
-
-
-
                                             return <InnerData
                                                 key={el.tx}
                                                 el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
@@ -214,7 +232,26 @@ const AccountData = (props) => {
                             {toggleRewards ? <div className={style.dropdown__content}>
                                 <div className={style.dropText}>
                                     <div className={style.dropText__data}>
-                                        <Total text={`Всего наград: ${props.account.accountData.rewards.rewardsTotal}`}/>
+                                        <Total text={`Всего наград: ${props.account.accountData.rewards.rewards.length}`}/>
+                                        <HeaderData
+                                            el1={'Cумма'}
+                                            el2={'Дата'}
+                                            el3={'Хэш'}
+                                            el4={'Высота блока'}
+                                            type={'rewards'}
+                                        />
+                                        {props.account.accountData.rewards.rewards ? props.account.accountData.rewards.rewards.map(el => {
+                                            return <InnerData
+
+
+                                                key={el.blockHash}
+                                                el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
+                                                el2={convertTimestamp(el.timestamp)}
+                                                el3={<a onClick={event => event.stopPropagation()} href={blockHashChecker(el.blockHash)}>{el.blockHash}</a>}
+                                                el4={el.blockHeight}
+                                                type={'rewards'}
+                                            />
+                                        }) : ''}
                                     </div>
                                 </div>
                             </div> : ''}

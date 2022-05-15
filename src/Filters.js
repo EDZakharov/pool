@@ -6,7 +6,8 @@ import evoxLogo from "./img/evox-prop.png";
 import ergoLogo from "./img/ergo.png";
 import siteLogo from "./img/logo56.png";
 import style from "./Components/Content/ContentComponent.module.scss";
-export const images = {ethLogo,etcLogo,burstLogo,kevaLogo,evoxLogo,ergoLogo,siteLogo}
+
+export const images = {ethLogo, etcLogo, burstLogo, kevaLogo, evoxLogo, ergoLogo, siteLogo}
 
 
 export let convertTimestamp = (timestamp) => {
@@ -18,84 +19,68 @@ export let convertTimestamp = (timestamp) => {
         min = ('0' + d.getMinutes()).slice(-2),     // Add leading 0.
         time;
 
-    time = hh + ':' + min + ', '+ dd + '-' + mm + '-' + yyyy
+    time = hh + ':' + min + ', ' + dd + '-' + mm + '-' + yyyy
     return time;
 
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export let getLastBeat = (lastBeat) => {
+    console.log(lastBeat)
     let d = new Date(lastBeat * 1000),
-        hh = d.getHours(),
-        min = d.getMinutes(),
-        sec = d.getSeconds(),
+        h = d.getUTCHours(),
+        min = d.getUTCMinutes(),
         time;
+    time = h + ':' + min
 
-        time = hh + ':' + min + ':' + sec
-
-    console.log(time)
     return time
+
+    // let currentDate = Date.now()
+    // let date = new Date(currentDate)
+    // let dateObj = new Date(lastBeat * 1000);
+    // let hours = Math.abs(Math.abs(date.getUTCHours()) - Math.abs(dateObj.getUTCHours()))
+    // let minutes = Math.abs(Math.abs(date.getUTCMinutes()) - Math.abs(dateObj.getUTCMinutes()))
+    // let seconds = Math.abs(Math.abs(date.getUTCSeconds()) - Math.abs(dateObj.getUTCSeconds()))
+    //
+    // let result = hours + ':' + minutes + ':' + seconds
+
+
+    // let date = new Date(lastBeat).getTime(); // заданная дата в Unix-epoch в мс
+    // let currentDate =  new Date().getTime(); // текущая дата в Unix-epoch в мс
+    //
+    // let sec = (currentDate - date)/1000
+    // let min = sec/60
+    // let hours = min/60
+    //
+    // let formattedTime = hours.toString().padStart(2, '0') + ':' +
+    //     minutes.toString().padStart(2, '0') + ':' +
+    //     seconds.toString().padStart(2, '0');
+    //
+    //
+    // return hours.toFixed(0) + ':' + min.toFixed(0) + ':' + sec.toFixed(2)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 export let hashFilter = (data) => {
     if (data !== undefined) {
         if (data.toString().length <= 3) {
-            return {hashrate: Number(data.toFixed(2)), unit:' H/s'}
+            return {hashrate: Number(data.toFixed(2)), unit: ' H/s'}
         }
         if (data.toString().length > 3 && data.toString().length <= 6) {
             let x = data / 1000
-            return {hashrate: Number(x.toFixed(0)), unit:' kH/s'}
+            return {hashrate: Number(x.toFixed(0)), unit: ' kH/s'}
         }
         if (data.toString().length > 6 && data.toString().length <= 9) {
             let x = data / 1000000
-            return {hashrate: Number(x.toFixed(0)), unit:' MH/s'}
+            return {hashrate: Number(x.toFixed(0)), unit: ' MH/s'}
         }
         if (data.toString().length > 9 && data.toString().length < 12) {
             let x = data / 1000000000
-            return {hashrate: Number(x.toFixed(2)), unit:' GH/s'}
+            return {hashrate: Number(x.toFixed(2)), unit: ' GH/s'}
         }
         if (data.toString().length > 12 && data.toString().length <= 15) {
             let x = data / 1000000000
-            return {hashrate: Number(x.toFixed(0)), unit:' GH/s'}
+            return {hashrate: Number(x.toFixed(0)), unit: ' GH/s'}
         }
 
     } else return 0
@@ -403,6 +388,7 @@ export const showDate = (data) => {
 
 export let showRandomBgcStyle = () => {
     let x = Math.ceil(Math.random() * 10)
+
     function random(x) {
         if (x <= 3) {
             return style.coin
@@ -414,6 +400,7 @@ export let showRandomBgcStyle = () => {
             return style.coin3
         }
     }
+
     let result = random(x)
     localStorage.setItem('showRandomBgcStyle', result)
 }
