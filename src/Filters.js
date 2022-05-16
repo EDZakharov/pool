@@ -11,12 +11,12 @@ export const images = {ethLogo, etcLogo, burstLogo, kevaLogo, evoxLogo, ergoLogo
 
 
 export let convertTimestamp = (timestamp) => {
-    let d = new Date(timestamp * 1000), // Convert the passed timestamp to milliseconds
+    let d = new Date(timestamp * 1000),
         yyyy = d.getFullYear(),
-        mm = ('0' + (d.getMonth() + 1)).slice(-2),  // Months are zero based. Add leading 0.
-        dd = ('0' + d.getDate()).slice(-2),         // Add leading 0.
+        mm = ('0' + (d.getMonth() + 1)).slice(-2),
+        dd = ('0' + d.getDate()).slice(-2),
         hh = ('0' + d.getHours()).slice(-2),
-        min = ('0' + d.getMinutes()).slice(-2),     // Add leading 0.
+        min = ('0' + d.getMinutes()).slice(-2),
         time;
 
     time = hh + ':' + min + ', ' + dd + '-' + mm + '-' + yyyy
@@ -34,30 +34,6 @@ export let getLastBeat = (lastBeat) => {
     time = h + ':' + min
 
     return time
-
-    // let currentDate = Date.now()
-    // let date = new Date(currentDate)
-    // let dateObj = new Date(lastBeat * 1000);
-    // let hours = Math.abs(Math.abs(date.getUTCHours()) - Math.abs(dateObj.getUTCHours()))
-    // let minutes = Math.abs(Math.abs(date.getUTCMinutes()) - Math.abs(dateObj.getUTCMinutes()))
-    // let seconds = Math.abs(Math.abs(date.getUTCSeconds()) - Math.abs(dateObj.getUTCSeconds()))
-    //
-    // let result = hours + ':' + minutes + ':' + seconds
-
-
-    // let date = new Date(lastBeat).getTime(); // заданная дата в Unix-epoch в мс
-    // let currentDate =  new Date().getTime(); // текущая дата в Unix-epoch в мс
-    //
-    // let sec = (currentDate - date)/1000
-    // let min = sec/60
-    // let hours = min/60
-    //
-    // let formattedTime = hours.toString().padStart(2, '0') + ':' +
-    //     minutes.toString().padStart(2, '0') + ':' +
-    //     seconds.toString().padStart(2, '0');
-    //
-    //
-    // return hours.toFixed(0) + ':' + min.toFixed(0) + ':' + sec.toFixed(2)
 }
 
 

@@ -11,7 +11,8 @@ export const CoinPageData = (props) => {
 
 
     let textCopy = () => {
-        navigator.clipboard.writeText(props.miner)
+        navigator.clipboard.writeText(props.miner).then(res => res)
+        props.addInputValue(props.miner)
         setShow(!show)
         setTimeout(() => {
             setShow(false)
@@ -23,11 +24,10 @@ export const CoinPageData = (props) => {
         <div className={style.grid_data}>
             <div className={style.miner_s}>
                 <div className={style.miner}>{props.miner.toString().length > 60 ?
-                    <span className={style.longMiner}>{props.miner}
-                        <i className="fa-solid fa-copy" onClick={textCopy}/>{show ?
+                    <span className={style.longMiner} onClick={textCopy}>{props.miner}
+                        <i className="fa-solid fa-copy" />{show ?
                             <span className={style.copy}> Copy</span> : ''}</span> :
-                    <span className={style.shortMiner}>{props.miner} <i className="fa-solid fa-copy"
-                                                                        onClick={textCopy}/>{show ?
+                    <span className={style.shortMiner} onClick={textCopy}>{props.miner} <i className="fa-solid fa-copy"/>{show ?
                         <span className={style.copy}> Copy</span> : ''}</span>}</div>
             </div>
             <div className={style.hashrate_s}>

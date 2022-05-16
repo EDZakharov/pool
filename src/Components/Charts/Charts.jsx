@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Highcharts from 'highcharts'
 import './Charts.css'
 import HighchartsReact from 'highcharts-react-official'
@@ -163,7 +163,16 @@ let setupOptions = (props) => {
         }]
     }
 }
+
+// useEffect(()=>{
+//     return () => {
+//
+//     }
+// },[])
+
+
 const Charts = (props) => {
+    console.log(props)
     if(props.charts){
         return <div className='Charts'>{props.charts !== 'n/a' ? <HighchartsReact
             highcharts={Highcharts}

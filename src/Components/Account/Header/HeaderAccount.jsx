@@ -21,7 +21,7 @@ const HeaderAccount = () => {
     return (
         <div className={style.header}>
             <div className={style.logo__wrapper}>
-                <NavLink to={'/'}><img src={imgFilter(selectedCoin)} alt='logo' className={style.siteLogo}/></NavLink>
+                <NavLink to={`/${selectedCoin}`}><img src={imgFilter(selectedCoin)} alt='logo' className={style.siteLogo}/></NavLink>
                 <NavLink to={`/${selectedCoin}`} ><span className={style.currentCoin}>Назад</span></NavLink>
             </div>
             <div className={style.headerLinks}>

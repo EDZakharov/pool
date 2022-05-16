@@ -68,11 +68,13 @@
       }
 
       input{
+        display: flex;
+        align-items: center;
         margin: 0 8px 0 10px;
         width: 92%;
         min-height: 20%;
-        height: 40px;
-        padding: 0 10px;
+        //height: 40px;
+        padding: 8px 10px;
         font-size: 20px;
         //outline:none;
         border: .1px solid white;

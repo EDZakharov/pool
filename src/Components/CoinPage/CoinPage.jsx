@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import style from './CoinPage.module.scss'
 import {CoinPageData} from "./CoinPageData/CoinPageData";
 import Fetcher from "../Fetcher/Fetcher";
@@ -15,7 +15,6 @@ export const CoinPage = (props) => {
     let lastBlockFound = `${new Date(props.coinPage.fullStats.lastBlockFound * 1000).getMinutes()} мин. назад`;
 
     let [checked, setChecked] = useState(false);
-    let [value, SetValue] = useState('');
 
     useEffect(() => {
 
@@ -47,8 +46,8 @@ export const CoinPage = (props) => {
             clearInterval(start)
             props.dellFullStats()
             props.dellMinersData()
-            navigator.clipboard.writeText('')
-
+            navigator.clipboard.writeText('').then(res => res)
+            props.addAccountAddress('')
         }
     }, [])
 
@@ -57,23 +56,16 @@ export const CoinPage = (props) => {
     }
 
     let setAddr = (e) => {
-        if (e.target.value !== '') {
-            SetValue(e.target.value)
-            props.addAccountAddress(e.target.value)
-
-        }
+        props.addAccountAddress(e.target.value)
     }
 
     let addrFilter = (coinName) => {
-        if (props.account.accountAddress !== value) {
+        if (props.coinPage.accountAddress === null) {
             return `/${coinName}`
         }
-        if (props.account.accountAddress === null) {
-            return `/${coinName}`
-        } else {
-            return `/${coinName}/account/${props.account.accountAddress}`
-        }
+        return `/${coinName}/account/${props.coinPage.accountAddress}`
     }
+
 
     return (props.coinPage.isFetching ? <Fetcher/> : <div className={localStorage.getItem('showRandomBackStyle')}>
         <div className={style.coinData}>
@@ -84,12 +76,12 @@ export const CoinPage = (props) => {
                     </div>
                 </div> : <div className={style.graph}><span>Загрузка..</span></div>}
             {thisPool === 'evox-prop' || thisPool === 'evox-solo' || thisPool === 'keva' ?
-                <div className={style.inputForm}></div> : <div className={style.inputForm}>
+                <div className={style.inputForm}/> : <div className={style.inputForm}>
                     <img src={coinLogo} alt='logo'/>
                     <input type='text' autoComplete='off' placeholder={`Введите адрес кошелька фермы`}
-                           onChange={setAddr}/>
+                           onChange={setAddr} value={props.coinPage.accountAddress !== null ? props.coinPage.accountAddress : ''}/>
                     <Link to={addrFilter(thisPool)}>
-                        <div className={style.inputBtn}><i className="fa-solid fa-magnifying-glass"></i></div>
+                        <div className={style.inputBtn}><i className="fa-solid fa-magnifying-glass"/></div>
                     </Link>
                 </div>}
 
@@ -127,7 +119,9 @@ export const CoinPage = (props) => {
                             <CoinPageData miner={el.address}
                                           hashrate={hashFilter(el.hr)}
                                           lastShare={el.lastBeat}
-                                          offline={el.offline}/>
+                                          offline={el.offline}
+                                          addInputValue={props.addInputValue}
+                            />
                         </div>
                     })}
                 </div>
