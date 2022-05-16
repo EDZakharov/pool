@@ -25,6 +25,23 @@ export let convertTimestamp = (timestamp) => {
 }
 
 
+export let poolChecker = (pool) => {
+    if (pool === 'etc' || pool === 'etc-solo') {
+        return 'etc'
+    }
+    if (pool === 'eth') {
+        return 'eth'
+    }
+    if (pool === 'keva') {
+        return 'keva'
+    }
+    if (pool === 'evox-prop' || pool === 'evox-solo') {
+        return 'evox'
+    }
+    return 'Coin'
+}
+
+
 export let getLastBeat = (lastBeat) => {
     console.log(lastBeat)
     let d = new Date(lastBeat * 1000),

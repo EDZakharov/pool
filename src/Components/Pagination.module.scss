@@ -1,0 +1,52 @@
+
+.pagination{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  height: 20px;
+
+  i {
+    padding-top: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0 5px;
+
+    &:active{
+      color: #e3bd37;
+    }
+
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+
+
+  .pageItem{
+    background-color: rgba(255, 255, 255, 0);
+    padding: 0 5px 0 5px;
+
+  }
+}
+
+.pageLink{
+  margin: 0 10px;
+  font-size: 18px;
+  &:hover{
+    color: #b1b1b1;
+  }
+}
+
+.active{
+  //background-color: #fff;
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #e3bd37;
+
+  }
+
+}

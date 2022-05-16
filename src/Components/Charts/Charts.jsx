@@ -121,6 +121,7 @@ let setupOptions = (props) => {
         chart: {
             type: 'spline',
             backgroundColor: 'rgba(85,77,77,0.56)',
+            height:'300px'
         },
         series: [{
             showInLegend: false,
@@ -164,15 +165,11 @@ let setupOptions = (props) => {
     }
 }
 
-// useEffect(()=>{
-//     return () => {
-//
-//     }
-// },[])
+
 
 
 const Charts = (props) => {
-    console.log(props)
+
     if(props.charts){
         return <div className='Charts'>{props.charts !== 'n/a' ? <HighchartsReact
             highcharts={Highcharts}

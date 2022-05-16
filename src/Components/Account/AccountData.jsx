@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import style from './AccountData.module.scss'
 import Fetcher from "../Fetcher/Fetcher";
-import {convertTimestamp, getLastBeat, hashFilter} from "../../Filters";
+import {convertTimestamp, getLastBeat, hashFilter, poolChecker} from "../../Filters";
 import Charts from "../Charts/Charts";
 import Err404 from "../404/404";
 import InnerData from "./InnerData";
 import HeaderData from "./HeaderData";
 import Total from "./Total";
 import DropBtn from "./DropBtn";
+import PaginatedItems from "../Pagination";
 
-let count = 0
 const AccountData = (props) => {
     let pool = localStorage.getItem('selectedCoin')
     let account = localStorage.getItem('account')
@@ -20,13 +20,11 @@ const AccountData = (props) => {
     let [toggleRewards, setToggleRewards] = useState(false)
 
     useEffect(() => {
-        setTimeout(()=>{props.showAccountDataOnce(pool, account)},500)
-
+        props.showAccountDataOnce(pool, account)
         let interval = setInterval(() => {
             props.showAccountData()
-        }, 1500)
+        }, 1000)
         return () => {
-            count = 0
             clearInterval(interval)
             props.clearCash()
             props.dellAccountData()
@@ -34,28 +32,6 @@ const AccountData = (props) => {
         }
     }, [])
 
-    let poolChecker = (pool) => {
-        if (pool === 'etc' || pool === 'etc-solo') {
-            return 'etc'
-        }
-        if (pool === 'eth') {
-            return 'eth'
-        }
-        if (pool === 'keva') {
-            return 'keva'
-        }
-        if (pool === 'evox-prop' || pool === 'evox-solo') {
-            return 'evox'
-        }
-        return 'Coin'
-    }
-
-    // let checkToErr = () => {
-    //     if (props.account.accountData.hr === 0) {
-    //         return <Fetcher/>
-    //     }
-    //     return <Fetcher/>
-    // }
 
     let summPayments = () => {
         let summ = 0
@@ -78,7 +54,7 @@ const AccountData = (props) => {
     }
 
     let dropDownPaymentsToggle = () => {
-        setTogglePayments(!togglePayments)
+        setTogglePayments(true)
         setToggleBalance(false)
         setToggleHashrate(false)
         setToggleRewards(false)
@@ -86,7 +62,7 @@ const AccountData = (props) => {
 
     let dropDownHashrateToggle = () => {
         setTogglePayments(false)
-        setToggleHashrate(!toggleHashrate)
+        setToggleHashrate(true)
         setToggleBalance(false)
         setToggleRewards(false)
     }
@@ -94,63 +70,27 @@ const AccountData = (props) => {
     let dropDownBalanceToggle = () => {
         setTogglePayments(false)
         setToggleHashrate(false)
-        setToggleBalance(!toggleBalance)
+        setToggleBalance(true)
         setToggleRewards(false)
     }
     let dropDownRewardsToggle = () => {
         setTogglePayments(false)
         setToggleHashrate(false)
         setToggleBalance(false)
-        setToggleRewards(!toggleRewards)
+        setToggleRewards(true)
     }
-
-    // console.log(props.account.accountData.payments)
-
-    let txChecker = (tx) => {
-        if(pool === 'eth'){
-            return `https://etherscan.io//tx/${tx}`
-        }
-        if(pool === 'eth-solo'){
-            return `https://etherscan.io//tx/${tx}`
-        }
-        if(pool === 'etc'){
-            return `https://etc.tokenview.com/en/tx/${tx}`
-        }
-        if(pool === 'etc-solo'){
-            return `https://etc.tokenview.com/en/tx/${tx}`
-        }
-        else {
-            return '#'
-        }
-    }
-    let blockHashChecker = (blochHash) => {
-        if(pool === 'eth'){
-            return `https://etherscan.io/block/${blochHash}`
-        }
-        if(pool === 'eth-solo'){
-            return `https://etherscan.io/block/${blochHash}`
-        }
-        if(pool === 'etc'){
-            return `https://etc.tokenview.com/en/block/${blochHash}`
-        }
-        if(pool === 'etc-solo'){
-            return `https://etc.tokenview.com/en/block/${blochHash}`
-        }
-        else {
-            return '#'
-        }
-    }
-
 
 
     return (!props.account.accountData ? <Fetcher/> :
         <div className={style.account}>
+
             <div className={style.graph}>
                 <div className={style.chartsGraph}>
                     <Charts text={`Кошелек: ${localStorage.getItem('account')}`}
                             charts={props.account.accountData.charts}/>
                 </div>
             </div>
+
             {props.account.accountData.workers.length !== 0 ?
                 <div className={style.accountData}>
                     <div className={style.flexWrapper}>
@@ -178,21 +118,7 @@ const AccountData = (props) => {
                                             el3={'Последняя шара'}
                                             type={'workers'}
                                         />
-                                        {props.account.accountData.workers.map(el => {
-                                            // let timestamp = new Date(el.lastBeat * 1000);
-                                            // let setEnd = timestamp.getSeconds().toString().slice(-1)
-
-
-                                            return <InnerData
-                                                key={el.name}
-                                                el1={el.name}
-                                                el2={hashFilter(el.hr).hashrate + ' ' + hashFilter(el.hr).unit}
-                                                // el3={`${timestamp.getSeconds()} секун${checkEnd(setEnd)} назад`}
-                                                el3={`${getLastBeat(el.lastBeat)}`}
-                                                type={'workers'}
-                                            />
-
-                                        })}
+                                        <PaginatedItems itemsPerPage={7} items={props.account.accountData.workers} type={'workers'}/>
                                     </div>
                                 </div>
                             </div> : ''}
@@ -210,21 +136,15 @@ const AccountData = (props) => {
                                             el3={'Дата'}
                                             type={'payments'}
                                         />
-                                        {props.account.accountData.payments.payments ? props.account.accountData.payments.payments.map(el => {
-                                            return <InnerData
-                                                key={el.tx}
-                                                el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
-                                                el2={<a onClick={event => event.stopPropagation()} href={txChecker(el.tx)}>{el.tx}</a>}
-                                                el3={convertTimestamp(el.timestamp)}
-                                                type={'payments'}
-                                            />
-                                        }) : ''}
+                                        <PaginatedItems itemsPerPage={7} items={props.account.accountData.payments.payments} type={'payments'}/>
                                     </div>
                                 </div>
                             </div> : ''}
                         </div>
                         <div className={style.dropDown} onClick={dropDownRewardsToggle}>
+
                             <DropBtn status={toggleRewards} text={'Награды'}/>
+
                             {toggleRewards ? <div className={style.dropdown__content}>
                                 <div className={style.dropText}>
                                     <div className={style.dropText__data}>
@@ -236,16 +156,8 @@ const AccountData = (props) => {
                                             el4={'Высота блока'}
                                             type={'rewards'}
                                         />
-                                        {props.account.accountData.rewards.rewards ? props.account.accountData.rewards.rewards.map(el => {
-                                            return <InnerData
-                                                key={el.blockHash}
-                                                el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
-                                                el2={convertTimestamp(el.timestamp)}
-                                                el3={<a onClick={event => event.stopPropagation()} href={blockHashChecker(el.blockHash)}>{el.blockHash}</a>}
-                                                el4={el.blockHeight}
-                                                type={'rewards'}
-                                            />
-                                        }) : ''}
+                                        <PaginatedItems itemsPerPage={7} items={props.account.accountData.rewards.rewards} type={'rewards'}/>
+
                                     </div>
                                 </div>
                             </div> : ''}
@@ -257,3 +169,4 @@ const AccountData = (props) => {
 };
 
 export default AccountData;
+

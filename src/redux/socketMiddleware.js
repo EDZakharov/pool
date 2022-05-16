@@ -40,7 +40,7 @@ socket.on('update', res => {
     }
 
     if (res.method === 'account') {
-        console.log(res)
+        // console.log(res)
         if (res.error !== 'Method not allowed') {
             // console.log(res)
             if (res.data !== undefined) {
@@ -103,6 +103,7 @@ export let socketMiddleware = store => next => action => {
     if (action.type === 'SHOW_ACCOUNT_DATA') {
         action.type = 'ADD_ACCOUNT_DATA'
         action.payload = storage.accountData
+        storage.accountData = undefined
         return next(action)
     }
 
