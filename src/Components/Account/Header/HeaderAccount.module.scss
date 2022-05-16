@@ -25,6 +25,10 @@
     flex-direction: row;
     align-items: center;
     z-index: 300;
+    
+    a{
+      background-color: rgba(255, 255, 255, 0);
+    }
   }
 
   .siteLogo {

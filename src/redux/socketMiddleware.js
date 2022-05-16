@@ -20,6 +20,7 @@ let storage = {
     coins: [],
     miners: [],
     fullStats: {},
+    accountData: undefined
 }
 
 
@@ -37,28 +38,34 @@ socket.on('update', res => {
     if (res.method === 'miners') {
         storage.miners = [...res.data.miners]
     }
-})
-
-let storage2 = {
-    fullStats: {},
-    accountData: null
-}
-
-socket2.on('update', res => {
-    if (res.method === 'fullStats') {
-        storage2.fullStats = {...res.data}
-    }
 
     if (res.method === 'account') {
+        console.log(res)
         if (res.error !== 'Method not allowed') {
+            // console.log(res)
             if (res.data !== undefined) {
-                    storage2.accountData = {...res.data}
+                storage.accountData = {...res.data}
             }
 
         } else {
             console.log(res.error)
         }
     }
+
+})
+
+let storage2 = {
+    fullStats: {},
+
+}
+
+socket2.on('update', res => {
+
+    if (res.method === 'fullStats') {
+        storage2.fullStats = {...res.data}
+    }
+
+
 
 
 })
@@ -95,7 +102,7 @@ export let socketMiddleware = store => next => action => {
 
     if (action.type === 'SHOW_ACCOUNT_DATA') {
         action.type = 'ADD_ACCOUNT_DATA'
-        action.payload = storage2.accountData
+        action.payload = storage.accountData
         return next(action)
     }
 
@@ -157,17 +164,17 @@ export let showAccountDataOnce = (pool, account) => {
     if (pool === 'keva' || pool === 'evox-prop' || pool === 'evox-solo') {
         return {type: SHOW_ACCOUNT_DATA, pool}
     }
-    socket2.emit('startPoolStats', {
+    socket.emit('startPoolStats', {
         pool: pool,
         method: 'account',
         address: account
     })
     return {type: SHOW_ACCOUNT_DATA, pool}
 }
-export let showAccountData = (pool) => {
-    return {type: SHOW_ACCOUNT_DATA, pool}
+export let showAccountData = () => {
+    return {type: SHOW_ACCOUNT_DATA}
 }
 export let dellAccountData = () => {
-    socket2.emit('stopStats')
+    socket.emit('stopStats')
     return {type: DELL_ACCOUNT_DATA}
 }

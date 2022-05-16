@@ -1,28 +1,24 @@
 const FETCHING = 'FETCHING/account';
 const ADD_ACCOUNT_DATA = 'ADD_ACCOUNT_DATA';
-const ADD_ACCOUNT_ADDRESS = 'ADD_ACCOUNT_ADDRESS';
+const CLEAR_CASH = 'CLEAR_CASH';
+
 
 
 
 
 let initialState = {
     isFetching: true,
-    isAccountData: false,
     accountAddress: null,
-    accountData: {}
+    accountData: undefined
 }
 
 const accountReducer = (state = initialState, action) => {
     let stateCopy = {...state};
-    stateCopy.accountData = {...state.accountData}
     switch (action.type) {
         case ADD_ACCOUNT_DATA:{
-            if (action.payload === null){
-                stateCopy.isAccountData = false;
-            }
-            if (action.payload !== null){
+            // console.log(action)
+            if (action.payload){
                 stateCopy.accountData = {...action.payload}
-                stateCopy.isAccountData = true;
             }
             return stateCopy
         }
@@ -30,15 +26,8 @@ const accountReducer = (state = initialState, action) => {
             stateCopy.isFetching = action.payload
             return stateCopy
         }
-        case ADD_ACCOUNT_ADDRESS: {
-            if (action.payload !== null) {
-                if(action.payload.length > 20){
-                    stateCopy.accountAddress = action.payload
-                    localStorage.setItem('account',action.payload)
-                }
-            } else {
-                stateCopy.accountAddress = null
-            }
+        case CLEAR_CASH: {
+            stateCopy.accountData = undefined
             return stateCopy
         }
         default: {
@@ -51,9 +40,11 @@ const accountReducer = (state = initialState, action) => {
 export const fetchingAccount = (payload) => {
     return {type: FETCHING, payload}
 }
-export const addAccountAddress = (payload) => {
-    return {type: ADD_ACCOUNT_ADDRESS, payload}
+
+export const clearCash= () => {
+    return {type: CLEAR_CASH}
 }
+
 export default accountReducer;
 
 

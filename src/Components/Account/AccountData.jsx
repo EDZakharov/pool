@@ -19,21 +19,18 @@ const AccountData = (props) => {
     let [toggleBalance, setToggleBalance] = useState(true)
     let [toggleRewards, setToggleRewards] = useState(false)
 
-
     useEffect(() => {
+        setTimeout(()=>{props.showAccountDataOnce(pool, account)},500)
 
-        setTimeout(() => {
-            props.fetchingAccount(false)
-        }, 1000)
-        props.showAccountDataOnce(pool, account)
         let interval = setInterval(() => {
-            props.showAccountData(pool)
+            props.showAccountData()
         }, 1500)
         return () => {
             count = 0
             clearInterval(interval)
-            props.fetchingAccount(true)
+            props.clearCash()
             props.dellAccountData()
+
         }
     }, [])
 
@@ -53,12 +50,12 @@ const AccountData = (props) => {
         return 'Coin'
     }
 
-    let checkToErr = () => {
-        if (props.account.accountData.hr === 0) {
-            return <Err404/>
-        }
-        return <Fetcher/>
-    }
+    // let checkToErr = () => {
+    //     if (props.account.accountData.hr === 0) {
+    //         return <Fetcher/>
+    //     }
+    //     return <Fetcher/>
+    // }
 
     let summPayments = () => {
         let summ = 0
@@ -144,10 +141,9 @@ const AccountData = (props) => {
         }
     }
 
-    console.log(props.account.accountData)
 
 
-    return (props.account.isFetching || !props.account.accountData.hr ? checkToErr() :
+    return (!props.account.accountData ? <Fetcher/> :
         <div className={style.account}>
             <div className={style.graph}>
                 <div className={style.chartsGraph}>
@@ -242,8 +238,6 @@ const AccountData = (props) => {
                                         />
                                         {props.account.accountData.rewards.rewards ? props.account.accountData.rewards.rewards.map(el => {
                                             return <InnerData
-
-
                                                 key={el.blockHash}
                                                 el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
                                                 el2={convertTimestamp(el.timestamp)}
