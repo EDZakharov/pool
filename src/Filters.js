@@ -53,6 +53,23 @@ export let getLastBeat = (lastBeat) => {
     return time
 }
 
+export let blockHashChecker = (blochHash, pool) => {
+    if(pool === 'eth'){
+        return `https://etherscan.io/block/${blochHash}`
+    }
+    if(pool === 'eth-solo'){
+        return `https://etherscan.io/block/${blochHash}`
+    }
+    if(pool === 'etc'){
+        return `https://etc.tokenview.com/en/block/${blochHash}`
+    }
+    if(pool === 'etc-solo'){
+        return `https://etc.tokenview.com/en/block/${blochHash}`
+    }
+    else {
+        return '#'
+    }
+}
 
 export let hashFilter = (data) => {
     if (data !== undefined) {

@@ -3,7 +3,8 @@ import style from './Pagination.module.scss'
 import {useEffect, useState} from "react";
 import ReactPaginate from "react-paginate";
 import InnerData from "./Account/InnerData";
-import {convertTimestamp, getLastBeat, hashFilter, poolChecker} from "../Filters";
+import {blockHashChecker, convertTimestamp, getLastBeat, hashFilter, poolChecker} from "../Filters";
+import {CoinPageData} from "./CoinPage/CoinPageData/CoinPageData";
 
 
 let pool = localStorage.getItem('selectedCoin')
@@ -26,26 +27,10 @@ let txChecker = (tx) => {
     }
 }
 
-let blockHashChecker = (blochHash) => {
-    if(pool === 'eth'){
-        return `https://etherscan.io/block/${blochHash}`
-    }
-    if(pool === 'eth-solo'){
-        return `https://etherscan.io/block/${blochHash}`
-    }
-    if(pool === 'etc'){
-        return `https://etc.tokenview.com/en/block/${blochHash}`
-    }
-    if(pool === 'etc-solo'){
-        return `https://etc.tokenview.com/en/block/${blochHash}`
-    }
-    else {
-        return '#'
-    }
-}
 
 
-function Items({ currentItems, type }) {
+
+function Items({ currentItems, type, addInputValue}) {
     return (
         <div className={style.items}>
             {currentItems && currentItems.map((el) => {
@@ -64,7 +49,7 @@ function Items({ currentItems, type }) {
                         key={el.blockHash}
                         el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
                         el2={convertTimestamp(el.timestamp)}
-                        el3={<a onClick={event => event.stopPropagation()} href={blockHashChecker(el.blockHash)}>{el.blockHash}</a>}
+                        el3={<a onClick={event => event.stopPropagation()} href={blockHashChecker(el.blockHash, pool)}>{el.blockHash}</a>}
                         el4={el.blockHeight}
                         type={'rewards'}
                     />
@@ -89,14 +74,23 @@ function Items({ currentItems, type }) {
                         type={'rewards'}
                     />
                 }
+                if(type === 'coinPage'){
+                    return <div key={el.address}>
+                        <CoinPageData miner={el.address}
+                                      hashrate={hashFilter(el.hr)}
+                                      lastShare={el.lastBeat}
+                                      offline={el.offline}
+                                      addInputValue={addInputValue}
+                        />
+                    </div>
+                }
             })}
         </div>
     );
 }
 
-let onClickActiveStatus = ({isActive}) => (isActive ? style.active : 'inactive');
 
-let PaginatedItems = ({ itemsPerPage, items, type}) => {
+let PaginatedItems = ({ itemsPerPage, items, type , addInputValue}) => {
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
@@ -115,7 +109,7 @@ let PaginatedItems = ({ itemsPerPage, items, type}) => {
 
     return (
         <>
-            <Items currentItems={currentItems} type={type}/>
+            <Items currentItems={currentItems} type={type} addInputValue={addInputValue}/>
             <ReactPaginate
                 nextLabel={<i className="fa-solid fa-caret-right"/>}
                 onPageChange={handlePageClick}

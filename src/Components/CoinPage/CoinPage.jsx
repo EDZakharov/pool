@@ -5,6 +5,8 @@ import Fetcher from "../Fetcher/Fetcher";
 import {hashFilter, imgFilter} from "../../Filters";
 import Charts from "../Charts/Charts";
 import {Link} from "react-router-dom";
+import PaginatedItems from "../Pagination";
+import DropBtn from "../Account/DropBtn";
 
 
 export const CoinPage = (props) => {
@@ -114,16 +116,7 @@ export const CoinPage = (props) => {
                     <div className={style.status}>Статус</div>
                 </div>
                 <div className={style.minersWrapper}>
-                    {props.coinPage.miners.map(el => {
-                        return <div key={el.address}>
-                            <CoinPageData miner={el.address}
-                                          hashrate={hashFilter(el.hr)}
-                                          lastShare={el.lastBeat}
-                                          offline={el.offline}
-                                          addInputValue={props.addInputValue}
-                            />
-                        </div>
-                    })}
+                    <PaginatedItems itemsPerPage={7} items={props.coinPage.miners} type={'coinPage'} addInputValue={props.addInputValue}/>
                 </div>
 
             </div> : ''}
