@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import style from './AccountData.module.scss'
 import Fetcher from "../Fetcher/Fetcher";
-import {convertTimestamp, getLastBeat, hashFilter, poolChecker} from "../../Filters";
+import {getLastBeat, hashFilter, poolChecker} from "../../Filters";
 import Charts from "../Charts/Charts";
-import Err404 from "../404/404";
 import InnerData from "./InnerData";
 import HeaderData from "./HeaderData";
 import Total from "./Total";
@@ -118,7 +117,16 @@ const AccountData = (props) => {
                                             el3={'Последняя шара'}
                                             type={'workers'}
                                         />
-                                        <PaginatedItems itemsPerPage={7} items={props.account.accountData.workers} type={'workers'}/>
+                                        {props.account.accountData.workers.length <= 7 ? props.account.accountData.workers.map(el => {
+                                            return <InnerData
+                                                key={el.name}
+                                                el1={el.name}
+                                                el2={hashFilter(el.hr).hashrate + ' ' + hashFilter(el.hr).unit}
+                                                el3={`${getLastBeat(el.lastBeat)}`}
+                                                type={'workers'}
+                                            />
+                                        }):<PaginatedItems itemsPerPage={7} items={props.account.accountData.workers} type={'workers'}/>}
+
                                     </div>
                                 </div>
                             </div> : ''}
