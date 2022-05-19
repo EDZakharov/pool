@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import style from './CoinPageData.module.scss'
-import {checkEnd} from "../../../Filters";
+import {checkEnd, dateFilter} from "../../../Filters";
 
 export const CoinPageData = (props) => {
-    console.log(props.addInputValue)
     let timestamp = new Date(props.lastShare * 1000);
     let setEnd = timestamp.getSeconds().toString().slice(-1)
 
@@ -11,14 +10,14 @@ export const CoinPageData = (props) => {
 
 
     let textCopy = () => {
-        navigator.clipboard.writeText(props.miner).then(res => res)
+        navigator.clipboard.writeText(props.miner).catch(e => e)
         props.addInputValue(props.miner)
         setShow(!show)
         setTimeout(() => {
             setShow(false)
         }, 200)
     }
-
+    // console.log(props.lastShare)
 
     return (
         <div className={style.grid_data}>
@@ -36,7 +35,7 @@ export const CoinPageData = (props) => {
                 <div className={style.hashrate}><span>{props.hashrate.hashrate}{props.hashrate.unit}</span></div>
             </div>
             <div className={style.shares_s}>
-                <div className={style.shares}><span>{`${timestamp.getSeconds()} секун${checkEnd(setEnd)} назад`}</span>
+                <div className={style.shares}><span>{`${dateFilter(props.lastShare)}`}</span>
                 </div>
             </div>
             <div className={style.status_s}>

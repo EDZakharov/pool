@@ -125,7 +125,7 @@ const AccountData = (props) => {
                                                 el3={`${getLastBeat(el.lastBeat)}`}
                                                 type={'workers'}
                                             />
-                                        }):<PaginatedItems itemsPerPage={7} items={props.account.accountData.workers} type={'workers'}/>}
+                                        }):<PaginatedItems itemsPerPage={7} items={props.account.accountData.workers} type={'workers'} pool={pool}/>}
 
                                     </div>
                                 </div>
@@ -144,7 +144,7 @@ const AccountData = (props) => {
                                             el3={'Дата'}
                                             type={'payments'}
                                         />
-                                        <PaginatedItems itemsPerPage={7} items={props.account.accountData.payments.payments} type={'payments'}/>
+                                        <PaginatedItems itemsPerPage={7} items={props.account.accountData.payments.payments} type={'payments'} pool={pool}/>
                                     </div>
                                 </div>
                             </div> : ''}
@@ -164,7 +164,7 @@ const AccountData = (props) => {
                                             el4={'Высота блока'}
                                             type={'rewards'}
                                         />
-                                        <PaginatedItems itemsPerPage={7} items={props.account.accountData.rewards.rewards} type={'rewards'}/>
+                                        <PaginatedItems itemsPerPage={7} items={props.account.accountData.rewards.rewards} type={'rewards'} pool={pool}/>
 
                                     </div>
                                 </div>
