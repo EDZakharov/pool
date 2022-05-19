@@ -1,23 +1,21 @@
 import React, {useState} from 'react';
 import style from './CoinPageData.module.scss'
-import {checkEnd, dateFilter} from "../../../Filters";
+import {dateFilter} from "../../../Filters";
 
 export const CoinPageData = (props) => {
-    let timestamp = new Date(props.lastShare * 1000);
-    let setEnd = timestamp.getSeconds().toString().slice(-1)
-
     let [show, setShow] = useState(false)
-
 
     let textCopy = () => {
         navigator.clipboard.writeText(props.miner).catch(e => e)
         props.addInputValue(props.miner)
         setShow(!show)
-        setTimeout(() => {
-            setShow(false)
-        }, 200)
+        if(show){
+            setTimeout(() => {
+                setShow(false)
+            }, 200)
+        }
+
     }
-    // console.log(props.lastShare)
 
     return (
         <div className={style.grid_data}>

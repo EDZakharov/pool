@@ -25,28 +25,29 @@ export let convertTimestamp = (timestamp) => {
 }
 
 export let dateFilter = (date) => {
-
-    if (date === undefined) {
-        return 0
-    }
-
-    if (date && date.toString().length < 13) {
-        date = date * 1000
-    }
     Date.prototype.daysInMonth = function () {
         return 32 - new Date(this.getFullYear(), this.getMonth(), 32).getDate();
     };
+    if(date === null){
+        return 'еще не найден'
+    }
+    if (date === undefined) {
+        return 0
+    }
+    if (date && date.toString().length < 13) {
+        date = date * 1000
+    }
 
     let currentDate = new Date().getTime()
     let sec = (currentDate - date) / 1000
     let min = sec / 60
     let hour = min / 60
     let day = hour / 24
-
     let diffTimes = (currentDate - date) / 1000
-    // console.log(diffTimes)
+
     if (diffTimes <= 60) {
-        return `${Math.floor(sec)} сек. назад`
+        // return `${Math.floor(sec)} сек. назад`
+        return `меньше мин. назад`
     }
     if (diffTimes <= 3600) {
         return `${Math.floor(min)} мин. назад`
@@ -60,9 +61,26 @@ export let dateFilter = (date) => {
     if (diffTimes >= 2592000) {
         return 'больше месяца назад'
     }
-
-
 }
+
+export let txChecker = (tx, pool) => {
+    if(pool === 'eth'){
+        return `https://etherscan.io//tx/${tx}`
+    }
+    if(pool === 'eth-solo'){
+        return `https://etherscan.io//tx/${tx}`
+    }
+    if(pool === 'etc'){
+        return `https://etc.tokenview.com/en/tx/${tx}`
+    }
+    if(pool === 'etc-solo'){
+        return `https://etc.tokenview.com/en/tx/${tx}`
+    }
+    else {
+        return '#'
+    }
+}
+
 
 
 export let poolChecker = (pool) => {

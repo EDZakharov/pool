@@ -40,11 +40,12 @@
       .coin .coinData .inputForm a {
         text-decoration: none; }
       .coin .coinData .inputForm input {
+        display: flex;
+        align-items: center;
         margin: 0 8px 0 10px;
         width: 92%;
         min-height: 20%;
-        height: 40px;
-        padding: 0 10px;
+        padding: 8px 10px;
         font-size: 20px;
         border: .1px solid white;
         border-radius: 5px;
@@ -250,7 +251,8 @@
       .coin .totalHashrate .coin_column_grid .hashrate {
         grid-area: h; }
       .coin .totalHashrate .coin_column_grid .shares {
-        grid-area: s; }
+        grid-area: s;
+        margin-left: -20px; }
       .coin .totalHashrate .coin_column_grid .status {
         grid-area: ss; }
     .coin .totalHashrate .minersWrapper {
@@ -294,11 +296,12 @@
       .coin2 .coinData .inputForm a {
         text-decoration: none; }
       .coin2 .coinData .inputForm input {
+        display: flex;
+        align-items: center;
         margin: 0 8px 0 10px;
         width: 92%;
         min-height: 20%;
-        height: 40px;
-        padding: 0 10px;
+        padding: 8px 10px;
         font-size: 20px;
         border: .1px solid white;
         border-radius: 5px;
@@ -504,7 +507,8 @@
       .coin2 .totalHashrate .coin_column_grid .hashrate {
         grid-area: h; }
       .coin2 .totalHashrate .coin_column_grid .shares {
-        grid-area: s; }
+        grid-area: s;
+        margin-left: -20px; }
       .coin2 .totalHashrate .coin_column_grid .status {
         grid-area: ss; }
     .coin2 .totalHashrate .minersWrapper {
@@ -548,11 +552,12 @@
       .coin3 .coinData .inputForm a {
         text-decoration: none; }
       .coin3 .coinData .inputForm input {
+        display: flex;
+        align-items: center;
         margin: 0 8px 0 10px;
         width: 92%;
         min-height: 20%;
-        height: 40px;
-        padding: 0 10px;
+        padding: 8px 10px;
         font-size: 20px;
         border: .1px solid white;
         border-radius: 5px;
@@ -758,7 +763,8 @@
       .coin3 .totalHashrate .coin_column_grid .hashrate {
         grid-area: h; }
       .coin3 .totalHashrate .coin_column_grid .shares {
-        grid-area: s; }
+        grid-area: s;
+        margin-left: -20px; }
       .coin3 .totalHashrate .coin_column_grid .status {
         grid-area: ss; }
     .coin3 .totalHashrate .minersWrapper {

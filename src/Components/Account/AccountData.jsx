@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import style from './AccountData.module.scss'
 import Fetcher from "../Fetcher/Fetcher";
-import {getLastBeat, hashFilter, poolChecker} from "../../Filters";
+import {dateFilter, hashFilter, poolChecker} from "../../Filters";
 import Charts from "../Charts/Charts";
 import InnerData from "./InnerData";
 import HeaderData from "./HeaderData";
@@ -122,7 +122,7 @@ const AccountData = (props) => {
                                                 key={el.name}
                                                 el1={el.name}
                                                 el2={hashFilter(el.hr).hashrate + ' ' + hashFilter(el.hr).unit}
-                                                el3={`${getLastBeat(el.lastBeat)}`}
+                                                el3={`${dateFilter(el.lastBeat)}`}
                                                 type={'workers'}
                                             />
                                         }):<PaginatedItems itemsPerPage={7} items={props.account.accountData.workers} type={'workers'} pool={pool}/>}
@@ -131,7 +131,6 @@ const AccountData = (props) => {
                                 </div>
                             </div> : ''}
                         </div>
-
                         <div className={style.dropDown} onClick={dropDownPaymentsToggle}>
                             <DropBtn status={togglePayments} text={'Выплаты'}/>
                             {togglePayments ? <div className={style.dropdown__content}>
@@ -165,7 +164,6 @@ const AccountData = (props) => {
                                             type={'rewards'}
                                         />
                                         <PaginatedItems itemsPerPage={7} items={props.account.accountData.rewards.rewards} type={'rewards'} pool={pool}/>
-
                                     </div>
                                 </div>
                             </div> : ''}

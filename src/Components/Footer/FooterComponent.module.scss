@@ -12,6 +12,13 @@
   padding: 5px;
   @media (pointer: coarse){
     opacity: 0;
+    display: none;
+    a{
+      user-select: none;
+      pointer-events: none;
+      display: none;
+    }
+
   }
 
   a{

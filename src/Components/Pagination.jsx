@@ -3,38 +3,29 @@ import style from './Pagination.module.scss'
 import {useEffect, useState} from "react";
 import ReactPaginate from "react-paginate";
 import InnerData from "./Account/InnerData";
-import {blockHashChecker, convertTimestamp, getLastBeat, hashFilter, poolChecker} from "../Filters";
+import {
+    blockHashChecker,
+    convertTimestamp,
+    dateFilter,
+    getLastBeat,
+    hashFilter,
+    poolChecker,
+    txChecker
+} from "../Filters";
 import {CoinPageData} from "./CoinPage/CoinPageData/CoinPageData";
 
 
 
 
-let txChecker = (tx, pool) => {
-    if(pool === 'eth'){
-        return `https://etherscan.io//tx/${tx}`
-    }
-    if(pool === 'eth-solo'){
-        return `https://etherscan.io//tx/${tx}`
-    }
-    if(pool === 'etc'){
-        return `https://etc.tokenview.com/en/tx/${tx}`
-    }
-    if(pool === 'etc-solo'){
-        return `https://etc.tokenview.com/en/tx/${tx}`
-    }
-    else {
-        return '#'
-    }
-}
 
 
 
 
-function Items({ currentItems, type, addInputValue, pool}) {
+
+function Items({ currentItems, type, addInputValue, pool }) {
     return (
         <div className={style.items}>
             {currentItems && currentItems.map((el) => {
-
                 if(type === 'payments'){
                     return <InnerData
                         key={el.tx}
@@ -60,7 +51,7 @@ function Items({ currentItems, type, addInputValue, pool}) {
                         el1={el.name}
                         el2={hashFilter(el.hr).hashrate + ' ' + hashFilter(el.hr).unit}
                         // el3={`${timestamp.getSeconds()} секун${checkEnd(setEnd)} назад`}
-                        el3={`${getLastBeat(el.lastBeat)}`}
+                        el3={`${dateFilter(el.lastBeat)}`}
                         type={'workers'}
                     />
                 }
@@ -95,8 +86,8 @@ let PaginatedItems = ({ itemsPerPage, items, type , addInputValue, pool}) => {
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
     let newItems = [...items]
-    useEffect(() => {
 
+    useEffect(() => {
         const endOffset = itemOffset + itemsPerPage;
         setCurrentItems(newItems.slice(itemOffset, endOffset));
         setPageCount(Math.ceil(newItems.length / itemsPerPage));

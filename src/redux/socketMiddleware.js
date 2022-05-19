@@ -15,7 +15,6 @@ const DELL_MINERS = 'DELL_MINERS';
 const SHOW_ACCOUNT_DATA = 'SHOW_ACCOUNT_DATA';
 const DELL_ACCOUNT_DATA = 'DELL_ACCOUNT_DATA';
 
-
 let storage = {
     coins: [],
     miners: [],
@@ -23,11 +22,8 @@ let storage = {
     accountData: undefined
 }
 
-
 socket.on('update', res => {
-
     if (res.method === 'stats') {
-
         let index = storage.coins.findIndex(el => el.pool === res.data.pool);
         if (index === -1) {
             storage.coins.push(res.data)
@@ -39,12 +35,8 @@ socket.on('update', res => {
     if (res.method === 'miners') {
         storage.miners = [...res.data.miners]
     }
-
     if (res.method === 'account') {
-        // console.log(res)
         if (res.error !== 'Method not allowed') {
-            console.log(res)
-            // console.log(res)
             if (res.data !== undefined) {
                 storage.accountData = {...res.data}
             }
@@ -53,26 +45,17 @@ socket.on('update', res => {
             console.log(res.error)
         }
     }
-
 })
 
 let storage2 = {
     fullStats: {},
-
 }
 
 socket2.on('update', res => {
-
     if (res.method === 'fullStats') {
-
         storage2.fullStats = {...res.data}
     }
-
-
-
-
 })
-
 
 export let socketMiddleware = store => next => action => {
     if (typeof action === 'function') {
@@ -96,20 +79,17 @@ export let socketMiddleware = store => next => action => {
         action.payload = storage2.fullStats
         return next(action)
     }
-
     if (action.type === 'SHOW_MINERS') {
         action.type = 'ADD_MINERS'
         action.payload = storage.miners
         return next(action)
     }
-
     if (action.type === 'SHOW_ACCOUNT_DATA') {
         action.type = 'ADD_ACCOUNT_DATA'
         action.payload = storage.accountData
         storage.accountData = undefined
         return next(action)
     }
-
     return next(action)
 }
 
@@ -118,7 +98,6 @@ export let showCoinsOnce = () => {
     socket.emit('startStats')
     return {type: SHOW_COINS}
 }
-
 export let showCoins = () => {
     return {type: SHOW_COINS}
 }
@@ -128,7 +107,6 @@ export let dellCoinData = () => {
 }
 
 //FULL STATS
-
 export let showFullStatsOnce = () => {
     let CoinName = localStorage.getItem('selectedCoin')
     socket2.emit('startPoolStats', {
@@ -161,7 +139,6 @@ export let dellMinersData = () => {
     socket.emit('stopStats')
     return {type: DELL_MINERS}
 }
-
 
 //ACCOUNT______________________________
 export let showAccountDataOnce = (pool, account) => {

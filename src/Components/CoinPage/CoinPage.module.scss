@@ -252,6 +252,7 @@
     //border: 1px solid white;
     width: 68%;
     margin: 0 auto;
+
     .totalHashrate_span{
       font-weight: 600;
       font-size: 18px;
@@ -289,11 +290,11 @@
       }
       .shares{
         grid-area: s;
-        //padding-left: 10px;
+        margin-left: -20px;
       }
       .status{
         grid-area: ss;
-        //padding-left: 10px;
+
       }
 
 
