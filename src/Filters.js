@@ -26,54 +26,42 @@ export let convertTimestamp = (timestamp) => {
 
 export let dateFilter = (date) => {
 
-    if(date && date.toString().length < 13){
+    if (date === undefined) {
+        return 0
+    }
+
+    if (date && date.toString().length < 13) {
         date = date * 1000
     }
-
-    Date.prototype.daysInMonth = function() {
+    Date.prototype.daysInMonth = function () {
         return 32 - new Date(this.getFullYear(), this.getMonth(), 32).getDate();
     };
-    // let current = new Date()
-    // let newDate = new Date(date)
-    let currentDate = new Date().getTime()
-    let daysAgo = (currentDate - date)/86400000
-    let hoursAgo = (currentDate - date)/3600000
-    let minsAgo = (currentDate - date)/60000
-    let secAgo = (currentDate - date)/1000
-    console.log(Math.abs(date - currentDate))
-    if(Math.abs(date - currentDate) >= 2592000 || Math.abs(date - currentDate) > 86400){
 
-        // console.log('1: ', date)
-        // console.log('2: ', currentDate)
-        if(daysAgo.toFixed(0) >= new Date().daysInMonth()){
-            return 'больше месяца назад'
-        }
-        return `${daysAgo.toFixed(0)} дн. назад`
+    let currentDate = new Date().getTime()
+    let sec = (currentDate - date) / 1000
+    let min = sec / 60
+    let hour = min / 60
+    let day = hour / 24
+
+    let diffTimes = (currentDate - date) / 1000
+    // console.log(diffTimes)
+    if (diffTimes <= 60) {
+        return `${Math.floor(sec)} сек. назад`
     }
-    if(Math.abs(date - currentDate) <= 86400){
-        // console.log('1: ', date)
-        // console.log('2: ', currentDate)
-        // console.log('3: ', Math.abs(date - currentDate))
-        // console.log(`${('0' + newDate.getHours()).slice(-2)}.${('0' + (newDate.getMinutes())).slice(-2)}`)
-        if(hoursAgo.toFixed(0) <= 24){
-            return `${hoursAgo.toFixed(0)} час. назад`
-        }
-        // return `${current.getHours() - Number(newDate.getHours())} час. назад`
+    if (diffTimes <= 3600) {
+        return `${Math.floor(min)} мин. назад`
     }
-    if(Math.abs(date - currentDate) <= 3600){
-        // console.log(`${('0' + newDate.getHours()).slice(-2)}.${('0' + (newDate.getMinutes())).slice(-2)}`)
-        if(minsAgo.toFixed(0) <= 60){
-            return `${minsAgo.toFixed(0)} мин. назад`
-        }
-        // return `${current.getHours() - Number(newDate.getHours())} час. назад`
+    if (diffTimes <= 86400) {
+        return `${Math.floor(hour)} час. назад`
     }
-    if(Math.abs(date - currentDate) <= 60){
-        // console.log(`${('0' + newDate.getHours()).slice(-2)}.${('0' + (newDate.getMinutes())).slice(-2)}`)
-        if(minsAgo.toFixed(0) <= 60){
-            return `${secAgo.toFixed(0)} сек. назад`
-        }
-        // return `${current.getHours() - Number(newDate.getHours())} час. назад`
+    if (diffTimes > 86400) {
+        return `${Math.floor(day)} дн. назад`
     }
+    if (diffTimes >= 2592000) {
+        return 'больше месяца назад'
+    }
+
+
 }
 
 
@@ -108,19 +96,18 @@ export let getLastBeat = (lastBeat) => {
 }
 
 export let blockHashChecker = (blochHash, pool) => {
-    if(pool === 'eth'){
+    if (pool === 'eth') {
         return `https://etherscan.io/block/${blochHash}`
     }
-    if(pool === 'eth-solo'){
+    if (pool === 'eth-solo') {
         return `https://etherscan.io/block/${blochHash}`
     }
-    if(pool === 'etc'){
+    if (pool === 'etc') {
         return `https://etc.tokenview.com/en/block/${blochHash}`
     }
-    if(pool === 'etc-solo'){
+    if (pool === 'etc-solo') {
         return `https://etc.tokenview.com/en/block/${blochHash}`
-    }
-    else {
+    } else {
         return '#'
     }
 }
