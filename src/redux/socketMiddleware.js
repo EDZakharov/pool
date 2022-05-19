@@ -27,6 +27,7 @@ let storage = {
 socket.on('update', res => {
 
     if (res.method === 'stats') {
+
         let index = storage.coins.findIndex(el => el.pool === res.data.pool);
         if (index === -1) {
             storage.coins.push(res.data)
@@ -42,6 +43,7 @@ socket.on('update', res => {
     if (res.method === 'account') {
         // console.log(res)
         if (res.error !== 'Method not allowed') {
+            console.log(res)
             // console.log(res)
             if (res.data !== undefined) {
                 storage.accountData = {...res.data}
@@ -62,6 +64,7 @@ let storage2 = {
 socket2.on('update', res => {
 
     if (res.method === 'fullStats') {
+
         storage2.fullStats = {...res.data}
     }
 

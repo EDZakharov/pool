@@ -24,12 +24,67 @@ export let convertTimestamp = (timestamp) => {
 
 }
 
+export let dateFilter = (date) => {
+
+    if(date && date.toString().length < 13){
+        date = date * 1000
+    }
+
+    Date.prototype.daysInMonth = function() {
+        return 32 - new Date(this.getFullYear(), this.getMonth(), 32).getDate();
+    };
+    // let current = new Date()
+    // let newDate = new Date(date)
+    let currentDate = new Date().getTime()
+    let daysAgo = (currentDate - date)/86400000
+    let hoursAgo = (currentDate - date)/3600000
+    let minsAgo = (currentDate - date)/60000
+    let secAgo = (currentDate - date)/1000
+    console.log(Math.abs(date - currentDate))
+    if(Math.abs(date - currentDate) >= 2592000 || Math.abs(date - currentDate) > 86400){
+
+        // console.log('1: ', date)
+        // console.log('2: ', currentDate)
+        if(daysAgo.toFixed(0) >= new Date().daysInMonth()){
+            return 'больше месяца назад'
+        }
+        return `${daysAgo.toFixed(0)} дн. назад`
+    }
+    if(Math.abs(date - currentDate) <= 86400){
+        // console.log('1: ', date)
+        // console.log('2: ', currentDate)
+        // console.log('3: ', Math.abs(date - currentDate))
+        // console.log(`${('0' + newDate.getHours()).slice(-2)}.${('0' + (newDate.getMinutes())).slice(-2)}`)
+        if(hoursAgo.toFixed(0) <= 24){
+            return `${hoursAgo.toFixed(0)} час. назад`
+        }
+        // return `${current.getHours() - Number(newDate.getHours())} час. назад`
+    }
+    if(Math.abs(date - currentDate) <= 3600){
+        // console.log(`${('0' + newDate.getHours()).slice(-2)}.${('0' + (newDate.getMinutes())).slice(-2)}`)
+        if(minsAgo.toFixed(0) <= 60){
+            return `${minsAgo.toFixed(0)} мин. назад`
+        }
+        // return `${current.getHours() - Number(newDate.getHours())} час. назад`
+    }
+    if(Math.abs(date - currentDate) <= 60){
+        // console.log(`${('0' + newDate.getHours()).slice(-2)}.${('0' + (newDate.getMinutes())).slice(-2)}`)
+        if(minsAgo.toFixed(0) <= 60){
+            return `${secAgo.toFixed(0)} сек. назад`
+        }
+        // return `${current.getHours() - Number(newDate.getHours())} час. назад`
+    }
+}
+
 
 export let poolChecker = (pool) => {
     if (pool === 'etc' || pool === 'etc-solo') {
         return 'etc'
     }
     if (pool === 'eth') {
+        return 'eth'
+    }
+    if (pool === 'eth-solo') {
         return 'eth'
     }
     if (pool === 'keva') {
@@ -43,7 +98,6 @@ export let poolChecker = (pool) => {
 
 
 export let getLastBeat = (lastBeat) => {
-    console.log(lastBeat)
     let d = new Date(lastBeat * 1000),
         h = d.getUTCHours(),
         min = d.getUTCMinutes(),
@@ -84,7 +138,7 @@ export let hashFilter = (data) => {
             let x = data / 1000000
             return {hashrate: Number(x.toFixed(0)), unit: ' MH/s'}
         }
-        if (data.toString().length > 9 && data.toString().length < 12) {
+        if (data.toString().length > 9 && data.toString().length <= 12) {
             let x = data / 1000000000
             return {hashrate: Number(x.toFixed(2)), unit: ' GH/s'}
         }
@@ -132,6 +186,8 @@ export const coinNamesFilter = (data) => {
     switch (data) {
         case 'eth':
             return 'Ethereum'
+        case 'eth-solo':
+            return 'Eth-solo'
         case 'etc':
             return 'Ethereum Classic'
         case 'etc-solo':
@@ -153,6 +209,8 @@ export const coinNamesFilter = (data) => {
 export const imgFilter = (data => {
     switch (data) {
         case 'eth':
+            return images.ethLogo
+        case 'eth-solo':
             return images.ethLogo
         case 'etc':
             return images.etcLogo

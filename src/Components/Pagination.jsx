@@ -7,9 +7,9 @@ import {blockHashChecker, convertTimestamp, getLastBeat, hashFilter, poolChecker
 import {CoinPageData} from "./CoinPage/CoinPageData/CoinPageData";
 
 
-let pool = localStorage.getItem('selectedCoin')
 
-let txChecker = (tx) => {
+
+let txChecker = (tx, pool) => {
     if(pool === 'eth'){
         return `https://etherscan.io//tx/${tx}`
     }
@@ -30,7 +30,7 @@ let txChecker = (tx) => {
 
 
 
-function Items({ currentItems, type, addInputValue}) {
+function Items({ currentItems, type, addInputValue, pool}) {
     return (
         <div className={style.items}>
             {currentItems && currentItems.map((el) => {
@@ -39,7 +39,7 @@ function Items({ currentItems, type, addInputValue}) {
                     return <InnerData
                         key={el.tx}
                         el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
-                        el2={<a onClick={event => event.stopPropagation()} href={txChecker(el.tx)}>{el.tx}</a>}
+                        el2={<a onClick={event => event.stopPropagation()} href={txChecker(el.tx, pool)}>{el.tx}</a>}
                         el3={convertTimestamp(el.timestamp)}
                         type={'payments'}
                     />
@@ -90,7 +90,7 @@ function Items({ currentItems, type, addInputValue}) {
 }
 
 
-let PaginatedItems = ({ itemsPerPage, items, type , addInputValue}) => {
+let PaginatedItems = ({ itemsPerPage, items, type , addInputValue, pool}) => {
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
@@ -109,7 +109,7 @@ let PaginatedItems = ({ itemsPerPage, items, type , addInputValue}) => {
 
     return (
         <>
-            <Items currentItems={currentItems} type={type} addInputValue={addInputValue}/>
+            <Items currentItems={currentItems} type={type} addInputValue={addInputValue} pool={pool}/>
             <ReactPaginate
                 nextLabel={<i className="fa-solid fa-caret-right"/>}
                 onPageChange={handlePageClick}

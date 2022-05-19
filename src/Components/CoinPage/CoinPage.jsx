@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import style from './CoinPage.module.scss'
 import {CoinPageData} from "./CoinPageData/CoinPageData";
 import Fetcher from "../Fetcher/Fetcher";
-import {hashFilter, imgFilter} from "../../Filters";
+import {dateFilter, hashFilter, imgFilter} from "../../Filters";
 import Charts from "../Charts/Charts";
 import {Link} from "react-router-dom";
 import PaginatedItems from "../Pagination";
@@ -14,7 +14,14 @@ export const CoinPage = (props) => {
     let thisPool = localStorage.getItem('selectedCoin')
     let coinLogo = imgFilter(localStorage.getItem('selectedCoin'))
     let luck = props.coinPage.fullStats.currentEffort * 100;
-    let lastBlockFound = `${new Date(props.coinPage.fullStats.lastBlockFound * 1000).getMinutes()} мин. назад`;
+    // let date = new Date(props.coinPage.fullStats.lastBlockFound * 1000);
+    // let lastBlockFound = `at ${('0' + date.getHours()).slice(-2)}:${('0' + date.getMinutes()).slice(-2)}, ${('0' + date.getDate()).slice(-2)}.${('0' + (date.getMonth() + 1)).slice(-2)}.${date.getFullYear()}`
+    // let h = Math.floor(new Date().getTime()/1000)
+    // console.log(props.coinPage.fullStats.lastBlockFound * 1000)
+    // console.log(props.coinPage.fullStats.lastBlockFound)
+
+
+    dateFilter(props.coinPage.fullStats.lastBlockFound)
 
     let [checked, setChecked] = useState(false);
 
@@ -48,7 +55,7 @@ export const CoinPage = (props) => {
             clearInterval(start)
             props.dellFullStats()
             props.dellMinersData()
-            navigator.clipboard.writeText('').then(res => res)
+            navigator.clipboard.writeText('').catch(e => e)
             props.addAccountAddress('')
         }
     }, [])
@@ -96,7 +103,7 @@ export const CoinPage = (props) => {
                     <div
                         className={style.hashrate}>Хэшрейт: {hashFilter(props.coinPage.fullStats.hashrate).hashrate}{hashFilter(props.coinPage.fullStats.hashrate).unit}</div>
                     <div className={style.height}>Решаем блок: {props.coinPage.fullStats.height}</div>
-                    <div className={style.lastBlockFound}>Последний блок: {lastBlockFound}</div>
+                    <div className={style.lastBlockFound}>Последний блок: {dateFilter(props.coinPage.fullStats.lastBlockFound)}</div>
                     <div className={style.minPayment}>Минимальный вывод: {props.coinPage.fullStats.minPayment}</div>
                     <div className={style.miners}>Майнеры: {props.coinPage.fullStats.miners}</div>
                     <div className={style.type}>Тип пула: {props.coinPage.fullStats.type}</div>
