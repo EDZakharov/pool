@@ -7,7 +7,6 @@ import {
     blockHashChecker,
     convertTimestamp,
     dateFilter,
-    getLastBeat,
     hashFilter,
     poolChecker,
     txChecker

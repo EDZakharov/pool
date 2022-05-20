@@ -9,11 +9,11 @@ export const CoinPageData = (props) => {
         navigator.clipboard.writeText(props.miner).catch(e => e)
         props.addInputValue(props.miner)
         setShow(!show)
-        if(show){
+
             setTimeout(() => {
                 setShow(false)
             }, 200)
-        }
+
 
     }
 

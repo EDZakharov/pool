@@ -1,12 +1,39 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
 @mixin addGridElem {
-  background-size: 390px 200px;
-  border: .1px solid rgb(227, 189, 55);
-  border-radius: 5px;
+  //background-size: 390px 200px;
+  padding: 15px;
+  background-color: rgba(127, 127, 127, 0.19);
+  //&:nth-child(1){
+  //  background-color: #756e6e;
+  //}
+  //&:nth-child(2){
+  //  background-color: #756e6e;
+  //}
+  //&:nth-child(7){
+  //  background-color: #756e6e;
+  //}
+  //&:nth-child(5){
+  //  background-color: #756e6e;
+  //}
+  &:nth-child(9){
+    //background-color: #756e6e;
+    opacity: 0;
+
+  }
+
+  border-bottom: 3px solid #e4be36;
+  &:hover{
+    border-bottom: 3px solid #ffbf00;
+
+  }
+
+  //border-right: 1px solid #e4be36;
+  //border-left: 1px solid #e4be36;
+  //border-radius: 35px 35px 0px 0px ;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -14,11 +41,11 @@
   height: 45px;
   color: rgb(231, 231, 231);
   font-weight: 600;
-  box-shadow: 0 0 10px rgb(14, 14, 14);
+  font-size: 20px;
+
+
+
 }
-
-
-
 
 
 @mixin allData {
@@ -29,11 +56,11 @@
   height: 88vh;
   padding-top: 50px;
 
-  .coinData{
+  .coinData {
     display: grid;
     grid-template-areas: 'graph''input''stats' 'showMinersBtn';
 
-    .graph{
+    .graph {
       grid-area: graph;
       width: 100%;
       display: flex;
@@ -41,7 +68,7 @@
       justify-self: center;
       justify-items: center;
 
-      .chartsGraph{
+      .chartsGraph {
         width: 100%;
         margin: 10px 0 10px 0;
         border-radius: 15px;
@@ -49,25 +76,26 @@
 
     }
 
-    .inputForm{
+    .inputForm {
       grid-area: input;
       display: flex;
       align-items: center;
-      margin: 5px auto;
+      margin: 0 auto;
       padding-right: 5px;
-      width: 68%;
+      width: 70%;
 
-      img{
+      img {
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
         border-radius: 50%;
+        height: 40px;
       }
 
-      a{
+      a {
         text-decoration: none;
 
       }
 
-      input{
+      input {
         display: flex;
         align-items: center;
         margin: 0 8px 0 10px;
@@ -86,17 +114,18 @@
         color: white;
 
 
-        &:focus{
+        &:focus {
           border: .1px solid #e5be36;
           outline: .1px solid #e5be36;
         }
 
-        &::placeholder{
+        &::placeholder {
           color: #6f6f6f;
         }
 
       }
-      .inputBtn{
+
+      .inputBtn {
         //padding: 12px;
         display: flex;
         height: 40px;
@@ -108,7 +137,7 @@
         align-items: center;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
 
-        i{
+        i {
           font-size: 22px;
           text-align: center;
           margin: 0 auto;
@@ -117,10 +146,10 @@
 
         }
 
-        &:hover{
+        &:hover {
           background-color: #ffffff;
 
-          i{
+          i {
 
             color: #000000;
 
@@ -130,106 +159,201 @@
         }
 
 
-
-
-
-
       }
     }
 
-    .stats{
-
-      text-align: center;
+    .dropContainer {
+      //text-align: center;
       font-weight: bold;
       font-size: 17px;
-      width: 60%;
+      width: 70%;
       margin: 10px auto;
       //margin-bottom: 10px;
       grid-area: stats;
 
-      .stats__grid{
-        //background-color: rgba(29, 29, 29, 0.19);
-        backdrop-filter: blur(15px);
-        margin: 0 20px;
+      .flexWrapper {
+        width: 100%;
 
-        display: grid;
-        grid-template-areas:
-                'm h l'
-                'he fe ty'
-                'c min cha';
-        //grid-template-rows: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-        white-space: nowrap;
-        grid-gap: 5px 50px;
-        text-align: center;
+        .buttonsWrapper {
+          display: inline-block;
+          height: 60px;
 
 
-        .miners{
-          grid-area: m;
-          @include addGridElem;
-
-        }
-
-        .hashrate{
-          grid-area: h;
-          @include addGridElem;
-        }
-
-        .lastBlockFound{
-          grid-area: l;
-          @include addGridElem;
-        }
-
-        .height{
-          grid-area: he;
-          @include addGridElem;
-        }
-
-        .fee{
-          grid-area: fe;
-          @include addGridElem;
-        }
-
-        .type {
-          grid-area: ty;
-          @include addGridElem;
-        }
-
-
-        .currentEffort{
-          grid-area: c;
-          @include addGridElem;
-        }
-
-        .minPayment{
-          grid-area: min;
-          @include addGridElem;
-        }
-
-        .charts{
-          grid-area: cha;
-          @include addGridElem;
-
-          .showMinersBtn{
-            grid-area: showMinersBtn;
+          //display: inline-block;
+          //background-color: #fff;
+          .buttons{
             display: flex;
-            align-items: center;
-            justify-content: center;
-            //box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-            width: 100%;
-            height: 45px;
-            color: #ffffff;
-            //border: 1px solid #ffffff;
-            //background-color: rgba(29, 29, 29, 0.19);
-            backdrop-filter: blur(15px);
-            //padding: 10px;
-            border-radius: 5px;
-            font-weight: 600;
-            &:hover{
-              color: #bfbfbf;
-              backdrop-filter: blur(75px);
+            height: 100%;
+            &:nth-child(1){
+              border-right: 1px solid white;
+              border-left: 1px solid white;
+            }
+
+            div{
               cursor: pointer;
 
+            }
+          }
+
+        }
+
+        .dropDown{
+          width: 100%;
+          background-color: rgba(29, 29, 29, 0.19);
+          backdrop-filter: blur(15px);
+          .stats {
+            padding: 10px;
+            border-right: 1px solid #ffffff;
+            border-left: 1px solid #ffffff;
+            box-shadow: 0 0 0 rgba(0, 0, 0, .3),
+            -28px 0 25px -23px rgba(0, 0, 0, .8),
+            28px 0 35px -23px rgba(0, 0, 0, .8),
+            0 0 0 rgba(0, 0, 0, 0.1) inset;
+            //margin: 0 20px;
+            display: grid;
+            grid-template-areas: 'm h l' 'he fe ty' 'c min cha';
+            //grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+            white-space: nowrap;
+            grid-gap: 20px 15px;
+            text-align: center;
+
+
+            .miners {
+              grid-area: m;
+              @include addGridElem;
+
+            }
+
+            .hashrate {
+              grid-area: h;
+              @include addGridElem;
+            }
+
+            .lastBlockFound {
+              grid-area: l;
+              @include addGridElem;
+            }
+
+            .height {
+              grid-area: he;
+              @include addGridElem;
+            }
+
+            .fee {
+              grid-area: fe;
+              @include addGridElem;
+            }
+
+            .type {
+              grid-area: ty;
+              @include addGridElem;
+            }
+
+
+            .currentEffort {
+              grid-area: c;
+              @include addGridElem;
+            }
+
+            .minPayment {
+              grid-area: min;
+              @include addGridElem;
+            }
+
+            .charts {
+              grid-area: cha;
+              //opacity: 0;
+              @include addGridElem;
+
+              .showMinersBtn {
+                grid-area: showMinersBtn;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                //box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
+                width: 100%;
+                height: 45px;
+                color: #ffffff;
+                //border: 1px solid #ffffff;
+                //background-color: rgba(29, 29, 29, 0.19);
+                backdrop-filter: blur(15px);
+                //padding: 10px;
+                border-radius: 5px;
+                font-weight: 600;
+
+                &:hover {
+                  color: #bfbfbf;
+                  backdrop-filter: blur(75px);
+                  cursor: pointer;
+
+                }
+
+              }
+
+
+            }
+
+          }
+          .totalHashrate {
+            padding: 10px 10px 0 10px;
+            border-right: 1px solid #ffffff;
+            border-left: 1px solid #ffffff;
+            box-shadow: 0 0 0 rgba(0, 0, 0, .3),
+            -28px 0 25px -23px rgba(0, 0, 0, .8),
+            28px 0 35px -23px rgba(0, 0, 0, .8),
+            0 0 0 rgba(0, 0, 0, 0.1) inset;
+
+            .totalHashrate_span {
+              font-weight: 600;
+              font-size: 18px;
+
+              .totalHashrate_span_span {
+                color: #f32222;
+                font-size: 20px;
+              }
+            }
+
+            .coin_column_grid {
+              display: grid;
+              font-size: 20px;
+              font-weight: 400;
+              grid-template-areas: 'w h s ss';
+              //font-weight: bold;
+              grid-template-columns: 6fr 2fr 2.3fr 1fr;
+              -moz-user-select: text;
+              //margin-top: 10px;
+              background-color: grey;
+              color: white;
+              //padding: 13px 0;
+              padding-bottom: 5px;
+              align-items: center;
+              height: 40px;
+
+
+              .wallet {
+                grid-area: w;
+                padding-left: 150px;
+              }
+
+              .hashrate {
+                grid-area: h;
+                //padding-left: 10px;
+              }
+
+              .shares {
+                grid-area: s;
+                margin-left: -20px;
+              }
+
+              .status {
+                grid-area: ss;
+
+              }
+            }
+
+            .minersWrapper {
+              //margin-bottom: 50px;
             }
 
           }
@@ -241,78 +365,20 @@
 
 
 
-    }
 
+
+    }
 
 
   }
 
-
-  .totalHashrate{
-    //border: 1px solid white;
-    width: 68%;
-    margin: 0 auto;
-
-    .totalHashrate_span{
-      font-weight: 600;
-      font-size: 18px;
-
-      .totalHashrate_span_span{
-        color: #f32222;
-        font-size: 20px;
-      }
-    }
-
-    .coin_column_grid{
-      display: grid;
-      font-size: 20px;
-      grid-template-areas: 'w h s ss';
-      //font-weight: bold;
-      grid-template-columns: 6fr 2fr 2.3fr 1fr;
-      -moz-user-select: text;
-      //margin-top: 10px;
-      background-color: grey;
-      color: white;
-      //padding: 13px 0;
-      padding-bottom: 5px;
-      align-items: center;
-      height: 40px;
-
-
-      .wallet{
-        grid-area: w;
-        padding-left: 150px;
-
-      }
-      .hashrate{
-        grid-area: h;
-        //padding-left: 10px;
-      }
-      .shares{
-        grid-area: s;
-        margin-left: -20px;
-      }
-      .status{
-        grid-area: ss;
-
-      }
-
-
-
-    }
-
-    .minersWrapper{
-      margin-bottom: 50px;
-    }
-
-  }
 
 
 
 
 }
 
-.coin{
+.coin {
   grid-area: c;
   @include allData;
   background: url(./../../img/octopus1.png) no-repeat 50% 0;
@@ -322,7 +388,7 @@
 
 }
 
-.coin2{
+.coin2 {
   grid-area: c;
   @include allData;
   background: url(./../../img/octopus2.png) no-repeat 50% 0;
@@ -332,7 +398,7 @@
 
 }
 
-.coin3{
+.coin3 {
   grid-area: c;
   @include allData;
   background: url(./../../img/octopus3.png) no-repeat 50% 30%;
