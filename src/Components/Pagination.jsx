@@ -59,9 +59,32 @@ function Items({ currentItems, type, addInputValue, pool }) {
                         key={el.blockHash}
                         el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
                         el2={convertTimestamp(el.timestamp)}
-                        el3={<a onClick={event => event.stopPropagation()} href={blockHashChecker(el.blockHash)}>{el.blockHash}</a>}
+                        el3={<a onClick={event => event.stopPropagation()} href={blockHashChecker(el.blockHash,pool)}>{el.blockHash}</a>}
                         el4={el.blockHeight}
                         type={'rewards'}
+                    />
+                }
+                if(type === 'blocks'){
+
+                    let getTruncatedName = (source) => {
+                        let skippedString = source.trimEnd();
+                        if(skippedString.length > 13){
+                            return skippedString.substring(0, 13) + '...';
+                        }else{
+                            return source;
+                        }
+                    }
+
+
+
+                    return <InnerData
+                        key={el.hash}
+                        el1={el.height}
+                        el2={el.uncle}
+                        el3={el.orphan}
+                        el4={<a href={blockHashChecker(el.hash,pool)}>{getTruncatedName(el.hash)}</a>}
+                        el5={convertTimestamp(el.timestamp)}
+                        type={'blocks'}
                     />
                 }
                 if(type === 'coinPage'){

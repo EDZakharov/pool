@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
 .coinCard {
   display: grid;
   grid-template-areas: 'h' 'm' 'f';
@@ -21,7 +23,17 @@
       grid-template-columns: 2fr 1fr;
       justify-items: center;
       align-items: center;
-      height: 100%; }
+      height: 100%;
+      position: relative;
+      font-family: 'Fugaz One', cursive;
+      font-size: 18px; }
+      .coinCard .coinCard_header .wrapper .poolType {
+        position: absolute;
+        top: 54%;
+        left: 32%; }
+        .coinCard .coinCard_header .wrapper .poolType span {
+          font-size: 12px;
+          font-family: 'Courgette', cursive; }
       .coinCard .coinCard_header .wrapper span {
         grid-area: name;
         font-size: 18px;

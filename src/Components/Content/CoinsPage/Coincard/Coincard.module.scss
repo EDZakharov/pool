@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
 @mixin mediaWidth {
   width: 100%;
   background-color: #fff;
@@ -12,7 +15,6 @@
   z-index: 10;
 
   &:hover{
-    
     @media (pointer: fine){
       transform: translateZ(+100px) translateY(+10px) translateX(2px);
       transition: transform .3s ease-in-out;
@@ -34,6 +36,18 @@
       justify-items: center;
       align-items: center;
       height: 100%;
+      position: relative;
+      font-family: 'Fugaz One', cursive;
+      font-size: 18px;
+      .poolType{
+        span{
+          font-size: 12px;
+          font-family: 'Courgette', cursive;
+        }
+        position: absolute;
+        top: 54%;
+        left: 32%;
+      }
 
       span {
         grid-area: name;

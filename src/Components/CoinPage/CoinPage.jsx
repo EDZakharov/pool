@@ -6,8 +6,8 @@ import Charts from "../Charts/Charts";
 import {Link} from "react-router-dom";
 import PaginatedItems from "../Pagination";
 import DropBtn from "../Account/DropBtn";
-import Total from "../Account/Total";
 import DropData from "./DropData/DropData";
+import Total from "../Account/Total";
 
 
 export const CoinPage = (props) => {
@@ -37,9 +37,10 @@ export const CoinPage = (props) => {
 
         props.showFullStatsOnce()
         props.ShowMinersOnce(thisPool)
-
+        props.ShowBlocksOnce(thisPool)
         let start = setInterval(() => {
             props.showFullStats()
+            props.showBlocks(thisPool)
             props.showMiners(thisPool)
             props.fetching(false)
         }, 1500)
@@ -48,6 +49,7 @@ export const CoinPage = (props) => {
             clearInterval(start)
             props.dellFullStats()
             props.dellMinersData()
+            props.dellBlocksData()
             navigator.clipboard.writeText('').catch(e => e)
             props.addAccountAddress('')
         }
@@ -70,17 +72,34 @@ export const CoinPage = (props) => {
 
     let [toggleStats, setToggleStats] = useState(true)
     let [toggleMiners, setToggleMiners] = useState(false)
+    let [toggleBlocks, setToggleBlocks] = useState(false)
 
     let dropDownStatsToggle = () => {
         setToggleStats(true)
         setToggleMiners(false)
+        setToggleBlocks(false)
 
     }
     let dropDownMinersToggle = () => {
         setToggleStats(false)
         setToggleMiners(true)
+        setToggleBlocks(false)
     }
 
+    let dropDownBlocksToggle = () => {
+        setToggleStats(false)
+        setToggleMiners(false)
+        setToggleBlocks(true)
+    }
+    // console.log(props.coinPage.fullStats.charts)
+
+    // if(props.coinPage.blocks !== undefined){
+    //     if(Object.keys(props.coinPage.blocks).length !== 0){
+    //         console.log(props.coinPage.blocks)
+    //         console.log(props.coinPage.blocks.effort['20'])
+    //     }
+    //
+    // }
 
     return (props.coinPage.isFetching ? <Fetcher/> : <div className={localStorage.getItem('showRandomBackStyle')}>
         <div className={style.coinData}>
@@ -107,7 +126,7 @@ export const CoinPage = (props) => {
                         <div className={style.buttons}>
                             <div onClick={dropDownStatsToggle}><DropBtn status={toggleStats} text={'Статистика'}/></div>
                             <div onClick={dropDownMinersToggle}><DropBtn status={toggleMiners} text={'Майнеры'}/></div>
-                            <div><DropBtn status={false} text={'Блоки'}/></div>
+                            <div onClick={dropDownBlocksToggle}><DropBtn status={toggleBlocks} text={'Блоки'}/></div>
                             <div><DropBtn status={false} text={'Как подключиться'}/></div>
                         </div>
                     </div>
@@ -117,7 +136,8 @@ export const CoinPage = (props) => {
                                 удача: {isNaN(luck) ? 'not found' : `${luck.toFixed(0)} %`}</div>
                             <div className={style.fee}>Комиссия пула: {props.coinPage.fullStats.fee} %</div>
                             <div
-                                className={style.hashrate}>Хэшрейт пула: {hashFilter(props.coinPage.fullStats.hashrate).hashrate}{hashFilter(props.coinPage.fullStats.hashrate).unit}</div>
+                                className={style.hashrate}>Хэшрейт
+                                пула: {hashFilter(props.coinPage.fullStats.hashrate).hashrate}{hashFilter(props.coinPage.fullStats.hashrate).unit}</div>
                             <div className={style.height}>Решаем блок: {props.coinPage.fullStats.height}</div>
                             <div className={style.lastBlockFound}>Последний
                                 блок: {dateFilter(props.coinPage.fullStats.lastBlockFound)}</div>
@@ -141,6 +161,28 @@ export const CoinPage = (props) => {
                             <div className={style.minersWrapper}>
                                 <PaginatedItems itemsPerPage={7} items={props.coinPage.miners}
                                                 type={'coinPage'} addInputValue={props.addInputValue}/>
+                            </div>
+                        </div> : ''}
+                    </div>}/>
+                    <DropData componentContent={<div className={style.dropDown}>
+                        {toggleBlocks ? <div className={style.blocks} id='anchorBtn'>
+                            <Total text={props.coinPage.blocks !== undefined ? `Удача последних 20, 50 и 200 блоков: 
+                            ${(props.coinPage.blocks.effort['20']*100).toFixed(0)} % |
+                            ${(props.coinPage.blocks.effort['50']*100).toFixed(0)} % |
+                            ${(props.coinPage.blocks.effort['200']*100).toFixed(0)} %` : ''}
+                            />
+                            <div className={style.blocks_column_grid}>
+                                <div className={style.height}>Высота</div>
+                                <div className={style.uncle}>Uncle</div>
+                                <div className={style.orphan}>Orphan</div>
+                                <div className={style.hash}>Хэш блока</div>
+                                <div className={style.timestamp}>Дата</div>
+                            </div>
+                            <div className={style.blocksWrapper}>
+                                <PaginatedItems itemsPerPage={7} items={props.coinPage.blocks.matured}
+                                                type={'blocks'} addInputValue={props.addInputValue} pool={thisPool}/>
+                                {(thisPool === 'eth' || thisPool === 'eth-solo') ?
+                                    <span className={style.liveViewer}><a href='http://www.ethviewer.live/'>EthLiveViewer</a></span>: ''}
                             </div>
                         </div> : ''}
                     </div>}/>

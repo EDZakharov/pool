@@ -20,6 +20,7 @@ export let CoinsPage = (props) => {
                         hashrate={c.hashrate}
                         minersTotal={c.miners}
                         maturedTotal={c.maturedTotal}
+                        lastBlockFound={c.lastBlockFound}
                         fee={c.fee}/>
                 )
             })}

@@ -1,8 +1,9 @@
 import {connect} from "react-redux";
 import {CoinPage} from "./CoinPage";
 import {
+    dellBlocksData,
     dellFullStats,
-    dellMinersData,
+    dellMinersData, showBlocks, ShowBlocksOnce,
     showFullStats,
     showFullStatsOnce,
     showMiners,
@@ -21,6 +22,12 @@ let mapStateToProps = (state) => {
 }
 
 
-let CoinPageContainer = connect(mapStateToProps, {fetching, showMiners,dellMinersData,ShowMinersOnce,showFullStatsOnce,showFullStats,dellFullStats,addAccountAddress,addInputValue,fetchingAccount})(CoinPage)
+let CoinPageContainer = connect(mapStateToProps,
+    {
+        fetching, showMiners,dellMinersData,
+        ShowMinersOnce,showFullStatsOnce,showFullStats,
+        dellFullStats,addAccountAddress,addInputValue,
+        fetchingAccount, ShowBlocksOnce, showBlocks,
+        dellBlocksData})(CoinPage)
 
 export default CoinPageContainer;

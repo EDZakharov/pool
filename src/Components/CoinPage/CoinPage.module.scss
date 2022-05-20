@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -201,14 +203,17 @@
           width: 100%;
           background-color: rgba(29, 29, 29, 0.19);
           backdrop-filter: blur(15px);
+          border-right: 1px solid #ffffff;
+          border-left: 1px solid #ffffff;
+          box-shadow: 0 0 0 rgba(0, 0, 0, .3),
+          -28px 0 25px -23px rgba(0, 0, 0, .8),
+          28px 0 35px -23px rgba(0, 0, 0, .8),
+          0 0 0 rgba(0, 0, 0, 0.1) inset;
+
           .stats {
             padding: 10px;
-            border-right: 1px solid #ffffff;
-            border-left: 1px solid #ffffff;
-            box-shadow: 0 0 0 rgba(0, 0, 0, .3),
-            -28px 0 25px -23px rgba(0, 0, 0, .8),
-            28px 0 35px -23px rgba(0, 0, 0, .8),
-            0 0 0 rgba(0, 0, 0, 0.1) inset;
+
+
             //margin: 0 20px;
             display: grid;
             grid-template-areas: 'm h l' 'he fe ty' 'c min cha';
@@ -218,6 +223,8 @@
             grid-gap: 20px 15px;
             text-align: center;
 
+
+              font-family: 'Courgette', cursive;
 
             .miners {
               grid-area: m;
@@ -297,13 +304,7 @@
           }
           .totalHashrate {
             padding: 10px 10px 0 10px;
-            border-right: 1px solid #ffffff;
-            border-left: 1px solid #ffffff;
-            box-shadow: 0 0 0 rgba(0, 0, 0, .3),
-            -28px 0 25px -23px rgba(0, 0, 0, .8),
-            28px 0 35px -23px rgba(0, 0, 0, .8),
-            0 0 0 rgba(0, 0, 0, 0.1) inset;
-
+            font-weight: 400;
             .totalHashrate_span {
               font-weight: 600;
               font-size: 18px;
@@ -356,6 +357,64 @@
               //margin-bottom: 50px;
             }
 
+          }
+          .blocks{
+            padding: 9px 10px 0 10px;
+            font-weight: 400;
+            .blocks_column_grid{
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
+              margin-top: 2px;
+              font-size: 20px;
+              //grid-template-columns: 6fr 2fr 2.3fr 1fr;
+              -moz-user-select: text;
+              background-color: grey;
+              color: white;
+              padding-bottom: 5px;
+              height: 40px;
+
+              div{
+                text-align: center;
+                width: 150px;
+              }
+
+
+              .height {
+                //grid-area: w;
+
+
+              }
+              .uncle{
+
+              }
+
+              .orphan{
+
+              }
+
+              .hash {
+
+                //grid-area: h;
+                //padding-left: 10px;
+              }
+
+              .timestamp {
+
+                //grid-area: s;
+                //margin-left: 180px;
+              }
+
+            }
+
+            .blocksWrapper{
+              position: relative;
+                .liveViewer{
+                  position: absolute;
+                  bottom: 25px;
+                  right: 0;
+                }
+            }
           }
 
 

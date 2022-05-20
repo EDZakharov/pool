@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Coincard.module.scss"
 import {NavLink} from "react-router-dom";
-import {coinNamesFilter, hashFilter, imgFilter} from "../../../../Filters";
+import {coinNamesFilter, dateFilter, hashFilter, imgFilter} from "../../../../Filters";
 
 
 const CoinCard = (props) => {
@@ -17,13 +17,14 @@ const CoinCard = (props) => {
         props.selectCoin(adr)
     }
 
-    // console.log(hashes)
+    console.log(props.content.coins)
     return (
 
         <div className={style.coinCard}>
             <div className={style.coinCard_header}>
                 <div className={style.wrapper}>
                     <span>{name}</span>
+                    <div className={style.poolType}><span>{props.poolType}</span></div>
                     <img src={image} alt='logo'
                          className={style.logo}/>
                 </div>
@@ -32,8 +33,7 @@ const CoinCard = (props) => {
                 <div><b>Хэшрейт пула</b> <span className={style.text}>{!hashes? '' : hashes.hashrate} {!hashes? '' : hashes.unit}</span></div>
                 <div><b>Майнеры:</b> <span className={style.text}>{props.minersTotal}</span></div>
                 <div><b>Комиссия пула:</b> <span className={style.text}>{props.fee} %</span></div>
-                <div><b>Тип:</b> <span className={style.text}>{props.poolType}</span></div>
-                {/*<div><b>Найденных блоков:</b> <span className={style.text}>{props.maturedTotal}</span></div>*/}
+                <div><b>Последний блок:</b> <span className={style.text}>{dateFilter(props.lastBlockFound)}</span></div>
             </div>
             <div className={style.coinCard_footer}>
                 <NavLink className={style.link} onClick={onButtonLinkClick} to={`${adr}`}>

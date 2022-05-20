@@ -14,8 +14,8 @@ const AccountData = (props) => {
     let account = localStorage.getItem('account')
 
     let [togglePayments, setTogglePayments] = useState(false)
-    let [toggleHashrate, setToggleHashrate] = useState(false)
-    let [toggleBalance, setToggleBalance] = useState(true)
+    let [toggleHashrate, setToggleHashrate] = useState(true)
+    let [toggleBalance, setToggleBalance] = useState(false)
     let [toggleRewards, setToggleRewards] = useState(false)
 
     useEffect(() => {
@@ -93,17 +93,6 @@ const AccountData = (props) => {
             {props.account.accountData.workers.length !== 0 ?
                 <div className={style.accountData}>
                     <div className={style.flexWrapper}>
-                        <div className={style.dropDown} onClick={dropDownBalanceToggle}>
-                            <DropBtn status={toggleBalance} text={'Баланс'}/>
-                            {toggleBalance ? <div className={style.dropdown__content}>
-                                <div className={style.dropText}>
-                                    <div className={style.dropText__data}>
-                                        <Total
-                                            text={`Текущий баланс: ${(props.account.accountData.balance / 1000000000).toFixed(3)} ${poolChecker(pool)}`}/>
-                                    </div>
-                                </div>
-                            </div> : ''}
-                        </div>
                         <div className={style.dropDown} onClick={dropDownHashrateToggle}>
                             <DropBtn status={toggleHashrate} text={'Воркеры'}/>
                             {toggleHashrate ? <div className={style.dropdown__content}>
@@ -131,6 +120,18 @@ const AccountData = (props) => {
                                 </div>
                             </div> : ''}
                         </div>
+                        <div className={style.dropDown} onClick={dropDownBalanceToggle}>
+                            <DropBtn status={toggleBalance} text={'Баланс'}/>
+                            {toggleBalance ? <div className={style.dropdown__content}>
+                                <div className={style.dropText}>
+                                    <div className={style.dropText__data}>
+                                        <Total
+                                            text={`Текущий баланс: ${(props.account.accountData.balance / 1000000000).toFixed(3)} ${poolChecker(pool)}`}/>
+                                    </div>
+                                </div>
+                            </div> : ''}
+                        </div>
+
                         <div className={style.dropDown} onClick={dropDownPaymentsToggle}>
                             <DropBtn status={togglePayments} text={'Выплаты'}/>
                             {togglePayments ? <div className={style.dropdown__content}>

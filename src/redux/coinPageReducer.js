@@ -3,10 +3,12 @@ const SHOW_FULL_STATS_DATA = 'SHOW_FULL_STATS_DATA';
 const FETCHING = 'FETCHING';
 const ADD_INPUT_DATA = 'ADD_INPUT_DATA';
 const ADD_ACCOUNT_ADDRESS = 'ADD_ACCOUNT_ADDRESS';
+const ADD_BLOCKS = 'ADD_BLOCKS';
 
 
 let initialState = {
     miners: [],
+    blocks: undefined,
     fullStats: false,
     isFetching: true,
     inputData: undefined,
@@ -20,6 +22,13 @@ const coinPageReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_MINERS: {
             stateCopy.miners = [...action.payload]
+            return stateCopy
+        }
+        case ADD_BLOCKS: {
+            // console.log(action.payload)
+            if({...action.payload} !== undefined){
+                stateCopy.blocks = {...action.payload}
+            }
             return stateCopy
         }
         case SHOW_FULL_STATS_DATA: {

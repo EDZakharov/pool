@@ -2,6 +2,7 @@ import io from 'socket.io-client'
 
 const socket = io('https://ws.e4pool.com/');
 const socket2 = io('https://ws.e4pool.com/');
+const socket3 = io('https://ws.e4pool.com/');
 
 const SHOW_COINS = 'SHOW_COINS';
 const DELL_COINS = 'DELL_COINS';
@@ -14,6 +15,11 @@ const DELL_MINERS = 'DELL_MINERS';
 
 const SHOW_ACCOUNT_DATA = 'SHOW_ACCOUNT_DATA';
 const DELL_ACCOUNT_DATA = 'DELL_ACCOUNT_DATA';
+
+const SHOW_BLOCKS = 'SHOW_BLOCKS';
+const DELL_BLOCKS = 'DELL_BLOCKS';
+
+
 
 let storage = {
     coins: [],
@@ -52,8 +58,19 @@ let storage2 = {
 }
 
 socket2.on('update', res => {
+
     if (res.method === 'fullStats') {
         storage2.fullStats = {...res.data}
+    }
+})
+
+let storage3 = {
+    blocks: undefined,
+}
+
+socket3.on('update', res => {
+    if (res.method === 'blocks') {
+        storage3.blocks = {...res.data}
     }
 })
 
@@ -82,6 +99,11 @@ export let socketMiddleware = store => next => action => {
     if (action.type === 'SHOW_MINERS') {
         action.type = 'ADD_MINERS'
         action.payload = storage.miners
+        return next(action)
+    }
+    if (action.type === 'SHOW_BLOCKS') {
+        action.type = 'ADD_BLOCKS'
+        action.payload = storage3.blocks
         return next(action)
     }
     if (action.type === 'SHOW_ACCOUNT_DATA') {
@@ -138,6 +160,21 @@ export const showMiners = (pool) => {
 export let dellMinersData = () => {
     socket.emit('stopStats')
     return {type: DELL_MINERS}
+}
+//BLOCKS_______________________________
+export let ShowBlocksOnce = (pool) => {
+    socket3.emit('startPoolStats', {
+        pool: pool,
+        method: 'blocks'
+    })
+    return {type: SHOW_BLOCKS, payload: pool}
+}
+export const showBlocks = (pool) => {
+    return {type: SHOW_BLOCKS, payload: pool}
+}
+export let dellBlocksData = () => {
+    socket3.emit('stopStats')
+    return {type: DELL_BLOCKS}
 }
 
 //ACCOUNT______________________________

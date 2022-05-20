@@ -190,21 +190,21 @@ export let checkEnd = (setEnd) => {
 export const coinNamesFilter = (data) => {
     switch (data) {
         case 'eth':
-            return 'Ethereum'
+            return 'ETH'
         case 'eth-solo':
-            return 'Eth-solo'
+            return 'ETH'
         case 'etc':
-            return 'Ethereum Classic'
+            return 'ETC'
         case 'etc-solo':
-            return 'Etc-solo'
+            return 'ETC'
         case 'burst':
             return 'Burst'
         case 'keva':
-            return 'Keva-prop'
+            return 'Keva'
         case 'evox-solo':
-            return 'Evox-solo'
+            return 'Evox'
         case 'evox-prop':
-            return 'Evox-prop'
+            return 'Evox'
         case 'ergo':
             return 'Ergo'
     }

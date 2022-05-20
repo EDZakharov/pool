@@ -33,6 +33,8 @@
 
   .miner_s {
     grid-area: ms;
+    display: flex;
+    align-items: center;
     @include addMargin1;
     @include addPadding;
     font-weight: bold;
@@ -102,6 +104,8 @@
 
   .hashrate_s {
     grid-area: hs;
+    display: flex;
+    align-items: center;
     @include addMargin1;
     @include addPadding;
     font-weight: bold;
@@ -114,6 +118,8 @@
 
   .shares_s {
     grid-area: ss;
+    display: flex;
+    align-items: center;
     @include addMargin1;
     @include addPadding;
     font-weight: bold;
@@ -126,26 +132,29 @@
 
   .status_s{
     grid-area: sts;
+    display: flex;
+    align-items: center;
     @include addMargin1;
     @include addPadding;
     font-weight: bold;
-
+    font-size: 10px;
     .status_offline{
       grid-area: st;
       font-weight: 400;
 
       span{
+
         background-color: #cb2410;
         border: 0.2px solid rgba(118, 110, 110, 0.17);
         border-radius: 5px;
-        font-weight: 400;
+        //font-weight: 400;
         color: white;
         }
       }
 
     .status_online{
       grid-area: st;
-      font-weight: 400;
+      //font-weight: 400;
 
       span{
         background-color: #1ca00d;

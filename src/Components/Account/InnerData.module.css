@@ -101,4 +101,17 @@ a {
     flex-grow: 1;
     padding-right: 2%; }
 
+.inner__data__grid__blocks {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #6e6767;
+  color: #ffffff;
+  margin-top: 2px;
+  font-size: 15px; }
+  .inner__data__grid__blocks div {
+    text-align: center;
+    width: 150px;
+    padding: 5.5px 0 5.5px 0; }
+
 /*# sourceMappingURL=InnerData.module.css.map */
