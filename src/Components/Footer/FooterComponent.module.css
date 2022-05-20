@@ -9,31 +9,39 @@
   height: 15px;
   width: 100%;
   z-index: 98;
-  padding: 5px; }
-  @media (pointer: coarse) {
-    .footer {
-      opacity: 0;
-      display: none; }
-      .footer a {
-        user-select: none;
-        pointer-events: none;
-        display: none; } }
+  padding: 5px;
+}
+@media (pointer: coarse) {
+  .footer {
+    opacity: 0;
+    display: none;
+  }
   .footer a {
-    margin-left: 10px;
-    text-decoration: none;
-    color: #c9c9c9; }
-  .footer :hover {
-    color: #ffffff;
-    text-decoration: none; }
-  .footer .fa-telegram-plane {
-    color: #FFF;
-    margin-top: 5vw;
-    font-size: 15vw;
-    margin-left: 5vw; }
-  .footer .fa-github {
-    color: #FFF;
-    margin-top: 5vw;
-    font-size: 15vw;
-    margin-left: 5vw; }
+    user-select: none;
+    pointer-events: none;
+    display: none;
+  }
+}
+.footer a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #c9c9c9;
+}
+.footer :hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+.footer .fa-telegram-plane {
+  color: #FFF;
+  margin-top: 5vw;
+  font-size: 15vw;
+  margin-left: 5vw;
+}
+.footer .fa-github {
+  color: #FFF;
+  margin-top: 5vw;
+  font-size: 15vw;
+  margin-left: 5vw;
+}
 
 /*# sourceMappingURL=FooterComponent.module.css.map */

@@ -5,6 +5,9 @@ import {dateFilter, hashFilter, imgFilter, poolChecker} from "../../Filters";
 import Charts from "../Charts/Charts";
 import {Link} from "react-router-dom";
 import PaginatedItems from "../Pagination";
+import DropBtn from "../Account/DropBtn";
+import Total from "../Account/Total";
+import DropData from "./DropData/DropData";
 
 
 export const CoinPage = (props) => {
@@ -65,6 +68,19 @@ export const CoinPage = (props) => {
         return `/${coinName}/account/${props.coinPage.accountAddress}`
     }
 
+    let [toggleStats, setToggleStats] = useState(true)
+    let [toggleMiners, setToggleMiners] = useState(false)
+
+    let dropDownStatsToggle = () => {
+        setToggleStats(true)
+        setToggleMiners(false)
+
+    }
+    let dropDownMinersToggle = () => {
+        setToggleStats(false)
+        setToggleMiners(true)
+    }
+
 
     return (props.coinPage.isFetching ? <Fetcher/> : <div className={localStorage.getItem('showRandomBackStyle')}>
         <div className={style.coinData}>
@@ -78,46 +94,58 @@ export const CoinPage = (props) => {
                 <div className={style.inputForm}/> : <div className={style.inputForm}>
                     <img src={coinLogo} alt='logo'/>
                     <input type='text' autoComplete='off' placeholder={`Введите адрес кошелька фермы`}
-                           onChange={setAddr} value={props.coinPage.accountAddress !== null ? props.coinPage.accountAddress : ''}/>
+                           onChange={setAddr}
+                           value={props.coinPage.accountAddress !== null ? props.coinPage.accountAddress : ''}/>
                     <Link to={addrFilter(thisPool)}>
                         <div className={style.inputBtn}><i className="fa-solid fa-magnifying-glass"/></div>
                     </Link>
                 </div>}
 
-            <div className={style.stats}>
-                <div className={style.stats__grid}>
-                    <div
-                        className={style.currentEffort}>Текущая
-                        удача: {isNaN(luck) ? 'not found' : `${luck.toFixed(0)} %`}</div>
-                    <div className={style.fee}>Комиссия пула: {props.coinPage.fullStats.fee} %</div>
-                    <div
-                        className={style.hashrate}>Хэшрейт: {hashFilter(props.coinPage.fullStats.hashrate).hashrate}{hashFilter(props.coinPage.fullStats.hashrate).unit}</div>
-                    <div className={style.height}>Решаем блок: {props.coinPage.fullStats.height}</div>
-                    <div className={style.lastBlockFound}>Последний блок: {dateFilter(props.coinPage.fullStats.lastBlockFound)}</div>
-                    <div className={style.minPayment}>Минимальный вывод: {props.coinPage.fullStats.minPayment} {poolChecker(thisPool)}</div>
-                    <div className={style.miners}>Майнеры: {props.coinPage.fullStats.miners}</div>
-                    <div className={style.type}>Тип пула: {props.coinPage.fullStats.type}</div>
-                    <div className={style.charts}>
-                        <div className={style.showMinersBtn}
-                             onClick={showMiners}>{!checked ? 'Показать список майнеров' : 'Убрать список майнеров'}
+            <div className={style.dropContainer}>
+                <div className={style.flexWrapper}>
+                    <div className={style.buttonsWrapper}>
+                        <div className={style.buttons}>
+                            <div onClick={dropDownStatsToggle}><DropBtn status={toggleStats} text={'Статистика'}/></div>
+                            <div onClick={dropDownMinersToggle}><DropBtn status={toggleMiners} text={'Майнеры'}/></div>
+                            <div><DropBtn status={false} text={'Блоки'}/></div>
+                            <div><DropBtn status={false} text={'Как подключиться'}/></div>
                         </div>
                     </div>
+                    <DropData componentContent={<div className={style.dropDown}>
+                        {toggleStats ? <div className={style.stats}>
+                            <div className={style.currentEffort}>Текущая
+                                удача: {isNaN(luck) ? 'not found' : `${luck.toFixed(0)} %`}</div>
+                            <div className={style.fee}>Комиссия пула: {props.coinPage.fullStats.fee} %</div>
+                            <div
+                                className={style.hashrate}>Хэшрейт пула: {hashFilter(props.coinPage.fullStats.hashrate).hashrate}{hashFilter(props.coinPage.fullStats.hashrate).unit}</div>
+                            <div className={style.height}>Решаем блок: {props.coinPage.fullStats.height}</div>
+                            <div className={style.lastBlockFound}>Последний
+                                блок: {dateFilter(props.coinPage.fullStats.lastBlockFound)}</div>
+                            <div className={style.minPayment}>Минимальный
+                                вывод: {props.coinPage.fullStats.minPayment} {poolChecker(thisPool)}</div>
+                            <div className={style.miners}>Майнеры: {props.coinPage.fullStats.miners}</div>
+                            <div className={style.type}>Тип пула: {props.coinPage.fullStats.type}</div>
+                            <div className={style.charts}>
+                            </div>
+                        </div> : ''}
+                    </div>}/>
+                    <DropData componentContent={<div className={style.dropDown}>
+                        {toggleMiners ? <div className={style.totalHashrate} id='anchorBtn'>
+                            {/*<Total text={`Общий хэшрейт: ${hashFilter(props.coinPage.fullStats.hashrate).hashrate}${hashFilter(props.coinPage.fullStats.hashrate).unit}`}/>*/}
+                            <div className={style.coin_column_grid}>
+                                <div className={style.wallet}>Кошелек</div>
+                                <div className={style.hashrate}>Хэшрейт</div>
+                                <div className={style.shares}>Последняя шара</div>
+                                <div className={style.status}>Статус</div>
+                            </div>
+                            <div className={style.minersWrapper}>
+                                <PaginatedItems itemsPerPage={7} items={props.coinPage.miners}
+                                                type={'coinPage'} addInputValue={props.addInputValue}/>
+                            </div>
+                        </div> : ''}
+                    </div>}/>
                 </div>
             </div>
-
-            {checked ? <div className={style.totalHashrate} id='anchorBtn'>
-                <div className={style.coin_column_grid}>
-                    <div className={style.wallet}>Кошелек</div>
-                    <div className={style.hashrate}>Хэшрейт</div>
-                    <div className={style.shares}>Последняя шара</div>
-                    <div className={style.status}>Статус</div>
-                </div>
-                <div className={style.minersWrapper}>
-                    <PaginatedItems itemsPerPage={7} items={props.coinPage.miners} type={'coinPage'} addInputValue={props.addInputValue}/>
-                </div>
-
-            </div> : ''}
         </div>
-
     </div>);
 };

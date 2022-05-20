@@ -1,7 +1,1 @@
-{
-"version": 3,
-"mappings": "AAAA,MAAM;EACJ,SAAS,EAAE,IAAI;EACf,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;EACvB,OAAO,EAAE,UAAU",
-"sources": ["Total.module.scss"],
-"names": [],
-"file": "Total.module.css"
-}
+{"version":3,"sourceRoot":"","sources":["Total.module.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;EACA;EACA;EACA;EACA","file":"Total.module.css"}
