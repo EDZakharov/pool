@@ -1,132 +1,104 @@
 .grid_data {
   width: 100%;
   margin: 2px auto;
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   grid-template-areas: "ms hs ss sts" "m h s st";
   grid-template-columns: 6fr 2fr 2.3fr 1fr;
   -moz-user-select: text;
   font-size: 16px;
   background-color: rgba(118, 111, 111, 0.82);
   backdrop-filter: blur(15px);
-  color: #f5f5f5;
-}
-.grid_data:hover:first-child > div {
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(10px);
-  color: #ffffff;
-}
-.grid_data:hover:first-child > div div {
-  color: white;
-}
-.grid_data .miner_s {
-  grid-area: ms;
-  display: flex;
-  align-items: center;
-  background-color: rgba(118, 111, 111, 0.82);
-  backdrop-filter: blur(15px);
-  padding: 5px;
-  font-weight: bold;
-}
-.grid_data .miner_s .miner {
-  font-weight: 400;
-}
-.grid_data .miner_s .miner .longMiner {
-  font-size: 10px;
-}
-.grid_data .miner_s .miner .longMiner .minerSpan:hover {
-  text-decoration: underline;
-}
-.grid_data .miner_s .miner .longMiner:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-.grid_data .miner_s .miner .longMiner i {
-  margin-left: 5px;
-}
-.grid_data .miner_s .miner .longMiner i:active {
-  color: #e3bd37;
-}
-.grid_data .miner_s .miner .longMiner .copy {
-  color: #e3bd37;
-  font-weight: 600;
-  font-size: 10px;
-  text-decoration: none;
-}
-.grid_data .miner_s .miner .shortMiner {
-  font-size: 15px;
-}
-.grid_data .miner_s .miner .shortMiner .minerSpan:hover {
-  text-decoration: underline;
-}
-.grid_data .miner_s .miner .shortMiner:hover {
-  cursor: pointer;
-}
-.grid_data .miner_s .miner .shortMiner i {
-  margin-left: 5px;
-}
-.grid_data .miner_s .miner .shortMiner i:active {
-  color: #e3bd37;
-}
-.grid_data .miner_s .miner .shortMiner .copy {
-  color: #e3bd37;
-  font-weight: 600;
-  font-size: 10px;
-}
-.grid_data .hashrate_s {
-  grid-area: hs;
-  display: flex;
-  align-items: center;
-  background-color: rgba(118, 111, 111, 0.82);
-  backdrop-filter: blur(15px);
-  padding: 5px;
-  font-weight: bold;
-}
-.grid_data .hashrate_s .hashrate {
-  grid-area: h;
-  font-weight: 400;
-}
-.grid_data .shares_s {
-  grid-area: ss;
-  display: flex;
-  align-items: center;
-  background-color: rgba(118, 111, 111, 0.82);
-  backdrop-filter: blur(15px);
-  padding: 5px;
-  font-weight: bold;
-}
-.grid_data .shares_s .shares {
-  grid-area: s;
-  font-weight: 400;
-}
-.grid_data .status_s {
-  grid-area: sts;
-  display: flex;
-  align-items: center;
-  background-color: rgba(118, 111, 111, 0.82);
-  backdrop-filter: blur(15px);
-  padding: 5px;
-  font-weight: bold;
-  font-size: 10px;
-}
-.grid_data .status_s .status_offline {
-  grid-area: st;
-  font-weight: 400;
-}
-.grid_data .status_s .status_offline span {
-  background-color: #cb2410;
-  border: 0.2px solid rgba(118, 110, 110, 0.17);
-  border-radius: 5px;
-  color: white;
-}
-.grid_data .status_s .status_online {
-  grid-area: st;
-}
-.grid_data .status_s .status_online span {
-  background-color: #1ca00d;
-  border: 0.2px solid rgba(118, 110, 110, 0.17);
-  border-radius: 5px;
-  font-weight: 400;
-  color: #ffffff;
-}
+  color: #f5f5f5; }
+  .grid_data div {
+    width: 150px;
+    text-align: center; }
+  .grid_data .miner_s {
+    display: flex;
+    align-items: center;
+    background-color: rgba(118, 111, 111, 0.82);
+    backdrop-filter: blur(15px);
+    padding: 5px;
+    font-weight: bold; }
+    .grid_data .miner_s .miner {
+      font-weight: 400; }
+      .grid_data .miner_s .miner .longMiner {
+        font-size: 10px; }
+        .grid_data .miner_s .miner .longMiner .minerSpan:hover {
+          text-decoration: underline; }
+        .grid_data .miner_s .miner .longMiner:hover {
+          cursor: pointer;
+          text-decoration: underline; }
+        .grid_data .miner_s .miner .longMiner i {
+          margin-left: 5px; }
+          .grid_data .miner_s .miner .longMiner i:active {
+            color: #e3bd37; }
+        .grid_data .miner_s .miner .longMiner .copy {
+          color: #e3bd37;
+          font-weight: 600;
+          font-size: 10px;
+          text-decoration: none; }
+      .grid_data .miner_s .miner .shortMiner {
+        font-size: 15px; }
+        .grid_data .miner_s .miner .shortMiner .minerSpan:hover {
+          text-decoration: underline; }
+        .grid_data .miner_s .miner .shortMiner:hover {
+          cursor: pointer; }
+        .grid_data .miner_s .miner .shortMiner i {
+          margin-left: 5px; }
+          .grid_data .miner_s .miner .shortMiner i:active {
+            color: #e3bd37; }
+        .grid_data .miner_s .miner .shortMiner .copy {
+          color: #e3bd37;
+          font-weight: 600;
+          font-size: 10px; }
+  .grid_data .hashrate_s {
+    grid-area: hs;
+    display: flex;
+    align-items: center;
+    background-color: rgba(118, 111, 111, 0.82);
+    backdrop-filter: blur(15px);
+    padding: 5px;
+    font-weight: bold; }
+    .grid_data .hashrate_s .hashrate {
+      grid-area: h;
+      font-weight: 400; }
+  .grid_data .shares_s {
+    grid-area: ss;
+    display: flex;
+    align-items: center;
+    background-color: rgba(118, 111, 111, 0.82);
+    backdrop-filter: blur(15px);
+    padding: 5px;
+    font-weight: bold; }
+    .grid_data .shares_s .shares {
+      grid-area: s;
+      font-weight: 400; }
+  .grid_data .status_s {
+    grid-area: sts;
+    display: flex;
+    align-items: center;
+    background-color: rgba(118, 111, 111, 0.82);
+    backdrop-filter: blur(15px);
+    padding: 5px;
+    font-weight: bold;
+    font-size: 10px; }
+    .grid_data .status_s .status_offline {
+      grid-area: st;
+      font-weight: 400; }
+      .grid_data .status_s .status_offline span {
+        background-color: #cb2410;
+        border: 0.2px solid rgba(118, 110, 110, 0.17);
+        border-radius: 5px;
+        color: white; }
+    .grid_data .status_s .status_online {
+      grid-area: st; }
+      .grid_data .status_s .status_online span {
+        background-color: #1ca00d;
+        border: 0.2px solid rgba(118, 110, 110, 0.17);
+        border-radius: 5px;
+        font-weight: 400;
+        color: #ffffff; }
 
 /*# sourceMappingURL=CoinPageData.module.css.map */

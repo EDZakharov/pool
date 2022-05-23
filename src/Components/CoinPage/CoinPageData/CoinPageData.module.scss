@@ -9,7 +9,10 @@
 .grid_data {
   width: 100%;
   margin: 2px auto;
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  //display: grid;
   grid-template-areas: 'ms hs ss sts''m h s st';
   grid-template-columns: 6fr 2fr 2.3fr 1fr;
   -moz-user-select: text;
@@ -18,27 +21,19 @@
   backdrop-filter: blur(15px);
   color: #f5f5f5;
 
-  &:hover {
-    
-    &:first-child>div{
-      background-color: rgba(29, 29, 29, 0.19);
-      backdrop-filter: blur(10px);
-      color: #ffffff;
-
-      div{
-        color: white;
-      }
-    }
+  div{
+    width: 150px;
+    text-align: center;
   }
 
+
   .miner_s {
-    grid-area: ms;
     display: flex;
     align-items: center;
     @include addMargin1;
     @include addPadding;
     font-weight: bold;
-    
+
     .miner {
       font-weight: 400;
 
@@ -138,6 +133,7 @@
     @include addPadding;
     font-weight: bold;
     font-size: 10px;
+    
     .status_offline{
       grid-area: st;
       font-weight: 400;

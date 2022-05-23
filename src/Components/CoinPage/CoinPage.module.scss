@@ -282,45 +282,25 @@
             }
 
             .coin_column_grid {
-              display: grid;
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
               font-size: 20px;
               font-weight: 400;
-              grid-template-areas: 'w h s ss';
-              //font-weight: bold;
-              grid-template-columns: 6fr 2fr 2.3fr 1fr;
               -moz-user-select: text;
-              //margin-top: 10px;
               background-color: grey;
               color: white;
-              //padding: 13px 0;
-              padding-bottom: 5px;
-              align-items: center;
               height: 40px;
 
-
-              .wallet {
-                grid-area: w;
-                padding-left: 150px;
-              }
-
-              .hashrate {
-                grid-area: h;
-                //padding-left: 10px;
-              }
-
-              .shares {
-                grid-area: s;
-                margin-left: -20px;
-              }
-
-              .status {
-                grid-area: ss;
-
+              div{
+                text-align: center;
+                width: 150px;
+                white-space: nowrap;
               }
             }
 
             .minersWrapper {
-              //margin-bottom: 50px;
+
             }
 
           }
@@ -342,53 +322,21 @@
               }
             }
 
-
             .blocks_column_grid {
               display: flex;
               align-items: center;
               justify-content: space-around;
               margin-top: 2px;
               font-size: 20px;
-              //grid-template-columns: 6fr 2fr 2.3fr 1fr;
               -moz-user-select: text;
               background-color: grey;
               color: white;
-              padding-bottom: 5px;
               height: 40px;
-
 
               div {
                 text-align: center;
                 width: 150px;
               }
-
-
-              .height {
-                //grid-area: w;
-
-
-              }
-
-              .uncle {
-
-              }
-
-              .orphan {
-
-              }
-
-              .hash {
-
-                //grid-area: h;
-                //padding-left: 10px;
-              }
-
-              .timestamp {
-
-                //grid-area: s;
-                //margin-left: 180px;
-              }
-
             }
 
             .blocksWrapper {

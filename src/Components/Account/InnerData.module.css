@@ -31,75 +31,43 @@ a {
 .inner__data__grid__payments {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   background-color: #6e6767;
   color: #ffffff;
   width: 100%;
   margin-top: 2px;
   font-size: 15px; }
   .inner__data__grid__payments div {
-    padding: 5px;
-    width: 200px; }
-  .inner__data__grid__payments .inner__elem1 {
-    flex-grow: 1;
-    text-align: center; }
-  .inner__data__grid__payments .inner__elem2 {
-    flex-grow: 2;
-    text-align: center; }
-  .inner__data__grid__payments .inner__elem3 {
-    flex-grow: 1;
+    padding: 5px 0;
+    width: 150px;
     text-align: center; }
 
 .inner__data__grid__workers {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   background-color: #6e6767;
   color: #ffffff;
   width: 100%;
   margin-top: 2px;
   font-size: 15px; }
-  .inner__data__grid__workers .inner__elem1 {
-    padding: 5px;
-    width: 100%;
+  .inner__data__grid__workers div {
+    padding: 5px 0;
+    width: 150px;
     text-align: center; }
-  .inner__data__grid__workers .inner__elem2 {
-    padding: 5px;
-    width: 100%;
-    display: grid;
-    grid-template-areas: '1 2 3';
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 0 auto; }
-    .inner__data__grid__workers .inner__elem2 .el2_gr {
-      grid-area: 2; }
-  .inner__data__grid__workers .inner__elem3 {
-    padding: 5px;
-    width: 110%;
-    display: grid;
-    grid-template-areas: '1 2 3';
-    grid-template-columns: 1fr 1fr 1fr; }
-    .inner__data__grid__workers .inner__elem3 .el3_gr {
-      grid-area: 2; }
 
 .inner__data__grid__rewards {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   background-color: #6e6767;
   color: #ffffff;
   margin-top: 2px;
   font-size: 15px; }
   .inner__data__grid__rewards div {
-    padding: 5px 0 5px 0; }
-  .inner__data__grid__rewards .inner__elem1 {
-    flex-grow: 4;
-    padding-left: 5%; }
-  .inner__data__grid__rewards .inner__elem2 {
-    flex-grow: 3; }
-  .inner__data__grid__rewards .inner__elem3 {
-    flex-grow: 2;
-    width: 500px; }
-  .inner__data__grid__rewards .inner__elem4 {
-    flex-grow: 1;
-    padding-right: 2%; }
+    padding: 5px 0;
+    text-align: center;
+    width: 150px; }
 
 .inner__data__grid__blocks {
   display: flex;

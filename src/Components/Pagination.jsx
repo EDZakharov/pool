@@ -36,7 +36,7 @@ function Items({currentItems, type, addInputValue, pool}) {
                     return <InnerData
                         key={el.tx}
                         el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
-                        el2={<a onClick={event => event.stopPropagation()} href={txChecker(el.tx, pool)}>{el.tx}</a>}
+                        el2={<a onClick={event => event.stopPropagation()} href={txChecker(el.tx, pool)}>{getTruncatedName(el.tx)}</a>}
                         el3={convertTimestamp(el.timestamp)}
                         type={'payments'}
                     />
@@ -47,7 +47,7 @@ function Items({currentItems, type, addInputValue, pool}) {
                         el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
                         el2={convertTimestamp(el.timestamp)}
                         el3={<a onClick={event => event.stopPropagation()}
-                                href={blockHashChecker(el.blockHash, pool)}>{el.blockHash}</a>}
+                                href={blockHashChecker(el.blockHash, pool)}>{getTruncatedName(el.blockHash)}</a>}
                         el4={el.blockHeight}
                         type={'rewards'}
                     />

@@ -274,27 +274,19 @@
                 color: #f32222;
                 font-size: 20px; }
             .coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid {
-              display: grid;
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
               font-size: 20px;
               font-weight: 400;
-              grid-template-areas: 'w h s ss';
-              grid-template-columns: 6fr 2fr 2.3fr 1fr;
               -moz-user-select: text;
               background-color: grey;
               color: white;
-              padding-bottom: 5px;
-              align-items: center;
               height: 40px; }
-              .coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .wallet {
-                grid-area: w;
-                padding-left: 150px; }
-              .coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .hashrate {
-                grid-area: h; }
-              .coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .shares {
-                grid-area: s;
-                margin-left: -20px; }
-              .coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .status {
-                grid-area: ss; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid div {
+                text-align: center;
+                width: 150px;
+                white-space: nowrap; }
           .coin .coinData .dropContainer .flexWrapper .dropDown .blocks {
             padding: 9px 10px 0 10px;
             font-weight: 400; }
@@ -328,7 +320,6 @@
               -moz-user-select: text;
               background-color: grey;
               color: white;
-              padding-bottom: 5px;
               height: 40px; }
               .coin .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid div {
                 text-align: center;
@@ -612,27 +603,19 @@
                 color: #f32222;
                 font-size: 20px; }
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid {
-              display: grid;
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
               font-size: 20px;
               font-weight: 400;
-              grid-template-areas: 'w h s ss';
-              grid-template-columns: 6fr 2fr 2.3fr 1fr;
               -moz-user-select: text;
               background-color: grey;
               color: white;
-              padding-bottom: 5px;
-              align-items: center;
               height: 40px; }
-              .coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .wallet {
-                grid-area: w;
-                padding-left: 150px; }
-              .coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .hashrate {
-                grid-area: h; }
-              .coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .shares {
-                grid-area: s;
-                margin-left: -20px; }
-              .coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .status {
-                grid-area: ss; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid div {
+                text-align: center;
+                width: 150px;
+                white-space: nowrap; }
           .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks {
             padding: 9px 10px 0 10px;
             font-weight: 400; }
@@ -666,7 +649,6 @@
               -moz-user-select: text;
               background-color: grey;
               color: white;
-              padding-bottom: 5px;
               height: 40px; }
               .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid div {
                 text-align: center;
@@ -950,27 +932,19 @@
                 color: #f32222;
                 font-size: 20px; }
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid {
-              display: grid;
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
               font-size: 20px;
               font-weight: 400;
-              grid-template-areas: 'w h s ss';
-              grid-template-columns: 6fr 2fr 2.3fr 1fr;
               -moz-user-select: text;
               background-color: grey;
               color: white;
-              padding-bottom: 5px;
-              align-items: center;
               height: 40px; }
-              .coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .wallet {
-                grid-area: w;
-                padding-left: 150px; }
-              .coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .hashrate {
-                grid-area: h; }
-              .coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .shares {
-                grid-area: s;
-                margin-left: -20px; }
-              .coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .status {
-                grid-area: ss; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid div {
+                text-align: center;
+                width: 150px;
+                white-space: nowrap; }
           .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks {
             padding: 9px 10px 0 10px;
             font-weight: 400; }
@@ -1004,7 +978,6 @@
               -moz-user-select: text;
               background-color: grey;
               color: white;
-              padding-bottom: 5px;
               height: 40px; }
               .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid div {
                 text-align: center;

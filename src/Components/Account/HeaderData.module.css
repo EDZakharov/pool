@@ -20,82 +20,46 @@
 .headerData__grid__payments {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   color: #ffffff;
   font-size: 20px;
   background-color: #7f7f7f;
   height: 40px;
   padding-bottom: 5px; }
   .headerData__grid__payments div {
-    padding: 5px;
-    width: 200px; }
-  .headerData__grid__payments .headerData__el1 {
-    flex-grow: 1;
-    text-align: center; }
-  .headerData__grid__payments .headerData__el2 {
-    flex-grow: 2;
-    text-align: center; }
-  .headerData__grid__payments .headerData__el3 {
-    flex-grow: 1;
-    text-align: center; }
+    text-align: center;
+    width: 150px;
+    white-space: nowrap; }
+    .headerData__grid__payments div:nth-child(1) {
+      margin-right: -20px; }
+    .headerData__grid__payments div:nth-child(2) {
+      padding-right: 35px; }
 
 .headerData__grid__workers {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   color: #ffffff;
   font-size: 20px;
   background-color: #7f7f7f;
   height: 40px;
   padding-bottom: 5px; }
-  .headerData__grid__workers .headerData__el1 {
-    width: 100%;
-    padding: 5px;
-    text-align: center; }
-  .headerData__grid__workers .headerData__el2 {
-    width: 100%;
-    padding: 5px;
-    display: grid;
-    grid-template-areas: '1 2 3';
-    grid-template-columns: 1fr 1fr 1fr; }
-    .headerData__grid__workers .headerData__el2 .el2_gr {
-      grid-area: 2;
-      margin-left: -10px; }
-  .headerData__grid__workers .headerData__el3 {
-    width: 110%;
-    padding: 5px;
-    display: grid;
-    grid-template-areas: '1 2 3';
-    grid-template-columns: 1fr 1fr 1fr; }
-    .headerData__grid__workers .headerData__el3 .el3_gr {
-      grid-area: 2;
-      white-space: nowrap;
-      margin-left: -20px; }
+  .headerData__grid__workers div {
+    text-align: center;
+    width: 150px;
+    white-space: nowrap; }
 
 .headerData__grid__rewards {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   color: #ffffff;
   font-size: 20px;
   background-color: #7f7f7f;
   height: 40px;
   padding-bottom: 5px; }
-  .headerData__grid__rewards .headerData__el1 {
-    flex-grow: 4;
-    padding-left: 5%; }
-  .headerData__grid__rewards .headerData__el2 {
-    flex-grow: 3; }
-    .headerData__grid__rewards .headerData__el2 div {
-      padding-left: 14%; }
-  .headerData__grid__rewards .headerData__el3 {
-    flex-grow: 2;
-    width: 500px; }
-    .headerData__grid__rewards .headerData__el3 div {
-      padding-left: 49%; }
-  .headerData__grid__rewards .headerData__el4 {
-    flex-grow: 1;
-    padding-right: 2%; }
-    .headerData__grid__rewards .headerData__el4 div {
-      padding-left: 16%;
-      white-space: nowrap; }
+  .headerData__grid__rewards div {
+    text-align: center;
+    width: 150px; }
 
 /*# sourceMappingURL=HeaderData.module.css.map */
