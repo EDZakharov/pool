@@ -54,13 +54,11 @@ const InnerData = ({el1,el2,el3,el4,el5,type}) => {
     }
     if(type === 'blocks'){
 
-
-
         return (
             <div className={style.inner__data__grid__blocks}>
                 <div className={style.inner__elem1}>{el1}</div>
-                <div className={style.inner__elem2}>{el2?'Да':'Нет'}</div>
-                <div className={style.inner__elem3}>{el3?'Да':'Нет'}</div>
+                <div className={style.inner__elem2}>{el2}</div>
+                <div className={style.inner__elem3}>{el3}</div>
                 <div className={style.inner__elem4}>{el4}</div>
                 <div className={style.inner__elem5}>{el5}</div>
             </div>

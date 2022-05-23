@@ -45,7 +45,49 @@
     cursor: pointer;
     text-decoration: none;
     color: #e3bd37;
-
   }
 
+}
+
+.reward{
+  position: relative;
+
+  .mev{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    //height: 100%;
+    white-space: nowrap;
+    margin-left: 10px;
+    font-size: 10px;
+    background-color: #4a935c;
+    border: .1px solid #4a935c;
+    border-radius: 5px;
+    padding: 0 3px;
+    left: 70px;
+    top: 1px;
+  }
+}
+
+.orphan{
+  color: #ff8989;
+}
+
+.easy{
+  background-color: #4a935c;
+  border: .1px solid #4a935c;
+  border-radius: 7px;
+  padding: 0 3px;
+}
+.hard{
+  background-color: #c2ba82;
+  border: .1px solid #c2ba82;
+  border-radius: 7px;
+  padding: 0 3px;
+}
+.insane{
+  background-color: #ff8989;
+  border: .1px solid #ff8989;
+  border-radius: 7px;
+  padding: 0 3px;
 }

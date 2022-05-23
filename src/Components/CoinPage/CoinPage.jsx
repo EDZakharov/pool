@@ -100,6 +100,8 @@ export const CoinPage = (props) => {
     //
     // }
 
+    console.log(props.coinPage.blocks)
+
     return (props.coinPage.isFetching ? <Fetcher/> : <div className={localStorage.getItem('showRandomBackStyle')}>
         <div className={style.coinData}>
             {props.coinPage.fullStats.charts && props.coinPage.fullStats.charts.length !== 0 ?
@@ -174,8 +176,8 @@ export const CoinPage = (props) => {
                             />
                             <div className={style.blocks_column_grid}>
                                 <div className={style.height}>Высота</div>
-                                <div className={style.uncle}>Uncle</div>
-                                <div className={style.orphan}>Orphan</div>
+                                <div className={style.summ}>Сумма</div>
+                                <div className={style.effort}>Удача</div>
                                 <div className={style.hash}>Хэш блока</div>
                                 <div className={style.timestamp}>Дата</div>
                             </div>

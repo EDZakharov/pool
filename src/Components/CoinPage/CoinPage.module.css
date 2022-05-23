@@ -1,7 +1,6 @@
 * {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 .coin {
   grid-area: c;
@@ -13,399 +12,333 @@
   padding-top: 50px;
   background: url(./../../img/octopus1.png) no-repeat 50% 0;
   background-size: 1500px;
-  z-index: 1;
-}
-.coin .coinData {
-  display: grid;
-  grid-template-areas: "graph" "input" "stats" "showMinersBtn";
-}
-.coin .coinData .graph {
-  grid-area: graph;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-self: center;
-  justify-items: center;
-}
-.coin .coinData .graph .chartsGraph {
-  width: 100%;
-  margin: 10px 0 10px 0;
-  border-radius: 15px;
-}
-.coin .coinData .inputForm {
-  grid-area: input;
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-  padding-right: 5px;
-  width: 70%;
-}
-.coin .coinData .inputForm img {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-  border-radius: 50%;
-  height: 40px;
-}
-.coin .coinData .inputForm a {
-  text-decoration: none;
-}
-.coin .coinData .inputForm input {
-  display: flex;
-  align-items: center;
-  margin: 0 8px 0 10px;
-  width: 92%;
-  min-height: 20%;
-  padding: 8px 10px;
-  font-size: 20px;
-  border: 0.1px solid white;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  color: white;
-}
-.coin .coinData .inputForm input:focus {
-  border: 0.1px solid #e5be36;
-  outline: 0.1px solid #e5be36;
-}
-.coin .coinData .inputForm input::placeholder {
-  color: #6f6f6f;
-}
-.coin .coinData .inputForm .inputBtn {
-  display: flex;
-  height: 40px;
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  border: 0.1px solid white;
-  border-radius: 5px;
-  align-items: center;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-}
-.coin .coinData .inputForm .inputBtn i {
-  font-size: 22px;
-  text-align: center;
-  margin: 0 auto;
-  width: 40px;
-  color: #ffffff;
-}
-.coin .coinData .inputForm .inputBtn:hover {
-  background-color: #ffffff;
-}
-.coin .coinData .inputForm .inputBtn:hover i {
-  color: #000000;
-}
-.coin .coinData .dropContainer {
-  font-weight: bold;
-  font-size: 17px;
-  width: 70%;
-  margin: 10px auto;
-  grid-area: stats;
-}
-.coin .coinData .dropContainer .flexWrapper {
-  width: 100%;
-}
-.coin .coinData .dropContainer .flexWrapper .buttonsWrapper {
-  display: inline-block;
-  height: 60px;
-}
-.coin .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons {
-  display: flex;
-  height: 100%;
-}
-.coin .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons:nth-child(1) {
-  border-right: 1px solid white;
-  border-left: 1px solid white;
-}
-.coin .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons div {
-  cursor: pointer;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown {
-  width: 100%;
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  border-right: 1px solid #ffffff;
-  border-left: 1px solid #ffffff;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0.3), -28px 0 25px -23px rgba(0, 0, 0, 0.8), 28px 0 35px -23px rgba(0, 0, 0, 0.8), 0 0 0 rgba(0, 0, 0, 0.1) inset;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats {
-  display: grid;
-  grid-template-areas: "m h l" "he fe ty" "c min cha";
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 10px;
-  grid-gap: 15px 30px;
-  text-align: center;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .miners {
-  grid-area: m;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .miners:nth-child(9) {
-  opacity: 0;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .miners:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate {
-  grid-area: h;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate:nth-child(9) {
-  opacity: 0;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound {
-  grid-area: l;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound:nth-child(9) {
-  opacity: 0;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .height {
-  grid-area: he;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .height:nth-child(9) {
-  opacity: 0;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .height:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .fee {
-  grid-area: fe;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .fee:nth-child(9) {
-  opacity: 0;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .fee:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .type {
-  grid-area: ty;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .type:nth-child(9) {
-  opacity: 0;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .type:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort {
-  grid-area: c;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort:nth-child(9) {
-  opacity: 0;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment {
-  grid-area: min;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment:nth-child(9) {
-  opacity: 0;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .charts {
-  grid-area: cha;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .charts:nth-child(9) {
-  opacity: 0;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .stats .charts:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate {
-  padding: 10px 10px 0 10px;
-  font-weight: 400;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .totalHashrate_span {
-  font-weight: 600;
-  font-size: 18px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .totalHashrate_span .totalHashrate_span_span {
-  color: #f32222;
-  font-size: 20px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid {
-  display: grid;
-  font-size: 20px;
-  font-weight: 400;
-  grid-template-areas: "w h s ss";
-  grid-template-columns: 6fr 2fr 2.3fr 1fr;
-  -moz-user-select: text;
-  background-color: grey;
-  color: white;
-  padding-bottom: 5px;
-  align-items: center;
-  height: 40px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .wallet {
-  grid-area: w;
-  padding-left: 150px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .hashrate {
-  grid-area: h;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .shares {
-  grid-area: s;
-  margin-left: -20px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .status {
-  grid-area: ss;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .blocks {
-  padding: 9px 10px 0 10px;
-  font-weight: 400;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 15px 30px;
-  text-align: center;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid .effort {
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid .effort:nth-child(9) {
-  opacity: 0;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid .effort:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 2px;
-  font-size: 20px;
-  -moz-user-select: text;
-  background-color: grey;
-  color: white;
-  padding-bottom: 5px;
-  height: 40px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid div {
-  text-align: center;
-  width: 150px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .blocks .blocksWrapper {
-  position: relative;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .blocks .blocksWrapper .liveViewer {
-  position: absolute;
-  bottom: 25px;
-  right: 0;
-}
+  z-index: 1; }
+  .coin .coinData {
+    display: grid;
+    grid-template-areas: "graph" "input" "stats" "showMinersBtn"; }
+    .coin .coinData .graph {
+      grid-area: graph;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-self: center;
+      justify-items: center; }
+      .coin .coinData .graph .chartsGraph {
+        width: 100%;
+        margin: 10px 0 10px 0;
+        border-radius: 15px; }
+    .coin .coinData .inputForm {
+      grid-area: input;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      padding-right: 5px;
+      width: 70%; }
+      .coin .coinData .inputForm img {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
+        border-radius: 50%;
+        height: 40px; }
+      .coin .coinData .inputForm a {
+        text-decoration: none; }
+      .coin .coinData .inputForm input {
+        display: flex;
+        align-items: center;
+        margin: 0 8px 0 10px;
+        width: 92%;
+        min-height: 20%;
+        padding: 8px 10px;
+        font-size: 20px;
+        border: .1px solid white;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
+        background-color: rgba(29, 29, 29, 0.19);
+        backdrop-filter: blur(15px);
+        color: white; }
+        .coin .coinData .inputForm input:focus {
+          border: .1px solid #e5be36;
+          outline: .1px solid #e5be36; }
+        .coin .coinData .inputForm input::placeholder {
+          color: #6f6f6f; }
+      .coin .coinData .inputForm .inputBtn {
+        display: flex;
+        height: 40px;
+        background-color: rgba(29, 29, 29, 0.19);
+        backdrop-filter: blur(15px);
+        border: .1px solid white;
+        border-radius: 5px;
+        align-items: center;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55); }
+        .coin .coinData .inputForm .inputBtn i {
+          font-size: 22px;
+          text-align: center;
+          margin: 0 auto;
+          width: 40px;
+          color: #ffffff; }
+        .coin .coinData .inputForm .inputBtn:hover {
+          background-color: #ffffff; }
+          .coin .coinData .inputForm .inputBtn:hover i {
+            color: #000000; }
+    .coin .coinData .dropContainer {
+      font-weight: bold;
+      font-size: 17px;
+      width: 70%;
+      margin: 10px auto;
+      grid-area: stats; }
+      .coin .coinData .dropContainer .flexWrapper {
+        width: 100%; }
+        .coin .coinData .dropContainer .flexWrapper .buttonsWrapper {
+          display: inline-block;
+          height: 60px; }
+          .coin .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons {
+            display: flex;
+            height: 100%; }
+            .coin .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons:nth-child(1) {
+              border-right: 1px solid white;
+              border-left: 1px solid white; }
+            .coin .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons div {
+              cursor: pointer; }
+        .coin .coinData .dropContainer .flexWrapper .dropDown {
+          width: 100%;
+          background-color: rgba(29, 29, 29, 0.19);
+          backdrop-filter: blur(15px);
+          border-right: 1px solid #ffffff;
+          border-left: 1px solid #ffffff;
+          box-shadow: 0 0 0 rgba(0, 0, 0, 0.3), -28px 0 25px -23px rgba(0, 0, 0, 0.8), 28px 0 35px -23px rgba(0, 0, 0, 0.8), 0 0 0 rgba(0, 0, 0, 0.1) inset; }
+          .coin .coinData .dropContainer .flexWrapper .dropDown .stats {
+            display: grid;
+            grid-template-areas: 'm h l' 'he fe ty' 'c min cha';
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 10px;
+            grid-gap: 15px 30px;
+            text-align: center; }
+            .coin .coinData .dropContainer .flexWrapper .dropDown .stats .miners {
+              grid-area: m;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .stats .miners:nth-child(9) {
+                opacity: 0; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .stats .miners:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate {
+              grid-area: h;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate:nth-child(9) {
+                opacity: 0; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound {
+              grid-area: l;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound:nth-child(9) {
+                opacity: 0; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin .coinData .dropContainer .flexWrapper .dropDown .stats .height {
+              grid-area: he;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .stats .height:nth-child(9) {
+                opacity: 0; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .stats .height:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin .coinData .dropContainer .flexWrapper .dropDown .stats .fee {
+              grid-area: fe;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .stats .fee:nth-child(9) {
+                opacity: 0; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .stats .fee:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin .coinData .dropContainer .flexWrapper .dropDown .stats .type {
+              grid-area: ty;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .stats .type:nth-child(9) {
+                opacity: 0; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .stats .type:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort {
+              grid-area: c;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort:nth-child(9) {
+                opacity: 0; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment {
+              grid-area: min;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment:nth-child(9) {
+                opacity: 0; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin .coinData .dropContainer .flexWrapper .dropDown .stats .charts {
+              grid-area: cha;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .stats .charts:nth-child(9) {
+                opacity: 0; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .stats .charts:hover {
+                border-bottom: 3px solid #ffbf00; }
+          .coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate {
+            padding: 10px 10px 0 10px;
+            font-weight: 400; }
+            .coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .totalHashrate_span {
+              font-weight: 600;
+              font-size: 18px; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .totalHashrate_span .totalHashrate_span_span {
+                color: #f32222;
+                font-size: 20px; }
+            .coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid {
+              display: grid;
+              font-size: 20px;
+              font-weight: 400;
+              grid-template-areas: 'w h s ss';
+              grid-template-columns: 6fr 2fr 2.3fr 1fr;
+              -moz-user-select: text;
+              background-color: grey;
+              color: white;
+              padding-bottom: 5px;
+              align-items: center;
+              height: 40px; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .wallet {
+                grid-area: w;
+                padding-left: 150px; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .hashrate {
+                grid-area: h; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .shares {
+                grid-area: s;
+                margin-left: -20px; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .status {
+                grid-area: ss; }
+          .coin .coinData .dropContainer .flexWrapper .dropDown .blocks {
+            padding: 9px 10px 0 10px;
+            font-weight: 400; }
+            .coin .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              grid-gap: 15px 30px;
+              text-align: center; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid .effort {
+                padding: 15px;
+                background-color: rgba(127, 127, 127, 0.19);
+                border-bottom: 3px solid #e4be36;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                height: 45px;
+                color: #e7e7e7;
+                font-weight: 400;
+                font-size: 16px; }
+                .coin .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid .effort:nth-child(9) {
+                  opacity: 0; }
+                .coin .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid .effort:hover {
+                  border-bottom: 3px solid #ffbf00; }
+            .coin .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid {
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
+              margin-top: 2px;
+              font-size: 20px;
+              -moz-user-select: text;
+              background-color: grey;
+              color: white;
+              padding-bottom: 5px;
+              height: 40px; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid div {
+                text-align: center;
+                width: 150px; }
+            .coin .coinData .dropContainer .flexWrapper .dropDown .blocks .blocksWrapper {
+              position: relative; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .blocks .blocksWrapper .liveViewer {
+                position: absolute;
+                bottom: 25px;
+                right: 0; }
 
 .coin2 {
   grid-area: c;
@@ -417,399 +350,333 @@
   padding-top: 50px;
   background: url(./../../img/octopus2.png) no-repeat 50% 0;
   background-size: 1500px;
-  z-index: 1;
-}
-.coin2 .coinData {
-  display: grid;
-  grid-template-areas: "graph" "input" "stats" "showMinersBtn";
-}
-.coin2 .coinData .graph {
-  grid-area: graph;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-self: center;
-  justify-items: center;
-}
-.coin2 .coinData .graph .chartsGraph {
-  width: 100%;
-  margin: 10px 0 10px 0;
-  border-radius: 15px;
-}
-.coin2 .coinData .inputForm {
-  grid-area: input;
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-  padding-right: 5px;
-  width: 70%;
-}
-.coin2 .coinData .inputForm img {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-  border-radius: 50%;
-  height: 40px;
-}
-.coin2 .coinData .inputForm a {
-  text-decoration: none;
-}
-.coin2 .coinData .inputForm input {
-  display: flex;
-  align-items: center;
-  margin: 0 8px 0 10px;
-  width: 92%;
-  min-height: 20%;
-  padding: 8px 10px;
-  font-size: 20px;
-  border: 0.1px solid white;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  color: white;
-}
-.coin2 .coinData .inputForm input:focus {
-  border: 0.1px solid #e5be36;
-  outline: 0.1px solid #e5be36;
-}
-.coin2 .coinData .inputForm input::placeholder {
-  color: #6f6f6f;
-}
-.coin2 .coinData .inputForm .inputBtn {
-  display: flex;
-  height: 40px;
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  border: 0.1px solid white;
-  border-radius: 5px;
-  align-items: center;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-}
-.coin2 .coinData .inputForm .inputBtn i {
-  font-size: 22px;
-  text-align: center;
-  margin: 0 auto;
-  width: 40px;
-  color: #ffffff;
-}
-.coin2 .coinData .inputForm .inputBtn:hover {
-  background-color: #ffffff;
-}
-.coin2 .coinData .inputForm .inputBtn:hover i {
-  color: #000000;
-}
-.coin2 .coinData .dropContainer {
-  font-weight: bold;
-  font-size: 17px;
-  width: 70%;
-  margin: 10px auto;
-  grid-area: stats;
-}
-.coin2 .coinData .dropContainer .flexWrapper {
-  width: 100%;
-}
-.coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper {
-  display: inline-block;
-  height: 60px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons {
-  display: flex;
-  height: 100%;
-}
-.coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons:nth-child(1) {
-  border-right: 1px solid white;
-  border-left: 1px solid white;
-}
-.coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons div {
-  cursor: pointer;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown {
-  width: 100%;
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  border-right: 1px solid #ffffff;
-  border-left: 1px solid #ffffff;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0.3), -28px 0 25px -23px rgba(0, 0, 0, 0.8), 28px 0 35px -23px rgba(0, 0, 0, 0.8), 0 0 0 rgba(0, 0, 0, 0.1) inset;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats {
-  display: grid;
-  grid-template-areas: "m h l" "he fe ty" "c min cha";
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 10px;
-  grid-gap: 15px 30px;
-  text-align: center;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .miners {
-  grid-area: m;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .miners:nth-child(9) {
-  opacity: 0;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .miners:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate {
-  grid-area: h;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate:nth-child(9) {
-  opacity: 0;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound {
-  grid-area: l;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound:nth-child(9) {
-  opacity: 0;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .height {
-  grid-area: he;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .height:nth-child(9) {
-  opacity: 0;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .height:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .fee {
-  grid-area: fe;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .fee:nth-child(9) {
-  opacity: 0;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .fee:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .type {
-  grid-area: ty;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .type:nth-child(9) {
-  opacity: 0;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .type:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort {
-  grid-area: c;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort:nth-child(9) {
-  opacity: 0;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment {
-  grid-area: min;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment:nth-child(9) {
-  opacity: 0;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .charts {
-  grid-area: cha;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .charts:nth-child(9) {
-  opacity: 0;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .charts:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate {
-  padding: 10px 10px 0 10px;
-  font-weight: 400;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .totalHashrate_span {
-  font-weight: 600;
-  font-size: 18px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .totalHashrate_span .totalHashrate_span_span {
-  color: #f32222;
-  font-size: 20px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid {
-  display: grid;
-  font-size: 20px;
-  font-weight: 400;
-  grid-template-areas: "w h s ss";
-  grid-template-columns: 6fr 2fr 2.3fr 1fr;
-  -moz-user-select: text;
-  background-color: grey;
-  color: white;
-  padding-bottom: 5px;
-  align-items: center;
-  height: 40px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .wallet {
-  grid-area: w;
-  padding-left: 150px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .hashrate {
-  grid-area: h;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .shares {
-  grid-area: s;
-  margin-left: -20px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .status {
-  grid-area: ss;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks {
-  padding: 9px 10px 0 10px;
-  font-weight: 400;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 15px 30px;
-  text-align: center;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid .effort {
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid .effort:nth-child(9) {
-  opacity: 0;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid .effort:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 2px;
-  font-size: 20px;
-  -moz-user-select: text;
-  background-color: grey;
-  color: white;
-  padding-bottom: 5px;
-  height: 40px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid div {
-  text-align: center;
-  width: 150px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocksWrapper {
-  position: relative;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocksWrapper .liveViewer {
-  position: absolute;
-  bottom: 25px;
-  right: 0;
-}
+  z-index: 1; }
+  .coin2 .coinData {
+    display: grid;
+    grid-template-areas: "graph" "input" "stats" "showMinersBtn"; }
+    .coin2 .coinData .graph {
+      grid-area: graph;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-self: center;
+      justify-items: center; }
+      .coin2 .coinData .graph .chartsGraph {
+        width: 100%;
+        margin: 10px 0 10px 0;
+        border-radius: 15px; }
+    .coin2 .coinData .inputForm {
+      grid-area: input;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      padding-right: 5px;
+      width: 70%; }
+      .coin2 .coinData .inputForm img {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
+        border-radius: 50%;
+        height: 40px; }
+      .coin2 .coinData .inputForm a {
+        text-decoration: none; }
+      .coin2 .coinData .inputForm input {
+        display: flex;
+        align-items: center;
+        margin: 0 8px 0 10px;
+        width: 92%;
+        min-height: 20%;
+        padding: 8px 10px;
+        font-size: 20px;
+        border: .1px solid white;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
+        background-color: rgba(29, 29, 29, 0.19);
+        backdrop-filter: blur(15px);
+        color: white; }
+        .coin2 .coinData .inputForm input:focus {
+          border: .1px solid #e5be36;
+          outline: .1px solid #e5be36; }
+        .coin2 .coinData .inputForm input::placeholder {
+          color: #6f6f6f; }
+      .coin2 .coinData .inputForm .inputBtn {
+        display: flex;
+        height: 40px;
+        background-color: rgba(29, 29, 29, 0.19);
+        backdrop-filter: blur(15px);
+        border: .1px solid white;
+        border-radius: 5px;
+        align-items: center;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55); }
+        .coin2 .coinData .inputForm .inputBtn i {
+          font-size: 22px;
+          text-align: center;
+          margin: 0 auto;
+          width: 40px;
+          color: #ffffff; }
+        .coin2 .coinData .inputForm .inputBtn:hover {
+          background-color: #ffffff; }
+          .coin2 .coinData .inputForm .inputBtn:hover i {
+            color: #000000; }
+    .coin2 .coinData .dropContainer {
+      font-weight: bold;
+      font-size: 17px;
+      width: 70%;
+      margin: 10px auto;
+      grid-area: stats; }
+      .coin2 .coinData .dropContainer .flexWrapper {
+        width: 100%; }
+        .coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper {
+          display: inline-block;
+          height: 60px; }
+          .coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons {
+            display: flex;
+            height: 100%; }
+            .coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons:nth-child(1) {
+              border-right: 1px solid white;
+              border-left: 1px solid white; }
+            .coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons div {
+              cursor: pointer; }
+        .coin2 .coinData .dropContainer .flexWrapper .dropDown {
+          width: 100%;
+          background-color: rgba(29, 29, 29, 0.19);
+          backdrop-filter: blur(15px);
+          border-right: 1px solid #ffffff;
+          border-left: 1px solid #ffffff;
+          box-shadow: 0 0 0 rgba(0, 0, 0, 0.3), -28px 0 25px -23px rgba(0, 0, 0, 0.8), 28px 0 35px -23px rgba(0, 0, 0, 0.8), 0 0 0 rgba(0, 0, 0, 0.1) inset; }
+          .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats {
+            display: grid;
+            grid-template-areas: 'm h l' 'he fe ty' 'c min cha';
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 10px;
+            grid-gap: 15px 30px;
+            text-align: center; }
+            .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .miners {
+              grid-area: m;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .miners:nth-child(9) {
+                opacity: 0; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .miners:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate {
+              grid-area: h;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate:nth-child(9) {
+                opacity: 0; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound {
+              grid-area: l;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound:nth-child(9) {
+                opacity: 0; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .height {
+              grid-area: he;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .height:nth-child(9) {
+                opacity: 0; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .height:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .fee {
+              grid-area: fe;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .fee:nth-child(9) {
+                opacity: 0; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .fee:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .type {
+              grid-area: ty;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .type:nth-child(9) {
+                opacity: 0; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .type:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort {
+              grid-area: c;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort:nth-child(9) {
+                opacity: 0; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment {
+              grid-area: min;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment:nth-child(9) {
+                opacity: 0; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .charts {
+              grid-area: cha;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .charts:nth-child(9) {
+                opacity: 0; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .charts:hover {
+                border-bottom: 3px solid #ffbf00; }
+          .coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate {
+            padding: 10px 10px 0 10px;
+            font-weight: 400; }
+            .coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .totalHashrate_span {
+              font-weight: 600;
+              font-size: 18px; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .totalHashrate_span .totalHashrate_span_span {
+                color: #f32222;
+                font-size: 20px; }
+            .coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid {
+              display: grid;
+              font-size: 20px;
+              font-weight: 400;
+              grid-template-areas: 'w h s ss';
+              grid-template-columns: 6fr 2fr 2.3fr 1fr;
+              -moz-user-select: text;
+              background-color: grey;
+              color: white;
+              padding-bottom: 5px;
+              align-items: center;
+              height: 40px; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .wallet {
+                grid-area: w;
+                padding-left: 150px; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .hashrate {
+                grid-area: h; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .shares {
+                grid-area: s;
+                margin-left: -20px; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .status {
+                grid-area: ss; }
+          .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks {
+            padding: 9px 10px 0 10px;
+            font-weight: 400; }
+            .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              grid-gap: 15px 30px;
+              text-align: center; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid .effort {
+                padding: 15px;
+                background-color: rgba(127, 127, 127, 0.19);
+                border-bottom: 3px solid #e4be36;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                height: 45px;
+                color: #e7e7e7;
+                font-weight: 400;
+                font-size: 16px; }
+                .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid .effort:nth-child(9) {
+                  opacity: 0; }
+                .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid .effort:hover {
+                  border-bottom: 3px solid #ffbf00; }
+            .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid {
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
+              margin-top: 2px;
+              font-size: 20px;
+              -moz-user-select: text;
+              background-color: grey;
+              color: white;
+              padding-bottom: 5px;
+              height: 40px; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid div {
+                text-align: center;
+                width: 150px; }
+            .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocksWrapper {
+              position: relative; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocksWrapper .liveViewer {
+                position: absolute;
+                bottom: 25px;
+                right: 0; }
 
 .coin3 {
   grid-area: c;
@@ -821,398 +688,332 @@
   padding-top: 50px;
   background: url(./../../img/octopus3.png) no-repeat 50% 30%;
   background-size: 1500px;
-  z-index: 1;
-}
-.coin3 .coinData {
-  display: grid;
-  grid-template-areas: "graph" "input" "stats" "showMinersBtn";
-}
-.coin3 .coinData .graph {
-  grid-area: graph;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-self: center;
-  justify-items: center;
-}
-.coin3 .coinData .graph .chartsGraph {
-  width: 100%;
-  margin: 10px 0 10px 0;
-  border-radius: 15px;
-}
-.coin3 .coinData .inputForm {
-  grid-area: input;
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-  padding-right: 5px;
-  width: 70%;
-}
-.coin3 .coinData .inputForm img {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-  border-radius: 50%;
-  height: 40px;
-}
-.coin3 .coinData .inputForm a {
-  text-decoration: none;
-}
-.coin3 .coinData .inputForm input {
-  display: flex;
-  align-items: center;
-  margin: 0 8px 0 10px;
-  width: 92%;
-  min-height: 20%;
-  padding: 8px 10px;
-  font-size: 20px;
-  border: 0.1px solid white;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  color: white;
-}
-.coin3 .coinData .inputForm input:focus {
-  border: 0.1px solid #e5be36;
-  outline: 0.1px solid #e5be36;
-}
-.coin3 .coinData .inputForm input::placeholder {
-  color: #6f6f6f;
-}
-.coin3 .coinData .inputForm .inputBtn {
-  display: flex;
-  height: 40px;
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  border: 0.1px solid white;
-  border-radius: 5px;
-  align-items: center;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-}
-.coin3 .coinData .inputForm .inputBtn i {
-  font-size: 22px;
-  text-align: center;
-  margin: 0 auto;
-  width: 40px;
-  color: #ffffff;
-}
-.coin3 .coinData .inputForm .inputBtn:hover {
-  background-color: #ffffff;
-}
-.coin3 .coinData .inputForm .inputBtn:hover i {
-  color: #000000;
-}
-.coin3 .coinData .dropContainer {
-  font-weight: bold;
-  font-size: 17px;
-  width: 70%;
-  margin: 10px auto;
-  grid-area: stats;
-}
-.coin3 .coinData .dropContainer .flexWrapper {
-  width: 100%;
-}
-.coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper {
-  display: inline-block;
-  height: 60px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons {
-  display: flex;
-  height: 100%;
-}
-.coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons:nth-child(1) {
-  border-right: 1px solid white;
-  border-left: 1px solid white;
-}
-.coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons div {
-  cursor: pointer;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown {
-  width: 100%;
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  border-right: 1px solid #ffffff;
-  border-left: 1px solid #ffffff;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0.3), -28px 0 25px -23px rgba(0, 0, 0, 0.8), 28px 0 35px -23px rgba(0, 0, 0, 0.8), 0 0 0 rgba(0, 0, 0, 0.1) inset;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats {
-  display: grid;
-  grid-template-areas: "m h l" "he fe ty" "c min cha";
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 10px;
-  grid-gap: 15px 30px;
-  text-align: center;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .miners {
-  grid-area: m;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .miners:nth-child(9) {
-  opacity: 0;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .miners:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate {
-  grid-area: h;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate:nth-child(9) {
-  opacity: 0;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound {
-  grid-area: l;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound:nth-child(9) {
-  opacity: 0;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .height {
-  grid-area: he;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .height:nth-child(9) {
-  opacity: 0;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .height:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .fee {
-  grid-area: fe;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .fee:nth-child(9) {
-  opacity: 0;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .fee:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .type {
-  grid-area: ty;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .type:nth-child(9) {
-  opacity: 0;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .type:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort {
-  grid-area: c;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort:nth-child(9) {
-  opacity: 0;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment {
-  grid-area: min;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment:nth-child(9) {
-  opacity: 0;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .charts {
-  grid-area: cha;
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .charts:nth-child(9) {
-  opacity: 0;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .charts:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate {
-  padding: 10px 10px 0 10px;
-  font-weight: 400;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .totalHashrate_span {
-  font-weight: 600;
-  font-size: 18px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .totalHashrate_span .totalHashrate_span_span {
-  color: #f32222;
-  font-size: 20px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid {
-  display: grid;
-  font-size: 20px;
-  font-weight: 400;
-  grid-template-areas: "w h s ss";
-  grid-template-columns: 6fr 2fr 2.3fr 1fr;
-  -moz-user-select: text;
-  background-color: grey;
-  color: white;
-  padding-bottom: 5px;
-  align-items: center;
-  height: 40px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .wallet {
-  grid-area: w;
-  padding-left: 150px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .hashrate {
-  grid-area: h;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .shares {
-  grid-area: s;
-  margin-left: -20px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .status {
-  grid-area: ss;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks {
-  padding: 9px 10px 0 10px;
-  font-weight: 400;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 15px 30px;
-  text-align: center;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid .effort {
-  padding: 15px;
-  background-color: rgba(127, 127, 127, 0.19);
-  border-bottom: 3px solid #e4be36;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-  color: rgb(231, 231, 231);
-  font-weight: 400;
-  font-size: 16px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid .effort:nth-child(9) {
-  opacity: 0;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid .effort:hover {
-  border-bottom: 3px solid #ffbf00;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 2px;
-  font-size: 20px;
-  -moz-user-select: text;
-  background-color: grey;
-  color: white;
-  padding-bottom: 5px;
-  height: 40px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid div {
-  text-align: center;
-  width: 150px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocksWrapper {
-  position: relative;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocksWrapper .liveViewer {
-  position: absolute;
-  bottom: 25px;
-  right: 0;
-}
+  z-index: 1; }
+  .coin3 .coinData {
+    display: grid;
+    grid-template-areas: "graph" "input" "stats" "showMinersBtn"; }
+    .coin3 .coinData .graph {
+      grid-area: graph;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-self: center;
+      justify-items: center; }
+      .coin3 .coinData .graph .chartsGraph {
+        width: 100%;
+        margin: 10px 0 10px 0;
+        border-radius: 15px; }
+    .coin3 .coinData .inputForm {
+      grid-area: input;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      padding-right: 5px;
+      width: 70%; }
+      .coin3 .coinData .inputForm img {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
+        border-radius: 50%;
+        height: 40px; }
+      .coin3 .coinData .inputForm a {
+        text-decoration: none; }
+      .coin3 .coinData .inputForm input {
+        display: flex;
+        align-items: center;
+        margin: 0 8px 0 10px;
+        width: 92%;
+        min-height: 20%;
+        padding: 8px 10px;
+        font-size: 20px;
+        border: .1px solid white;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
+        background-color: rgba(29, 29, 29, 0.19);
+        backdrop-filter: blur(15px);
+        color: white; }
+        .coin3 .coinData .inputForm input:focus {
+          border: .1px solid #e5be36;
+          outline: .1px solid #e5be36; }
+        .coin3 .coinData .inputForm input::placeholder {
+          color: #6f6f6f; }
+      .coin3 .coinData .inputForm .inputBtn {
+        display: flex;
+        height: 40px;
+        background-color: rgba(29, 29, 29, 0.19);
+        backdrop-filter: blur(15px);
+        border: .1px solid white;
+        border-radius: 5px;
+        align-items: center;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55); }
+        .coin3 .coinData .inputForm .inputBtn i {
+          font-size: 22px;
+          text-align: center;
+          margin: 0 auto;
+          width: 40px;
+          color: #ffffff; }
+        .coin3 .coinData .inputForm .inputBtn:hover {
+          background-color: #ffffff; }
+          .coin3 .coinData .inputForm .inputBtn:hover i {
+            color: #000000; }
+    .coin3 .coinData .dropContainer {
+      font-weight: bold;
+      font-size: 17px;
+      width: 70%;
+      margin: 10px auto;
+      grid-area: stats; }
+      .coin3 .coinData .dropContainer .flexWrapper {
+        width: 100%; }
+        .coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper {
+          display: inline-block;
+          height: 60px; }
+          .coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons {
+            display: flex;
+            height: 100%; }
+            .coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons:nth-child(1) {
+              border-right: 1px solid white;
+              border-left: 1px solid white; }
+            .coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons div {
+              cursor: pointer; }
+        .coin3 .coinData .dropContainer .flexWrapper .dropDown {
+          width: 100%;
+          background-color: rgba(29, 29, 29, 0.19);
+          backdrop-filter: blur(15px);
+          border-right: 1px solid #ffffff;
+          border-left: 1px solid #ffffff;
+          box-shadow: 0 0 0 rgba(0, 0, 0, 0.3), -28px 0 25px -23px rgba(0, 0, 0, 0.8), 28px 0 35px -23px rgba(0, 0, 0, 0.8), 0 0 0 rgba(0, 0, 0, 0.1) inset; }
+          .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats {
+            display: grid;
+            grid-template-areas: 'm h l' 'he fe ty' 'c min cha';
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 10px;
+            grid-gap: 15px 30px;
+            text-align: center; }
+            .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .miners {
+              grid-area: m;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .miners:nth-child(9) {
+                opacity: 0; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .miners:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate {
+              grid-area: h;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate:nth-child(9) {
+                opacity: 0; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound {
+              grid-area: l;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound:nth-child(9) {
+                opacity: 0; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .height {
+              grid-area: he;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .height:nth-child(9) {
+                opacity: 0; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .height:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .fee {
+              grid-area: fe;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .fee:nth-child(9) {
+                opacity: 0; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .fee:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .type {
+              grid-area: ty;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .type:nth-child(9) {
+                opacity: 0; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .type:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort {
+              grid-area: c;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort:nth-child(9) {
+                opacity: 0; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment {
+              grid-area: min;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment:nth-child(9) {
+                opacity: 0; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment:hover {
+                border-bottom: 3px solid #ffbf00; }
+            .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .charts {
+              grid-area: cha;
+              padding: 15px;
+              background-color: rgba(127, 127, 127, 0.19);
+              border-bottom: 3px solid #e4be36;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              height: 45px;
+              color: #e7e7e7;
+              font-weight: 400;
+              font-size: 16px; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .charts:nth-child(9) {
+                opacity: 0; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .charts:hover {
+                border-bottom: 3px solid #ffbf00; }
+          .coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate {
+            padding: 10px 10px 0 10px;
+            font-weight: 400; }
+            .coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .totalHashrate_span {
+              font-weight: 600;
+              font-size: 18px; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .totalHashrate_span .totalHashrate_span_span {
+                color: #f32222;
+                font-size: 20px; }
+            .coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid {
+              display: grid;
+              font-size: 20px;
+              font-weight: 400;
+              grid-template-areas: 'w h s ss';
+              grid-template-columns: 6fr 2fr 2.3fr 1fr;
+              -moz-user-select: text;
+              background-color: grey;
+              color: white;
+              padding-bottom: 5px;
+              align-items: center;
+              height: 40px; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .wallet {
+                grid-area: w;
+                padding-left: 150px; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .hashrate {
+                grid-area: h; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .shares {
+                grid-area: s;
+                margin-left: -20px; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .totalHashrate .coin_column_grid .status {
+                grid-area: ss; }
+          .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks {
+            padding: 9px 10px 0 10px;
+            font-weight: 400; }
+            .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              grid-gap: 15px 30px;
+              text-align: center; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid .effort {
+                padding: 15px;
+                background-color: rgba(127, 127, 127, 0.19);
+                border-bottom: 3px solid #e4be36;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                height: 45px;
+                color: #e7e7e7;
+                font-weight: 400;
+                font-size: 16px; }
+                .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid .effort:nth-child(9) {
+                  opacity: 0; }
+                .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .effort__grid .effort:hover {
+                  border-bottom: 3px solid #ffbf00; }
+            .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid {
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
+              margin-top: 2px;
+              font-size: 20px;
+              -moz-user-select: text;
+              background-color: grey;
+              color: white;
+              padding-bottom: 5px;
+              height: 40px; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid div {
+                text-align: center;
+                width: 150px; }
+            .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocksWrapper {
+              position: relative; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocksWrapper .liveViewer {
+                position: absolute;
+                bottom: 25px;
+                right: 0; }
 
 /*# sourceMappingURL=CoinPage.module.css.map */

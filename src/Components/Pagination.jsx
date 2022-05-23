@@ -6,7 +6,7 @@ import InnerData from "./Account/InnerData";
 import {
     blockHashChecker,
     convertTimestamp,
-    dateFilter,
+    dateFilter, getTruncatedName,
     hashFilter,
     poolChecker,
     txChecker
@@ -14,18 +14,25 @@ import {
 import {CoinPageData} from "./CoinPage/CoinPageData/CoinPageData";
 
 
+function effortFilter(effort) {
+    if(effort < 100){
+        return <span className={style.easy}>{effort} %</span>
+    }
+    if(effort <= 150){
+        return <span className={style.hard}>{effort} %</span>
+    }
+    if(effort > 150){
+        return <span className={style.insane}>{effort} %</span>
+    }
+
+}
 
 
-
-
-
-
-
-function Items({ currentItems, type, addInputValue, pool }) {
+function Items({currentItems, type, addInputValue, pool}) {
     return (
         <div className={style.items}>
             {currentItems && currentItems.map((el) => {
-                if(type === 'payments'){
+                if (type === 'payments') {
                     return <InnerData
                         key={el.tx}
                         el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
@@ -34,17 +41,18 @@ function Items({ currentItems, type, addInputValue, pool }) {
                         type={'payments'}
                     />
                 }
-                if(type === 'rewards'){
+                if (type === 'rewards') {
                     return <InnerData
                         key={el.blockHash}
                         el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
                         el2={convertTimestamp(el.timestamp)}
-                        el3={<a onClick={event => event.stopPropagation()} href={blockHashChecker(el.blockHash, pool)}>{el.blockHash}</a>}
+                        el3={<a onClick={event => event.stopPropagation()}
+                                href={blockHashChecker(el.blockHash, pool)}>{el.blockHash}</a>}
                         el4={el.blockHeight}
                         type={'rewards'}
                     />
                 }
-                if(type === 'workers'){
+                if (type === 'workers') {
                     return <InnerData
                         key={el.name}
                         el1={el.name}
@@ -54,56 +62,56 @@ function Items({ currentItems, type, addInputValue, pool }) {
                         type={'workers'}
                     />
                 }
-                if(type === 'rewards'){
+                if (type === 'rewards') {
                     return <InnerData
                         key={el.blockHash}
                         el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
                         el2={convertTimestamp(el.timestamp)}
-                        el3={<a onClick={event => event.stopPropagation()} href={blockHashChecker(el.blockHash,pool)}>{el.blockHash}</a>}
+                        el3={<a onClick={event => event.stopPropagation()}
+                                href={blockHashChecker(el.blockHash, pool)}>{el.blockHash}</a>}
                         el4={el.blockHeight}
                         type={'rewards'}
                     />
                 }
-                if(type === 'blocks'){
-
-                    let getTruncatedName = (source) => {
-                        let skippedString = source.trimEnd();
-                        if(skippedString.length > 13){
-                            return skippedString.substring(0, 13) + '...';
-                        }else{
-                            return source;
-                        }
-                    }
+                if (type === 'blocks') {
 
 
 
                     return <InnerData
                         key={el.hash}
                         el1={el.height}
-                        el2={el.uncle}
-                        el3={el.orphan}
-                        el4={<a href={blockHashChecker(el.hash,pool)}>{getTruncatedName(el.hash)}</a>}
+                        el2={el.rewardMev
+                            ? <span className={style.reward}>{(el.reward / 1000000000000000000).toFixed(3)} {poolChecker(pool)}
+                                <span className={style.mev}> +{(el.rewardMev / 1000000000000000000).toFixed(3)} MEV</span>
+                            </span>
+                            : poolChecker(pool) !== 'evox' && poolChecker(pool) !== 'keva'
+                                ? (el.reward / 1000000000000000000).toFixed(3) + ' ' +poolChecker(pool)
+                                : el.reward + ' ' +poolChecker(pool)}
+                        el3={effortFilter((el.effort * 100).toFixed(0))}
+                        el4={!el.orphan ?
+                            <a href={blockHashChecker(el.hash, pool)}>{getTruncatedName(el.hash)}</a> :
+                            <span className={style.orphan}>Orphan</span>}
                         el5={convertTimestamp(el.timestamp)}
                         type={'blocks'}
                     />
                 }
-                if(type === 'coinPage'){
-                    return <div key={el.address}>
-                        <CoinPageData miner={el.address}
-                                      hashrate={hashFilter(el.hr)}
-                                      lastShare={el.lastBeat}
-                                      offline={el.offline}
-                                      addInputValue={addInputValue}
-                        />
-                    </div>
-                }
+            if (type === 'coinPage') {
+            return <div key={el.address}>
+            <CoinPageData miner={el.address}
+            hashrate={hashFilter(el.hr)}
+            lastShare={el.lastBeat}
+            offline={el.offline}
+            addInputValue={addInputValue}
+            />
+            </div>
+        }
             })}
         </div>
     );
 }
 
 
-let PaginatedItems = ({ itemsPerPage, items, type , addInputValue, pool}) => {
+let PaginatedItems = ({itemsPerPage, items, type, addInputValue, pool}) => {
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);

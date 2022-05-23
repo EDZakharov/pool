@@ -82,7 +82,14 @@ export let txChecker = (tx, pool) => {
     }
 }
 
-
+export let getTruncatedName = (source) => {
+    let skippedString = source.trimEnd();
+    if (skippedString.length > 13) {
+        return skippedString.substring(0, 13) + '...';
+    } else {
+        return source;
+    }
+}
 
 export let poolChecker = (pool) => {
     if (pool === 'etc' || pool === 'etc-solo') {
