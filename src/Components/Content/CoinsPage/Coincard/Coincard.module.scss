@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
 @mixin mediaWidth {
   width: 100%;
-  background-color: #fff;
+  //background-color: #fff;
+  background-color: rgba(198, 198, 198, 0.19);
+  color: white;
 }
 
 
@@ -13,6 +13,7 @@
   grid-template-rows: auto auto auto;
   transition: transform 1.5s ease-in-out;
   z-index: 10;
+  backdrop-filter: blur(20px);
 
   &:hover{
     @media (pointer: fine){
@@ -27,7 +28,7 @@
     @include mediaWidth;
     border-radius: 10px 10px 0 0;
     grid-area: h;
-    border-bottom: 0.2px solid rgba(0, 0, 0, 0.51);
+    //border-bottom: 2px solid #e5be36;
     padding: 5px 0 5px 0;
     .wrapper {
       display: grid;
@@ -36,23 +37,30 @@
       justify-items: center;
       align-items: center;
       height: 100%;
-      position: relative;
-      font-family: 'Fugaz One', cursive;
+
       font-size: 18px;
-      .poolType{
-        span{
+
+      .poolName{
+        position: relative;
+
+        .poolType{
+          position: absolute;
+          display: inline-block;
           font-size: 12px;
-          font-family: 'Courgette', cursive;
+          //height: 100%;
+          //top: 22px;
+          margin-top: 4px;
+          margin-left: 4px;
+          align-items: center;
         }
-        position: absolute;
-        top: 54%;
-        left: 32%;
+
       }
+
 
       span {
         grid-area: name;
         font-size: 18px;
-        font-weight: 700;
+        //font-weight: 700;
         text-transform: uppercase;
         text-align: center;
         margin: 0 10px;
@@ -70,7 +78,7 @@
 
       .logo {
         grid-area: logo;
-        background-color: rgb(241, 240, 241);
+        //background-color: rgb(241, 240, 241);
         border-radius: 50%;
         width: 60px;
 
@@ -139,15 +147,16 @@
       font-size: 14px;
     }
     div {
-      margin: 10px;
-      color: #4b4b4b;
+      margin: 12px 10px;
+      //color: #4b4b4b;
       //margin-top: 6px;
-      font-weight: 400;
+      font-weight: 300;
 
       .text {
         font-size: 16px;
-        color: #479790;
-        font-weight: bold;
+
+        //color: #e5be36;
+        //font-weight: bold;
 
         @media screen and (max-width: 1200px) {
           text-align: center;
@@ -174,29 +183,30 @@
     border-radius: 0 0 10px 10px;
     grid-area: f;
     //margin-top: 10px;
-    border-top: 0.2px solid rgba(0, 0, 0, 0.51);
+    //border-top: .2px solid #e5be36;
     a {
       text-decoration: none;
     }
 
     .start_btn {
-      background-color: #27847B;
+      background-color: rgba(68, 68, 68, 0.74);
+      border-bottom: 2px solid #e5be36;
       margin: 20px auto;
       width: 175px;
       //height: 25px;
       text-align: center;
       color: white;
       padding: 10px;
-      border-radius: 8px;
+      //border-radius: 8px;
       text-transform: uppercase;
       text-decoration: none;
 
 
       &:hover {
         transition: 0.2s ease-in-out;
-        background-color: #25786f;
+        //background-color: #25786f;
         cursor: pointer;
-        color: #f7a81a;
+        color: #e5be36;
 
       }
       @media (max-width: 1280px) {

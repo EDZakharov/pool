@@ -91,7 +91,6 @@ export const CoinPage = (props) => {
         setToggleMiners(false)
         setToggleBlocks(true)
     }
-    // console.log(props.coinPage.fullStats.charts)
 
     // if(props.coinPage.blocks !== undefined){
     //     if(Object.keys(props.coinPage.blocks).length !== 0){
@@ -112,7 +111,7 @@ export const CoinPage = (props) => {
             {thisPool === 'evox-prop' || thisPool === 'evox-solo' || thisPool === 'keva' ?
                 <div className={style.inputForm}/> : <div className={style.inputForm}>
                     <img src={coinLogo} alt='logo'/>
-                    <input type='text' autoComplete='off' placeholder={`Введите адрес кошелька фермы`}
+                    <input type='text' autoComplete='off' placeholder={`Адрес кошелька`}
                            onChange={setAddr}
                            value={props.coinPage.accountAddress !== null ? props.coinPage.accountAddress : ''}/>
                     <Link to={addrFilter(thisPool)}>
@@ -159,17 +158,19 @@ export const CoinPage = (props) => {
                                 <div className={style.status}>Статус</div>
                             </div>
                             <div className={style.minersWrapper}>
-                                <PaginatedItems itemsPerPage={7} items={props.coinPage.miners}
+                                <PaginatedItems itemsPerPage={15} items={props.coinPage.miners}
                                                 type={'coinPage'} addInputValue={props.addInputValue}/>
                             </div>
                         </div> : ''}
                     </div>}/>
                     <DropData componentContent={<div className={style.dropDown}>
                         {toggleBlocks ? <div className={style.blocks} id='anchorBtn'>
-                            <Total text={props.coinPage.blocks !== undefined ? `Удача последних 20, 50 и 200 блоков: 
-                            ${(props.coinPage.blocks.effort['20']*100).toFixed(0)} % |
-                            ${(props.coinPage.blocks.effort['50']*100).toFixed(0)} % |
-                            ${(props.coinPage.blocks.effort['200']*100).toFixed(0)} %` : ''}
+                            <Total text={props.coinPage.blocks !== undefined ?
+                                <div className={style.effort__grid}>
+                                    <div className={style.effort}>Удача последних 20 блоков: {(props.coinPage.blocks.effort['20']*100).toFixed(0)} %</div>
+                                    <div className={style.effort}>Удача последних 50 блоков: {(props.coinPage.blocks.effort['50']*100).toFixed(0)} %</div>
+                                    <div className={style.effort}>Удача последних 200 блоков: {(props.coinPage.blocks.effort['200']*100).toFixed(0)} %</div>
+                                </div>:''}
                             />
                             <div className={style.blocks_column_grid}>
                                 <div className={style.height}>Высота</div>
@@ -179,7 +180,7 @@ export const CoinPage = (props) => {
                                 <div className={style.timestamp}>Дата</div>
                             </div>
                             <div className={style.blocksWrapper}>
-                                <PaginatedItems itemsPerPage={7} items={props.coinPage.blocks.matured}
+                                <PaginatedItems itemsPerPage={15} items={props.coinPage.blocks.matured}
                                                 type={'blocks'} addInputValue={props.addInputValue} pool={thisPool}/>
                                 {(thisPool === 'eth' || thisPool === 'eth-solo') ?
                                     <span className={style.liveViewer}><a href='http://www.ethviewer.live/'>EthLiveViewer</a></span>: ''}
