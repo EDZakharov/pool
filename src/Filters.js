@@ -12,14 +12,14 @@ export const images = {ethLogo, etcLogo, burstLogo, kevaLogo, evoxLogo, ergoLogo
 
 export let convertTimestamp = (timestamp) => {
     let d = new Date(timestamp * 1000),
-        yyyy = d.getFullYear(),
+        yyyy = d.getFullYear().toString().slice(-2),
         mm = ('0' + (d.getMonth() + 1)).slice(-2),
         dd = ('0' + d.getDate()).slice(-2),
         hh = ('0' + d.getHours()).slice(-2),
         min = ('0' + d.getMinutes()).slice(-2),
         time;
 
-    time = hh + ':' + min + ', ' + dd + '-' + mm + '-' + yyyy
+    time = hh + ':' + min + ', ' + dd + '.' + mm + '.' + yyyy
     return time;
 
 }

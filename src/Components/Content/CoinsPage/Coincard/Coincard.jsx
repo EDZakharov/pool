@@ -23,17 +23,17 @@ const CoinCard = (props) => {
         <div className={style.coinCard}>
             <div className={style.coinCard_header}>
                 <div className={style.wrapper}>
-                    <span>{name}</span>
-                    <div className={style.poolType}><span>{props.poolType}</span></div>
+                    <span className={style.poolName}>{name}<span className={style.poolType}>{props.poolType}</span></span>
+
                     <img src={image} alt='logo'
                          className={style.logo}/>
                 </div>
             </div>
             <div className={style.coinCard_main}>
-                <div><b>Хэшрейт пула</b> <span className={style.text}>{!hashes? '' : hashes.hashrate} {!hashes? '' : hashes.unit}</span></div>
-                <div><b>Майнеры:</b> <span className={style.text}>{props.minersTotal}</span></div>
-                <div><b>Комиссия пула:</b> <span className={style.text}>{props.fee} %</span></div>
-                <div><b>Последний блок:</b> <span className={style.text}>{dateFilter(props.lastBlockFound)}</span></div>
+                <div>Хэшрейт пула: <span className={style.text}>{!hashes? '' : hashes.hashrate} {!hashes? '' : hashes.unit}</span></div>
+                <div>Майнеры: <span className={style.text}>{props.minersTotal}</span></div>
+                <div>Комиссия пула: <span className={style.text}>{props.fee} %</span></div>
+                <div>Последний блок: <span className={style.text}>{dateFilter(props.lastBlockFound)}</span></div>
             </div>
             <div className={style.coinCard_footer}>
                 <NavLink className={style.link} onClick={onButtonLinkClick} to={`${adr}`}>
