@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
 * {
   margin: 0;
@@ -21,14 +20,14 @@
   //&:nth-child(5){
   //  background-color: #756e6e;
   //}
-  &:nth-child(9){
+  &:nth-child(9) {
     //background-color: #756e6e;
     opacity: 0;
 
   }
 
   border-bottom: 3px solid #e4be36;
-  &:hover{
+  &:hover {
     border-bottom: 3px solid #ffbf00;
 
   }
@@ -42,9 +41,8 @@
   justify-content: center;
   height: 45px;
   color: rgb(231, 231, 231);
-  font-weight: 600;
-  font-size: 20px;
-
+  font-weight: 400;
+  font-size: 16px;
 
 
 }
@@ -103,13 +101,11 @@
         margin: 0 8px 0 10px;
         width: 92%;
         min-height: 20%;
-        //height: 40px;
         padding: 8px 10px;
         font-size: 20px;
         //outline:none;
         border: .1px solid white;
         border-radius: 5px;
-        //background-color: rgba(255, 255, 255, 0);
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
         background-color: rgba(29, 29, 29, 0.19);
         backdrop-filter: blur(15px);
@@ -183,15 +179,16 @@
 
           //display: inline-block;
           //background-color: #fff;
-          .buttons{
+          .buttons {
             display: flex;
             height: 100%;
-            &:nth-child(1){
+
+            &:nth-child(1) {
               border-right: 1px solid white;
               border-left: 1px solid white;
             }
 
-            div{
+            div {
               cursor: pointer;
 
             }
@@ -199,7 +196,7 @@
 
         }
 
-        .dropDown{
+        .dropDown {
           width: 100%;
           background-color: rgba(29, 29, 29, 0.19);
           backdrop-filter: blur(15px);
@@ -211,20 +208,14 @@
           0 0 0 rgba(0, 0, 0, 0.1) inset;
 
           .stats {
-            padding: 10px;
 
-
-            //margin: 0 20px;
             display: grid;
             grid-template-areas: 'm h l' 'he fe ty' 'c min cha';
             //grid-template-rows: 1fr 1fr 1fr;
             grid-template-columns: 1fr 1fr 1fr;
-            white-space: nowrap;
-            grid-gap: 20px 15px;
+            padding: 10px;
+            grid-gap: 15px 30px;
             text-align: center;
-
-
-              font-family: 'Courgette', cursive;
 
             .miners {
               grid-area: m;
@@ -272,39 +263,14 @@
               grid-area: cha;
               //opacity: 0;
               @include addGridElem;
-
-              .showMinersBtn {
-                grid-area: showMinersBtn;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                //box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-                width: 100%;
-                height: 45px;
-                color: #ffffff;
-                //border: 1px solid #ffffff;
-                //background-color: rgba(29, 29, 29, 0.19);
-                backdrop-filter: blur(15px);
-                //padding: 10px;
-                border-radius: 5px;
-                font-weight: 600;
-
-                &:hover {
-                  color: #bfbfbf;
-                  backdrop-filter: blur(75px);
-                  cursor: pointer;
-
-                }
-
-              }
-
-
             }
 
           }
+
           .totalHashrate {
             padding: 10px 10px 0 10px;
             font-weight: 400;
+
             .totalHashrate_span {
               font-weight: 600;
               font-size: 18px;
@@ -358,10 +324,26 @@
             }
 
           }
-          .blocks{
+
+          .blocks {
             padding: 9px 10px 0 10px;
             font-weight: 400;
-            .blocks_column_grid{
+
+
+            .effort__grid {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              //padding: 10px;
+              grid-gap: 15px 30px;
+              text-align: center;
+
+              .effort {
+                @include addGridElem;
+              }
+            }
+
+
+            .blocks_column_grid {
               display: flex;
               align-items: center;
               justify-content: space-around;
@@ -374,7 +356,8 @@
               padding-bottom: 5px;
               height: 40px;
 
-              div{
+
+              div {
                 text-align: center;
                 width: 150px;
               }
@@ -385,11 +368,12 @@
 
 
               }
-              .uncle{
+
+              .uncle {
 
               }
 
-              .orphan{
+              .orphan {
 
               }
 
@@ -407,13 +391,14 @@
 
             }
 
-            .blocksWrapper{
+            .blocksWrapper {
               position: relative;
-                .liveViewer{
-                  position: absolute;
-                  bottom: 25px;
-                  right: 0;
-                }
+
+              .liveViewer {
+                position: absolute;
+                bottom: 25px;
+                right: 0;
+              }
             }
           }
 
@@ -423,16 +408,10 @@
       }
 
 
-
-
-
     }
 
 
   }
-
-
-
 
 
 }
