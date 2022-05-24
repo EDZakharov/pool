@@ -82,13 +82,29 @@ export let txChecker = (tx, pool) => {
     }
 }
 
-export let getTruncatedName = (source) => {
-    let skippedString = source.trimEnd();
-    if (skippedString.length > 13) {
-        return skippedString.substring(0, 13) + '...';
-    } else {
-        return source;
+export let getTruncatedName = (source,type) => {
+    let skippedStringEnd = source.trimEnd();
+
+    if(type === 'wallet'){
+        if (skippedStringEnd.length > 90) {
+            return skippedStringEnd.substring(0, 5) + '...' + skippedStringEnd.substring(90, skippedStringEnd.length);
+        }
+        if (skippedStringEnd.length > 13) {
+            return skippedStringEnd.substring(0, 7) + '...' + skippedStringEnd.substring(35, skippedStringEnd.length);
+        }
+        else {
+            return source;
+        }
     }
+    if (type === 'tx'){
+        if (skippedStringEnd.length > 13) {
+            return skippedStringEnd.substring(0, 13) + '...';
+        }
+        else {
+            return source;
+        }
+    }
+
 }
 
 export let poolChecker = (pool) => {

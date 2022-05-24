@@ -5,23 +5,9 @@
 }
 
 @mixin addGridElem {
-  //background-size: 390px 200px;
   padding: 15px;
   background-color: rgba(127, 127, 127, 0.19);
-  //&:nth-child(1){
-  //  background-color: #756e6e;
-  //}
-  //&:nth-child(2){
-  //  background-color: #756e6e;
-  //}
-  //&:nth-child(7){
-  //  background-color: #756e6e;
-  //}
-  //&:nth-child(5){
-  //  background-color: #756e6e;
-  //}
   &:nth-child(9) {
-    //background-color: #756e6e;
     opacity: 0;
 
   }
@@ -31,10 +17,6 @@
     border-bottom: 3px solid #ffbf00;
 
   }
-
-  //border-right: 1px solid #e4be36;
-  //border-left: 1px solid #e4be36;
-  //border-radius: 35px 35px 0px 0px ;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -310,17 +292,16 @@
             font-weight: 400;
 
 
-            .effort__grid {
-              display: grid;
-              grid-template-columns: 1fr 1fr 1fr;
-              //padding: 10px;
-              grid-gap: 15px 30px;
-              text-align: center;
-
-              .effort {
-                @include addGridElem;
-              }
-            }
+            //.effort__grid {
+            //  display: flex;
+            //  //padding: 10px;
+            //  gap: 0 30px;
+            //  text-align: center;
+            //
+            //  .effort {
+            //    @include addGridElem;
+            //  }
+            //}
 
             .blocks_column_grid {
               display: flex;
@@ -346,6 +327,52 @@
                 position: absolute;
                 bottom: 25px;
                 right: 0;
+              }
+            }
+          }
+
+          .how{
+            color: white;
+            font-weight: 300;
+            //padding: 9px 10px 0 10px;
+            pointer-events: all;
+            -webkit-touch-callout: default;
+            -webkit-user-select: text;
+            -moz-user-select: none;
+            -ms-user-select: text;
+            user-select: text;
+            padding: 1px 10px 8px 10px;
+
+
+            div{
+
+              &::selection{
+                background: #fff;
+              }
+              p{
+                &::selection{
+                  background: #fff;
+                }
+                span{
+                  &::selection{
+                    background: #fff;
+                  }
+                }
+              }
+              h3{
+                margin-top: 10px;
+                margin-bottom: 10px;
+                &::selection{
+                  background: #ffffff;
+                }
+              }
+
+              h4{
+                margin-top: 10px;
+                &::selection{
+                  background: #fff;
+                }
+
               }
             }
           }

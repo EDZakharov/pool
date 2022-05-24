@@ -73,23 +73,33 @@ export const CoinPage = (props) => {
     let [toggleStats, setToggleStats] = useState(true)
     let [toggleMiners, setToggleMiners] = useState(false)
     let [toggleBlocks, setToggleBlocks] = useState(false)
+    let [toggleHow, setToggleHow] = useState(false)
 
     let dropDownStatsToggle = () => {
         setToggleStats(true)
         setToggleMiners(false)
         setToggleBlocks(false)
+        setToggleHow(false)
 
     }
     let dropDownMinersToggle = () => {
         setToggleStats(false)
         setToggleMiners(true)
         setToggleBlocks(false)
+        setToggleHow(false)
     }
 
     let dropDownBlocksToggle = () => {
         setToggleStats(false)
         setToggleMiners(false)
         setToggleBlocks(true)
+        setToggleHow(false)
+    }
+    let dropDownHowToggle = () => {
+        setToggleStats(false)
+        setToggleMiners(false)
+        setToggleBlocks(false)
+        setToggleHow(true)
     }
 
     // if(props.coinPage.blocks !== undefined){
@@ -128,7 +138,7 @@ export const CoinPage = (props) => {
                             <div onClick={dropDownStatsToggle}><DropBtn status={toggleStats} text={'Статистика'}/></div>
                             <div onClick={dropDownMinersToggle}><DropBtn status={toggleMiners} text={'Майнеры'}/></div>
                             <div onClick={dropDownBlocksToggle}><DropBtn status={toggleBlocks} text={'Блоки'}/></div>
-                            <div><DropBtn status={false} text={'Как подключиться'}/></div>
+                            <div onClick={dropDownHowToggle}><DropBtn status={toggleHow} text={'Как подключиться'}/></div>
                         </div>
                     </div>
                     <DropData componentContent={<div className={style.dropDown}>
@@ -169,10 +179,16 @@ export const CoinPage = (props) => {
                         {toggleBlocks ? <div className={style.blocks} id='anchorBtn'>
                             <Total text={props.coinPage.blocks !== undefined ?
                                 <div className={style.effort__grid}>
-                                    <div className={style.effort}>Удача последних 20 блоков: {(props.coinPage.blocks.effort['20']*100).toFixed(0)} %</div>
-                                    <div className={style.effort}>Удача последних 50 блоков: {(props.coinPage.blocks.effort['50']*100).toFixed(0)} %</div>
-                                    <div className={style.effort}>Удача последних 200 блоков: {(props.coinPage.blocks.effort['200']*100).toFixed(0)} %</div>
-                                </div>:''}
+                                    <div className={style.effort}>Удача последних 20
+                                        блоков: {(props.coinPage.blocks.effort['20'] * 100).toFixed(0)} %
+                                    </div>
+                                    <div className={style.effort}>Удача последних 50
+                                        блоков: {(props.coinPage.blocks.effort['50'] * 100).toFixed(0)} %
+                                    </div>
+                                    <div className={style.effort}>Удача последних 200
+                                        блоков: {(props.coinPage.blocks.effort['200'] * 100).toFixed(0)} %
+                                    </div>
+                                </div> : ''}
                             />
                             <div className={style.blocks_column_grid}>
                                 <div className={style.height}>Высота</div>
@@ -185,9 +201,59 @@ export const CoinPage = (props) => {
                                 <PaginatedItems itemsPerPage={15} items={props.coinPage.blocks.matured}
                                                 type={'blocks'} addInputValue={props.addInputValue} pool={thisPool}/>
                                 {(thisPool === 'eth' || thisPool === 'eth-solo') ?
-                                    <span className={style.liveViewer}><a href='http://www.ethviewer.live/'>EthLiveViewer</a></span>: ''}
+                                    <span className={style.liveViewer}><a
+                                        href='http://www.ethviewer.live/'>EthLiveViewer</a></span> : ''}
                             </div>
                         </div> : ''}
+                    </div>}/>
+                    <DropData componentContent={<div className={style.dropDown}>
+                        {toggleHow
+                            ?
+                            <div className={style.how} id='anchorBtn'>
+                                {thisPool === 'eth'? <div>
+                                    <h3>Пул ЕТН pplns</h3>
+                                    <div>eth.e4pool.com:4444 - Сложность шар 4G</div>
+                                    <div>eth.e4pool.com:8888 - Сложность шар 8G</div>
+                                    <div>eth.e4pool.com:5555 - Сложность шар 4G + SSL</div>
+                                    <div>eth.e4pool.com:9999 - Сложность шар 8G + SSL</div>
+                                    <h3>Для подключения к пулу ЕТН используйте следующие параметры:</h3>
+                                    <h4>Настройки T-Rex:</h4>
+                                    <p><span>t-rex.exe -a ethash -o eth.e4pool.com:4444 -u YOUR_WALLET_ADDRESS -w RIG_ID -p x
+                                    pause</span></p>
+                                    <p><span>t-rex.exe -a ethash -o stratum+ssl://eth.e4pool.com:5555 -u YOUR_WALLET_ADDRESS -w RIG_ID -p x
+                                    pause</span></p>
+                                    <h4>Настройки NBminer:</h4>
+                                    <p><span>nbminer.exe -a ethash -o eth.e4pool.com:4444 -u YOUR_WALLET_ADDRESS.RIG_ID
+                                    pause</span></p>
+                                    <p><span>nbminer.exe -a ethash -o stratum+ssl://eth.e4pool.com:5555 -u YOUR_WALLET_ADDRESS.RIG_ID
+                                    pause</span></p>
+                                    <h4>Настройки lolminer:</h4>
+                                    <p><span>lolMiner.exe --algo ETHASH --pool eth.e4pool.com:4444 --user YOUR_WALLET_ADDRESS.RIG_ID
+                                    pause</span></p>
+                                    <p><span>lolMiner.exe --algo ETHASH --pool stratum+ssl://eth.e4pool.com:5555 --user YOUR_WALLET_ADDRESS.RIG_ID
+                                    pause</span></p>
+                                </div>:''}
+                                {thisPool === 'eth-solo' ? <div>
+                                    <h3>Пул ЕТН solo</h3>
+                                    <div>eth.e4pool.com:8484 - Сложность шар 8G</div>
+                                    <div>eth.e4pool.com:9595 - Сложность шар 8G + SSL</div>
+                                    <h4>Настройки T-Rex:</h4>
+                                    Для подключения к пулу ЕТН используйте следующие параметры:
+                                    <p><span> t-rex.exe -a ethash -o solo-eth.e4pool.com:8484 -u YOUR_WALLET_ADDRESS -w RIG_ID -p x
+                                    pause</span></p>
+                                    <h4>Настройки NBminer:</h4>
+                                    <p><span> nbminer.exe -a ethash -o solo-eth.e4pool.com:8484 -u YOUR_WALLET_ADDRESS.RIG_ID
+                                    pause</span></p>
+                                    <p><span> nbminer.exe -a ethash -o stratum+ssl://solo-eth.e4pool.com:9595 -u YOUR_WALLET_ADDRESS.RIG_ID
+                                    pause</span></p>
+                                    <h4>Настройки lolminer:</h4>
+                                    <p><span>lolMiner.exe --algo ETHASH --pool eth.e4pool.com:8484 --user YOUR_WALLET_ADDRESS.RIG_ID
+                                    pause</span></p>
+                                    <p><span>lolMiner.exe --algo ETHASH --pool stratum+ssl://eth.e4pool.com:9595 --user YOUR_WALLET_ADDRESS.RIG_ID
+                                    pause</span></p>
+                                </div>:''}
+                            </div>
+                            : ''}
                     </div>}/>
                 </div>
             </div>

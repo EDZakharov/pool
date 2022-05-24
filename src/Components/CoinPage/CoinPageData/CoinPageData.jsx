@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import style from './CoinPageData.module.scss'
-import {dateFilter} from "../../../Filters";
+import {dateFilter, getTruncatedName} from "../../../Filters";
 
 export const CoinPageData = (props) => {
     let [show, setShow] = useState(false)
@@ -17,14 +17,15 @@ export const CoinPageData = (props) => {
 
     }
 
+
     return (
         <div className={style.grid_data}>
             <div className={style.miner_s}>
                 <div className={style.miner}>{props.miner.toString().length > 60 ?
-                    <span className={style.longMiner} onClick={textCopy}><span className={style.minerSpan}>{props.miner}</span>
+                    <span className={style.longMiner} onClick={textCopy}><span className={style.minerSpan}>{getTruncatedName(props.miner,'wallet')}</span>
                         {show ? <span className={style.copy}> Copy</span> : ''}
                     </span> :
-                    <span className={style.shortMiner} onClick={textCopy}><span className={style.minerSpan}>{props.miner}</span>{show ?
+                    <span className={style.shortMiner} onClick={textCopy}><span className={style.minerSpan}>{getTruncatedName(props.miner,'wallet')}</span>{show ?
                         <span className={style.copy}> Copy</span> : ''}
                     </span>}
                 </div>

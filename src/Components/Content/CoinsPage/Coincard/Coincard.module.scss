@@ -17,7 +17,8 @@
 
   &:hover{
     @media (pointer: fine){
-      transform: translateZ(+100px) translateY(+10px) translateX(2px);
+      transform: scale(1.02);
+      //transform: translateZ(+100px) translateY(+10px) translateX(2px);
       transition: transform .3s ease-in-out;
 
     }
