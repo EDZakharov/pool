@@ -36,7 +36,7 @@ function Items({currentItems, type, addInputValue, pool}) {
                     return <InnerData
                         key={el.tx}
                         el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
-                        el2={<a onClick={event => event.stopPropagation()} href={txChecker(el.tx, pool)}>{getTruncatedName(el.tx)}</a>}
+                        el2={<a onClick={event => event.stopPropagation()} href={txChecker(el.tx, pool)}>{getTruncatedName(el.tx, 'tx')}</a>}
                         el3={convertTimestamp(el.timestamp)}
                         type={'payments'}
                     />
@@ -47,7 +47,7 @@ function Items({currentItems, type, addInputValue, pool}) {
                         el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
                         el2={convertTimestamp(el.timestamp)}
                         el3={<a onClick={event => event.stopPropagation()}
-                                href={blockHashChecker(el.blockHash, pool)}>{getTruncatedName(el.blockHash)}</a>}
+                                href={blockHashChecker(el.blockHash, pool)}>{getTruncatedName(el.blockHash, 'tx')}</a>}
                         el4={el.blockHeight}
                         type={'rewards'}
                     />
@@ -62,21 +62,7 @@ function Items({currentItems, type, addInputValue, pool}) {
                         type={'workers'}
                     />
                 }
-                if (type === 'rewards') {
-                    return <InnerData
-                        key={el.blockHash}
-                        el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
-                        el2={convertTimestamp(el.timestamp)}
-                        el3={<a onClick={event => event.stopPropagation()}
-                                href={blockHashChecker(el.blockHash, pool)}>{el.blockHash}</a>}
-                        el4={el.blockHeight}
-                        type={'rewards'}
-                    />
-                }
                 if (type === 'blocks') {
-
-
-
                     return <InnerData
                         key={el.hash}
                         el1={el.height}
@@ -89,7 +75,7 @@ function Items({currentItems, type, addInputValue, pool}) {
                                 : el.reward + ' ' +poolChecker(pool)}
                         el3={effortFilter((el.effort * 100).toFixed(0))}
                         el4={!el.orphan ?
-                            <a href={blockHashChecker(el.hash, pool)}>{getTruncatedName(el.hash)}</a> :
+                            <a href={blockHashChecker(el.hash, pool)}>{getTruncatedName(el.hash, 'tx')}</a> :
                             <span className={style.orphan}>Orphan</span>}
                         el5={convertTimestamp(el.timestamp)}
                         type={'blocks'}

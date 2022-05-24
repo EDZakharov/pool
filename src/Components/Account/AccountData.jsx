@@ -98,8 +98,7 @@ const AccountData = (props) => {
                             {toggleHashrate ? <div className={style.dropdown__content}>
                                 <div className={style.dropText}>
                                     <div className={style.dropText__data}>
-                                        <Total
-                                            text={`Воркеров: ${props.account.accountData.workers.length} | Хэшрейт: ${hashFilter(summHashrate()).hashrate} ${hashFilter(summHashrate()).unit}`}/>
+                                        <Total text={<div><div>{`Воркеров онлайн: ${props.account.accountData.workers.length}`}</div><div>{`Хэшрейт: ${hashFilter(summHashrate()).hashrate} ${hashFilter(summHashrate()).unit}`}</div></div>}/>
                                         <HeaderData
                                             el1={'Имя воркера'}
                                             el2={'Хэшрейт'}
@@ -114,7 +113,7 @@ const AccountData = (props) => {
                                                 el3={`${dateFilter(el.lastBeat)}`}
                                                 type={'workers'}
                                             />
-                                        }):<PaginatedItems itemsPerPage={7} items={props.account.accountData.workers} type={'workers'} pool={pool}/>}
+                                        }):<PaginatedItems itemsPerPage={15} items={props.account.accountData.workers} type={'workers'} pool={pool}/>}
 
                                     </div>
                                 </div>
@@ -126,7 +125,7 @@ const AccountData = (props) => {
                                 <div className={style.dropText}>
                                     <div className={style.dropText__data}>
                                         <Total
-                                            text={`Текущий баланс: ${(props.account.accountData.balance / 1000000000).toFixed(3)} ${poolChecker(pool)}`}/>
+                                            text={<div><div>{`Текущий баланс: ${(props.account.accountData.balance / 1000000000).toFixed(3)} ${poolChecker(pool)}`}</div></div>}/>
                                     </div>
                                 </div>
                             </div> : ''}
@@ -137,14 +136,14 @@ const AccountData = (props) => {
                             {togglePayments ? <div className={style.dropdown__content}>
                                 <div className={style.dropText}>
                                     <div className={style.dropText__data}>
-                                        <Total text={`Всего выплачено: ${(summPayments() / 1000000000).toFixed(3)} ${poolChecker(pool)}`}/>
+                                        <Total text={<div><div>{`Всего выплачено: ${(summPayments() / 1000000000).toFixed(3)} ${poolChecker(pool)}`}</div></div>}/>
                                         <HeaderData
                                             el1={'Cумма'}
                                             el2={'Номер транзакции'}
                                             el3={'Дата'}
                                             type={'payments'}
                                         />
-                                        <PaginatedItems itemsPerPage={7} items={props.account.accountData.payments.payments} type={'payments'} pool={pool}/>
+                                        <PaginatedItems itemsPerPage={15} items={props.account.accountData.payments.payments} type={'payments'} pool={pool}/>
                                     </div>
                                 </div>
                             </div> : ''}
@@ -156,7 +155,7 @@ const AccountData = (props) => {
                             {toggleRewards ? <div className={style.dropdown__content}>
                                 <div className={style.dropText}>
                                     <div className={style.dropText__data}>
-                                        <Total text={`Всего наград: ${props.account.accountData.rewards.rewards.length}`}/>
+                                        <Total text={<div><div>{`Всего наград: ${props.account.accountData.rewards.rewards.length}`}</div></div>}/>
                                         <HeaderData
                                             el1={'Cумма'}
                                             el2={'Дата'}
@@ -164,7 +163,7 @@ const AccountData = (props) => {
                                             el4={'Высота блока'}
                                             type={'rewards'}
                                         />
-                                        <PaginatedItems itemsPerPage={7} items={props.account.accountData.rewards.rewards} type={'rewards'} pool={pool}/>
+                                        <PaginatedItems itemsPerPage={15} items={props.account.accountData.rewards.rewards} type={'rewards'} pool={pool}/>
                                     </div>
                                 </div>
                             </div> : ''}
