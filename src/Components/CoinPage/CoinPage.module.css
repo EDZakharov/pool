@@ -402,6 +402,14 @@
 .coin .coinData .dropContainer .flexWrapper .dropDown .how div h4::selection {
   background: #fff;
 }
+.coin .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.coin .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages h3 {
+  margin-top: 30px;
+}
 
 .coin2 {
   grid-area: c;
@@ -802,6 +810,14 @@
 .coin2 .coinData .dropContainer .flexWrapper .dropDown .how div h4::selection {
   background: #fff;
 }
+.coin2 .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.coin2 .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages h3 {
+  margin-top: 30px;
+}
 
 .coin3 {
   grid-area: c;
@@ -1201,6 +1217,14 @@
 }
 .coin3 .coinData .dropContainer .flexWrapper .dropDown .how div h4::selection {
   background: #fff;
+}
+.coin3 .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.coin3 .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages h3 {
+  margin-top: 30px;
 }
 
 /*# sourceMappingURL=CoinPage.module.css.map */

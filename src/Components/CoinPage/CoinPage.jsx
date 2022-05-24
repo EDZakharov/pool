@@ -8,6 +8,10 @@ import PaginatedItems from "../Pagination";
 import DropBtn from "../Account/DropBtn";
 import DropData from "./DropData/DropData";
 import Total from "../Account/Total";
+import addPoolImg from '../../img/addPool.jpg'
+import addPoolDataImg from '../../img/addPoolData.jpg'
+import addWallet from '../../img/addWallet.jpg'
+import dashboard from '../../img/dashBoard.jpg'
 
 
 export const CoinPage = (props) => {
@@ -232,6 +236,16 @@ export const CoinPage = (props) => {
                                     pause</span></p>
                                     <p><span>lolMiner.exe --algo ETHASH --pool stratum+ssl://eth.e4pool.com:5555 --user YOUR_WALLET_ADDRESS.RIG_ID
                                     pause</span></p>
+
+
+                                    <div className={style.RaveImages}>
+                                        <h3>Настройка подключения через RaveOs:</h3>
+                                        <div><img src={addPoolImg}/></div>
+                                        <div><img src={addPoolDataImg}/></div>
+                                        <div><img src={addWallet}/></div>
+                                        <div><img src={dashboard}/></div>
+                                    </div>
+
                                 </div>:''}
                                 {thisPool === 'eth-solo' ? <div>
                                     <h3>Пул ЕТН solo</h3>
