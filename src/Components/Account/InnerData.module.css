@@ -1,15 +1,13 @@
 a {
   color: white;
   text-decoration: none;
-  pointer-events: auto;
-}
-a:hover {
-  text-decoration: underline;
-}
+  pointer-events: auto; }
+  a:hover {
+    text-decoration: underline; }
 
 .inner__data__grid {
   display: grid;
-  grid-template-areas: "el1 el2 el3";
+  grid-template-areas: 'el1 el2 el3';
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-content: space-between;
@@ -17,23 +15,18 @@ a:hover {
   color: #ffffff;
   margin: 2px auto;
   font-size: 15px;
-  pointer-events: none;
-}
-.inner__data__grid div {
-  padding: 5px;
-}
-.inner__data__grid .inner__elem1 {
-  grid-area: el1;
-  margin: 0 auto;
-}
-.inner__data__grid .inner__elem2 {
-  grid-area: el2;
-  margin: 0 auto;
-}
-.inner__data__grid .inner__elem3 {
-  grid-area: el3;
-  margin: 0 auto;
-}
+  pointer-events: none; }
+  .inner__data__grid div {
+    padding: 5px; }
+  .inner__data__grid .inner__elem1 {
+    grid-area: el1;
+    margin: 0 auto; }
+  .inner__data__grid .inner__elem2 {
+    grid-area: el2;
+    margin: 0 auto; }
+  .inner__data__grid .inner__elem3 {
+    grid-area: el3;
+    margin: 0 auto; }
 
 .inner__data__grid__payments {
   display: flex;
@@ -43,13 +36,11 @@ a:hover {
   color: #ffffff;
   width: 100%;
   margin-top: 2px;
-  font-size: 15px;
-}
-.inner__data__grid__payments div {
-  padding: 5px 0;
-  width: 150px;
-  text-align: center;
-}
+  font-size: 15px; }
+  .inner__data__grid__payments div {
+    padding: 5px 0;
+    width: 150px;
+    text-align: center; }
 
 .inner__data__grid__workers {
   display: flex;
@@ -59,14 +50,12 @@ a:hover {
   color: #ffffff;
   width: 100%;
   margin-top: 2px;
-  font-size: 15px;
-}
-.inner__data__grid__workers div {
-  white-space: nowrap;
-  padding: 5px 0;
-  width: 150px;
-  text-align: center;
-}
+  font-size: 15px; }
+  .inner__data__grid__workers div {
+    white-space: nowrap;
+    padding: 5px 0;
+    width: 150px;
+    text-align: center; }
 
 .inner__data__grid__rewards {
   display: flex;
@@ -75,13 +64,11 @@ a:hover {
   background-color: #6e6767;
   color: #ffffff;
   margin-top: 2px;
-  font-size: 15px;
-}
-.inner__data__grid__rewards div {
-  padding: 5px 0;
-  text-align: center;
-  width: 150px;
-}
+  font-size: 15px; }
+  .inner__data__grid__rewards div {
+    padding: 5px 0;
+    text-align: center;
+    width: 150px; }
 
 .inner__data__grid__blocks {
   display: flex;
@@ -90,12 +77,10 @@ a:hover {
   background-color: #6e6767;
   color: #ffffff;
   margin-top: 2px;
-  font-size: 15px;
-}
-.inner__data__grid__blocks div {
-  text-align: center;
-  width: 150px;
-  padding: 5.5px 0 5.5px 0;
-}
+  font-size: 15px; }
+  .inner__data__grid__blocks div {
+    text-align: center;
+    width: 150px;
+    padding: 5.5px 0 5.5px 0; }
 
 /*# sourceMappingURL=InnerData.module.css.map */

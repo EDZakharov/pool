@@ -377,92 +377,22 @@
                 &::selection {
                   background: #fff;
                 }
-
               }
 
               .RaveImages {
                 h3 {
                   margin-top: 30px;
                 }
+
                 text-align: center;
-                //width: 600px;
-                //text-align: center;
-                //margin: 0 auto;
-                //padding: 0 50px 50px 50px;
                 white-space: nowrap;
-                //align-items: center;
-                //flex-direction: column;
-                //display: flex;
-                //position: relative;
-
-
-                .carousel {
-                  //background-color: #fff;
-                  margin: 0 auto;
-                  width: 95%;
-                  height: 700px;
-                  img{
-                    cursor: pointer;
-                    width: 100%;
-                    height: 700px;
-                  }
-
-                  //.active{
-
-                  div {
-                    //background-color: #fff;
-
-                    button{
-                      background-color: rgba(255, 255, 255, 0);
-
-                      //box-shadow: none;
-                      height: 20px;
-                      width: 20px;
-
-                      &:hover{
-                        box-shadow: 0 0 15px #e4be36;
-                      }
-                    }
-
-                  }
-
-
-                  //  background-color: #fff;
-                  //}
-                  .arrows {
-
-                    div{
-                      i{
-                        cursor: pointer;
-                        &:hover{
-                          color: #e4be36;
-                        }
-                      }
-
-                    }
-
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-
-                  }
-                }
               }
             }
           }
-
-
         }
-
       }
-
-
     }
-
-
   }
-
-
 }
 
 .coin {

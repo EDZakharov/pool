@@ -1,53 +1,56 @@
-import React, {useState} from 'react';
+import React from 'react';
 import style from './Slider.module.scss'
+import Carousel, {consts} from "react-elastic-carousel";
+import styled from 'styled-components'
 
-
-let SliderImages = ({items,currentSlide}) => {
-
-    let newItems = items?[...items]:[]
-    let itemsLength = newItems.length
-
-    if(itemsLength === 0){
-        return <div/>
-    }
-    if(currentSlide <= 0) {
-        return <div className={style.sliderImage}>
-            <img src={newItems[0]}/>
-        </div>
-    }
-    if(currentSlide >= newItems.length) {
-        return <div className={style.sliderImage}>
-            <img src={newItems[newItems.length-1]}/>
-        </div>
-    }
-    if(currentSlide){
-        return <div className={style.sliderImage}>
-            <img src={newItems[currentSlide]}/>
-        </div>
-    }
-}
-
-
+const Circle = styled.button`
+    background: ${({ active }) => (active ? '#e4be36' : '0 0 2px white')};
+    display: ${({itemsLength}) => (itemsLength <= 1 ? 'none' : 'inline-block')};
+    border-radius: 0;
+    margin: 10px 10px;
+    cursor: pointer;
+`
 
 const Slider = ({items}) => {
-    let [currentSlide, setCurrentSlide] = useState(0)
-    let changeLeft = () => {
-        if(currentSlide > 0){
-            setCurrentSlide(currentSlide-1)
-        }
-    }
-    let changeRight = () => {
-        if(currentSlide < items.length-1){
-            setCurrentSlide(currentSlide+1)
-        }
 
+    let newItems = items? [...items]:[]
+    let itemsLength = newItems.length
+
+
+    let myArrow = ({ type, onClick, isEdge }) => {
+
+        const pointer = type === consts.PREV ? '':''
+
+        return (
+            <div onClick={onClick} disabled={isEdge} className={style.arrows}>
+                {pointer}
+            </div>
+        )
     }
+
     return (
         <div className={style.slider}>
-            <SliderImages items={items} currentSlide={currentSlide}/>
-            <div className={style.btnLeft} ><i className="fas fa-arrow-alt-circle-left" onClick={changeLeft}/></div>
-            <div className={style.btnRight} ><i className="fas fa-arrow-alt-circle-right" onClick={changeRight}/></div>
-            <div className={style.currentSlide}><span>{currentSlide+1} из {items.length}</span></div>
+            <Carousel itemsToShow={1} className={style.carousel} renderArrow={myArrow}
+                      renderPagination={({ pages, activePage, onClick }) => {
+                          return (
+                              <div className={style.active}>
+                                  {pages.map(page => {
+                                      const isActivePage = activePage === page
+                                      return (
+                                          <Circle
+                                              key={page}
+                                              onClick={() => onClick(page)}
+                                              active={isActivePage}
+                                              itemsLength={itemsLength}
+                                          />
+                                      )
+                                  })}
+                              </div>
+                          )
+                      }}
+            >
+                {newItems.map(el => <img draggable="false" key={el.id} src={el.src}/>)}
+            </Carousel>
         </div>
     );
 };
