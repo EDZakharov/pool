@@ -1,0 +1,59 @@
+.slider {
+  display: flex;
+  position: relative;
+}
+.slider .sliderImage img {
+  width: 700px;
+  height: 800px;
+}
+.slider .btnLeft {
+  user-select: none;
+  width: 120px;
+  text-align: center;
+  position: absolute;
+  padding: 10px;
+  bottom: 50%;
+  left: -20%;
+}
+.slider .btnLeft i {
+  font-size: 40px;
+  cursor: pointer;
+}
+.slider .btnLeft i:hover {
+  color: #9b99a0;
+}
+.slider .btnLeft i:active {
+  color: #e4be36;
+}
+.slider .btnRight {
+  user-select: none;
+  width: 120px;
+  text-align: center;
+  bottom: 50%;
+  right: -20%;
+  position: absolute;
+  padding: 10px;
+}
+.slider .btnRight i {
+  font-size: 40px;
+  cursor: pointer;
+}
+.slider .btnRight i:hover {
+  color: #9b99a0;
+}
+.slider .btnRight i:active {
+  color: #e4be36;
+}
+.slider .currentSlide {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  bottom: 15px;
+  text-align: center;
+  justify-content: center;
+}
+.slider .currentSlide span {
+  padding: 10px;
+}
+
+/*# sourceMappingURL=Slider.module.css.map */

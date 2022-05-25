@@ -12,10 +12,15 @@ import addPoolImg from '../../img/addPool.jpg'
 import addPoolDataImg from '../../img/addPoolData.jpg'
 import addWallet from '../../img/addWallet.jpg'
 import dashboard from '../../img/dashBoard.jpg'
+import Carousel, { consts } from 'react-elastic-carousel';
 
+let imageArr = [addPoolImg,addPoolDataImg,addWallet,dashboard]
+
+let sliderStyled = {
+    background: 'white'
+}
 
 export const CoinPage = (props) => {
-
     let thisPool = localStorage.getItem('selectedCoin')
     let coinLogo = imgFilter(localStorage.getItem('selectedCoin'))
     let luck = props.coinPage.fullStats.currentEffort * 100;
@@ -106,15 +111,17 @@ export const CoinPage = (props) => {
         setToggleHow(true)
     }
 
-    // if(props.coinPage.blocks !== undefined){
-    //     if(Object.keys(props.coinPage.blocks).length !== 0){
-    //         console.log(props.coinPage.blocks)
-    //         console.log(props.coinPage.blocks.effort['20'])
-    //     }
-    //
-    // }
+    let myArrow = ({ type, onClick, isEdge }) => {
 
-    console.log(props.coinPage.blocks)
+        const pointer = type === consts.PREV ? <div><i className="fas fa-arrow-alt-circle-left" /></div>: <div><i className="fas fa-arrow-alt-circle-right"/></div>
+
+        return (
+            <div onClick={onClick} disabled={isEdge} className={style.arrows}>
+                {pointer}
+            </div>
+        )
+    }
+
 
     return (props.coinPage.isFetching ? <Fetcher/> : <div className={localStorage.getItem('showRandomBackStyle')}>
         <div className={style.coinData}>
@@ -240,10 +247,12 @@ export const CoinPage = (props) => {
 
                                     <div className={style.RaveImages}>
                                         <h3>Настройка подключения через RaveOs:</h3>
-                                        <div><img src={addPoolImg}/></div>
-                                        <div><img src={addPoolDataImg}/></div>
-                                        <div><img src={addWallet}/></div>
-                                        <div><img src={dashboard}/></div>
+                                        <Carousel itemsToShow={1} className={style.carousel} renderArrow={myArrow}>
+                                            <img draggable="false" src={addPoolImg}/>
+                                            <img draggable="false" src={addPoolDataImg}/>
+                                            <img draggable="false" src={addWallet}/>
+                                            <img draggable="false" src={dashboard}/>
+                                        </Carousel>
                                     </div>
 
                                 </div>:''}
