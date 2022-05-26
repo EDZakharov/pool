@@ -1,31 +1,79 @@
-* {
-  padding: 0;
-}
-
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap");
 .e4pizor {
   position: relative;
-  margin: 0 0 0 -1px;
   grid-area: c;
+  height: 100vh;
+  width: 100vw;
   overflow-y: hidden;
   pointer-events: none;
-}
-.e4pizor .background {
-  position: absolute;
-  top: 0;
-}
-.e4pizor .background img {
-  width: 100%;
-  height: 100%;
-}
-.e4pizor .content {
-  position: relative;
-}
-.e4pizor .content .colorButtons {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0);
-  top: 50%;
-  display: flex;
-  border: none;
-}
+  background-image: url("../../img/фон.jpg");
+  background-size: 100%; }
+  .e4pizor .header__description {
+    position: absolute;
+    text-align: left;
+    color: white;
+    top: 110px;
+    left: 6%; }
+    .e4pizor .header__description h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      font-size: 55px; }
+    .e4pizor .header__description span {
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      font-size: 25px; }
+  .e4pizor .content {
+    display: flex;
+    padding-top: 13%;
+    justify-content: space-evenly; }
+    .e4pizor .content .imageSelection {
+      padding-top: 10px;
+      display: inline-block;
+      user-select: none; }
+      .e4pizor .content .imageSelection .e4pizor__device {
+        padding-bottom: 20px; }
+        .e4pizor .content .imageSelection .e4pizor__device .device__img {
+          width: 300px;
+          background-color: #fff;
+          border-radius: 50%;
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.67); }
+      .e4pizor .content .imageSelection .colorButtons {
+        display: flex;
+        justify-content: center;
+        border: none; }
+    .e4pizor .content .player {
+      border: 4px solid rgba(255, 255, 255, 0.13);
+      padding: 1px;
+      align-items: center;
+      justify-content: center;
+      pointer-events: auto;
+      position: relative; }
+      .e4pizor .content .player .btn {
+        position: absolute;
+        margin-top: 60px;
+        width: 100%;
+        text-align: center; }
+        .e4pizor .content .player .btn a {
+          text-decoration: none; }
+    .e4pizor .content .description {
+      user-select: none;
+      color: white;
+      text-align: justify;
+      width: 450px; }
+      .e4pizor .content .description .dec {
+        padding-right: 5px;
+        color: red;
+        font-size: 40px;
+        font-weight: bold; }
+      .e4pizor .content .description h2 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        font-size: 30px; }
+      .e4pizor .content .description p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        margin-top: 10px; }
 
 /*# sourceMappingURL=E4pizor.module.css.map */
