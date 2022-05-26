@@ -16,8 +16,34 @@
   background-image: url("../../img/фон.jpg");
   background-size: 100%;
 
-  .header__description {
+  .questions{
+    position: absolute;
+    font-size: 20px;
+    color: #afafaf;
+    bottom: 40px;
+    right: 20px;
+    text-decoration: none;
+    cursor: pointer;
 
+
+    &:hover{
+      transition: .3s all;
+      transform: translateZ(+100px) translateY(-4px) translateX(-5px);
+      color: white;
+    }
+    span{
+      &:hover{
+
+        color: white;
+      }
+      i{
+        font-size: 25px;
+      }
+    }
+
+  }
+
+  .header__description {
     position: absolute;
     text-align: left;
     color: white;
@@ -81,19 +107,6 @@
         a{
           text-decoration: none;
         }
-        //span{
-        //  font-family: 'Roboto Flex', sans-serif;
-        //  font-weight: 400;
-        //  font-size: 20px;
-        //  background-color: #fff;
-        //  color: black;
-        //  padding: 5px;
-        //  border-radius: 5px;
-        //  &:hover{
-        //    background-color: rgba(255, 255, 255, 0.8);
-        //  }
-
-        //}
       }
 
 
@@ -106,7 +119,7 @@
       width: 450px;
       .dec{
         padding-right: 5px;
-        color: red;
+        //color: red;
         font-size: 40px;
         font-weight: bold;
       }

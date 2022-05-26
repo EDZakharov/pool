@@ -10,6 +10,22 @@
   pointer-events: none;
   background-image: url("../../img/фон.jpg");
   background-size: 100%; }
+  .e4pizor .questions {
+    position: absolute;
+    font-size: 20px;
+    color: #afafaf;
+    bottom: 40px;
+    right: 20px;
+    text-decoration: none;
+    cursor: pointer; }
+    .e4pizor .questions:hover {
+      transition: .3s all;
+      transform: translateZ(100px) translateY(-4px) translateX(-5px);
+      color: white; }
+    .e4pizor .questions span:hover {
+      color: white; }
+    .e4pizor .questions span i {
+      font-size: 25px; }
   .e4pizor .header__description {
     position: absolute;
     text-align: left;
@@ -64,7 +80,6 @@
       width: 450px; }
       .e4pizor .content .description .dec {
         padding-right: 5px;
-        color: red;
         font-size: 40px;
         font-weight: bold; }
       .e4pizor .content .description h2 {

@@ -11,15 +11,15 @@
   display: grid;
   grid-template-areas: 'h' 'm' 'f';
   grid-template-rows: auto auto auto;
-  transition: transform 1.5s ease-in-out;
+  transition: transform .2s ease-in-out;
   z-index: 10;
   backdrop-filter: blur(20px);
 
   &:hover{
     @media (pointer: fine){
-      transform: scale(1.02);
-      //transform: translateZ(+100px) translateY(+10px) translateX(2px);
-      transition: transform .3s ease-in-out;
+      //transform: scale(1.033);
+      transform: translateZ(+100px) translateY(+2px) translateX(1px);
+      transition: transform .2s ease-in-out;
 
     }
 

@@ -44,7 +44,7 @@ function Items({currentItems, type, addInputValue, pool}) {
                 if (type === 'rewards') {
                     return <InnerData
                         key={el.blockHash}
-                        el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
+                        el1={(el.amount / 1000000000).toFixed(5) + ' ' + poolChecker(pool)}
                         el2={convertTimestamp(el.timestamp)}
                         el3={<a onClick={event => event.stopPropagation()}
                                 href={blockHashChecker(el.blockHash, pool)}>{getTruncatedName(el.blockHash, 'tx')}</a>}

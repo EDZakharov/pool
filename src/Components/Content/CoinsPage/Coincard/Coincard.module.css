@@ -2,13 +2,13 @@
   display: grid;
   grid-template-areas: 'h' 'm' 'f';
   grid-template-rows: auto auto auto;
-  transition: transform 1.5s ease-in-out;
+  transition: transform .2s ease-in-out;
   z-index: 10;
   backdrop-filter: blur(20px); }
   @media (pointer: fine) {
     .coinCard:hover {
-      transform: scale(1.02);
-      transition: transform .3s ease-in-out; } }
+      transform: translateZ(100px) translateY(2px) translateX(1px);
+      transition: transform .2s ease-in-out; } }
   .coinCard .coinCard_header {
     width: 100%;
     background-color: rgba(198, 198, 198, 0.19);
