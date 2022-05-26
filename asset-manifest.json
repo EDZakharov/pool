@@ -1,10 +1,15 @@
 {
   "files": {
-    "main.css": "/pool/static/css/main.ebaf4e36.css",
-    "main.js": "/pool/static/js/main.be7c4d62.js",
+    "main.css": "/pool/static/css/main.bff3fc2e.css",
+    "main.js": "/pool/static/js/main.130d0203.js",
     "static/js/787.49970623.chunk.js": "/pool/static/js/787.49970623.chunk.js",
-    "static/media/fon.jpg": "/pool/static/media/fon.e793281eb6cf9e1a18d6.jpg",
+    "static/media/фон.jpg": "/pool/static/media/фон.9c6a099043c23a626102.jpg",
+    "static/media/DarkGreen.png": "/pool/static/media/DarkGreen.6149066245299e372a7f.png",
+    "static/media/Black.png": "/pool/static/media/Black.d2c50f7c5f2994a2d27c.png",
+    "static/media/Green.png": "/pool/static/media/Green.b9b16ac51584043e7098.png",
     "static/media/octopus3.png": "/pool/static/media/octopus3.df5b029418e2359f2a05.png",
+    "static/media/Blue.png": "/pool/static/media/Blue.ade98cf49fbb749b7d8c.png",
+    "static/media/Red.png": "/pool/static/media/Red.e2d3c972ef042e03b63a.png",
     "static/media/addPool.jpg": "/pool/static/media/addPool.3fee944657fea8fe82cb.jpg",
     "static/media/addWallet.jpg": "/pool/static/media/addWallet.fbb3e60f89e2eeecd031.jpg",
     "static/media/octopus2.png": "/pool/static/media/octopus2.5ed266a202777e32894b.png",
@@ -14,12 +19,12 @@
     "static/media/evox-prop.png": "/pool/static/media/evox-prop.ac28b74f9e6ea3693fa4.png",
     "static/media/loader.gif": "/pool/static/media/loader.90527d3e638231a0f785.gif",
     "index.html": "/pool/index.html",
-    "main.ebaf4e36.css.map": "/pool/static/css/main.ebaf4e36.css.map",
-    "main.be7c4d62.js.map": "/pool/static/js/main.be7c4d62.js.map",
+    "main.bff3fc2e.css.map": "/pool/static/css/main.bff3fc2e.css.map",
+    "main.130d0203.js.map": "/pool/static/js/main.130d0203.js.map",
     "787.49970623.chunk.js.map": "/pool/static/js/787.49970623.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ebaf4e36.css",
-    "static/js/main.be7c4d62.js"
+    "static/css/main.bff3fc2e.css",
+    "static/js/main.130d0203.js"
   ]
 }
