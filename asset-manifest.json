@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pool/static/css/main.b0753761.css",
-    "main.js": "/pool/static/js/main.0b6b3a7f.js",
+    "main.css": "/pool/static/css/main.9c5cb4ba.css",
+    "main.js": "/pool/static/js/main.a7ad26f2.js",
     "static/js/787.49970623.chunk.js": "/pool/static/js/787.49970623.chunk.js",
     "static/media/фон.jpg": "/pool/static/media/фон.9c6a099043c23a626102.jpg",
     "static/media/DarkGreen.png": "/pool/static/media/DarkGreen.6149066245299e372a7f.png",
@@ -19,12 +19,12 @@
     "static/media/evox-prop.png": "/pool/static/media/evox-prop.ac28b74f9e6ea3693fa4.png",
     "static/media/loader.gif": "/pool/static/media/loader.90527d3e638231a0f785.gif",
     "index.html": "/pool/index.html",
-    "main.b0753761.css.map": "/pool/static/css/main.b0753761.css.map",
-    "main.0b6b3a7f.js.map": "/pool/static/js/main.0b6b3a7f.js.map",
+    "main.9c5cb4ba.css.map": "/pool/static/css/main.9c5cb4ba.css.map",
+    "main.a7ad26f2.js.map": "/pool/static/js/main.a7ad26f2.js.map",
     "787.49970623.chunk.js.map": "/pool/static/js/787.49970623.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0753761.css",
-    "static/js/main.0b6b3a7f.js"
+    "static/css/main.9c5cb4ba.css",
+    "static/js/main.a7ad26f2.js"
   ]
 }
