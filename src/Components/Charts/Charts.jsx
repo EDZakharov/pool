@@ -6,7 +6,7 @@ import HighchartsReact from 'highcharts-react-official'
 
 let setupOptions = (props) => {
 
-    if(props.charts === 'n/a'){
+    if (props.charts === 'n/a') {
         return 0
     }
 
@@ -46,7 +46,7 @@ let setupOptions = (props) => {
             }
             if (el.hr.toString().length > 3 && el.hr.toString().length <= 6) {
                 let x = el.hr;
-                if(el.hr > 2000){
+                if (el.hr > 2000) {
                     x = el.hr / 1000
                     showHashes(2)
                     return Number(x.toFixed(0))
@@ -56,7 +56,7 @@ let setupOptions = (props) => {
             }
             if (el.hr.toString().length > 6 && el.hr.toString().length <= 9) {
                 let x = el.hr / 1000
-                if(el.hr > 2000000){
+                if (el.hr > 2000000) {
                     x = el.hr / 1000000
                     showHashes(3)
                     return Number(x.toFixed(2))
@@ -67,7 +67,7 @@ let setupOptions = (props) => {
             if (el.hr.toString().length > 9 && el.hr.toString().length <= 12) {
                 let x = el.hr / 1000000
 
-                if(el.hr > 2000000000){
+                if (el.hr > 2000000000) {
                     x = el.hr / 1000000000
                     showHashes(4)
                     return Number(x.toFixed(2))
@@ -77,7 +77,7 @@ let setupOptions = (props) => {
             }
             if (el.hr.toString().length > 12 && el.hr.toString().length <= 15) {
                 let x = el.hr / 1000000000
-                if(el.hr > 2000000000000){
+                if (el.hr > 2000000000000) {
                     x = el.hr / 1000000000000
                     showHashes(5)
                     return Number(x.toFixed(2))
@@ -88,18 +88,30 @@ let setupOptions = (props) => {
         } else return 0
     })
 
-    const cutOffLastElem = (array,cut) => {
+    const cutOffLastElem = (array, cut) => {
         const [first, ...rest] = array;
         return rest.slice(cut);
     }
 
 
     let arr2 = props.charts.map(el => {
-        return new Date(el.timestamp * 1000).getHours() + ':' + minutesFlor(new Date(el.timestamp * 1000).getMinutes())
+        if (new Date(el.timestamp * 1000).getHours() === 0) {
+            if (new Date(el.timestamp * 1000).getMinutes() === 0) {
+                return new Date(el.timestamp * 1000).getDate() + '.'
+                    + ('0' + (new Date(el.timestamp * 1000).getMonth() + 1)).slice(-2) + ' '
+                    + new Date(el.timestamp * 1000).getHours() + ':'
+                    + minutesFlor(new Date(el.timestamp * 1000).getMinutes())
+            }
+        }
+
+
+        return new Date(el.timestamp * 1000).getHours() + ':'
+            + minutesFlor(new Date(el.timestamp * 1000).getMinutes())
     })
 
-    arr1 = cutOffLastElem(arr1,-96)
-    arr2 = cutOffLastElem(arr2,-96)
+
+    arr1 = cutOffLastElem(arr1, -24)
+    arr2 = cutOffLastElem(arr2, -24)
 
 
     return {
@@ -112,16 +124,16 @@ let setupOptions = (props) => {
             series: {
                 label: {style: {color: 'black'}},
             },
-            area:{
-                marker:{
-                    enabled:false
+            area: {
+                marker: {
+                    enabled: false
                 }
             }
         },
         chart: {
             type: 'spline',
             backgroundColor: 'rgba(85,77,77,0.56)',
-            height:'300px'
+            height: '300px'
         },
         series: [{
             showInLegend: false,
@@ -153,7 +165,7 @@ let setupOptions = (props) => {
             gridLineColor: '#747474',
             title: {
                 text: hashesData,
-                style: {color: '#fff', fontSize:'20px'}
+                style: {color: '#fff', fontSize: '20px'}
             },
             alternateGridColor: 'rgba(101,70,70,0.07)',
             labels: {
@@ -166,15 +178,13 @@ let setupOptions = (props) => {
 }
 
 
-
-
 const Charts = (props) => {
 
-    if(props.charts){
+    if (props.charts) {
         return <div className='Charts'>{props.charts !== 'n/a' ? <HighchartsReact
             highcharts={Highcharts}
             options={setupOptions(props)}
-        />:''}
+        /> : ''}
         </div>
     }
 }

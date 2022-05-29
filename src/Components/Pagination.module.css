@@ -48,21 +48,30 @@
   color: #ff8989; }
 
 .easy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5px;
   background-color: #4a935c;
   border: .1px solid #4a935c;
-  border-radius: 7px;
-  padding: 0 3px; }
+  border-radius: 7px; }
 
 .hard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5px;
   background-color: #c2ba82;
   border: .1px solid #c2ba82;
-  border-radius: 7px;
-  padding: 0 3px; }
+  border-radius: 7px; }
 
 .insane {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5px;
   background-color: #ff8989;
   border: .1px solid #ff8989;
-  border-radius: 7px;
-  padding: 0 3px; }
+  border-radius: 7px; }
 
 /*# sourceMappingURL=Pagination.module.css.map */

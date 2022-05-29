@@ -20,7 +20,7 @@ export let convertTimestamp = (timestamp) => {
         min = ('0' + d.getMinutes()).slice(-2),
         time;
 
-    time = hh + ':' + min + ', ' + dd + '.' + mm + '.' + yyyy
+    time =  dd + '.' + mm + '.' + yyyy + '  ' + hh + ':' + min
     return time;
 
 }

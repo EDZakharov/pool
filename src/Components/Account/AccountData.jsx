@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import style from './AccountData.module.scss'
 import Fetcher from "../Fetcher/Fetcher";
-import {dateFilter, hashFilter, poolChecker} from "../../Filters";
+import {dateFilter, hashFilter, poolChecker, showRandomBgcStyle} from "../../Filters";
 import Charts from "../Charts/Charts";
 import InnerData from "./InnerData";
 import HeaderData from "./HeaderData";
@@ -18,7 +18,23 @@ const AccountData = (props) => {
     let [toggleBalance, setToggleBalance] = useState(false)
     let [toggleRewards, setToggleRewards] = useState(false)
 
+
     useEffect(() => {
+        let showRandomAccBGCStyle = () => {
+            let x = Math.ceil(Math.random() * 10)
+            if (x <= 3) {
+                return style.coin
+            }
+            if (x <= 7) {
+                return style.coin2
+            }
+            if (x <= 10) {
+                return style.coin3
+            }
+        }
+
+        localStorage.setItem('showRandomAccBGCStyle', showRandomAccBGCStyle())
+
         props.showAccountDataOnce(pool, account)
         let interval = setInterval(() => {
             props.showAccountData()
@@ -80,9 +96,12 @@ const AccountData = (props) => {
     }
 
 
+    // console.log(localStorage.getItem('showRandomAccBgcStyle'))
+
+
     return (!props.account.accountData ? <Fetcher/> :
         <div className={style.account}>
-
+            <div className={localStorage.getItem('showRandomAccBGCStyle')}/>
             <div className={style.graph}>
                 <div className={style.chartsGraph}>
                     <Charts text={`Кошелек: ${localStorage.getItem('account')}`}

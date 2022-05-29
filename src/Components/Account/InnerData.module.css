@@ -75,12 +75,28 @@ a {
   align-items: center;
   justify-content: space-around;
   background-color: #6e6767;
+  position: relative;
   color: #ffffff;
   margin-top: 2px;
   font-size: 15px; }
   .inner__data__grid__blocks div {
-    text-align: center;
-    width: 150px;
     padding: 5.5px 0 5.5px 0; }
+  .inner__data__grid__blocks .inner__elem1 {
+    position: absolute;
+    left: 5%; }
+  .inner__data__grid__blocks .inner__elem2 {
+    position: absolute;
+    left: 25%; }
+  .inner__data__grid__blocks .inner__elem3 {
+    position: absolute;
+    width: 55px;
+    white-space: nowrap; }
+  .inner__data__grid__blocks .inner__elem4 {
+    position: absolute;
+    right: 25%; }
+  .inner__data__grid__blocks .inner__elem5 {
+    width: 100%;
+    text-align: end;
+    padding-right: 5%; }
 
 /*# sourceMappingURL=InnerData.module.css.map */

@@ -8,7 +8,7 @@
   background-size: 1000px 1000px;
   overflow: auto;
   user-select: none;
-  height: 88vh;
+  height: 91vh;
   padding-top: 50px;
   background: url(./../../img/octopus1.png) no-repeat 50% 0;
   background-size: 1500px;
@@ -299,10 +299,25 @@
               -moz-user-select: text;
               background-color: grey;
               color: white;
-              height: 40px; }
-              .coin .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid div {
-                text-align: center;
-                width: 150px; }
+              height: 40px;
+              position: relative; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid .height {
+                position: absolute;
+                left: 5%; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid .summ {
+                position: absolute;
+                left: 25%; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid .effort {
+                position: absolute;
+                width: 55px;
+                white-space: nowrap; }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid .hash {
+                position: absolute;
+                right: calc(25% + 10px); }
+              .coin .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid .timestamp {
+                width: 100%;
+                text-align: end;
+                padding-right: calc(5% + 25px); }
             .coin .coinData .dropContainer .flexWrapper .dropDown .blocks .blocksWrapper {
               position: relative; }
               .coin .coinData .dropContainer .flexWrapper .dropDown .blocks .blocksWrapper .liveViewer {
@@ -346,7 +361,7 @@
   background-size: 1000px 1000px;
   overflow: auto;
   user-select: none;
-  height: 88vh;
+  height: 91vh;
   padding-top: 50px;
   background: url(./../../img/octopus2.png) no-repeat 50% 0;
   background-size: 1500px;
@@ -637,10 +652,25 @@
               -moz-user-select: text;
               background-color: grey;
               color: white;
-              height: 40px; }
-              .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid div {
-                text-align: center;
-                width: 150px; }
+              height: 40px;
+              position: relative; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid .height {
+                position: absolute;
+                left: 5%; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid .summ {
+                position: absolute;
+                left: 25%; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid .effort {
+                position: absolute;
+                width: 55px;
+                white-space: nowrap; }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid .hash {
+                position: absolute;
+                right: calc(25% + 10px); }
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid .timestamp {
+                width: 100%;
+                text-align: end;
+                padding-right: calc(5% + 25px); }
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocksWrapper {
               position: relative; }
               .coin2 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocksWrapper .liveViewer {
@@ -684,7 +714,7 @@
   background-size: 1000px 1000px;
   overflow: auto;
   user-select: none;
-  height: 88vh;
+  height: 91vh;
   padding-top: 50px;
   background: url(./../../img/octopus3.png) no-repeat 50% 30%;
   background-size: 1500px;
@@ -975,10 +1005,25 @@
               -moz-user-select: text;
               background-color: grey;
               color: white;
-              height: 40px; }
-              .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid div {
-                text-align: center;
-                width: 150px; }
+              height: 40px;
+              position: relative; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid .height {
+                position: absolute;
+                left: 5%; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid .summ {
+                position: absolute;
+                left: 25%; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid .effort {
+                position: absolute;
+                width: 55px;
+                white-space: nowrap; }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid .hash {
+                position: absolute;
+                right: calc(25% + 10px); }
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocks_column_grid .timestamp {
+                width: 100%;
+                text-align: end;
+                padding-right: calc(5% + 25px); }
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocksWrapper {
               position: relative; }
               .coin3 .coinData .dropContainer .flexWrapper .dropDown .blocks .blocksWrapper .liveViewer {

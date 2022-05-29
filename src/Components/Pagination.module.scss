@@ -73,21 +73,31 @@
   color: #ff8989;
 }
 
+@mixin spanStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5px;
+}
+
 .easy{
+  @include spanStyle;
   background-color: #4a935c;
   border: .1px solid #4a935c;
   border-radius: 7px;
-  padding: 0 3px;
+  //padding: 0 3px;
 }
 .hard{
+  @include spanStyle;
   background-color: #c2ba82;
   border: .1px solid #c2ba82;
   border-radius: 7px;
-  padding: 0 3px;
+  //padding: 0 3px;
 }
 .insane{
+  @include spanStyle;
   background-color: #ff8989;
   border: .1px solid #ff8989;
   border-radius: 7px;
-  padding: 0 3px;
+  //padding: 0 3px;
 }

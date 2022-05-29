@@ -3,6 +3,8 @@
   padding: 0;
 }
 
+
+
 .account{
   grid-area: c;
   background-color: #544c4d;
@@ -12,9 +14,36 @@
   grid-template-rows: 300px 1fr;
   color: white;
   overflow: auto;
-  height: 88vh;
+  height: 91vh;
   padding-top: 50px;
+  z-index: 2;
+  position: relative;
 
+
+  .coin{
+    position: fixed;
+    width: 100vw;
+    height: 100%;
+
+    background: url(../../../src/img/octopus1.png) no-repeat 50% 0;
+    background-size: 1400px;
+  }
+  .coin2{
+    position: fixed;
+    width: 100vw;
+    height: 100%;
+
+    background: url(../../../src/img/octopus2.png) no-repeat 50% 0;
+    background-size: 1400px;
+  }
+  .coin3{
+    position: fixed;
+    width: 100vw;
+    height: 100%;
+
+    background: url(../../../src/img/octopus3.png) no-repeat 50% 0;
+    background-size: 1400px;
+  }
 
   .graph{
     grid-area: g;
@@ -71,7 +100,7 @@
           border-left: 1px solid white;
         }
 
-        .dropdown__content{
+        .dropdown__content {
           display: flex;
           font-weight: 400;
           font-size: 16px;
@@ -86,7 +115,7 @@
           //border: .1px solid white;
 
 
-          .dropText{
+          .dropText {
             width: 100%;
             border-right: .2px solid white;
             border-left: .2px solid white;
@@ -100,23 +129,12 @@
             //padding: 0 10px 40px 10px;
             margin-bottom: 40px;
 
-            .dropText__data{
+            .dropText__data {
               padding: 10px;
             }
-
-
           }
-
-
         }
-
-
       }
-
     }
-
-
-
-
   }
 }

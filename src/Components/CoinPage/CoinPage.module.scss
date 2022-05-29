@@ -35,7 +35,7 @@
   background-size: 1000px 1000px;
   overflow: auto;
   user-select: none;
-  height: 88vh;
+  height: 91vh;
   padding-top: 50px;
 
   .coinData {
@@ -313,11 +313,37 @@
               background-color: grey;
               color: white;
               height: 40px;
+              position: relative;
 
               div {
-                text-align: center;
-                width: 150px;
+                //text-align: center;
+                //width: 150px;
               }
+
+              .height{
+                position: absolute;
+                left: 5%;
+              }
+              .summ{
+                position: absolute;
+                left: 25%;
+              }
+              .effort{
+                position: absolute;
+                width: 55px;
+                white-space: nowrap;
+              }
+              .hash{
+                position: absolute;
+                right: calc(25% + 10px);
+              }
+              .timestamp{
+                width: 100%;
+                text-align: end;
+                padding-right: calc(5% + 25px);
+              }
+
+
             }
 
             .blocksWrapper {
@@ -421,6 +447,4 @@
   background: url(./../../img/octopus3.png) no-repeat 50% 30%;
   background-size: 1500px;
   z-index: 1;
-
-
 }

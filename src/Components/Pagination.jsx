@@ -16,13 +16,13 @@ import {CoinPageData} from "./CoinPage/CoinPageData/CoinPageData";
 
 function effortFilter(effort) {
     if(effort < 100){
-        return <span className={style.easy}>{effort} %</span>
+        return <div className={style.easy}>{effort} %</div>
     }
     if(effort <= 150){
-        return <span className={style.hard}>{effort} %</span>
+        return <div className={style.hard}>{effort} %</div>
     }
     if(effort > 150){
-        return <span className={style.insane}>{effort} %</span>
+        return <div className={style.insane}>{effort} %</div>
     }
 
 }
