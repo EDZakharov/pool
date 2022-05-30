@@ -6,14 +6,13 @@
   grid-area: c;
   height: 100vh;
   width: 100vw;
-  overflow-y: hidden;
   pointer-events: none;
   background-image: url("../../img/фон.jpg");
   background-size: 100%; }
   @media screen and (max-width: 1366px) {
     .e4pizor {
-      overflow-y: scroll;
-      pointer-events: auto; } }
+      pointer-events: auto;
+      overflow-y: scroll; } }
   .e4pizor .questions {
     position: absolute;
     font-size: 20px;

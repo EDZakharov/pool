@@ -169,15 +169,7 @@
         border-right: 1px solid #ffffff;
         border-left: 1px solid #ffffff;
         box-shadow: 0 0 0 rgba(0, 0, 0, 0.3), -28px 0 25px -23px rgba(0, 0, 0, 0.8), 28px 0 35px -23px rgba(0, 0, 0, 0.8), 0 0 0 rgba(0, 0, 0, 0.1) inset; }
-        @media screen and (min-width: 2000px) {
-          .coin .coinData .dropContainer .flexWrapper .dropDown .stats {
-            display: grid;
-            grid-template-areas: 'm h l' 'he fe ty' 'c min cha';
-            grid-template-columns: 1fr 1fr 1fr;
-            padding: 10px;
-            grid-gap: 25px 45px;
-            text-align: center; } }
-        @media screen and (max-width: 2000px) {
+        @media screen and (min-width: 600px) {
           .coin .coinData .dropContainer .flexWrapper .dropDown .stats {
             display: grid;
             grid-template-areas: 'm h l' 'he fe ty' 'c min cha';
@@ -205,12 +197,9 @@
             opacity: 0; }
           .coin .coinData .dropContainer .flexWrapper .dropDown .stats .miners:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin .coinData .dropContainer .flexWrapper .dropDown .stats .miners {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin .coinData .dropContainer .flexWrapper .dropDown .stats .miners {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin .coinData .dropContainer .flexWrapper .dropDown .stats .miners {
               font-size: 18px; } }
@@ -237,12 +226,9 @@
             opacity: 0; }
           .coin .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate {
               font-size: 18px; } }
@@ -269,12 +255,9 @@
             opacity: 0; }
           .coin .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound {
               font-size: 18px; } }
@@ -301,12 +284,9 @@
             opacity: 0; }
           .coin .coinData .dropContainer .flexWrapper .dropDown .stats .height:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin .coinData .dropContainer .flexWrapper .dropDown .stats .height {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin .coinData .dropContainer .flexWrapper .dropDown .stats .height {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin .coinData .dropContainer .flexWrapper .dropDown .stats .height {
               font-size: 18px; } }
@@ -333,12 +313,9 @@
             opacity: 0; }
           .coin .coinData .dropContainer .flexWrapper .dropDown .stats .fee:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin .coinData .dropContainer .flexWrapper .dropDown .stats .fee {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin .coinData .dropContainer .flexWrapper .dropDown .stats .fee {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin .coinData .dropContainer .flexWrapper .dropDown .stats .fee {
               font-size: 18px; } }
@@ -365,12 +342,9 @@
             opacity: 0; }
           .coin .coinData .dropContainer .flexWrapper .dropDown .stats .type:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin .coinData .dropContainer .flexWrapper .dropDown .stats .type {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin .coinData .dropContainer .flexWrapper .dropDown .stats .type {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin .coinData .dropContainer .flexWrapper .dropDown .stats .type {
               font-size: 18px; } }
@@ -397,12 +371,9 @@
             opacity: 0; }
           .coin .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort {
               font-size: 18px; } }
@@ -429,12 +400,9 @@
             opacity: 0; }
           .coin .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment {
               font-size: 18px; } }
@@ -461,12 +429,9 @@
             opacity: 0; }
           .coin .coinData .dropContainer .flexWrapper .dropDown .stats .charts:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin .coinData .dropContainer .flexWrapper .dropDown .stats .charts {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin .coinData .dropContainer .flexWrapper .dropDown .stats .charts {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin .coinData .dropContainer .flexWrapper .dropDown .stats .charts {
               font-size: 18px; } }
@@ -737,15 +702,7 @@
         border-right: 1px solid #ffffff;
         border-left: 1px solid #ffffff;
         box-shadow: 0 0 0 rgba(0, 0, 0, 0.3), -28px 0 25px -23px rgba(0, 0, 0, 0.8), 28px 0 35px -23px rgba(0, 0, 0, 0.8), 0 0 0 rgba(0, 0, 0, 0.1) inset; }
-        @media screen and (min-width: 2000px) {
-          .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats {
-            display: grid;
-            grid-template-areas: 'm h l' 'he fe ty' 'c min cha';
-            grid-template-columns: 1fr 1fr 1fr;
-            padding: 10px;
-            grid-gap: 25px 45px;
-            text-align: center; } }
-        @media screen and (max-width: 2000px) {
+        @media screen and (min-width: 600px) {
           .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats {
             display: grid;
             grid-template-areas: 'm h l' 'he fe ty' 'c min cha';
@@ -773,12 +730,9 @@
             opacity: 0; }
           .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .miners:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .miners {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .miners {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .miners {
               font-size: 18px; } }
@@ -805,12 +759,9 @@
             opacity: 0; }
           .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate {
               font-size: 18px; } }
@@ -837,12 +788,9 @@
             opacity: 0; }
           .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound {
               font-size: 18px; } }
@@ -869,12 +817,9 @@
             opacity: 0; }
           .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .height:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .height {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .height {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .height {
               font-size: 18px; } }
@@ -901,12 +846,9 @@
             opacity: 0; }
           .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .fee:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .fee {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .fee {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .fee {
               font-size: 18px; } }
@@ -933,12 +875,9 @@
             opacity: 0; }
           .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .type:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .type {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .type {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .type {
               font-size: 18px; } }
@@ -965,12 +904,9 @@
             opacity: 0; }
           .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort {
               font-size: 18px; } }
@@ -997,12 +933,9 @@
             opacity: 0; }
           .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment {
               font-size: 18px; } }
@@ -1029,12 +962,9 @@
             opacity: 0; }
           .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .charts:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .charts {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .charts {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin2 .coinData .dropContainer .flexWrapper .dropDown .stats .charts {
               font-size: 18px; } }
@@ -1305,15 +1235,7 @@
         border-right: 1px solid #ffffff;
         border-left: 1px solid #ffffff;
         box-shadow: 0 0 0 rgba(0, 0, 0, 0.3), -28px 0 25px -23px rgba(0, 0, 0, 0.8), 28px 0 35px -23px rgba(0, 0, 0, 0.8), 0 0 0 rgba(0, 0, 0, 0.1) inset; }
-        @media screen and (min-width: 2000px) {
-          .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats {
-            display: grid;
-            grid-template-areas: 'm h l' 'he fe ty' 'c min cha';
-            grid-template-columns: 1fr 1fr 1fr;
-            padding: 10px;
-            grid-gap: 25px 45px;
-            text-align: center; } }
-        @media screen and (max-width: 2000px) {
+        @media screen and (min-width: 600px) {
           .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats {
             display: grid;
             grid-template-areas: 'm h l' 'he fe ty' 'c min cha';
@@ -1341,12 +1263,9 @@
             opacity: 0; }
           .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .miners:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .miners {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .miners {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .miners {
               font-size: 18px; } }
@@ -1373,12 +1292,9 @@
             opacity: 0; }
           .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .hashrate {
               font-size: 18px; } }
@@ -1405,12 +1321,9 @@
             opacity: 0; }
           .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .lastBlockFound {
               font-size: 18px; } }
@@ -1437,12 +1350,9 @@
             opacity: 0; }
           .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .height:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .height {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .height {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .height {
               font-size: 18px; } }
@@ -1469,12 +1379,9 @@
             opacity: 0; }
           .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .fee:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .fee {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .fee {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .fee {
               font-size: 18px; } }
@@ -1501,12 +1408,9 @@
             opacity: 0; }
           .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .type:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .type {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .type {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .type {
               font-size: 18px; } }
@@ -1533,12 +1437,9 @@
             opacity: 0; }
           .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .currentEffort {
               font-size: 18px; } }
@@ -1565,12 +1466,9 @@
             opacity: 0; }
           .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .minPayment {
               font-size: 18px; } }
@@ -1597,12 +1495,9 @@
             opacity: 0; }
           .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .charts:hover {
             border-bottom: 3px solid #ffbf00; }
-          @media screen and (max-width: 5000px) {
+          @media screen and (max-width: 5100px) {
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .charts {
-              font-size: 28px; } }
-          @media screen and (max-width: 2620px) {
-            .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .charts {
-              font-size: 22px; } }
+              font-size: 24px; } }
           @media screen and (max-width: 1920px) {
             .coin3 .coinData .dropContainer .flexWrapper .dropDown .stats .charts {
               font-size: 18px; } }
