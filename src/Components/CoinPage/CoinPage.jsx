@@ -15,13 +15,12 @@ import Slider from "../Slider/Slider";
 
 
 let RaveOsImg = [
-    {id:1, src:addPoolImg},
-    {id:2, src:addWallet},
+    {id: 1, src: addPoolImg},
+    {id: 2, src: addWallet},
 ]
 let OsDogImg = [
-    {id:1, src:osPoolConnect},
+    {id: 1, src: osPoolConnect},
 ]
-
 
 
 export const CoinPage = (props) => {
@@ -142,7 +141,8 @@ export const CoinPage = (props) => {
                             <div onClick={dropDownStatsToggle}><DropBtn status={toggleStats} text={'Статистика'}/></div>
                             <div onClick={dropDownMinersToggle}><DropBtn status={toggleMiners} text={'Майнеры'}/></div>
                             <div onClick={dropDownBlocksToggle}><DropBtn status={toggleBlocks} text={'Блоки'}/></div>
-                            <div onClick={dropDownHowToggle}><DropBtn status={toggleHow} text={'Как подключиться'}/></div>
+                            <div onClick={dropDownHowToggle}><DropBtn status={toggleHow} text={'Как подключиться'}/>
+                            </div>
                         </div>
                     </div>
                     <DropData componentContent={<div className={style.dropDown}>
@@ -214,7 +214,7 @@ export const CoinPage = (props) => {
                         {toggleHow
                             ?
                             <div className={style.how} id='anchorBtn'>
-                                {thisPool === 'eth'? <div>
+                                {thisPool === 'eth' ? <div>
                                     <h3>Пул ЕТН pplns</h3>
                                     <div>eth.e4pool.com:4444 - Сложность шар 4G</div>
                                     <div>eth.e4pool.com:8888 - Сложность шар 8G</div>
@@ -245,7 +245,7 @@ export const CoinPage = (props) => {
                                         <Slider items={OsDogImg}/>
                                     </div>
 
-                                </div>:''}
+                                </div> : ''}
                                 {thisPool === 'eth-solo' ? <div>
                                     <h3>Пул ЕТН solo</h3>
                                     <div>eth.e4pool.com:8484 - Сложность шар 8G</div>
@@ -264,7 +264,81 @@ export const CoinPage = (props) => {
                                     pause</span></p>
                                     <p><span>lolMiner.exe --algo ETHASH --pool stratum+ssl://eth.e4pool.com:9595 --user YOUR_WALLET_ADDRESS.RIG_ID
                                     pause</span></p>
-                                </div>:''}
+                                </div> : ''}
+                                {poolChecker(thisPool) === 'evox' ? <div>
+                                    <h3>Пул evox.e4pool.com</h3>
+                                    <div>evox.e4pool.com:4488 - стартовая сложность 50 000</div>
+                                    <h3>Для подключения к пулу evox используйте следующие параметры:</h3>
+                                    <p>Настройки xmrig (bat)* рекомендуется:</p>
+                                    <p>xmrig.exe --donate-level 0 -o evox.e4pool.com:4488 -u Ваш_кошелёк -p
+                                        @Имя_Вашего_воркера -t XX -a RandomARQ -k</p>
+                                    <p>pause</p>
+                                    <p>,где -t - количество выделяемых для майнинга ядер</p>
+                                    <h4>Настройки xmrig (через config.json [xmr-node-proxy]):</h4>
+                                    <p>pools": [</p>
+                                    <p>{`{`}"url": "evox.e4pool.com:4488",</p>
+                                    <p>"user": "Ваш_кошелёк",</p>
+                                    <p>"pass": "Имя_Вашего_Воркера"</p>
+                                    <p>"keepalive": true,</p>
+                                    <p>"nicehash": false,</p>
+                                    <p>"algo": "rx/arq"{`}]`}</p>
+                                    <p>*Более подробно об общей настройке конфига:
+                                        https://bytwork.com/soft/xmrig?ysclid=l3lgbgoqmw</p>
+                                    <h4>Настройки SRBminer-Multi (bat):</h4>
+                                    <p>setx GPU_MAX_HEAP_SIZE 100</p>
+                                    <p>setx GPU_MAX_USE_SYNC_OBJECTS 1</p>
+                                    <p>setx GPU_SINGLE_ALLOC_PERCENT 100</p>
+                                    <p>setx GPU_MAX_ALLOC_PERCENT 100</p>
+                                    <p>setx GPU_MAX_SINGLE_ALLOC_PERCENT 100</p>
+                                    <p>setx GPU_ENABLE_LARGE_ALLOCATION 100</p>
+                                    <p>setx GPU_MAX_WORKGROUP_SIZE 1024</p>
+                                    <p>@echo off</p>
+                                    <p>cd %~dp0</p>
+                                    <p>cls</p>
+                                    <p>SRBMiner-MULTI.exe --algorithm randomarq --evox.e4pool.com:4488 --Ваш_кошелёк
+                                        --password Имя_Вашего_воркера</p>
+                                    <p>pause</p>
+                                    <p>*В примере bat файла автоматическое определение количество ядер для работы
+                                        майнера, более еподробно про найстройку можно почитать: *более подробно об общей
+                                        настройке конфига: https://bytwork.com/soft/xmrig?ysclid=l3lgbgoqmw</p>
+                                </div> : ''}
+                                {poolChecker(thisPool) === 'keva' ? <div>
+                                    <h3>Пул keva.e4pool.com</h3>
+                                    <div>keva.e4pool.com:8000 - стартовая сложность 8000</div>
+                                    <h3>Для подключения к пулу keva используйте следующие параметры:</h3>
+                                    <p>Настройки xmrig (bat)* рекомендуется:</p>
+                                    <p>xmrig.exe --donate-level 0 -o keva.e4pool.com:9011 -u Ваш_кошелёк -p Имя_Вашего_воркера -t ХХ -a cn/keva -k</p>
+                                    <p>pause</p>
+                                    <p>,где -t - количество выделяемых для майнинга ядер</p>
+                                    <h4>Настройки xmrig (через config.json [xmr-node-proxy]):</h4>
+                                    <p>pools": [</p>
+                                    <p>{`{`}"hostname": "keva.e4pool.com",</p>
+                                    <p>"port":9011,</p>
+                                    <p>"ssl": false,</p>
+                                    <p>"allowSelfSignedSSL": false,</p>
+                                    <p>"share": 100,</p>
+                                    <p>"username": Ваш_кошелёк,</p>
+                                    <p>"password": "Имя_Вашего_воркера",</p>
+                                    <p>"keepAlive": true,</p>
+                                    <p>"algo": "rx/keva",</p>
+                                    <p>"blob_type": "cryptonote",</p>
+                                    <p>"default": true{`}]`}</p>
+                                    <p>*более подробно об общей настройке конфига: https://bytwork.com/soft/xmrig?ysclid=l3lgbgoqmw</p>
+                                    <h4>Настройки SRBminer-Multi (bat):</h4>
+                                    <p>setx GPU_MAX_HEAP_SIZE 100</p>
+                                    <p>setx GPU_MAX_USE_SYNC_OBJECTS 1</p>
+                                    <p>setx GPU_SINGLE_ALLOC_PERCENT 100</p>
+                                    <p>setx GPU_MAX_ALLOC_PERCENT 100</p>
+                                    <p>setx GPU_MAX_SINGLE_ALLOC_PERCENT 100</p>
+                                    <p>setx GPU_ENABLE_LARGE_ALLOCATION 100</p>
+                                    <p>setx GPU_MAX_WORKGROUP_SIZE 1024</p>
+                                    <p>@echo off</p>
+                                    <p>cd %~dp0</p>
+                                    <p>cls</p>
+                                    <p>SRBMiner-MULTI.exe --algorithm randomkeva --keva.e4pool.com:9011 --Ваш_кошелёк --password Имя_Вашего_воркера</p>
+                                    <p>pause</p>
+                                    <p>*В примере bat файла автоматическое определение количество ядер для работы майнера, более еподробно про найстройку можно почитать: *более подробно об общей настройке конфига: https://bytwork.com/soft/xmrig?ysclid=l3lgbgoqmw</p>
+                                </div> : ''}
                             </div>
                             : ''}
                     </div>}/>
