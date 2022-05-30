@@ -16,6 +16,7 @@
   align-items: center;
   z-index: 300;
 
+
   a {
     text-decoration: none;
     &:hover{
@@ -136,7 +137,7 @@
 
   .burger_show{
     position: absolute;
-    top: 22px;
+    top: 16px;
     right: $right;
     height: 30px;
     width: 30px;

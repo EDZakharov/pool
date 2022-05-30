@@ -1,8 +1,8 @@
 .coinCardWrapper{
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
-  padding: 80px 0 0 0;
-
+  padding: 80px 0 30px 0;
+  overflow-y: scroll;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

@@ -121,11 +121,12 @@ const E4Pizor = () => {
                     </div>
                 </div>
                 <div className={style.player}>
-                    <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+                    <iframe id="ytplayer" type="text/html"
                             src="https://www.youtube.com/embed/oUUWa_pTVo8"
-                            frameBorder="0"/>
+                            frameBorder="0" className={style.iFrame}/>
                     <div className={style.btn}><a href='https://t.me/e4pizor_sale_bot' target='https://t.me/e4pizor_sale_bot' ><StyledSpan color={currentColor}>Оформить</StyledSpan></a></div>
                 </div>
+                <div className={style.btn2}><a href='https://t.me/e4pizor_sale_bot' target='https://t.me/e4pizor_sale_bot' ><StyledSpan color={currentColor}>Оформить</StyledSpan></a></div>
                 <div className={style.description}>
                     <h2><span className={style.dec}><StyledLine color={currentColor}>|</StyledLine></span>E4PIZOR - это</h2>
                     <p> Аппаратный кошелёк - специальное устройство, позволяющее безопасно управлять активами в

@@ -1,14 +1,36 @@
-.Charts {
-    width: 70%;
-    margin: 0 auto;
-    padding: 0px 0;
-    /*border: 1px solid white;*/
-    /*background-color: rgba(255, 255, 255, 0);*/
-    backdrop-filter: blur(15px);
-    box-shadow: 0 0 0 rgba(0, 0, 0, .3),
-    -28px 0 35px -23px rgba(0, 0, 0, .8),
-    28px 0 35px -23px rgba(0, 0, 0, .8),
-    0 0 0 rgba(0, 0, 0, 0.1) inset;
-    z-index: 2000;
 
+
+@media screen and (max-width: 2000px) {
+    .Charts {
+        width: 70%;
+        margin: 0 auto;
+        padding: 0 0;
+        /*border: 1px solid white;*/
+        /*background-color: rgba(255, 255, 255, 0);*/
+        backdrop-filter: blur(15px);
+        box-shadow: 0 0 0 rgba(0, 0, 0, .3),
+        -28px 0 35px -23px rgba(0, 0, 0, .8),
+        28px 0 35px -23px rgba(0, 0, 0, .8),
+        0 0 0 rgba(0, 0, 0, 0.1) inset;
+        z-index: 2000;
+
+    }
 }
+
+@media screen and (min-width: 2000px) {
+    .Charts {
+        width: 90%;
+        height: 500px;
+        margin: 0 auto;
+        padding: 0 0;
+        /*border: 1px solid white;*/
+        /*background-color: rgba(255, 255, 255, 0);*/
+        backdrop-filter: blur(15px);
+        box-shadow: 0 0 0 rgba(0, 0, 0, .3),
+        -28px 0 35px -23px rgba(0, 0, 0, .8),
+        28px 0 35px -23px rgba(0, 0, 0, .8),
+        0 0 0 rgba(0, 0, 0, 0.1) inset;
+        z-index: 2000;
+    }
+}
+

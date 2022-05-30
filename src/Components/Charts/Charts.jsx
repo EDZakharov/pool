@@ -113,7 +113,7 @@ let setupOptions = (props) => {
     arr1 = cutOffLastElem(arr1, -24)
     arr2 = cutOffLastElem(arr2, -24)
 
-
+    const screenWidth = window.screen.width
     return {
         title: {
             text: `${props.text}`,
@@ -126,14 +126,14 @@ let setupOptions = (props) => {
             },
             area: {
                 marker: {
-                    enabled: false
+                    enabled: true
                 }
             }
         },
         chart: {
             type: 'spline',
             backgroundColor: 'rgba(85,77,77,0.56)',
-            height: '300px'
+            height: `${screenWidth <= 2000 ? '300px': '500px'}`
         },
         series: [{
             showInLegend: false,
@@ -143,7 +143,8 @@ let setupOptions = (props) => {
             color: '#e5bf36',
             dataLabels: {
                 style: {
-                    color: '#ffffff'
+                    color: '#ffffff',
+
                 }
             }
 
@@ -153,11 +154,8 @@ let setupOptions = (props) => {
         },
         xAxis: {
             categories: [...arr2],
-
             labels: {
-                style: {
-                    color: '#fff',
-                }
+                style: {color: '#fff', fontSize: `${screenWidth <= 2000 ? '15px': '20px'}`}
             },
 
         },
@@ -165,12 +163,13 @@ let setupOptions = (props) => {
             gridLineColor: '#747474',
             title: {
                 text: hashesData,
-                style: {color: '#fff', fontSize: '20px'}
+                style: {color: '#fff'}
             },
             alternateGridColor: 'rgba(101,70,70,0.07)',
             labels: {
                 style: {
                     color: '#fff',
+                    fontSize: `${screenWidth <= 2000 ? '15px': '20px'}`
                 }
             },
         }]

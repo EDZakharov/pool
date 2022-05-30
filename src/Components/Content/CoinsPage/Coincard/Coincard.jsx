@@ -17,7 +17,6 @@ const CoinCard = (props) => {
         props.selectCoin(adr)
     }
 
-    console.log(props.content.coins)
     return (
 
         <div className={style.coinCard}>
@@ -30,14 +29,14 @@ const CoinCard = (props) => {
                 </div>
             </div>
             <div className={style.coinCard_main}>
-                <div>Хэшрейт пула: <span className={style.text}>{!hashes? '' : hashes.hashrate} {!hashes? '' : hashes.unit}</span></div>
-                <div>Майнеры: <span className={style.text}>{props.minersTotal}</span></div>
-                <div>Комиссия пула: <span className={style.text}>{props.fee} %</span></div>
-                <div>Последний блок: <span className={style.text}>{dateFilter(props.lastBlockFound)}</span></div>
+                <div><span className={style.line}/> Хэшрейт пула: <span className={style.text}>{!hashes? '' : hashes.hashrate} {!hashes? '' : hashes.unit}</span></div>
+                <div><span className={style.line}/> Майнеры: <span className={style.text}>{props.minersTotal}</span></div>
+                <div><span className={style.line}/> Комиссия пула: <span className={style.text}>{props.fee} %</span></div>
+                <div><span className={style.line}/> Последний блок: <span className={style.text}>{dateFilter(props.lastBlockFound)}</span></div>
             </div>
             <div className={style.coinCard_footer}>
-                <NavLink className={style.link} onClick={onButtonLinkClick} to={`${adr}`}>
-                    <div className={style.start_btn}>Перейти на пул</div>
+                <NavLink className={style.start_btn} onClick={onButtonLinkClick} to={`${adr}`}>
+                    Перейти на пул
                 </NavLink>
 
             </div>
