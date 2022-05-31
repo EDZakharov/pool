@@ -95,26 +95,61 @@ let setupOptions = (props) => {
 
 
     let arr2 = props.charts.map(el => {
-        if (new Date(el.timestamp * 1000).getHours() === 0) {
-            if (new Date(el.timestamp * 1000).getMinutes() === 0) {
-                return new Date(el.timestamp * 1000).getDate() + '.'
-                    + ('0' + (new Date(el.timestamp * 1000).getMonth() + 1)).slice(-2) + ' '
-                    + new Date(el.timestamp * 1000).getHours() + ':'
-                    + minutesFlor(new Date(el.timestamp * 1000).getMinutes())
-            }
-        }
-
-
-        return new Date(el.timestamp * 1000).getHours() + ':'
-            + minutesFlor(new Date(el.timestamp * 1000).getMinutes())
+        return el.timestamp * 1000
     })
 
 
     arr1 = cutOffLastElem(arr1, -24)
     arr2 = cutOffLastElem(arr2, -24)
 
+
+    let setGlobal = () => {
+        Highcharts.setOptions({
+            lang:{
+                months:[
+                    'января',
+                    'февраля',
+                    'марта',
+                    'апреля',
+                    'мая',
+                    'июня',
+                    'июля',
+                    'августа',
+                    'сентября',
+                    'октября',
+                    'ноября',
+                    'декабря'
+                ],
+                shortMonths:[
+                    'января',
+                    'февраля',
+                    'марта',
+                    'апреля',
+                    'мая',
+                    'июня',
+                    'июля',
+                    'августа',
+                    'сентября',
+                    'октября',
+                    'ноября',
+                    'декабря'
+                ],
+                weekdays: [
+                    "Воскресенье",
+                    "Понедельник",
+                    "Вторник",
+                    "Среда",
+                    "Четверг",
+                    "Пятница",
+                    "Суббота"
+                ],
+            },
+        })
+    }
+    setGlobal()
     const screenWidth = window.screen.width
     return {
+
         title: {
             text: `${props.text}`,
             style: {color: '#fff', fontSize: '26px'}
@@ -133,7 +168,7 @@ let setupOptions = (props) => {
         chart: {
             type: 'spline',
             backgroundColor: 'rgba(85,77,77,0.56)',
-            height: `${screenWidth <= 2000 ? '300px': '500px'}`
+            height: `${screenWidth <= 2000 ? '300px' : '500px'}`
         },
         series: [{
             showInLegend: false,
@@ -146,16 +181,39 @@ let setupOptions = (props) => {
                     color: '#ffffff',
 
                 }
-            }
+            },
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">●</span> <b>{point.y} {series.name}</b>',
+                xDateFormat:'%e %b %Y %H:%M',
+                valuePrefix: '</br>',
+            },
+
 
         }],
         accessibility: {
             enabled: false,
         },
         xAxis: {
+            type: 'datetime',
             categories: [...arr2],
             labels: {
-                style: {color: '#fff', fontSize: `${screenWidth <= 2000 ? '15px': '20px'}`}
+                enabled: true,
+                style: {color: '#fff', fontSize: `${screenWidth <= 2000 ? '15px' : '20px'}`},
+                formatter: function() {
+
+                    if (new Date(this.value+3600).getHours() === 0) {
+                        if (new Date(this.value+3600).getMinutes() === 0) {
+                            return new Date(this.value+3600).getDate() + '.'
+                                + ('0' + (new Date(this.value+3600).getMonth() + 1)).slice(-2) + ' '
+                                + new Date(this.value+3600).getHours() + ':'
+                                + minutesFlor(new Date(this.value+3600).getMinutes())
+                        }
+                    }
+
+
+                    return new Date(this.value+3600).getHours() + ':'
+                        + minutesFlor(new Date(this.value+3600).getMinutes())
+                },
             },
 
         },
@@ -169,7 +227,7 @@ let setupOptions = (props) => {
             labels: {
                 style: {
                     color: '#fff',
-                    fontSize: `${screenWidth <= 2000 ? '15px': '20px'}`
+                    fontSize: `${screenWidth <= 2000 ? '15px' : '20px'}`
                 }
             },
         }]
