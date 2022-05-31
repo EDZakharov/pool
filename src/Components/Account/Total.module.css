@@ -25,5 +25,8 @@
         opacity: 0; }
       .total div div:hover {
         border-bottom: 3px solid #ffbf00; }
+      @media screen and (max-width: 750px) {
+        .total div div {
+          font-size: 12px; } }
 
 /*# sourceMappingURL=Total.module.css.map */

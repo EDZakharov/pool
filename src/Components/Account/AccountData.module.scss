@@ -11,14 +11,14 @@
   display: grid;
   grid-template-areas: 'g''m';
   grid-template-columns: 1fr;
-  grid-template-rows: 300px 1fr;
+  grid-template-rows: auto 1fr;
   color: white;
   overflow: auto;
   height: 91vh;
   padding-top: 50px;
   z-index: 2;
   position: relative;
-
+  gap: 10px;
 
   .coin{
     position: fixed;
@@ -53,18 +53,38 @@
     justify-self: center;
     justify-items: center;
 
+    @media screen and (min-width: 2000px){
+      height: 500px;
+    }
+    @media screen and (max-width: 2000px){
+      height: 300px;
+    }
+
+    @media screen and (max-width: 600px){
+      display: none;
+    }
+
     .chartsGraph{
       width: 100%;
-      margin: 10px 0 10px 0;
+      margin: 10px 0 0 0;
       border-radius: 15px;
-
     }
   }
 
   .accountData{
     grid-area: m;
-    width: 70%;
-    margin: 15px auto;
+    margin: 0 auto;
+
+    @media screen and (min-width: 2000px){
+      width: 90%;
+    }
+    @media screen and (max-width: 2000px){
+      width: 70%;
+    }
+    @media screen and (max-width: 1000px){
+      width: 98%;
+    }
+
 
 
     .flexWrapper{
@@ -72,9 +92,12 @@
       position: relative;
       width: 100%;
 
+
+
       .dropDown{
         display: flex;
         align-items: center;
+        text-align: center;
         height: 60px;
         color: black;
         font-weight: 600;
@@ -82,6 +105,11 @@
         padding: 0;
         cursor: pointer;
         user-select: none;
+
+        @media screen and (max-width: 600px) {
+          //width: 100%;
+          height: 40px;
+        }
 
         //&:hover{
         //  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(228, 190, 54, 0.8));
@@ -114,7 +142,9 @@
           color: #ffffff;
           //border: .1px solid white;
 
-
+          @media screen and (max-width: 600px) {
+            top: 42px;
+          }
           .dropText {
             width: 100%;
             border-right: .2px solid white;

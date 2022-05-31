@@ -6,6 +6,7 @@ a{
     text-decoration: underline;
 
   }
+
 }
 
 //DEFAULT
@@ -40,6 +41,11 @@ a{
     grid-area: el3;
     margin: 0 auto;
   }
+
+  @media screen and (max-width: 750px){
+    font-size: 11px;
+  }
+
 }
 
 //PAYMENTS
@@ -58,6 +64,11 @@ a{
     width: 150px;
     text-align: center;
   }
+
+  @media screen and (max-width: 750px){
+    font-size: 11px;
+  }
+
 }
 
 //WORKERS
@@ -77,6 +88,11 @@ a{
     width: 150px;
     text-align: center;
   }
+
+  @media screen and (max-width: 750px){
+    font-size: 11px;
+  }
+
 }
 
 
@@ -95,6 +111,11 @@ a{
     text-align: center;
     width: 150px;
   }
+
+  @media screen and (max-width: 750px){
+    font-size: 11px;
+  }
+
 }
 
 .inner__data__grid__blocks{
@@ -138,6 +159,10 @@ a{
     padding-right: 5%;
     //flex-grow: 2;
     //width: 500px;
+  }
+
+  @media screen and (max-width: 750px){
+    font-size: 11px;
   }
 
 }

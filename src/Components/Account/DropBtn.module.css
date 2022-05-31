@@ -5,38 +5,36 @@
   height: 100%;
   width: 100%;
   color: #e5e5e6;
-  transition: 0.2s all;
+  transition: .2s all;
   backdrop-filter: blur(15px);
-  background-color: rgba(29, 29, 29, 0.19);
-}
-@media screen and (max-width: 752px) {
-  .dropbtn {
-    font-size: 12px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .dropbtn {
-    font-size: 13px;
-  }
-}
-.dropbtn:hover {
-  transition: 0.2s all;
-  background-color: rgba(29, 29, 29, 0.57);
-}
-.dropbtn .disable {
-  display: flex;
-  padding: 0 20px;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-.dropbtn .active {
-  display: flex;
-  padding: 0 20px;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(29, 29, 29, 0.57);
-}
+  background-color: rgba(29, 29, 29, 0.19); }
+  @media screen and (max-width: 752px) {
+    .dropbtn {
+      font-size: 12px; } }
+  @media screen and (max-width: 600px) {
+    .dropbtn {
+      font-size: 11px; } }
+  .dropbtn:hover {
+    transition: .2s all;
+    background-color: rgba(29, 29, 29, 0.57); }
+  .dropbtn .disable {
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    width: 100%;
+    height: 100%; }
+    @media screen and (max-width: 600px) {
+      .dropbtn .disable {
+        padding: 0 10px; } }
+  .dropbtn .active {
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 29, 29, 0.57); }
+    @media screen and (max-width: 600px) {
+      .dropbtn .active {
+        padding: 0 10px; } }
 
 /*# sourceMappingURL=DropBtn.module.css.map */

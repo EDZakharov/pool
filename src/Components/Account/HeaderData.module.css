@@ -16,6 +16,9 @@
   .headerData__grid .headerData__el3 {
     grid-area: el3;
     margin: 0 auto; }
+  @media screen and (max-width: 750px) {
+    .headerData__grid {
+      font-size: 13px; } }
 
 .headerData__grid__payments {
   display: flex;
@@ -34,6 +37,9 @@
       margin-right: -20px; }
     .headerData__grid__payments div:nth-child(2) {
       padding-right: 35px; }
+  @media screen and (max-width: 750px) {
+    .headerData__grid__payments {
+      font-size: 13px; } }
 
 .headerData__grid__workers {
   display: flex;
@@ -48,6 +54,9 @@
     text-align: center;
     width: 150px;
     white-space: nowrap; }
+  @media screen and (max-width: 750px) {
+    .headerData__grid__workers {
+      font-size: 11px; } }
 
 .headerData__grid__rewards {
   display: flex;
@@ -61,5 +70,8 @@
   .headerData__grid__rewards div {
     text-align: center;
     width: 150px; }
+  @media screen and (max-width: 750px) {
+    .headerData__grid__rewards {
+      font-size: 11px; } }
 
 /*# sourceMappingURL=HeaderData.module.css.map */

@@ -21,8 +21,8 @@ const HeaderAccount = () => {
     return (
         <div className={style.header}>
             <div className={style.logo__wrapper}>
-                <NavLink to={`/${selectedCoin}`}><img src={imgFilter(selectedCoin)} alt='logo' className={style.siteLogo}/></NavLink>
-                <NavLink to={`/${selectedCoin}`} ><span className={style.currentCoin}>Назад</span></NavLink>
+                <Link to={`/${selectedCoin}`}><img src={imgFilter(selectedCoin)} alt='logo' className={style.siteLogo}/></Link>
+                <Link to={`/${selectedCoin}`}><span className={style.currentCoin}>Назад</span></Link>
             </div>
             <div className={style.headerLinks}>
                 {menuList ? menuList.map(item => {
@@ -48,8 +48,6 @@ const HeaderAccount = () => {
                 </nav>
             </div>
             <BurgerMenu items={menuList} active={menuActive} setActive={setMenuActive}/>
-
-
         </div>
     );
 };

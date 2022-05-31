@@ -6,7 +6,9 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
-}
+  gap: 15px; }
+  @media screen and (max-width: 600px) {
+    .coinCardWrapper {
+      padding: 80px 0 55px 0; } }
 
 /*# sourceMappingURL=CoinsPage.module.css.map */

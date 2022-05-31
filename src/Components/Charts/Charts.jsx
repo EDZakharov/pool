@@ -147,12 +147,30 @@ let setupOptions = (props) => {
         })
     }
     setGlobal()
+
     const screenWidth = window.screen.width
+    let fontSizeChecker = (screenWidth) => {
+        if (screenWidth <= 600){
+            return '8px'
+        }
+        if (screenWidth <= 1000){
+            return '14px'
+        } else return '26px'
+    }
+
     return {
 
         title: {
             text: `${props.text}`,
-            style: {color: '#fff', fontSize: '26px'}
+            style: {color: '#fff', fontSize: `${fontSizeChecker(screenWidth)}`}
+        },
+        time:{
+            getTimezoneOffset: function (timestamp) {
+                let d = new Date();
+                let timezoneOffset =  d.getTimezoneOffset()
+
+                return timezoneOffset;
+            }
         },
 
         plotOptions: {
@@ -168,7 +186,7 @@ let setupOptions = (props) => {
         chart: {
             type: 'spline',
             backgroundColor: 'rgba(85,77,77,0.56)',
-            height: `${screenWidth <= 2000 ? '300px' : '500px'}`
+            height: `${screenWidth <= 2000 ? '300px' : '500px'}`,
         },
         series: [{
             showInLegend: false,
@@ -186,6 +204,8 @@ let setupOptions = (props) => {
                 pointFormat: '<span style="color:{point.color}">●</span> <b>{point.y} {series.name}</b>',
                 xDateFormat:'%e %b %Y %H:%M',
                 valuePrefix: '</br>',
+                className: 'tooltip'
+
             },
 
 

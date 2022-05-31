@@ -29,49 +29,53 @@
     flex-direction: row;
     align-items: center;
     z-index: 300;
-    
+
     a{
       background-color: rgba(255, 255, 255, 0);
     }
+
+    .siteLogo {
+      height: 45px;
+      margin: 5px 10px 4px 10px;
+
+    }
+
+    .currentCoin {
+      grid-area: s;
+      color: white;
+      background-color: #727270;
+      font-size: 26px;
+      cursor: pointer;
+      //text-transform: uppercase;
+
+      @media (min-width: 0px) {
+        font-size: 12px;
+      }
+
+
+      @media (min-width: 560px) {
+        font-size: 12px;
+      }
+
+      @media (min-width: 650px) {
+        font-size: 15px;
+      }
+
+      @media (min-width: 820px) {
+        font-size: 20px;
+      }
+
+      @media (min-width: 1000px) {
+        font-size: 25px;
+      }
+
+
+    }
+
+
   }
 
-  .siteLogo {
-    height: 45px;
-    margin: 5px 10px 4px 10px;
 
-  }
-
-  .currentCoin {
-    grid-area: s;
-    color: white;
-    background-color: #727270;
-    font-size: 26px;
-    cursor: pointer;
-    //text-transform: uppercase;
-
-    @media (min-width: 0px) {
-      font-size: 12px;
-    }
-
-
-    @media (min-width: 560px) {
-      font-size: 12px;
-    }
-
-    @media (min-width: 650px) {
-      font-size: 15px;
-    }
-
-    @media (min-width: 820px) {
-      font-size: 20px;
-    }
-
-    @media (min-width: 1000px) {
-      font-size: 25px;
-    }
-
-
-  }
 
   .headerLinks {
     grid-area: n;
@@ -90,7 +94,7 @@
     }
 
     a {
-      //margin-left: 50px;
+      margin-left: 50px;
       color: #c9c9c9;
       text-decoration: none;
       font-size: 22px;
@@ -140,7 +144,7 @@
 
   .burger_show{
     position: absolute;
-    top: 22px;
+    top: 16px;
     right: $right;
     height: 30px;
     width: 30px;
@@ -194,9 +198,6 @@
     }
 
   }
-
-
-
-
-
 }
+
+
