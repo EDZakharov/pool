@@ -122,5 +122,52 @@
   color: #ffffff;
   transition: 0.2s ease-in-out;
 }
+.coin_header .burger_show {
+  position: absolute;
+  top: 16px;
+  right: 25px;
+  height: 30px;
+  width: 30px;
+}
+.coin_header .burger_show:hover {
+  cursor: pointer;
+}
+.coin_header .burger_show nav {
+  height: 30px;
+  position: relative;
+}
+.coin_header .burger_show nav .burger:before {
+  content: "";
+  position: absolute;
+  background-color: black;
+  top: 0;
+  width: 30px;
+  height: 5px;
+}
+.coin_header .burger_show nav .burger span {
+  position: absolute;
+  background-color: black;
+  top: 12.5px;
+  width: 30px;
+  height: 5px;
+}
+.coin_header .burger_show nav .burger:after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  bottom: 0;
+  width: 30px;
+  height: 5px;
+}
+@media (max-width: 560px) {
+  .coin_header .burger_show {
+    display: inline-block;
+  }
+}
+@media (min-width: 560px) {
+  .coin_header .burger_show {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=CoinHeader.module.css.map */

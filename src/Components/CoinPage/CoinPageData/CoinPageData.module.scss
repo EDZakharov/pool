@@ -13,8 +13,8 @@
   align-items: center;
   justify-content: space-around;
   //display: grid;
-  grid-template-areas: 'ms hs ss sts''m h s st';
-  grid-template-columns: 6fr 2fr 2.3fr 1fr;
+  //grid-template-areas: 'ms hs ss sts''m h s st';
+  //grid-template-columns: 6fr 2fr 2.3fr 1fr;
   -moz-user-select: text;
   font-size: 16px;
   background-color: rgba(118, 111, 111, 0.82);
@@ -22,9 +22,19 @@
   color: #f5f5f5;
   position: relative;
 
+
+  @media screen and (max-width: 600px){
+    flex-direction: column;
+  }
+
   div{
     width: 150px;
     text-align: center;
+
+    @media screen and (max-width: 600px){
+      font-size: 12px;
+    }
+
   }
 
 
@@ -45,6 +55,9 @@
         font-size: 15px;
         //text-align: start;
         position: relative;
+        @media screen and (max-width: 600px){
+          font-size: 10px;
+        }
         .minerSpan{
           &:hover{
             text-decoration: underline;
@@ -77,6 +90,9 @@
         font-size: 15px;
         position: relative;
         //text-align: start;
+        @media screen and (max-width: 600px){
+          font-size: 10px;
+        }
         .minerSpan{
           &:hover{
             text-decoration: underline;
@@ -104,6 +120,12 @@
 
         }
       }
+      &::before{
+        @media screen and (max-width: 600px){
+          content: 'Кошелек: ';
+          display: block;
+        }
+      }
     }
   }
 
@@ -118,6 +140,14 @@
     .hashrate {
       grid-area: h;
       font-weight: 400;
+      &::before{
+        @media screen and (max-width: 600px){
+          content: 'Хэшрейт: ';
+          display: block;
+        }
+      }
+
+
     }
   }
 
@@ -133,6 +163,12 @@
       white-space: nowrap;
       grid-area: s;
       font-weight: 400;
+      &::before{
+        @media screen and (max-width: 600px){
+          content: 'Последняя шара: ';
+          display: block;
+        }
+      }
     }
   }
 

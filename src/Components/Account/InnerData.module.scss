@@ -128,6 +128,8 @@ a{
   margin-top: 2px;
   font-size: 15px;
 
+
+
   div{
     //text-align: center;
     padding: 5.5px 0 5.5px 0;
@@ -137,32 +139,93 @@ a{
   .inner__elem1{
     position: absolute;
     left: 5%;
+
+    @media screen and (max-width: 600px){
+      margin: 0 auto;
+      position: initial;
+    }
+    &::before{
+      @media screen and (max-width: 600px){
+        content: 'Высота блока: ';
+      }
+    }
   }
 
   .inner__elem2{
     position: absolute;
     left: 25%;
+    @media screen and (max-width: 600px){
+      margin: 0 auto;
+      position: initial;
+    }
+    &::before{
+      @media screen and (max-width: 600px){
+        content: 'Сумма: ';
+      }
+    }
+
+
   }
 
   .inner__elem3{
     position: absolute;
     width: 55px;
     white-space: nowrap;
+    @media screen and (max-width: 600px){
+      margin: 0 auto;
+      width: 55px;
+      position: initial;
+    }
+    &::before{
+      @media screen and (max-width: 600px){
+        content: 'Удача: ';
+        white-space: normal;
+      }
+    }
+
   }
+
+
   .inner__elem4{
     position: absolute;
     right: 25%;
+    @media screen and (max-width: 600px){
+      right: 0;
+      position: initial;
+    }
+
+    &::before{
+      @media screen and (max-width: 600px){
+        content: 'Хэш блока: ';
+      }
+    }
+
   }
   .inner__elem5{
     width: 100%;
     text-align: end;
     padding-right: 5%;
-    //flex-grow: 2;
-    //width: 500px;
+    @media screen and (max-width: 600px){
+      text-align: center;
+      margin: 0 auto;
+      position: initial;
+    }
+    &::before{
+      @media screen and (max-width: 600px){
+        content: 'Дата: ';
+      }
+    }
+
   }
 
-  @media screen and (max-width: 750px){
+  @media screen and (max-width: 600px){
+    //text-align: start;
     font-size: 11px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    justify-content: left;
   }
 
 }

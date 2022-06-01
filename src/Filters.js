@@ -155,6 +155,7 @@ export let blockHashChecker = (blochHash, pool) => {
 }
 
 export let hashFilter = (data) => {
+    console.log(data)
     if (data !== undefined) {
         if (data.toString().length <= 3) {
             return {hashrate: Number(data.toFixed(2)), unit: ' H/s'}

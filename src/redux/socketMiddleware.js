@@ -58,7 +58,6 @@ let storage2 = {
 }
 
 socket2.on('update', res => {
-
     if (res.method === 'fullStats') {
         storage2.fullStats = {...res.data}
     }

@@ -1,8 +1,24 @@
 
 .fetcher {
   grid-area: c;
-  position: absolute;
-  margin-left: 37.5%;
-  margin-top: 16.5%;
+  display: flex;
+  justify-content: center;
+
+  img{
+    width: 450px;
+    height: 250px;
+  }
+
+
+  @media screen and (max-width: 600px){
+      //position: initial;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    //margin: 50px auto;
+    width: 90%;
+
+  }
+
 }
 

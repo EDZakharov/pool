@@ -1,7 +1,1 @@
-{
-"version": 3,
-"mappings": "AACA,QAAS;EACP,SAAS,EAAE,CAAC;EACZ,QAAQ,EAAE,QAAQ;EAClB,WAAW,EAAE,KAAK;EAClB,UAAU,EAAE,KAAK",
-"sources": ["Fetcher.module.scss"],
-"names": [],
-"file": "Fetcher.module.css"
-}
+{"version":3,"sourceRoot":"","sources":["Fetcher.module.scss"],"names":[],"mappings":"AACA;EACE;EACA;EACA;;AAEA;EACE;EACA;;AAIF;EAXF;IAaI;IACA;IACA;IAEA","file":"Fetcher.module.css"}
