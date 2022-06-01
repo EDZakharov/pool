@@ -1,5 +1,5 @@
 
-.pagination{
+.pagination {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,7 @@
     font-size: 20px;
     margin: 0 5px;
 
-    &:active{
+    &:active {
       color: #e3bd37;
     }
 
@@ -24,22 +24,22 @@
   }
 
 
-
-  .pageItem{
+  .pageItem {
     background-color: rgba(255, 255, 255, 0);
 
   }
 }
 
-.pageLink{
+.pageLink {
   margin: 0 10px;
   font-size: 18px;
-  &:hover{
+
+  &:hover {
     color: #b1b1b1;
   }
 }
 
-.active{
+.active {
   //background-color: #fff;
   a {
     cursor: pointer;
@@ -49,10 +49,10 @@
 
 }
 
-.reward{
+.reward {
   position: relative;
 
-  .mev{
+  .mev {
     position: absolute;
     display: flex;
     align-items: center;
@@ -66,10 +66,16 @@
     padding: 0 3px;
     left: 70px;
     top: 1px;
+
+    @media screen and (max-width: 600px) {
+      left: 50px;
+    }
+
   }
+
 }
 
-.orphan{
+.orphan {
   color: #ff8989;
 }
 
@@ -80,21 +86,23 @@
   height: 5px;
 }
 
-.easy{
+.easy {
   @include spanStyle;
   background-color: #4a935c;
   border: .1px solid #4a935c;
   border-radius: 7px;
   //padding: 0 3px;
 }
-.hard{
+
+.hard {
   @include spanStyle;
   background-color: #c2ba82;
   border: .1px solid #c2ba82;
   border-radius: 7px;
   //padding: 0 3px;
 }
-.insane{
+
+.insane {
   @include spanStyle;
   background-color: #ff8989;
   border: .1px solid #ff8989;

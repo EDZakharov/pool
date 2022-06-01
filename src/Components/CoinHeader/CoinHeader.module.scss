@@ -134,6 +134,64 @@
 
   }
 
+  $right: 25px;
+
+  .burger_show{
+    position: absolute;
+    top: 16px;
+    right: $right;
+    height: 30px;
+    width: 30px;
+
+
+    &:hover{
+      cursor: pointer;
+    }
+
+    nav{
+      height: 30px;
+      position: relative;
+
+      .burger:before {
+        content: '';
+        position: absolute;
+        background-color: black;
+        top: 0;
+        width: 30px;
+        height: 5px;
+
+      }
+
+      .burger span {
+        position: absolute;
+        background-color: black;
+        top: 12.5px;
+        width: 30px;
+        height: 5px;
+      }
+
+      .burger:after {
+        content: '';
+        position: absolute;
+        background-color: black;
+        bottom: 0;
+        width: 30px;
+        height: 5px;
+
+      }
+
+
+    }
+
+    @media (max-width: 560px) {
+      display: inline-block;
+    }
+
+    @media (min-width: 560px) {
+      display: none;
+    }
+
+  }
 
 }
 

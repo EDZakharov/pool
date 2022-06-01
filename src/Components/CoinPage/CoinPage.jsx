@@ -115,6 +115,9 @@ export const CoinPage = (props) => {
     }
 
 
+
+
+
     return (props.coinPage.isFetching ? <Fetcher/> : <div className={localStorage.getItem('showRandomBackStyle')}>
         <div className={style.coinData}>
             {props.coinPage.fullStats.charts && props.coinPage.fullStats.charts.length !== 0 ?
@@ -265,6 +268,26 @@ export const CoinPage = (props) => {
                                     <p><span>lolMiner.exe --algo ETHASH --pool stratum+ssl://eth.e4pool.com:9595 --user YOUR_WALLET_ADDRESS.RIG_ID
                                     pause</span></p>
                                 </div> : ''}
+                                {thisPool === 'etc' ? <div>
+                                    <h3>Пул ЕТC pplns</h3>
+                                    Для подключения к пулу ЕТC используйте следующие параметры:
+                                    <h4>Настройки T-Rex:</h4>
+                                    <p><span>t-rex.exe -a etchash -o etc.e4pool.com:9007 -u YOUR_WALLET_ADDRESS -w RIG_ID -p x pause</span></p>
+                                    <p><span>t-rex.exe -a etchash -o stratum+ssl://etc.e4pool.com:9008 -u YOUR_WALLET_ADDRESS -w RIG_ID -p x pause</span></p>
+                                    <h4>Настройки Phoenix miner:</h4>
+                                    <p><span>phoenixminer.exe -a etchash -o etc.e4pool.com:9007 -u YOUR_WALLET_ADDRESS.RIG_ID pause</span></p>
+                                    <p><span>phoenixminer.exe -a etchash -o stratum+ssl://etc.e4pool.com:9008 -u YOUR_WALLET_ADDRESS.RIG_ID pause</span></p>
+                                </div> : ''}
+                                {thisPool === 'etc-solo' ? <div>
+                                    <h3>Пул ЕТC solo</h3>
+                                    Для подключения к пулу ЕТC используйте следующие параметры:
+                                    <h4>Настройки T-Rex:</h4>
+                                    <p><span>t-rex.exe -a etchash -o solo-etc.e4pool.com:8005 -u YOUR_WALLET_ADDRESS -w RIG_ID -p x pause</span></p>
+                                    <p><span>t-rex.exe -a etchash -o stratum+ssl://solo-etc.e4pool.com:8006 -u YOUR_WALLET_ADDRESS -w RIG_ID -p x pause</span></p>
+                                    <h4>Настройки Phoenix miner:</h4>
+                                    <p><span>phoenixminer.exe -a etchash -o solo-etc.e4pool.com:8005 -u YOUR_WALLET_ADDRESS.RIG_ID pause</span></p>
+                                    <p><span>phoenixminer.exe -a etchash -o stratum+ssl://solo-etc.e4pool.com:8006 -u YOUR_WALLET_ADDRESS.RIG_ID pause</span></p>
+                                </div> : ''}
                                 {poolChecker(thisPool) === 'evox' ? <div>
                                     <h3>Пул evox.e4pool.com</h3>
                                     <div>evox.e4pool.com:4488 - стартовая сложность 50 000</div>
@@ -307,7 +330,8 @@ export const CoinPage = (props) => {
                                     <div>keva.e4pool.com:8000 - стартовая сложность 8000</div>
                                     <h3>Для подключения к пулу keva используйте следующие параметры:</h3>
                                     <p>Настройки xmrig (bat)* рекомендуется:</p>
-                                    <p>xmrig.exe --donate-level 0 -o keva.e4pool.com:9011 -u Ваш_кошелёк -p Имя_Вашего_воркера -t ХХ -a cn/keva -k</p>
+                                    <p>xmrig.exe --donate-level 0 -o keva.e4pool.com:9011 -u Ваш_кошелёк -p
+                                        Имя_Вашего_воркера -t ХХ -a cn/keva -k</p>
                                     <p>pause</p>
                                     <p>,где -t - количество выделяемых для майнинга ядер</p>
                                     <h4>Настройки xmrig (через config.json [xmr-node-proxy]):</h4>
@@ -323,7 +347,8 @@ export const CoinPage = (props) => {
                                     <p>"algo": "rx/keva",</p>
                                     <p>"blob_type": "cryptonote",</p>
                                     <p>"default": true{`}]`}</p>
-                                    <p>*более подробно об общей настройке конфига: https://bytwork.com/soft/xmrig?ysclid=l3lgbgoqmw</p>
+                                    <p>*более подробно об общей настройке конфига:
+                                        https://bytwork.com/soft/xmrig?ysclid=l3lgbgoqmw</p>
                                     <h4>Настройки SRBminer-Multi (bat):</h4>
                                     <p>setx GPU_MAX_HEAP_SIZE 100</p>
                                     <p>setx GPU_MAX_USE_SYNC_OBJECTS 1</p>
@@ -335,9 +360,12 @@ export const CoinPage = (props) => {
                                     <p>@echo off</p>
                                     <p>cd %~dp0</p>
                                     <p>cls</p>
-                                    <p>SRBMiner-MULTI.exe --algorithm randomkeva --keva.e4pool.com:9011 --Ваш_кошелёк --password Имя_Вашего_воркера</p>
+                                    <p>SRBMiner-MULTI.exe --algorithm randomkeva --keva.e4pool.com:9011 --Ваш_кошелёк
+                                        --password Имя_Вашего_воркера</p>
                                     <p>pause</p>
-                                    <p>*В примере bat файла автоматическое определение количество ядер для работы майнера, более еподробно про найстройку можно почитать: *более подробно об общей настройке конфига: https://bytwork.com/soft/xmrig?ysclid=l3lgbgoqmw</p>
+                                    <p>*В примере bat файла автоматическое определение количество ядер для работы
+                                        майнера, более еподробно про найстройку можно почитать: *более подробно об общей
+                                        настройке конфига: https://bytwork.com/soft/xmrig?ysclid=l3lgbgoqmw</p>
                                 </div> : ''}
                             </div>
                             : ''}

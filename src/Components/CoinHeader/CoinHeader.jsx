@@ -1,8 +1,9 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import style from "./CoinHeader.module.scss"
 import {Link, NavLink} from "react-router-dom";
 import {coinNamesFilter, imgFilter} from "../../Filters";
 import {selectedCoin} from "../../GlobalVars";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 const CoinHeader = () => {
     let CoinName = localStorage.getItem('selectedCoin')
@@ -14,7 +15,7 @@ const CoinHeader = () => {
         {href: 'https://t.me/e4pool_howto', icon: <i className="fab fa-telegram-plane"/>, text: 'Поддержка'},
         {href: '/e4pizor', icon: <i className="fa-solid fa-basket-shopping"/>, text: 'E4pizor'},
     ]
-
+    let [menuActive, setMenuActive] = useState(false)
 
     return (
         <div className={style.coin_header}>
@@ -41,6 +42,14 @@ const CoinHeader = () => {
 
                 }) : ''}
             </div>
+            <div className={style.burger_show} onClick={() => setMenuActive(!menuActive)}>
+                <nav>
+                    <div className={style.burger}>
+                        <span/>
+                    </div>
+                </nav>
+            </div>
+            <BurgerMenu items={addMenuList} active={menuActive} setActive={setMenuActive}/>
         </div>
     );
 }

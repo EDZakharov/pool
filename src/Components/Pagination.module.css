@@ -53,6 +53,11 @@
   left: 70px;
   top: 1px;
 }
+@media screen and (max-width: 600px) {
+  .reward .mev {
+    left: 50px;
+  }
+}
 
 .orphan {
   color: #ff8989;

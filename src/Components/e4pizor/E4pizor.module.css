@@ -8,157 +8,208 @@
   width: 100vw;
   pointer-events: none;
   background-image: url("../../img/фон.jpg");
-  background-size: 100%; }
-  @media screen and (max-width: 1366px) {
-    .e4pizor {
-      pointer-events: auto;
-      overflow-y: scroll; } }
+  background-size: 100%;
+}
+@media screen and (max-width: 1366px) {
+  .e4pizor {
+    pointer-events: auto;
+    overflow-y: scroll;
+  }
+}
+.e4pizor .questions {
+  position: absolute;
+  font-size: 20px;
+  color: #afafaf;
+  bottom: 40px;
+  right: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 1366px) {
   .e4pizor .questions {
-    position: absolute;
-    font-size: 20px;
-    color: #afafaf;
-    bottom: 40px;
-    right: 20px;
-    text-decoration: none;
-    cursor: pointer; }
-    @media screen and (max-width: 1366px) {
-      .e4pizor .questions {
-        display: none; } }
-    .e4pizor .questions:hover {
-      transition: .3s all;
-      transform: translateZ(100px) translateY(-4px) translateX(-5px);
-      color: white; }
-    .e4pizor .questions span:hover {
-      color: white; }
-    .e4pizor .questions span i {
-      font-size: 25px; }
+    display: none;
+  }
+}
+.e4pizor .questions:hover {
+  transition: 0.3s all;
+  transform: translateZ(100px) translateY(-4px) translateX(-5px);
+  color: white;
+}
+.e4pizor .questions span:hover {
+  color: white;
+}
+.e4pizor .questions span i {
+  font-size: 25px;
+}
+.e4pizor .header__description {
+  position: absolute;
+  text-align: left;
+  color: white;
+  top: 110px;
+  left: 6%;
+}
+@media screen and (max-width: 1766px) {
   .e4pizor .header__description {
-    position: absolute;
-    text-align: left;
-    color: white;
-    top: 110px;
-    left: 6%; }
-    @media screen and (max-width: 1766px) {
-      .e4pizor .header__description {
-        display: none; } }
-    .e4pizor .header__description h2 {
-      font-family: 'Roboto', sans-serif;
-      font-size: 20px;
-      font-size: 55px; }
-    .e4pizor .header__description span {
-      font-family: 'Roboto', sans-serif;
-      font-size: 20px;
-      font-size: 25px; }
+    display: none;
+  }
+}
+.e4pizor .header__description h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-size: 55px;
+}
+.e4pizor .header__description span {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-size: 25px;
+}
+.e4pizor .content {
+  grid-area: c;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 13% 10px 0 10px;
+}
+@media screen and (max-width: 1366px) {
   .e4pizor .content {
-    grid-area: c;
     display: flex;
-    justify-content: space-evenly;
-    padding: 13% 10px 0 10px; }
-    @media screen and (max-width: 1366px) {
-      .e4pizor .content {
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-        padding: 8% 10px 0 10px;
-        overflow-y: scroll; } }
-    .e4pizor .content .imageSelection {
-      padding: 60px 10px 0 10px;
-      display: inline-block;
-      user-select: none; }
-      @media screen and (max-width: 1366px) {
-        .e4pizor .content .imageSelection {
-          padding: 0 10px 0 10px;
-          order: 2; } }
-      .e4pizor .content .imageSelection .e4pizor__device {
-        padding-bottom: 20px; }
-        .e4pizor .content .imageSelection .e4pizor__device .device__img {
-          width: 300px;
-          background-color: #fff;
-          border-radius: 50%;
-          box-shadow: 0 0 25px rgba(0, 0, 0, 0.67); }
-      .e4pizor .content .imageSelection .colorButtons {
-        display: flex;
-        justify-content: center;
-        border: none; }
-    .e4pizor .content .player {
-      border: 4px solid rgba(255, 255, 255, 0.13);
-      padding: 1px;
-      margin: 20px 0;
-      align-items: center;
-      justify-content: center;
-      pointer-events: auto;
-      position: relative;
-      width: 40%;
-      height: 450px; }
-      @media screen and (max-width: 1366px) {
-        .e4pizor .content .player {
-          width: 80%;
-          margin-bottom: 200px;
-          height: 450px; } }
-      @media screen and (max-width: 1000px) {
-        .e4pizor .content .player {
-          width: 97%;
-          margin-top: 30px;
-          border: none; } }
-      @media screen and (max-width: 700px) {
-        .e4pizor .content .player {
-          display: none; } }
-      .e4pizor .content .player .iFrame {
-        width: 100%;
-        height: 100%;
-        position: relative; }
-      .e4pizor .content .player .btn {
-        position: absolute;
-        margin-top: 60px;
-        width: 100%;
-        text-align: center; }
-        .e4pizor .content .player .btn a {
-          text-decoration: none; }
-        @media screen and (max-width: 1366px) {
-          .e4pizor .content .player .btn {
-            margin-top: 80px; } }
-        @media screen and (max-width: 1000px) {
-          .e4pizor .content .player .btn {
-            display: block;
-            order: 1; } }
-    .e4pizor .content .btn2 {
-      margin-top: 60px;
-      width: 100%;
-      text-align: center; }
-      .e4pizor .content .btn2 a {
-        text-decoration: none; }
-      @media screen and (min-width: 700px) {
-        .e4pizor .content .btn2 {
-          display: none; } }
-      @media screen and (max-width: 700px) {
-        .e4pizor .content .btn2 {
-          margin-bottom: 150px; } }
-    .e4pizor .content .description {
-      user-select: none;
-      color: white;
-      text-align: justify;
-      width: 450px;
-      padding: 30px 10px; }
-      @media screen and (max-width: 1366px) {
-        .e4pizor .content .description {
-          order: 3;
-          margin-top: 30px;
-          width: 80%; } }
-      @media screen and (max-width: 1000px) {
-        .e4pizor .content .description {
-          width: 97%; } }
-      .e4pizor .content .description .dec {
-        padding-right: 5px;
-        font-size: 40px;
-        font-weight: bold; }
-      .e4pizor .content .description h2 {
-        font-family: 'Roboto', sans-serif;
-        font-size: 20px;
-        font-size: 30px; }
-      .e4pizor .content .description p {
-        font-family: 'Roboto', sans-serif;
-        font-size: 20px;
-        margin-top: 10px; }
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 8% 10px 0 10px;
+    overflow-y: scroll;
+  }
+}
+.e4pizor .content .imageSelection {
+  padding: 60px 10px 0 10px;
+  display: inline-block;
+  user-select: none;
+}
+@media screen and (max-width: 1366px) {
+  .e4pizor .content .imageSelection {
+    padding: 0 10px 0 10px;
+    order: 2;
+  }
+}
+.e4pizor .content .imageSelection .e4pizor__device {
+  padding-bottom: 20px;
+}
+.e4pizor .content .imageSelection .e4pizor__device .device__img {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.67);
+}
+.e4pizor .content .imageSelection .colorButtons {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+.e4pizor .content .player {
+  border: 4px solid rgba(255, 255, 255, 0.13);
+  padding: 1px;
+  margin: 20px 0;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  position: relative;
+  width: 40%;
+  height: 450px;
+}
+@media screen and (max-width: 1366px) {
+  .e4pizor .content .player {
+    width: 80%;
+    margin-bottom: 200px;
+    height: 450px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .e4pizor .content .player {
+    width: 97%;
+    margin-top: 30px;
+    border: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .e4pizor .content .player {
+    display: none;
+  }
+}
+.e4pizor .content .player .iFrame {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.e4pizor .content .player .btn {
+  position: absolute;
+  margin-top: 60px;
+  width: 100%;
+  text-align: center;
+}
+.e4pizor .content .player .btn a {
+  text-decoration: none;
+}
+@media screen and (max-width: 1366px) {
+  .e4pizor .content .player .btn {
+    margin-top: 80px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .e4pizor .content .player .btn {
+    display: block;
+    order: 1;
+  }
+}
+.e4pizor .content .btn2 {
+  margin-top: 60px;
+  width: 100%;
+  text-align: center;
+}
+.e4pizor .content .btn2 a {
+  text-decoration: none;
+}
+@media screen and (min-width: 700px) {
+  .e4pizor .content .btn2 {
+    display: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .e4pizor .content .btn2 {
+    margin-bottom: 150px;
+  }
+}
+.e4pizor .content .description {
+  user-select: none;
+  color: white;
+  text-align: justify;
+  width: 450px;
+  padding: 30px 10px;
+}
+@media screen and (max-width: 1366px) {
+  .e4pizor .content .description {
+    order: 3;
+    margin-top: 30px;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .e4pizor .content .description {
+    width: 97%;
+  }
+}
+.e4pizor .content .description .dec {
+  padding-right: 5px;
+  font-size: 40px;
+  font-weight: bold;
+}
+.e4pizor .content .description h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-size: 30px;
+}
+.e4pizor .content .description p {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  margin-top: 10px;
+}
 
 /*# sourceMappingURL=E4pizor.module.css.map */

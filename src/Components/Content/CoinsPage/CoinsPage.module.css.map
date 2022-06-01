@@ -1,7 +1,1 @@
-{
-"version": 3,
-"mappings": "AAAA,gBAAgB;EACd,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,MAAM;EACd,OAAO,EAAE,aAAa;EACtB,UAAU,EAAE,MAAM;EAClB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,SAAS,EAAE,IAAI;EACf,GAAG,EAAE,IAAI;EAET,oCAAoC;IAVtC,gBAAgB;MAWZ,OAAO,EAAE,aAAa",
-"sources": ["CoinsPage.module.scss"],
-"names": [],
-"file": "CoinsPage.module.css"
-}
+{"version":3,"sourceRoot":"","sources":["CoinsPage.module.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EAVF;IAWI","file":"CoinsPage.module.css"}
