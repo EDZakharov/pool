@@ -17,6 +17,7 @@ export let CoinsPage = (props) => {
                         poolType={c.type}
                         key={c.pool}
                         fullName={c.pool}
+                        symbol={c.symbol}
                         hashrate={c.hashrate}
                         minersTotal={c.miners}
                         maturedTotal={c.maturedTotal}

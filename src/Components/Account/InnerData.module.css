@@ -2,15 +2,13 @@
 a {
   color: white;
   text-decoration: none;
-  pointer-events: auto;
-}
-a:hover {
-  text-decoration: underline;
-}
+  pointer-events: auto; }
+  a:hover {
+    text-decoration: underline; }
 
 .inner__data__grid {
   display: grid;
-  grid-template-areas: "el1 el2 el3";
+  grid-template-areas: 'el1 el2 el3';
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-content: space-between;
@@ -18,28 +16,21 @@ a:hover {
   color: #ffffff;
   margin: 2px auto;
   font-size: 15px;
-  pointer-events: none;
-}
-.inner__data__grid div {
-  padding: 5px;
-}
-.inner__data__grid .inner__elem1 {
-  grid-area: el1;
-  margin: 0 auto;
-}
-.inner__data__grid .inner__elem2 {
-  grid-area: el2;
-  margin: 0 auto;
-}
-.inner__data__grid .inner__elem3 {
-  grid-area: el3;
-  margin: 0 auto;
-}
-@media screen and (max-width: 750px) {
-  .inner__data__grid {
-    font-size: 11px;
-  }
-}
+  pointer-events: none; }
+  .inner__data__grid div {
+    padding: 5px; }
+  .inner__data__grid .inner__elem1 {
+    grid-area: el1;
+    margin: 0 auto; }
+  .inner__data__grid .inner__elem2 {
+    grid-area: el2;
+    margin: 0 auto; }
+  .inner__data__grid .inner__elem3 {
+    grid-area: el3;
+    margin: 0 auto; }
+  @media screen and (max-width: 750px) {
+    .inner__data__grid {
+      font-size: 11px; } }
 
 .inner__data__grid__payments {
   display: flex;
@@ -49,18 +40,14 @@ a:hover {
   color: #ffffff;
   width: 100%;
   margin-top: 2px;
-  font-size: 15px;
-}
-.inner__data__grid__payments div {
-  padding: 5px 0;
-  width: 150px;
-  text-align: center;
-}
-@media screen and (max-width: 750px) {
-  .inner__data__grid__payments {
-    font-size: 11px;
-  }
-}
+  font-size: 15px; }
+  .inner__data__grid__payments div {
+    padding: 5px 0;
+    width: 150px;
+    text-align: center; }
+  @media screen and (max-width: 750px) {
+    .inner__data__grid__payments {
+      font-size: 11px; } }
 
 .inner__data__grid__workers {
   display: flex;
@@ -70,19 +57,15 @@ a:hover {
   color: #ffffff;
   width: 100%;
   margin-top: 2px;
-  font-size: 15px;
-}
-.inner__data__grid__workers div {
-  white-space: nowrap;
-  padding: 5px 0;
-  width: 150px;
-  text-align: center;
-}
-@media screen and (max-width: 750px) {
-  .inner__data__grid__workers {
-    font-size: 11px;
-  }
-}
+  font-size: 15px; }
+  .inner__data__grid__workers div {
+    white-space: nowrap;
+    padding: 5px 0;
+    width: 150px;
+    text-align: center; }
+  @media screen and (max-width: 750px) {
+    .inner__data__grid__workers {
+      font-size: 11px; } }
 
 .inner__data__grid__rewards {
   display: flex;
@@ -91,18 +74,14 @@ a:hover {
   background-color: #6e6767;
   color: #ffffff;
   margin-top: 2px;
-  font-size: 15px;
-}
-.inner__data__grid__rewards div {
-  padding: 5px 0;
-  text-align: center;
-  width: 150px;
-}
-@media screen and (max-width: 750px) {
-  .inner__data__grid__rewards {
-    font-size: 11px;
-  }
-}
+  font-size: 15px; }
+  .inner__data__grid__rewards div {
+    padding: 5px 0;
+    text-align: center;
+    width: 150px; }
+  @media screen and (max-width: 750px) {
+    .inner__data__grid__rewards {
+      font-size: 11px; } }
 
 .inner__data__grid__blocks {
   display: flex;
@@ -112,100 +91,71 @@ a:hover {
   position: relative;
   color: #ffffff;
   margin-top: 2px;
-  font-size: 15px;
-}
-.inner__data__grid__blocks div {
-  padding: 5.5px 0 5.5px 0;
-}
-.inner__data__grid__blocks .inner__elem1 {
-  position: absolute;
-  left: 5%;
-}
-@media screen and (max-width: 600px) {
+  font-size: 15px; }
+  .inner__data__grid__blocks div {
+    padding: 5.5px 0 5.5px 0; }
   .inner__data__grid__blocks .inner__elem1 {
-    margin: 0 auto;
-    position: initial;
-  }
-}
-@media screen and (max-width: 600px) {
-  .inner__data__grid__blocks .inner__elem1::before {
-    content: "Высота блока: ";
-  }
-}
-.inner__data__grid__blocks .inner__elem2 {
-  position: absolute;
-  left: 25%;
-}
-@media screen and (max-width: 600px) {
+    position: absolute;
+    left: 5%; }
+    @media screen and (max-width: 600px) {
+      .inner__data__grid__blocks .inner__elem1 {
+        margin: 0 auto;
+        position: initial; } }
+    @media screen and (max-width: 600px) {
+      .inner__data__grid__blocks .inner__elem1::before {
+        content: 'Высота блока: '; } }
   .inner__data__grid__blocks .inner__elem2 {
-    margin: 0 auto;
-    position: initial;
-  }
-}
-@media screen and (max-width: 600px) {
-  .inner__data__grid__blocks .inner__elem2::before {
-    content: "Сумма: ";
-  }
-}
-.inner__data__grid__blocks .inner__elem3 {
-  position: absolute;
-  width: 55px;
-  white-space: nowrap;
-}
-@media screen and (max-width: 600px) {
+    position: absolute;
+    left: 25%; }
+    @media screen and (max-width: 600px) {
+      .inner__data__grid__blocks .inner__elem2 {
+        margin: 0 auto;
+        position: initial; } }
+    @media screen and (max-width: 600px) {
+      .inner__data__grid__blocks .inner__elem2::before {
+        content: 'Сумма: '; } }
   .inner__data__grid__blocks .inner__elem3 {
-    margin: 0 auto;
+    position: absolute;
     width: 55px;
-    position: initial;
-  }
-}
-@media screen and (max-width: 600px) {
-  .inner__data__grid__blocks .inner__elem3::before {
-    content: "Удача: ";
-    white-space: normal;
-  }
-}
-.inner__data__grid__blocks .inner__elem4 {
-  position: absolute;
-  right: 25%;
-}
-@media screen and (max-width: 600px) {
+    white-space: nowrap; }
+    @media screen and (max-width: 600px) {
+      .inner__data__grid__blocks .inner__elem3 {
+        margin: 0 auto;
+        width: 55px;
+        position: initial; } }
+    @media screen and (max-width: 600px) {
+      .inner__data__grid__blocks .inner__elem3::before {
+        content: 'Удача: ';
+        white-space: normal; } }
   .inner__data__grid__blocks .inner__elem4 {
-    right: 0;
-    position: initial;
-  }
-}
-@media screen and (max-width: 600px) {
-  .inner__data__grid__blocks .inner__elem4::before {
-    content: "Хэш блока: ";
-  }
-}
-.inner__data__grid__blocks .inner__elem5 {
-  width: 100%;
-  text-align: end;
-  padding-right: 5%;
-}
-@media screen and (max-width: 600px) {
+    position: absolute;
+    right: 25%; }
+    @media screen and (max-width: 600px) {
+      .inner__data__grid__blocks .inner__elem4 {
+        right: 0;
+        position: initial; } }
+    @media screen and (max-width: 600px) {
+      .inner__data__grid__blocks .inner__elem4::before {
+        content: 'Хэш блока: '; } }
   .inner__data__grid__blocks .inner__elem5 {
-    text-align: center;
-    margin: 0 auto;
-    position: initial;
-  }
-}
-@media screen and (max-width: 600px) {
-  .inner__data__grid__blocks .inner__elem5::before {
-    content: "Дата: ";
-  }
-}
-@media screen and (max-width: 600px) {
-  .inner__data__grid__blocks {
-    font-size: 11px;
-    display: block;
     width: 100%;
-    text-align: center;
-    flex-direction: column;
-    justify-content: left;
-  }
-}
+    text-align: end;
+    padding-right: 5%; }
+    @media screen and (max-width: 600px) {
+      .inner__data__grid__blocks .inner__elem5 {
+        text-align: center;
+        margin: 0 auto;
+        position: initial; } }
+    @media screen and (max-width: 600px) {
+      .inner__data__grid__blocks .inner__elem5::before {
+        content: 'Дата: '; } }
+  @media screen and (max-width: 600px) {
+    .inner__data__grid__blocks {
+      font-size: 11px;
+      display: block;
+      width: 100%;
+      text-align: center;
+      flex-direction: column;
+      justify-content: left; } }
 
 /*# sourceMappingURL=InnerData.module.css.map */
