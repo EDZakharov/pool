@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import style from './E4pizor.module.scss'
-import red from '../../img/Red.png'
-import black from '../../img/Black.png'
-import blue from '../../img/Blue.png'
-import darkGreen from '../../img/DarkGreen.png'
-import green from '../../img/Green.png'
+import red from '../../assets/images/Red.png'
+import black from '../../assets/images/Black.png'
+import blue from '../../assets/images/Blue.png'
+import darkGreen from '../../assets/images/DarkGreen.png'
+import green from '../../assets/images/Green.png'
 import styled from 'styled-components'
 
 

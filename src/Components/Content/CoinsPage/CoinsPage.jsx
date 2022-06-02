@@ -9,7 +9,6 @@ export let CoinsPage = (props) => {
     if (props.content.coins.length !== 0) {
         return <div className={style.coinCardWrapper}>
             {props.content.coins.map(c => {
-                // console.log(c.pool, c.hashrate)
                 return (<CoinCard
                         isFetching={props.fetching}
                         content={props.content}

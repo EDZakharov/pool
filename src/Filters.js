@@ -1,14 +1,5 @@
-import ethLogo from "./img/eth.png";
-// import ethLogo from "../public/eth.png";
-import etcLogo from "./img/etc.png";
-import burstLogo from "./img/burst.png";
-import kevaLogo from "./img/keva-prop.png";
-import evoxLogo from "./img/evox-prop.png";
-import ergoLogo from "./img/ergo.png";
-import siteLogo from "./img/logo56.png";
+import siteLogo from "./assets/images/logo56.png";
 import style from "./Components/Content/ContentComponent.module.scss";
-
-export const images = {ethLogo, etcLogo, burstLogo, kevaLogo, evoxLogo, ergoLogo, siteLogo}
 
 
 export let convertTimestamp = (timestamp) => {
@@ -20,7 +11,7 @@ export let convertTimestamp = (timestamp) => {
         min = ('0' + d.getMinutes()).slice(-2),
         time;
 
-    time =  dd + '.' + mm + '.' + yyyy + '  ' + hh + ':' + min
+    time = dd + '.' + mm + '.' + yyyy + '  ' + hh + ':' + min
     return time;
 
 }
@@ -29,7 +20,7 @@ export let dateFilter = (date) => {
     Date.prototype.daysInMonth = function () {
         return 32 - new Date(this.getFullYear(), this.getMonth(), 32).getDate();
     };
-    if(date === null){
+    if (date === null) {
         return 'еще не найден'
     }
     if (date === undefined) {
@@ -65,42 +56,39 @@ export let dateFilter = (date) => {
 }
 
 export let txChecker = (tx, pool) => {
-    if(pool === 'eth'){
+    if (pool === 'eth') {
         return `https://etherscan.io//tx/${tx}`
     }
-    if(pool === 'eth-solo'){
+    if (pool === 'eth-solo') {
         return `https://etherscan.io//tx/${tx}`
     }
-    if(pool === 'etc'){
+    if (pool === 'etc') {
         return `https://etc.tokenview.com/en/tx/${tx}`
     }
-    if(pool === 'etc-solo'){
+    if (pool === 'etc-solo') {
         return `https://etc.tokenview.com/en/tx/${tx}`
-    }
-    else {
+    } else {
         return '#'
     }
 }
 
-export let getTruncatedName = (source,type) => {
+export let getTruncatedName = (source, type) => {
     let skippedStringEnd = source.trimEnd();
 
-    if(type === 'wallet'){
+    if (type === 'wallet') {
         if (skippedStringEnd.length > 90) {
             return skippedStringEnd.substring(0, 5) + '...' + skippedStringEnd.substring(90, skippedStringEnd.length);
         }
         if (skippedStringEnd.length > 13) {
             return skippedStringEnd.substring(0, 7) + '...' + skippedStringEnd.substring(35, skippedStringEnd.length);
-        }
-        else {
+        } else {
             return source;
         }
     }
-    if (type === 'tx'){
+    if (type === 'tx') {
         if (skippedStringEnd.length > 13) {
             return skippedStringEnd.substring(0, 13) + '...';
-        }
-        else {
+        } else {
             return source;
         }
     }
@@ -156,30 +144,33 @@ export let blockHashChecker = (blochHash, pool) => {
 
 export let hashFilter = (data) => {
     if (data !== undefined) {
-        if (data === 0){
-            return {hashrate: 0, unit: ' H/s'}
-        }
-        if (data.toString().length <= 3) {
-            return {hashrate: Number(data.toFixed(2)), unit: ' H/s'}
-        }
-        if (data.toString().length > 3 && data.toString().length <= 6) {
-            let x = data / 1000
-            return {hashrate: Number(x.toFixed(0)), unit: ' kH/s'}
-        }
-        if (data.toString().length > 6 && data.toString().length <= 9) {
-            let x = data / 1000000
-            return {hashrate: Number(x.toFixed(0)), unit: ' MH/s'}
-        }
-        if (data.toString().length > 9 && data.toString().length <= 12) {
-            let x = data / 1000000000
-            return {hashrate: Number(x.toFixed(2)), unit: ' GH/s'}
-        }
-        if (data.toString().length > 12 && data.toString().length <= 15) {
-            let x = data / 1000000000
-            return {hashrate: Number(x.toFixed(0)), unit: ' GH/s'}
-        }
+        if (typeof data !== 'string') {
+            if (data === 0) {
+                return {hashrate: 0, unit: ' H/s'}
+            }
+            let stringDataLength = data.toString().length
 
-    } else return 0
+            if (stringDataLength <= 3) {
+                return {hashrate: Number(data.toFixed(2)), unit: ' H/s'}
+            }
+            if (stringDataLength > 3 && stringDataLength <= 6) {
+                let x = data / 1000
+                return {hashrate: Number(x.toFixed(0)), unit: ' kH/s'}
+            }
+            if (stringDataLength > 6 && stringDataLength <= 9) {
+                let x = data / 1000000
+                return {hashrate: Number(x.toFixed(0)), unit: ' MH/s'}
+            }
+            if (stringDataLength > 9 && stringDataLength <= 12) {
+                let x = data / 1000000000
+                return {hashrate: Number(x.toFixed(2)), unit: ' GH/s'}
+            }
+            if (stringDataLength > 12 && stringDataLength <= 15) {
+                let x = data / 1000000000
+                return {hashrate: Number(x.toFixed(0)), unit: ' GH/s'}
+            }
+        } else return {hashrate: 'n/a', unit: ' '}
+    } else return {hashrate: 'n/a', unit: ' '}
 
 }
 
@@ -238,32 +229,15 @@ export const coinNamesFilter = (data) => {
 }
 
 
-export const imgFilter = (data => {
-    switch (data) {
-        case 'eth':
-            return images.ethLogo
-        case 'eth-solo':
-            return images.ethLogo
-        case 'etc':
-            return images.etcLogo
-        case 'etc-solo':
-            return images.etcLogo
-        case 'burst':
-            return images.burstLogo
-        case 'keva':
-            return images.kevaLogo
-        case 'evox-solo':
-            return images.evoxLogo
-        case 'evox-prop':
-            return images.evoxLogo
-        case 'ergo':
-            return images.ergoLogo
-        case 'logo':
-            return images.siteLogo
-        default:
-            return images.siteLogo
+export const imgFilter = (data) => {
+    console.log(data)
+    try {
+        return  require(`../src/assets/images/${data}.png`)
+    } catch (e) {
+        return siteLogo
     }
-})
+}
+
 
 
 export const showDate = (data) => {

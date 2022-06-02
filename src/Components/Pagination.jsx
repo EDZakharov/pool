@@ -15,6 +15,7 @@ import {CoinPageData} from "./CoinPage/CoinPageData/CoinPageData";
 
 
 function effortFilter(effort) {
+    console.log(effort)
     if(effort < 100){
         return <div className={style.easy}>{effort} %</div>
     }
@@ -71,7 +72,7 @@ function Items({currentItems, type, addInputValue, pool}) {
                                 <span className={style.mev}> +{(el.rewardMev / 1000000000000000000).toFixed(3)} MEV</span>
                             </span>
                             : poolChecker(pool) !== 'evox' && poolChecker(pool) !== 'keva'
-                                ? (el.reward / 1000000000000000000).toFixed(3) + ' ' +poolChecker(pool)
+                                ? (el.reward / 1000000000000000000).toFixed(3) + ' ' + poolChecker(pool)
                                 : el.reward + ' ' +poolChecker(pool)}
                         el3={effortFilter((el.effort * 100).toFixed(0))}
                         el4={!el.orphan ?

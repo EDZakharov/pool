@@ -7,7 +7,7 @@
   height: 100vh;
   width: 100vw;
   pointer-events: none;
-  background-image: url("../../img/фон.jpg");
+  background-image: url("../../assets/images/фон.jpg");
   background-size: 100%;
 }
 @media screen and (max-width: 1366px) {
