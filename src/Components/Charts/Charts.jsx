@@ -99,14 +99,14 @@ let setupOptions = (props) => {
     })
 
 
-    arr1 = cutOffLastElem(arr1, -24)
-    arr2 = cutOffLastElem(arr2, -24)
+    arr1 = cutOffLastElem(arr1, -20)
+    arr2 = cutOffLastElem(arr2, -20)
 
 
     let setGlobal = () => {
         Highcharts.setOptions({
-            lang:{
-                months:[
+            lang: {
+                months: [
                     'января',
                     'февраля',
                     'марта',
@@ -120,7 +120,7 @@ let setupOptions = (props) => {
                     'ноября',
                     'декабря'
                 ],
-                shortMonths:[
+                shortMonths: [
                     'января',
                     'февраля',
                     'марта',
@@ -150,10 +150,10 @@ let setupOptions = (props) => {
 
     const screenWidth = window.screen.width
     let fontSizeChecker = (screenWidth) => {
-        if (screenWidth <= 600){
+        if (screenWidth <= 600) {
             return '8px'
         }
-        if (screenWidth <= 1000){
+        if (screenWidth <= 1000) {
             return '14px'
         } else return '26px'
     }
@@ -164,10 +164,10 @@ let setupOptions = (props) => {
             text: `${props.text}`,
             style: {color: '#fff', fontSize: `${fontSizeChecker(screenWidth)}`}
         },
-        time:{
+        time: {
             getTimezoneOffset: function (timestamp) {
                 let d = new Date();
-                let timezoneOffset =  d.getTimezoneOffset()
+                let timezoneOffset = d.getTimezoneOffset()
 
                 return timezoneOffset;
             }
@@ -202,7 +202,7 @@ let setupOptions = (props) => {
             },
             tooltip: {
                 pointFormat: '<span style="color:{point.color}">●</span> <b>{point.y} {series.name}</b>',
-                xDateFormat:'%e %b %Y %H:%M',
+                xDateFormat: '%e %b %Y %H:%M',
                 valuePrefix: '</br>',
                 className: 'tooltip'
 
@@ -219,20 +219,26 @@ let setupOptions = (props) => {
             labels: {
                 enabled: true,
                 style: {color: '#fff', fontSize: `${screenWidth <= 2000 ? '15px' : '20px'}`},
-                formatter: function() {
-
-                    if (new Date(this.value+3600).getHours() === 0) {
-                        if (new Date(this.value+3600).getMinutes() === 0) {
-                            return new Date(this.value+3600).getDate() + '.'
-                                + ('0' + (new Date(this.value+3600).getMonth() + 1)).slice(-2) + ' '
-                                + new Date(this.value+3600).getHours() + ':'
-                                + minutesFlor(new Date(this.value+3600).getMinutes())
+                formatter: function () {
+                    if (new Date(this.value).getHours() === 0) {
+                        if (new Date(this.value).getMinutes() === 0) {
+                            return `<span class="xData">
+                                <span >${new Date(this.value).getHours() + ':'
+                            + minutesFlor(new Date(this.value).getMinutes())}
+                                </span></br>
+                                <span>${('0' + new Date(this.value).getDate()).slice(-2) + '.'
+                            + ('0' + (new Date(this.value).getMonth() + 1)).slice(-2)}
+                                </span>
+                                </span>`
                         }
                     }
 
 
-                    return new Date(this.value+3600).getHours() + ':'
-                        + minutesFlor(new Date(this.value+3600).getMinutes())
+                    return `<span class="xData">
+                    <span >${new Date(this.value).getHours() + ':'
+                    + minutesFlor(new Date(this.value).getMinutes())}
+                    </span>
+                    </span>`
                 },
             },
 
@@ -256,7 +262,6 @@ let setupOptions = (props) => {
 
 
 const Charts = (props) => {
-
     if (props.charts) {
         return <div className='Charts'>{props.charts !== 'n/a' ? <HighchartsReact
             highcharts={Highcharts}

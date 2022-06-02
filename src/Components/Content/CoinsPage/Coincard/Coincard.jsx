@@ -1,13 +1,13 @@
 import React from "react";
 import style from "./Coincard.module.scss"
 import {NavLink} from "react-router-dom";
-import {coinNamesFilter, dateFilter, hashFilter, imgFilter} from "../../../../Filters";
+import {dateFilter, hashFilter, imgFilter} from "../../../../Filters";
 
 
 const CoinCard = (props) => {
 
     let adr = props.fullName.toString()
-    let name = coinNamesFilter(props.fullName);
+    let name = props.fullName;
     let hashes = hashFilter(props.hashrate);
     let image = imgFilter(`${props.fullName}`);
 

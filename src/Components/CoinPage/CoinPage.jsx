@@ -8,9 +8,9 @@ import PaginatedItems from "../Pagination";
 import DropBtn from "../Account/DropBtn";
 import DropData from "./DropData/DropData";
 import Total from "../Account/Total";
-import addPoolImg from '../../img/addPool.jpg'
-import addWallet from '../../img/addWallet.jpg'
-import osPoolConnect from '../../img/osDog.jpg'
+import addPoolImg from '../../assets/images/addPool.jpg'
+import addWallet from '../../assets/images/addWallet.jpg'
+import osPoolConnect from '../../assets/images/osDog.jpg'
 import Slider from "../Slider/Slider";
 
 
@@ -28,7 +28,6 @@ export const CoinPage = (props) => {
     let coinLogo = imgFilter(localStorage.getItem('selectedCoin'))
     let luck = props.coinPage.fullStats.currentEffort * 100;
 
-    let [checked, setChecked] = useState(false);
 
     useEffect(() => {
 
@@ -67,9 +66,6 @@ export const CoinPage = (props) => {
         }
     }, [])
 
-    let showMiners = () => {
-        setChecked(!checked)
-    }
 
     let setAddr = (e) => {
         props.addAccountAddress(e.target.value)
@@ -114,10 +110,6 @@ export const CoinPage = (props) => {
         setToggleHow(true)
     }
 
-
-
-
-
     return (props.coinPage.isFetching ? <Fetcher/> : <div className={localStorage.getItem('showRandomBackStyle')}>
         <div className={style.coinData}>
             {props.coinPage.fullStats.charts && props.coinPage.fullStats.charts.length !== 0 ?
@@ -126,7 +118,7 @@ export const CoinPage = (props) => {
                         <Charts charts={props.coinPage.fullStats.charts} text={`Общая мощность ${thisPool} пула`}/>
                     </div>
                 </div> : <div className={style.graph}><span>Загрузка..</span></div>}
-            {thisPool === 'evox-prop' || thisPool === 'evox-solo' || thisPool === 'keva' ?
+            {props.coinPage.miners.length === 0 ?
                 <div className={style.inputForm}/> : <div className={style.inputForm}>
                     <img src={coinLogo} alt='logo'/>
                     <input type='text' autoComplete='off' placeholder={`Адрес кошелька`}
@@ -151,7 +143,7 @@ export const CoinPage = (props) => {
                     <DropData componentContent={<div className={style.dropDown}>
                         {toggleStats ? <div className={style.stats}>
                             <div className={style.currentEffort}>Текущая
-                                удача: {isNaN(luck) ? 'not found' : `${luck.toFixed(0)} %`}</div>
+                                удача: {isNaN(luck) ? 'n/a' : `${luck.toFixed(0)} %`}</div>
                             <div className={style.fee}>Комиссия пула: {props.coinPage.fullStats.fee} %</div>
                             <div
                                 className={style.hashrate}>Хэшрейт
