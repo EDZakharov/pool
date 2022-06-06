@@ -3,15 +3,33 @@ import style from './Blocks.module.scss'
 import Total from "../../Account/Total";
 import Fetcher from "../../Fetcher/Fetcher";
 import PaginatedItems from "../../Pagination";
+import {showBlocks} from "../../../redux/socketMiddleware";
 
-const Blocks = ({blocks,effort,matured,addInputValue,thisPool, showBlocksOnce,dellBlocksData,clearCashP}) => {
-    useEffect(()=>{
+const Blocks = ({
+                    blocks,
+                    effort,
+                    matured,
+                    addInputValue,
+                    thisPool,
+                    showBlocksOnce,
+                    dellBlocksData,
+                    clearCashP,
+                    showBlocks,
+                    fetching
+                }) => {
+
+
+    useEffect(() => {
+        let start = setInterval(() => {
+            showBlocks(thisPool)
+            fetching(false)
+        }, 1000)
         showBlocksOnce(thisPool)
         return () => {
+            clearInterval(start)
             dellBlocksData()
-            clearCashP()
         }
-    },[])
+    }, [])
 
     return (
         <div className={style.blocks} id='anchorBtn'>
@@ -26,7 +44,7 @@ const Blocks = ({blocks,effort,matured,addInputValue,thisPool, showBlocksOnce,de
                     <div className={style.effort}>Удача последних 200
                         блоков: {(effort['200'] * 100).toFixed(0)} %
                     </div>
-                </div> : <Fetcher/>}
+                </div> : ''}
             />
             <div className={style.blocks_column_grid}>
                 <div className={style.height}>Высота</div>

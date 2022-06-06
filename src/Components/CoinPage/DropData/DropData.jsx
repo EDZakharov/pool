@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import style from './DropData.module.scss'
-
 const DropData = ({componentContent, clicked}) => {
 
 

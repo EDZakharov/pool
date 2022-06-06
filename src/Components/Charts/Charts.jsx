@@ -186,7 +186,7 @@ let setupOptions = (props) => {
         chart: {
             type: 'spline',
             backgroundColor: 'rgba(85,77,77,0.56)',
-            height: `${screenWidth <= 2000 ? '300px' : '500px'}`,
+            height: `${screenWidth <= 2000 ? '350px' : '500px'}`,
         },
         series: [{
             showInLegend: false,

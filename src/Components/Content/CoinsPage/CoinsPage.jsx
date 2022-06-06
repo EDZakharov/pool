@@ -10,12 +10,12 @@ export let CoinsPage = (props) => {
         return <div className={style.coinCardWrapper}>
             {props.content.coins.map(c => {
                 return (<CoinCard
-                        isFetching={props.fetching}
                         content={props.content}
                         selectCoin={props.selectCoin}
                         poolType={c.type}
                         key={c.pool}
                         fullName={c.pool}
+                        name={c.name}
                         symbol={c.symbol}
                         hashrate={c.hashrate}
                         minersTotal={c.miners}

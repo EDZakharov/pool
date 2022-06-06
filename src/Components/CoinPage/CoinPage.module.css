@@ -1,7 +1,6 @@
 * {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 .coin {
   grid-area: c;
@@ -11,289 +10,113 @@
   user-select: none;
   height: 91vh;
   padding-top: 50px;
-  background: url(../../img/octopus1.png) no-repeat 50% 0;
+  background: url(../../assets/octopus1.png) no-repeat 50% 0;
   position: sticky;
   overflow-y: scroll;
   background-size: 1500px;
-  z-index: 1;
-}
-.coin .coinData {
-  display: grid;
-  grid-template-areas: "graph" "input" "stats" "showMinersBtn";
-}
-.coin .coinData .graph {
-  grid-area: graph;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-self: center;
-  justify-items: center;
-}
-@media screen and (max-width: 600px) {
-  .coin .coinData .graph {
-    display: none;
-  }
-}
-.coin .coinData .graph .chartsGraph {
-  width: 100%;
-  margin: 10px 0 10px 0;
-  border-radius: 15px;
-}
-.coin .coinData .inputForm {
-  grid-area: input;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  padding-right: 5px;
-  width: 70%;
-}
-@media screen and (min-width: 2000px) {
-  .coin .coinData .inputForm {
-    justify-content: center;
-    width: 90%;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .coin .coinData .inputForm {
-    width: 98%;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin .coinData .inputForm {
-    width: 90%;
-    padding: 20px 1px 0 1px;
-  }
-}
-.coin .coinData .inputForm img {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-  border-radius: 50%;
-  height: 40px;
-}
-@media screen and (min-width: 2000px) {
-  .coin .coinData .inputForm img {
-    height: 70px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin .coinData .inputForm img {
-    height: 30px;
-  }
-}
-.coin .coinData .inputForm a {
-  text-decoration: none;
-}
-.coin .coinData .inputForm input {
-  display: flex;
-  align-items: center;
-  margin: 0 8px 0 10px;
-  width: 92%;
-  min-height: 20%;
-  padding: 8px 10px;
-  font-size: 20px;
-  border: 0.1px solid white;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  color: white;
-}
-@media screen and (min-width: 2000px) {
-  .coin .coinData .inputForm input {
-    height: 40px;
-    font-size: 26px;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .coin .coinData .inputForm input {
-    width: 80%;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin .coinData .inputForm input {
-    padding: 3px 5px;
-  }
-}
-.coin .coinData .inputForm input:focus {
-  border: 0.1px solid #e5be36;
-  outline: 0.1px solid #e5be36;
-}
-.coin .coinData .inputForm input::placeholder {
-  color: #6f6f6f;
-}
-@media screen and (min-width: 2000px) {
-  .coin .coinData .inputForm input::placeholder {
-    font-size: 26px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin .coinData .inputForm input::placeholder {
-    font-size: 13px;
-    text-align: center;
-  }
-}
-.coin .coinData .inputForm .inputBtn {
-  display: flex;
-  height: 40px;
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  border: 0.1px solid white;
-  border-radius: 5px;
-  align-items: center;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-}
-@media screen and (min-width: 2000px) {
-  .coin .coinData .inputForm .inputBtn {
-    height: 55px;
-    width: 55px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin .coinData .inputForm .inputBtn {
-    height: 30px;
-    width: 30px;
-  }
-}
-.coin .coinData .inputForm .inputBtn i {
-  font-size: 22px;
-  text-align: center;
-  margin: 0 auto;
-  width: 40px;
-  color: #ffffff;
-}
-@media screen and (min-width: 2000px) {
-  .coin .coinData .inputForm .inputBtn i {
-    font-size: 26px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin .coinData .inputForm .inputBtn i {
-    font-size: 13px;
-  }
-}
-.coin .coinData .inputForm .inputBtn:hover {
-  background-color: #ffffff;
-}
-.coin .coinData .inputForm .inputBtn:hover i {
-  color: #000000;
-}
-.coin .coinData .dropContainer {
-  font-weight: bold;
-  font-size: 17px;
-  width: 70%;
-  margin: 10px auto;
-  grid-area: stats;
-}
-@media screen and (min-width: 2000px) {
-  .coin .coinData .dropContainer {
-    font-size: 28px;
-    width: 90%;
-    justify-content: center;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .coin .coinData .dropContainer {
-    width: 98%;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin .coinData .dropContainer {
-    width: 90%;
-  }
-}
-.coin .coinData .dropContainer .flexWrapper .buttonsWrapper {
-  display: inline-block;
-  height: 60px;
-}
-@media screen and (max-width: 600px) {
-  .coin .coinData .dropContainer .flexWrapper .buttonsWrapper {
-    width: 100%;
-    height: 140px;
-    z-index: 10000;
-  }
-}
-.coin .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons {
-  display: flex;
-  height: 100%;
-}
-@media screen and (max-width: 600px) {
-  .coin .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons {
-    flex-direction: column;
-    overflow: scroll;
-  }
-}
-.coin .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons:nth-child(1) {
-  border-right: 1px solid white;
-  border-left: 1px solid white;
-}
-.coin .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons div {
-  cursor: pointer;
-}
-@media screen and (max-width: 600px) {
-  .coin .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons div {
-    justify-content: center;
-    padding: 3px 0;
-  }
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown {
-  width: 99.5%;
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  border-right: 1px solid #ffffff;
-  border-left: 1px solid #ffffff;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0.3), -28px 0 25px -23px rgba(0, 0, 0, 0.8), 28px 0 35px -23px rgba(0, 0, 0, 0.8), 0 0 0 rgba(0, 0, 0, 0.1) inset;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .how {
-  color: white;
-  font-weight: 300;
-  pointer-events: all;
-  -webkit-touch-callout: default;
-  -webkit-user-select: text;
-  -moz-user-select: none;
-  -ms-user-select: text;
-  user-select: text;
-  padding: 1px 10px 8px 10px;
-}
-@media screen and (max-width: 600px) {
-  .coin .coinData .dropContainer .flexWrapper .dropDown .how {
-    width: 90%;
-    font-size: 11px;
-  }
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .how div::selection {
-  background: #fff;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .how div p::selection {
-  background: #fff;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .how div p span::selection {
-  background: #fff;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .how div h3 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .how div h3::selection {
-  background: #ffffff;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .how div h4 {
-  margin-top: 10px;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .how div h4::selection {
-  background: #fff;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages {
-  text-align: center;
-  white-space: nowrap;
-}
-.coin .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages h3 {
-  margin-top: 30px;
-}
-@media screen and (max-width: 600px) {
-  .coin .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages {
-    display: none;
-  }
-}
+  z-index: 1; }
+  .coin .coinData {
+    display: grid;
+    grid-template-areas: "graph" "input" "stats" "showMinersBtn"; }
+    .coin .coinData .graph {
+      grid-area: graph;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-self: center;
+      justify-items: center; }
+      @media screen and (max-width: 600px) {
+        .coin .coinData .graph {
+          display: none; } }
+      .coin .coinData .graph .chartsGraph {
+        width: 100%;
+        margin: 10px 0 10px 0;
+        border-radius: 15px; }
+    .coin .coinData .dropContainer {
+      font-weight: bold;
+      font-size: 17px;
+      width: 70%;
+      margin: 10px auto;
+      grid-area: stats; }
+      @media screen and (min-width: 2000px) {
+        .coin .coinData .dropContainer {
+          font-size: 28px;
+          width: 90%;
+          justify-content: center; } }
+      @media screen and (max-width: 1000px) {
+        .coin .coinData .dropContainer {
+          width: 98%; } }
+      @media screen and (max-width: 600px) {
+        .coin .coinData .dropContainer {
+          width: 90%; } }
+      .coin .coinData .dropContainer .flexWrapper .buttonsWrapper {
+        display: inline-block;
+        height: 60px; }
+        @media screen and (max-width: 600px) {
+          .coin .coinData .dropContainer .flexWrapper .buttonsWrapper {
+            width: 100%;
+            height: 140px;
+            z-index: 10000; } }
+        .coin .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons {
+          display: flex;
+          height: 100%; }
+          @media screen and (max-width: 600px) {
+            .coin .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons {
+              flex-direction: column;
+              overflow: scroll; } }
+          .coin .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons:nth-child(1) {
+            border-right: 1px solid white;
+            border-left: 1px solid white; }
+          .coin .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons div {
+            cursor: pointer; }
+            @media screen and (max-width: 600px) {
+              .coin .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons div {
+                justify-content: center;
+                padding: 3px 0; } }
+      .coin .coinData .dropContainer .flexWrapper .dropDown {
+        width: 99.5%;
+        background-color: rgba(29, 29, 29, 0.19);
+        backdrop-filter: blur(15px);
+        border-right: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.3), -28px 0 25px -23px rgba(0, 0, 0, 0.8), 28px 0 35px -23px rgba(0, 0, 0, 0.8), 0 0 0 rgba(0, 0, 0, 0.1) inset; }
+        .coin .coinData .dropContainer .flexWrapper .dropDown .how {
+          color: white;
+          font-weight: 300;
+          pointer-events: all;
+          -webkit-touch-callout: default;
+          -webkit-user-select: text;
+          -moz-user-select: none;
+          -ms-user-select: text;
+          user-select: text;
+          padding: 1px 10px 8px 10px; }
+          @media screen and (max-width: 600px) {
+            .coin .coinData .dropContainer .flexWrapper .dropDown .how {
+              width: 90%;
+              font-size: 11px; } }
+          .coin .coinData .dropContainer .flexWrapper .dropDown .how div::selection {
+            background: #fff; }
+          .coin .coinData .dropContainer .flexWrapper .dropDown .how div p::selection {
+            background: #fff; }
+          .coin .coinData .dropContainer .flexWrapper .dropDown .how div p span::selection {
+            background: #fff; }
+          .coin .coinData .dropContainer .flexWrapper .dropDown .how div h3 {
+            margin-top: 10px;
+            margin-bottom: 10px; }
+            .coin .coinData .dropContainer .flexWrapper .dropDown .how div h3::selection {
+              background: #ffffff; }
+          .coin .coinData .dropContainer .flexWrapper .dropDown .how div h4 {
+            margin-top: 10px; }
+            .coin .coinData .dropContainer .flexWrapper .dropDown .how div h4::selection {
+              background: #fff; }
+          .coin .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages {
+            text-align: center;
+            white-space: nowrap; }
+            .coin .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages h3 {
+              margin-top: 30px; }
+            @media screen and (max-width: 600px) {
+              .coin .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages {
+                display: none; } }
 
 .coin2 {
   grid-area: c;
@@ -303,289 +126,113 @@
   user-select: none;
   height: 91vh;
   padding-top: 50px;
-  background: url(../../img/octopus2.png) no-repeat 50% 0;
+  background: url(../../assets/octopus2.png) no-repeat 50% 0;
   position: sticky;
   overflow-y: scroll;
   background-size: 1500px;
-  z-index: 1;
-}
-.coin2 .coinData {
-  display: grid;
-  grid-template-areas: "graph" "input" "stats" "showMinersBtn";
-}
-.coin2 .coinData .graph {
-  grid-area: graph;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-self: center;
-  justify-items: center;
-}
-@media screen and (max-width: 600px) {
-  .coin2 .coinData .graph {
-    display: none;
-  }
-}
-.coin2 .coinData .graph .chartsGraph {
-  width: 100%;
-  margin: 10px 0 10px 0;
-  border-radius: 15px;
-}
-.coin2 .coinData .inputForm {
-  grid-area: input;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  padding-right: 5px;
-  width: 70%;
-}
-@media screen and (min-width: 2000px) {
-  .coin2 .coinData .inputForm {
-    justify-content: center;
-    width: 90%;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .coin2 .coinData .inputForm {
-    width: 98%;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin2 .coinData .inputForm {
-    width: 90%;
-    padding: 20px 1px 0 1px;
-  }
-}
-.coin2 .coinData .inputForm img {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-  border-radius: 50%;
-  height: 40px;
-}
-@media screen and (min-width: 2000px) {
-  .coin2 .coinData .inputForm img {
-    height: 70px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin2 .coinData .inputForm img {
-    height: 30px;
-  }
-}
-.coin2 .coinData .inputForm a {
-  text-decoration: none;
-}
-.coin2 .coinData .inputForm input {
-  display: flex;
-  align-items: center;
-  margin: 0 8px 0 10px;
-  width: 92%;
-  min-height: 20%;
-  padding: 8px 10px;
-  font-size: 20px;
-  border: 0.1px solid white;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  color: white;
-}
-@media screen and (min-width: 2000px) {
-  .coin2 .coinData .inputForm input {
-    height: 40px;
-    font-size: 26px;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .coin2 .coinData .inputForm input {
-    width: 80%;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin2 .coinData .inputForm input {
-    padding: 3px 5px;
-  }
-}
-.coin2 .coinData .inputForm input:focus {
-  border: 0.1px solid #e5be36;
-  outline: 0.1px solid #e5be36;
-}
-.coin2 .coinData .inputForm input::placeholder {
-  color: #6f6f6f;
-}
-@media screen and (min-width: 2000px) {
-  .coin2 .coinData .inputForm input::placeholder {
-    font-size: 26px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin2 .coinData .inputForm input::placeholder {
-    font-size: 13px;
-    text-align: center;
-  }
-}
-.coin2 .coinData .inputForm .inputBtn {
-  display: flex;
-  height: 40px;
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  border: 0.1px solid white;
-  border-radius: 5px;
-  align-items: center;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-}
-@media screen and (min-width: 2000px) {
-  .coin2 .coinData .inputForm .inputBtn {
-    height: 55px;
-    width: 55px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin2 .coinData .inputForm .inputBtn {
-    height: 30px;
-    width: 30px;
-  }
-}
-.coin2 .coinData .inputForm .inputBtn i {
-  font-size: 22px;
-  text-align: center;
-  margin: 0 auto;
-  width: 40px;
-  color: #ffffff;
-}
-@media screen and (min-width: 2000px) {
-  .coin2 .coinData .inputForm .inputBtn i {
-    font-size: 26px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin2 .coinData .inputForm .inputBtn i {
-    font-size: 13px;
-  }
-}
-.coin2 .coinData .inputForm .inputBtn:hover {
-  background-color: #ffffff;
-}
-.coin2 .coinData .inputForm .inputBtn:hover i {
-  color: #000000;
-}
-.coin2 .coinData .dropContainer {
-  font-weight: bold;
-  font-size: 17px;
-  width: 70%;
-  margin: 10px auto;
-  grid-area: stats;
-}
-@media screen and (min-width: 2000px) {
-  .coin2 .coinData .dropContainer {
-    font-size: 28px;
-    width: 90%;
-    justify-content: center;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .coin2 .coinData .dropContainer {
-    width: 98%;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin2 .coinData .dropContainer {
-    width: 90%;
-  }
-}
-.coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper {
-  display: inline-block;
-  height: 60px;
-}
-@media screen and (max-width: 600px) {
-  .coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper {
-    width: 100%;
-    height: 140px;
-    z-index: 10000;
-  }
-}
-.coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons {
-  display: flex;
-  height: 100%;
-}
-@media screen and (max-width: 600px) {
-  .coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons {
-    flex-direction: column;
-    overflow: scroll;
-  }
-}
-.coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons:nth-child(1) {
-  border-right: 1px solid white;
-  border-left: 1px solid white;
-}
-.coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons div {
-  cursor: pointer;
-}
-@media screen and (max-width: 600px) {
-  .coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons div {
-    justify-content: center;
-    padding: 3px 0;
-  }
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown {
-  width: 99.5%;
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  border-right: 1px solid #ffffff;
-  border-left: 1px solid #ffffff;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0.3), -28px 0 25px -23px rgba(0, 0, 0, 0.8), 28px 0 35px -23px rgba(0, 0, 0, 0.8), 0 0 0 rgba(0, 0, 0, 0.1) inset;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .how {
-  color: white;
-  font-weight: 300;
-  pointer-events: all;
-  -webkit-touch-callout: default;
-  -webkit-user-select: text;
-  -moz-user-select: none;
-  -ms-user-select: text;
-  user-select: text;
-  padding: 1px 10px 8px 10px;
-}
-@media screen and (max-width: 600px) {
-  .coin2 .coinData .dropContainer .flexWrapper .dropDown .how {
-    width: 90%;
-    font-size: 11px;
-  }
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .how div::selection {
-  background: #fff;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .how div p::selection {
-  background: #fff;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .how div p span::selection {
-  background: #fff;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .how div h3 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .how div h3::selection {
-  background: #ffffff;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .how div h4 {
-  margin-top: 10px;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .how div h4::selection {
-  background: #fff;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages {
-  text-align: center;
-  white-space: nowrap;
-}
-.coin2 .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages h3 {
-  margin-top: 30px;
-}
-@media screen and (max-width: 600px) {
-  .coin2 .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages {
-    display: none;
-  }
-}
+  z-index: 1; }
+  .coin2 .coinData {
+    display: grid;
+    grid-template-areas: "graph" "input" "stats" "showMinersBtn"; }
+    .coin2 .coinData .graph {
+      grid-area: graph;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-self: center;
+      justify-items: center; }
+      @media screen and (max-width: 600px) {
+        .coin2 .coinData .graph {
+          display: none; } }
+      .coin2 .coinData .graph .chartsGraph {
+        width: 100%;
+        margin: 10px 0 10px 0;
+        border-radius: 15px; }
+    .coin2 .coinData .dropContainer {
+      font-weight: bold;
+      font-size: 17px;
+      width: 70%;
+      margin: 10px auto;
+      grid-area: stats; }
+      @media screen and (min-width: 2000px) {
+        .coin2 .coinData .dropContainer {
+          font-size: 28px;
+          width: 90%;
+          justify-content: center; } }
+      @media screen and (max-width: 1000px) {
+        .coin2 .coinData .dropContainer {
+          width: 98%; } }
+      @media screen and (max-width: 600px) {
+        .coin2 .coinData .dropContainer {
+          width: 90%; } }
+      .coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper {
+        display: inline-block;
+        height: 60px; }
+        @media screen and (max-width: 600px) {
+          .coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper {
+            width: 100%;
+            height: 140px;
+            z-index: 10000; } }
+        .coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons {
+          display: flex;
+          height: 100%; }
+          @media screen and (max-width: 600px) {
+            .coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons {
+              flex-direction: column;
+              overflow: scroll; } }
+          .coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons:nth-child(1) {
+            border-right: 1px solid white;
+            border-left: 1px solid white; }
+          .coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons div {
+            cursor: pointer; }
+            @media screen and (max-width: 600px) {
+              .coin2 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons div {
+                justify-content: center;
+                padding: 3px 0; } }
+      .coin2 .coinData .dropContainer .flexWrapper .dropDown {
+        width: 99.5%;
+        background-color: rgba(29, 29, 29, 0.19);
+        backdrop-filter: blur(15px);
+        border-right: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.3), -28px 0 25px -23px rgba(0, 0, 0, 0.8), 28px 0 35px -23px rgba(0, 0, 0, 0.8), 0 0 0 rgba(0, 0, 0, 0.1) inset; }
+        .coin2 .coinData .dropContainer .flexWrapper .dropDown .how {
+          color: white;
+          font-weight: 300;
+          pointer-events: all;
+          -webkit-touch-callout: default;
+          -webkit-user-select: text;
+          -moz-user-select: none;
+          -ms-user-select: text;
+          user-select: text;
+          padding: 1px 10px 8px 10px; }
+          @media screen and (max-width: 600px) {
+            .coin2 .coinData .dropContainer .flexWrapper .dropDown .how {
+              width: 90%;
+              font-size: 11px; } }
+          .coin2 .coinData .dropContainer .flexWrapper .dropDown .how div::selection {
+            background: #fff; }
+          .coin2 .coinData .dropContainer .flexWrapper .dropDown .how div p::selection {
+            background: #fff; }
+          .coin2 .coinData .dropContainer .flexWrapper .dropDown .how div p span::selection {
+            background: #fff; }
+          .coin2 .coinData .dropContainer .flexWrapper .dropDown .how div h3 {
+            margin-top: 10px;
+            margin-bottom: 10px; }
+            .coin2 .coinData .dropContainer .flexWrapper .dropDown .how div h3::selection {
+              background: #ffffff; }
+          .coin2 .coinData .dropContainer .flexWrapper .dropDown .how div h4 {
+            margin-top: 10px; }
+            .coin2 .coinData .dropContainer .flexWrapper .dropDown .how div h4::selection {
+              background: #fff; }
+          .coin2 .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages {
+            text-align: center;
+            white-space: nowrap; }
+            .coin2 .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages h3 {
+              margin-top: 30px; }
+            @media screen and (max-width: 600px) {
+              .coin2 .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages {
+                display: none; } }
 
 .coin3 {
   grid-area: c;
@@ -595,288 +242,112 @@
   user-select: none;
   height: 91vh;
   padding-top: 50px;
-  background: url(../../img/octopus3.png) no-repeat 50% 30%;
+  background: url(../../assets/octopus3.png) no-repeat 50% 30%;
   position: sticky;
   overflow-y: scroll;
   background-size: 1500px;
-  z-index: 1;
-}
-.coin3 .coinData {
-  display: grid;
-  grid-template-areas: "graph" "input" "stats" "showMinersBtn";
-}
-.coin3 .coinData .graph {
-  grid-area: graph;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-self: center;
-  justify-items: center;
-}
-@media screen and (max-width: 600px) {
-  .coin3 .coinData .graph {
-    display: none;
-  }
-}
-.coin3 .coinData .graph .chartsGraph {
-  width: 100%;
-  margin: 10px 0 10px 0;
-  border-radius: 15px;
-}
-.coin3 .coinData .inputForm {
-  grid-area: input;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  padding-right: 5px;
-  width: 70%;
-}
-@media screen and (min-width: 2000px) {
-  .coin3 .coinData .inputForm {
-    justify-content: center;
-    width: 90%;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .coin3 .coinData .inputForm {
-    width: 98%;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin3 .coinData .inputForm {
-    width: 90%;
-    padding: 20px 1px 0 1px;
-  }
-}
-.coin3 .coinData .inputForm img {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-  border-radius: 50%;
-  height: 40px;
-}
-@media screen and (min-width: 2000px) {
-  .coin3 .coinData .inputForm img {
-    height: 70px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin3 .coinData .inputForm img {
-    height: 30px;
-  }
-}
-.coin3 .coinData .inputForm a {
-  text-decoration: none;
-}
-.coin3 .coinData .inputForm input {
-  display: flex;
-  align-items: center;
-  margin: 0 8px 0 10px;
-  width: 92%;
-  min-height: 20%;
-  padding: 8px 10px;
-  font-size: 20px;
-  border: 0.1px solid white;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  color: white;
-}
-@media screen and (min-width: 2000px) {
-  .coin3 .coinData .inputForm input {
-    height: 40px;
-    font-size: 26px;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .coin3 .coinData .inputForm input {
-    width: 80%;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin3 .coinData .inputForm input {
-    padding: 3px 5px;
-  }
-}
-.coin3 .coinData .inputForm input:focus {
-  border: 0.1px solid #e5be36;
-  outline: 0.1px solid #e5be36;
-}
-.coin3 .coinData .inputForm input::placeholder {
-  color: #6f6f6f;
-}
-@media screen and (min-width: 2000px) {
-  .coin3 .coinData .inputForm input::placeholder {
-    font-size: 26px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin3 .coinData .inputForm input::placeholder {
-    font-size: 13px;
-    text-align: center;
-  }
-}
-.coin3 .coinData .inputForm .inputBtn {
-  display: flex;
-  height: 40px;
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  border: 0.1px solid white;
-  border-radius: 5px;
-  align-items: center;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-}
-@media screen and (min-width: 2000px) {
-  .coin3 .coinData .inputForm .inputBtn {
-    height: 55px;
-    width: 55px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin3 .coinData .inputForm .inputBtn {
-    height: 30px;
-    width: 30px;
-  }
-}
-.coin3 .coinData .inputForm .inputBtn i {
-  font-size: 22px;
-  text-align: center;
-  margin: 0 auto;
-  width: 40px;
-  color: #ffffff;
-}
-@media screen and (min-width: 2000px) {
-  .coin3 .coinData .inputForm .inputBtn i {
-    font-size: 26px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin3 .coinData .inputForm .inputBtn i {
-    font-size: 13px;
-  }
-}
-.coin3 .coinData .inputForm .inputBtn:hover {
-  background-color: #ffffff;
-}
-.coin3 .coinData .inputForm .inputBtn:hover i {
-  color: #000000;
-}
-.coin3 .coinData .dropContainer {
-  font-weight: bold;
-  font-size: 17px;
-  width: 70%;
-  margin: 10px auto;
-  grid-area: stats;
-}
-@media screen and (min-width: 2000px) {
-  .coin3 .coinData .dropContainer {
-    font-size: 28px;
-    width: 90%;
-    justify-content: center;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .coin3 .coinData .dropContainer {
-    width: 98%;
-  }
-}
-@media screen and (max-width: 600px) {
-  .coin3 .coinData .dropContainer {
-    width: 90%;
-  }
-}
-.coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper {
-  display: inline-block;
-  height: 60px;
-}
-@media screen and (max-width: 600px) {
-  .coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper {
-    width: 100%;
-    height: 140px;
-    z-index: 10000;
-  }
-}
-.coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons {
-  display: flex;
-  height: 100%;
-}
-@media screen and (max-width: 600px) {
-  .coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons {
-    flex-direction: column;
-    overflow: scroll;
-  }
-}
-.coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons:nth-child(1) {
-  border-right: 1px solid white;
-  border-left: 1px solid white;
-}
-.coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons div {
-  cursor: pointer;
-}
-@media screen and (max-width: 600px) {
-  .coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons div {
-    justify-content: center;
-    padding: 3px 0;
-  }
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown {
-  width: 99.5%;
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  border-right: 1px solid #ffffff;
-  border-left: 1px solid #ffffff;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0.3), -28px 0 25px -23px rgba(0, 0, 0, 0.8), 28px 0 35px -23px rgba(0, 0, 0, 0.8), 0 0 0 rgba(0, 0, 0, 0.1) inset;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .how {
-  color: white;
-  font-weight: 300;
-  pointer-events: all;
-  -webkit-touch-callout: default;
-  -webkit-user-select: text;
-  -moz-user-select: none;
-  -ms-user-select: text;
-  user-select: text;
-  padding: 1px 10px 8px 10px;
-}
-@media screen and (max-width: 600px) {
-  .coin3 .coinData .dropContainer .flexWrapper .dropDown .how {
-    width: 90%;
-    font-size: 11px;
-  }
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .how div::selection {
-  background: #fff;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .how div p::selection {
-  background: #fff;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .how div p span::selection {
-  background: #fff;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .how div h3 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .how div h3::selection {
-  background: #ffffff;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .how div h4 {
-  margin-top: 10px;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .how div h4::selection {
-  background: #fff;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages {
-  text-align: center;
-  white-space: nowrap;
-}
-.coin3 .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages h3 {
-  margin-top: 30px;
-}
-@media screen and (max-width: 600px) {
-  .coin3 .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages {
-    display: none;
-  }
-}
+  z-index: 1; }
+  .coin3 .coinData {
+    display: grid;
+    grid-template-areas: "graph" "input" "stats" "showMinersBtn"; }
+    .coin3 .coinData .graph {
+      grid-area: graph;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-self: center;
+      justify-items: center; }
+      @media screen and (max-width: 600px) {
+        .coin3 .coinData .graph {
+          display: none; } }
+      .coin3 .coinData .graph .chartsGraph {
+        width: 100%;
+        margin: 10px 0 10px 0;
+        border-radius: 15px; }
+    .coin3 .coinData .dropContainer {
+      font-weight: bold;
+      font-size: 17px;
+      width: 70%;
+      margin: 10px auto;
+      grid-area: stats; }
+      @media screen and (min-width: 2000px) {
+        .coin3 .coinData .dropContainer {
+          font-size: 28px;
+          width: 90%;
+          justify-content: center; } }
+      @media screen and (max-width: 1000px) {
+        .coin3 .coinData .dropContainer {
+          width: 98%; } }
+      @media screen and (max-width: 600px) {
+        .coin3 .coinData .dropContainer {
+          width: 90%; } }
+      .coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper {
+        display: inline-block;
+        height: 60px; }
+        @media screen and (max-width: 600px) {
+          .coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper {
+            width: 100%;
+            height: 140px;
+            z-index: 10000; } }
+        .coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons {
+          display: flex;
+          height: 100%; }
+          @media screen and (max-width: 600px) {
+            .coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons {
+              flex-direction: column;
+              overflow: scroll; } }
+          .coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons:nth-child(1) {
+            border-right: 1px solid white;
+            border-left: 1px solid white; }
+          .coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons div {
+            cursor: pointer; }
+            @media screen and (max-width: 600px) {
+              .coin3 .coinData .dropContainer .flexWrapper .buttonsWrapper .buttons div {
+                justify-content: center;
+                padding: 3px 0; } }
+      .coin3 .coinData .dropContainer .flexWrapper .dropDown {
+        width: 99.5%;
+        background-color: rgba(29, 29, 29, 0.19);
+        backdrop-filter: blur(15px);
+        border-right: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.3), -28px 0 25px -23px rgba(0, 0, 0, 0.8), 28px 0 35px -23px rgba(0, 0, 0, 0.8), 0 0 0 rgba(0, 0, 0, 0.1) inset; }
+        .coin3 .coinData .dropContainer .flexWrapper .dropDown .how {
+          color: white;
+          font-weight: 300;
+          pointer-events: all;
+          -webkit-touch-callout: default;
+          -webkit-user-select: text;
+          -moz-user-select: none;
+          -ms-user-select: text;
+          user-select: text;
+          padding: 1px 10px 8px 10px; }
+          @media screen and (max-width: 600px) {
+            .coin3 .coinData .dropContainer .flexWrapper .dropDown .how {
+              width: 90%;
+              font-size: 11px; } }
+          .coin3 .coinData .dropContainer .flexWrapper .dropDown .how div::selection {
+            background: #fff; }
+          .coin3 .coinData .dropContainer .flexWrapper .dropDown .how div p::selection {
+            background: #fff; }
+          .coin3 .coinData .dropContainer .flexWrapper .dropDown .how div p span::selection {
+            background: #fff; }
+          .coin3 .coinData .dropContainer .flexWrapper .dropDown .how div h3 {
+            margin-top: 10px;
+            margin-bottom: 10px; }
+            .coin3 .coinData .dropContainer .flexWrapper .dropDown .how div h3::selection {
+              background: #ffffff; }
+          .coin3 .coinData .dropContainer .flexWrapper .dropDown .how div h4 {
+            margin-top: 10px; }
+            .coin3 .coinData .dropContainer .flexWrapper .dropDown .how div h4::selection {
+              background: #fff; }
+          .coin3 .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages {
+            text-align: center;
+            white-space: nowrap; }
+            .coin3 .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages h3 {
+              margin-top: 30px; }
+            @media screen and (max-width: 600px) {
+              .coin3 .coinData .dropContainer .flexWrapper .dropDown .how div .RaveImages {
+                display: none; } }
 
 /*# sourceMappingURL=CoinPage.module.css.map */

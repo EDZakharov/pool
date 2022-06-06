@@ -1,11 +1,11 @@
 
-import ethLogo from "./img/eth.png";
-import etcLogo from "./img/etc.png";
-import burstLogo from "./img/burst.png";
-import kevaLogo from "./img/keva.png";
-import evoxLogo from "./img/evox-prop.png";
-import ergoLogo from "./img/ergo.png";
-import siteLogo from "./img/logo56.png";
+// import ethLogo from "./img/eth.png";
+// import etcLogo from "./img/etc.png";
+// import burstLogo from "./img/burst.png";
+// import kevaLogo from "./img/keva.png";
+// import evoxLogo from "./img/evox-prop.png";
+// import ergoLogo from "./img/ergo.png";
+import siteLogo from "./assets/logo56.png";
 
 import style from "./Components/Content/ContentComponent.module.scss";
 
@@ -239,8 +239,17 @@ export const coinNamesFilter = (data) => {
 
 export const imgFilter = (data) => {
 
-        return siteLogo
 
+
+        try {
+            return require(`/static/media/${data}.png`)
+        } catch (e) {
+            try {
+                return require(`/src/assets/${data}.png`)
+            }catch (e) {
+                return siteLogo
+            }
+        }
 }
 
 

@@ -1,10 +1,8 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
 import contentReducer from "./contentReducer";
-
 import coinPageReducer from "./coinPageReducer";
 import {socketMiddleware} from "./socketMiddleware";
 import accountReducer from "./accountReducer";
-import {socket2Middleware} from "./socket2Middleware";
 
 
 let reducers = combineReducers({
@@ -14,6 +12,6 @@ let reducers = combineReducers({
 
 });
 
-let store = createStore(reducers, applyMiddleware(socketMiddleware, socket2Middleware));
+let store = createStore(reducers, applyMiddleware(socketMiddleware));
 
 export default store;

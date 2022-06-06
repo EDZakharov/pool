@@ -49,161 +49,7 @@
 
     }
 
-    .inputForm {
-      grid-area: input;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto;
-      padding-right: 5px;
-      width: 70%;
 
-      @media screen and (min-width: 2000px) {
-        justify-content: center;
-        width: 90%;
-        //padding: 20px 1px 0 1px;
-      }
-
-      @media screen and (max-width: 1000px) {
-        width: 98%;
-      }
-
-
-      @media screen and (max-width: 600px) {
-        width: 90%;
-        padding: 20px 1px 0 1px;
-      }
-
-      img {
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-        border-radius: 50%;
-        height: 40px;
-
-
-        @media screen and (min-width: 2000px) {
-          height: 70px;
-        }
-
-        @media screen and (max-width: 600px) {
-          height: 30px;
-        }
-
-      }
-
-      a {
-        text-decoration: none;
-
-      }
-
-      input {
-        display: flex;
-        align-items: center;
-        margin: 0 8px 0 10px;
-        width: 92%;
-        min-height: 20%;
-        padding: 8px 10px;
-        font-size: 20px;
-        //outline:none;
-        border: .1px solid white;
-        border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-        background-color: rgba(29, 29, 29, 0.19);
-        backdrop-filter: blur(15px);
-        color: white;
-
-        @media screen and (min-width: 2000px) {
-          height: 40px;
-          font-size: 26px;
-        }
-
-        @media screen and (max-width: 1000px) {
-          width: 80%;
-        }
-
-
-        @media screen and (max-width: 600px) {
-          padding: 3px 5px;
-        }
-
-        &:focus {
-          border: .1px solid #e5be36;
-          outline: .1px solid #e5be36;
-        }
-
-        &::placeholder {
-          color: #6f6f6f;
-
-          @media screen and (min-width: 2000px) {
-            font-size: 26px;
-          }
-
-
-          @media screen and (max-width: 600px) {
-            font-size: 13px;
-            text-align: center;
-          }
-
-        }
-
-      }
-
-      .inputBtn {
-        //padding: 12px;
-        display: flex;
-        height: 40px;
-        //width: calc(100% - 20px);
-        background-color: rgba(29, 29, 29, 0.19);
-        backdrop-filter: blur(15px);
-        border: .1px solid white;
-        border-radius: 5px;
-        align-items: center;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
-
-
-
-        @media screen and (min-width: 2000px) {
-          height: 55px;
-          width: 55px;
-        }
-
-        @media screen and (max-width: 600px) {
-          height: 30px;
-          width: 30px;
-        }
-
-
-        i {
-          font-size: 22px;
-          text-align: center;
-          margin: 0 auto;
-          width: 40px;
-          color: #ffffff;
-
-          @media screen and (min-width: 2000px) {
-            font-size: 26px;
-          }
-
-          @media screen and (max-width: 600px) {
-            font-size: 13px;
-          }
-
-        }
-
-        &:hover {
-          background-color: #ffffff;
-
-          i {
-
-            color: #000000;
-
-          }
-
-
-        }
-
-
-      }
-    }
 
     .dropContainer {
       //text-align: center;
@@ -229,7 +75,6 @@
       }
 
       .flexWrapper {
-
         .buttonsWrapper {
           display: inline-block;
           height: 60px;
@@ -358,7 +203,7 @@
 .coin {
   grid-area: c;
   @include allData;
-  background: url(../../img/octopus1.png) no-repeat 50% 0;
+  background: url(../../assets/octopus1.png) no-repeat 50% 0;
   position: sticky;
   overflow-y: scroll;
   background-size: 1500px;
@@ -368,7 +213,7 @@
 .coin2 {
   grid-area: c;
   @include allData;
-  background: url(../../img/octopus2.png) no-repeat 50% 0;
+  background: url(../../assets/octopus2.png) no-repeat 50% 0;
   position: sticky;
   overflow-y: scroll;
   background-size: 1500px;
@@ -380,7 +225,7 @@
 .coin3 {
   grid-area: c;
   @include allData;
-  background: url(../../img/octopus3.png) no-repeat 50% 30%;
+  background: url(../../assets/octopus3.png) no-repeat 50% 30%;
   position: sticky;
   overflow-y: scroll;
   background-size: 1500px;

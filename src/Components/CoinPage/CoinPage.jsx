@@ -2,19 +2,13 @@ import React, {useEffect, useState} from 'react';
 import style from './CoinPage.module.scss'
 import Fetcher from "../Fetcher/Fetcher";
 import {dateFilter, hashFilter, imgFilter, poolChecker} from "../../Filters";
-import Charts from "../Charts/Charts";
-import {Link} from "react-router-dom";
-// import PaginatedItems from "../Pagination";
 import DropBtn from "../Account/DropBtn";
 import DropData from "./DropData/DropData";
-// import Total from "../Account/Total";
 import Stats from "./Stats/Stats";
 import Miners from "./Miners/Miners";
 import Blocks from "./Blocks/Blocks";
+import {fetching} from "../../redux/coinPageReducer";
 // import Slider from "../Slider/Slider";
-// import {dellMinersData, ShowMinersOnce} from "../../redux/socketMiddleware";
-
-
 
 // let RaveOsImg = [
 //     {id: 1, src: addPoolImg},
@@ -28,7 +22,7 @@ import Blocks from "./Blocks/Blocks";
 export const CoinPage = (props) => {
     let thisPool = localStorage.getItem('selectedCoin')
     let coinLogo = imgFilter(localStorage.getItem('selectedCoin'))
-    let luck = props.coinPage.fullStats.currentEffort * 100;
+    let luck = props.coinPage.fullStats? props.coinPage.fullStats.currentEffort * 100 : 0
 
 
     useEffect(() => {
@@ -46,36 +40,18 @@ export const CoinPage = (props) => {
         }
 
         localStorage.setItem('showRandomBackStyle', showRandomBackStyle())
-
         props.showFullStatsOnce()
-
-        let start = setInterval(() => {
-
+        let start = setInterval(()=>{
             props.showFullStats()
-            props.showBlocks(thisPool)
-            props.showMiners(thisPool)
-            props.fetching(false)
-        }, 1500)
-
+        },1000)
         return () => {
             clearInterval(start)
-            props.dellFullStats()
-            navigator.clipboard.writeText('').catch(e => e)
-            props.addAccountAddress('')
-            // props.clearCashP()
+            props.clearCashP()
+            props.fetching(true)
         }
     }, [])
 
-    let setAddr = (e) => {
-        props.addAccountAddress(e.target.value)
-    }
 
-    let addrFilter = (coinName) => {
-        if (props.coinPage.accountAddress === null) {
-            return `/${coinName}`
-        }
-        return `/${coinName}/account/${props.coinPage.accountAddress}`
-    }
 
     let [toggleStats, setToggleStats] = useState(true)
     let [toggleMiners, setToggleMiners] = useState(false)
@@ -109,24 +85,8 @@ export const CoinPage = (props) => {
         setToggleHow(true)
     }
 
-    return (props.coinPage.isFetching ? <Fetcher/> : <div className={localStorage.getItem('showRandomBackStyle')}>
+    return (!props.coinPage.fullStats ? <Fetcher/> : <div className={localStorage.getItem('showRandomBackStyle')}>
         <div className={style.coinData}>
-            {props.coinPage.fullStats.charts && props.coinPage.fullStats.charts.length !== 0 ?
-                <div className={style.graph}>
-                    <div className={style.chartsGraph}>
-                        <Charts charts={props.coinPage.fullStats.charts} text={`Общая мощность ${thisPool} пула`}/>
-                    </div>
-                </div> : <div className={style.graph}><span>Загрузка..</span></div>}
-            {props.coinPage.miners && props.coinPage.miners.length === 0 ?
-                <div className={style.inputForm}/> : <div className={style.inputForm}>
-                    <img src={coinLogo} alt='logo'/>
-                    <input type='text' autoComplete='off' placeholder={`Адрес кошелька`}
-                           onChange={setAddr}
-                           value={props.coinPage.accountAddress !== null ? props.coinPage.accountAddress : ''}/>
-                    <Link to={addrFilter(thisPool)}>
-                        <div className={style.inputBtn}><i className="fa-solid fa-magnifying-glass"/></div>
-                    </Link>
-                </div>}
             <div className={style.dropContainer}>
                 <div className={style.flexWrapper}>
                     <div className={style.buttonsWrapper}>
@@ -139,18 +99,25 @@ export const CoinPage = (props) => {
                         </div>
                     </div>
                     <DropData componentContent={<div className={style.dropDown}>
-                        {toggleStats ? <Stats fee={props.coinPage.fullStats.fee}
-                                              luck={luck}
-                                              hashrate={hashFilter(props.coinPage.fullStats.hashrate).hashrate}
-                                              unit={hashFilter(props.coinPage.fullStats.hashrate).unit}
-                                              height={props.coinPage.fullStats.height}
-                                              lastBlockFound={dateFilter(props.coinPage.fullStats.lastBlockFound)}
-                                              minPayment={props.coinPage.fullStats.minPayment}
-                                              thisPool={thisPool}
-                                              miners={props.coinPage.fullStats.miners}
-                                              type={props.coinPage.fullStats.type}
-                                              clearCashP={props.clearCashP}
-                        /> : ''}
+                        {toggleStats ? <div>
+                                <Stats fee={props.coinPage.fullStats.fee}
+                                       luck={luck}
+                                       hashrate={hashFilter(props.coinPage.fullStats.hashrate).hashrate}
+                                       unit={hashFilter(props.coinPage.fullStats.hashrate).unit}
+                                       height={props.coinPage.fullStats.height}
+                                       lastBlockFound={dateFilter(props.coinPage.fullStats.lastBlockFound)}
+                                       minPayment={props.coinPage.fullStats.minPayment}
+                                       thisPool={thisPool}
+                                       miners={props.coinPage.fullStats.miners}
+                                       type={props.coinPage.fullStats.type}
+                                       clearCashP={props.clearCashP}
+                                       charts={props.coinPage.fullStats.charts}
+                                       showFullStatsOnce={props.showFullStatsOnce}
+                                       dellFullStats={props.dellFullStats}
+                                       showFullStats={props.showFullStats}
+                                       fetching={props.fetching}
+                                />
+                        </div> : ''}
                     </div>}/>
                     <DropData componentContent={<div className={style.dropDown}>
                         {toggleMiners ? <Miners miners={props.coinPage.miners}
@@ -159,6 +126,11 @@ export const CoinPage = (props) => {
                                                 dellMinersData={props.dellMinersData}
                                                 thisPool={thisPool}
                                                 clearCashP={props.clearCashP}
+                                                fetching={props.fetching}
+                                                showMiners={props.showMiners}
+                                                accountAddress={props.coinPage.accountAddress}
+                                                addAccountAddress={props.addAccountAddress}
+                                                coinLogo={coinLogo}
                         /> : ''}
                     </div>}/>
                     <DropData componentContent={<div className={style.dropDown}>
@@ -170,6 +142,8 @@ export const CoinPage = (props) => {
                                                 dellBlocksData={props.dellBlocksData}
                                                 thisPool={thisPool}
                                                 clearCashP={props.clearCashP}
+                                                fetching={props.fetching}
+                                                showBlocks={props.showBlocks}
 
                         /> : ''}
                     </div>}/>

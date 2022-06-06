@@ -1,4 +1,5 @@
 import io from 'socket.io-client'
+import {fetching} from "./coinPageReducer";
 
 const socket = io('https://ws.e4pool.com/');
 
@@ -14,15 +15,17 @@ const DELL_ACCOUNT_DATA = 'DELL_ACCOUNT_DATA';
 const SHOW_BLOCKS = 'SHOW_BLOCKS';
 const DELL_BLOCKS = 'DELL_BLOCKS';
 
-
+const SHOW_FULL_STATS = 'SHOW_FULL_STATS';
+const DEL_FULLSTATS = 'DEL_FULLSTATS';
 
 let storage = {
     coins: [],
     miners: undefined,
-    fullStats: {},
+    fullStats: undefined,
     accountData: undefined,
     blocks: undefined,
 }
+
 
 socket.on('update', res => {
     if (res.method === 'stats') {
@@ -55,8 +58,11 @@ socket.on('update', res => {
         if (res.data !== undefined) {
             storage.blocks = {...res.data}
         }
-
     }
+    if (res.method === 'fullStats') {
+        storage.fullStats = {...res.data}
+    }
+
 })
 
 export let socketMiddleware = store => next => action => {
@@ -92,6 +98,11 @@ export let socketMiddleware = store => next => action => {
         storage.accountData = undefined
         return next(action)
     }
+    if (action.type === 'SHOW_FULL_STATS') {
+        action.type = 'SHOW_FULL_STATS_DATA'
+        action.payload = storage.fullStats
+        return next(action)
+    }
     return next(action)
 }
 
@@ -110,6 +121,7 @@ export let dellCoinData = () => {
 
 //MINERS_______________________________
 export let ShowMinersOnce = (pool) => {
+
     socket.emit('startPoolStats', {
         pool: pool,
         method: 'miners'
@@ -139,6 +151,25 @@ export let dellBlocksData = () => {
     socket.emit('stopStats')
     storage.blocks = undefined
     return {type: DELL_BLOCKS}
+}
+
+//FULL STATS
+export let showFullStatsOnce = () => {
+    storage.fullStats = undefined
+    let CoinName = localStorage.getItem('selectedCoin')
+    socket.emit('startPoolStats', {
+        pool: CoinName,
+        method: 'fullStats'
+    })
+    return {type: SHOW_FULL_STATS}
+}
+
+export let showFullStats = () => {
+    return {type: SHOW_FULL_STATS}
+}
+export let dellFullStats = () => {
+    socket.emit('stopStats')
+    return {type: DEL_FULLSTATS}
 }
 
 //ACCOUNT______________________________

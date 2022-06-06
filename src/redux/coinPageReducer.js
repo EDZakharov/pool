@@ -10,7 +10,7 @@ const CLEAR_CASHP = 'CLEAR_CASHP';
 let initialState = {
     miners: undefined,
     blocks: undefined,
-    fullStats: false,
+    fullStats: undefined,
     isFetching: true,
     inputData: undefined,
     accountAddress: null
@@ -37,11 +37,14 @@ const coinPageReducer = (state = initialState, action) => {
             return stateCopy
         }
         case FETCHING: {
+
             stateCopy.isFetching = action.payload
             return stateCopy
 
         }
         case CLEAR_CASHP: {
+            console.log('4')
+            stateCopy.fullStats = undefined
             stateCopy.miners = undefined
             stateCopy.blocks = undefined
             return stateCopy

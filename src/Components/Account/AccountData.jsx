@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import style from './AccountData.module.scss'
 import Fetcher from "../Fetcher/Fetcher";
-import {dateFilter, hashFilter, poolChecker, showRandomBgcStyle} from "../../Filters";
+import {dateFilter, hashFilter, poolChecker} from "../../Filters";
 import Charts from "../Charts/Charts";
 import InnerData from "./InnerData";
 import HeaderData from "./HeaderData";
