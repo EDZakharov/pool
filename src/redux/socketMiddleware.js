@@ -1,14 +1,9 @@
 import io from 'socket.io-client'
 
 const socket = io('https://ws.e4pool.com/');
-const socket2 = io('https://ws.e4pool.com/');
-const socket3 = io('https://ws.e4pool.com/');
 
 const SHOW_COINS = 'SHOW_COINS';
 const DELL_COINS = 'DELL_COINS';
-
-const SHOW_FULL_STATS = 'SHOW_FULL_STATS';
-const DEL_FULLSTATS = 'DEL_FULLSTATS';
 
 const SHOW_MINERS = 'SHOW_MINERS';
 const DELL_MINERS = 'DELL_MINERS';
@@ -23,9 +18,10 @@ const DELL_BLOCKS = 'DELL_BLOCKS';
 
 let storage = {
     coins: [],
-    miners: [],
+    miners: undefined,
     fullStats: {},
-    accountData: undefined
+    accountData: undefined,
+    blocks: undefined,
 }
 
 socket.on('update', res => {
@@ -39,7 +35,11 @@ socket.on('update', res => {
     }
 
     if (res.method === 'miners') {
-        storage.miners = [...res.data.miners]
+        if (res.data !== undefined) {
+
+            storage.miners = [...res.data.miners]
+        }
+
     }
     if (res.method === 'account') {
         if (res.error !== 'Method not allowed') {
@@ -51,25 +51,11 @@ socket.on('update', res => {
             console.log(res.error)
         }
     }
-})
-
-let storage2 = {
-    fullStats: {},
-}
-
-socket2.on('update', res => {
-    if (res.method === 'fullStats') {
-        storage2.fullStats = {...res.data}
-    }
-})
-
-let storage3 = {
-    blocks: undefined,
-}
-
-socket3.on('update', res => {
     if (res.method === 'blocks') {
-        storage3.blocks = {...res.data}
+        if (res.data !== undefined) {
+            storage.blocks = {...res.data}
+        }
+
     }
 })
 
@@ -90,11 +76,6 @@ export let socketMiddleware = store => next => action => {
         action.payload = storage.coins
         return next(action)
     }
-    if (action.type === 'SHOW_FULL_STATS') {
-        action.type = 'SHOW_FULL_STATS_DATA'
-        action.payload = storage2.fullStats
-        return next(action)
-    }
     if (action.type === 'SHOW_MINERS') {
         action.type = 'ADD_MINERS'
         action.payload = storage.miners
@@ -102,7 +83,7 @@ export let socketMiddleware = store => next => action => {
     }
     if (action.type === 'SHOW_BLOCKS') {
         action.type = 'ADD_BLOCKS'
-        action.payload = storage3.blocks
+        action.payload = storage.blocks
         return next(action)
     }
     if (action.type === 'SHOW_ACCOUNT_DATA') {
@@ -127,24 +108,6 @@ export let dellCoinData = () => {
     return {type: DELL_COINS}
 }
 
-//FULL STATS
-export let showFullStatsOnce = () => {
-    let CoinName = localStorage.getItem('selectedCoin')
-    socket2.emit('startPoolStats', {
-        pool: CoinName,
-        method: 'fullStats'
-    })
-    return {type: SHOW_FULL_STATS}
-}
-export let showFullStats = () => {
-    return {type: SHOW_FULL_STATS}
-}
-export let dellFullStats = () => {
-    socket2.emit('stopStats')
-    return {type: DEL_FULLSTATS}
-}
-
-
 //MINERS_______________________________
 export let ShowMinersOnce = (pool) => {
     socket.emit('startPoolStats', {
@@ -158,11 +121,12 @@ export const showMiners = (pool) => {
 }
 export let dellMinersData = () => {
     socket.emit('stopStats')
+    storage.miners = undefined
     return {type: DELL_MINERS}
 }
 //BLOCKS_______________________________
 export let ShowBlocksOnce = (pool) => {
-    socket3.emit('startPoolStats', {
+    socket.emit('startPoolStats', {
         pool: pool,
         method: 'blocks'
     })
@@ -172,7 +136,8 @@ export const showBlocks = (pool) => {
     return {type: SHOW_BLOCKS, payload: pool}
 }
 export let dellBlocksData = () => {
-    socket3.emit('stopStats')
+    socket.emit('stopStats')
+    storage.blocks = undefined
     return {type: DELL_BLOCKS}
 }
 

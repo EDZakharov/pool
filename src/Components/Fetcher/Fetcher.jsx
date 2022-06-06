@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import style from './Fetcher.module.scss'
-import loaderGif from '../../assets/images/loader.gif'
+import loaderGif from '../../img/loader.gif'
 
 const Fetcher = () => {
 

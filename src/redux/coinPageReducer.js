@@ -4,29 +4,30 @@ const FETCHING = 'FETCHING';
 const ADD_INPUT_DATA = 'ADD_INPUT_DATA';
 const ADD_ACCOUNT_ADDRESS = 'ADD_ACCOUNT_ADDRESS';
 const ADD_BLOCKS = 'ADD_BLOCKS';
+const CLEAR_CASHP = 'CLEAR_CASHP';
 
 
 let initialState = {
-    miners: [],
+    miners: undefined,
     blocks: undefined,
     fullStats: false,
     isFetching: true,
     inputData: undefined,
-    accountAddress:null
+    accountAddress: null
 }
 
 const coinPageReducer = (state = initialState, action) => {
     let stateCopy = {...state};
-    stateCopy.miners = [...state.miners];
-
     switch (action.type) {
         case ADD_MINERS: {
-            stateCopy.miners = [...action.payload]
+            if (action.payload !== undefined) {
+                stateCopy.miners = [...action.payload]
+            }
             return stateCopy
         }
         case ADD_BLOCKS: {
             // console.log(action.payload)
-            if({...action.payload} !== undefined){
+            if (action.payload !== undefined) {
                 stateCopy.blocks = {...action.payload}
             }
             return stateCopy
@@ -40,12 +41,17 @@ const coinPageReducer = (state = initialState, action) => {
             return stateCopy
 
         }
+        case CLEAR_CASHP: {
+            stateCopy.miners = undefined
+            stateCopy.blocks = undefined
+            return stateCopy
+        }
         case ADD_ACCOUNT_ADDRESS: {
             if (action.payload !== null) {
                 stateCopy.accountAddress = action.payload
-                if(action.payload !== ''){
-                    if(action.payload.length > 20){
-                        localStorage.setItem('account',action.payload)
+                if (action.payload !== '') {
+                    if (action.payload.length > 20) {
+                        localStorage.setItem('account', action.payload)
                     }
                 }
             } else {
@@ -55,7 +61,7 @@ const coinPageReducer = (state = initialState, action) => {
         }
         case ADD_INPUT_DATA: {
             stateCopy.accountAddress = action.payload
-            localStorage.setItem('account',action.payload)
+            localStorage.setItem('account', action.payload)
             return stateCopy
 
         }
@@ -76,5 +82,9 @@ export const addInputValue = (payload) => {
 
 export const addAccountAddress = (payload) => {
     return {type: ADD_ACCOUNT_ADDRESS, payload}
+}
+
+export const clearCashP = () => {
+    return {type: CLEAR_CASHP}
 }
 export default coinPageReducer;
