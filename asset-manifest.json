@@ -1,31 +1,27 @@
 {
   "files": {
-    "main.css": "/pool/static/css/main.101383e1.css",
-    "main.js": "/pool/static/js/main.1ea8b021.js",
-    "static/js/787.49970623.chunk.js": "/pool/static/js/787.49970623.chunk.js",
-    "static/media/фон.jpg": "/pool/static/media/фон.9c6a099043c23a626102.jpg",
-    "static/media/DarkGreen.png": "/pool/static/media/DarkGreen.6149066245299e372a7f.png",
-    "static/media/Black.png": "/pool/static/media/Black.d2c50f7c5f2994a2d27c.png",
-    "static/media/Green.png": "/pool/static/media/Green.b9b16ac51584043e7098.png",
-    "static/media/octopus3.png": "/pool/static/media/octopus3.df5b029418e2359f2a05.png",
-    "static/media/Blue.png": "/pool/static/media/Blue.ade98cf49fbb749b7d8c.png",
-    "static/media/Red.png": "/pool/static/media/Red.e2d3c972ef042e03b63a.png",
-    "static/media/addPool.jpg": "/pool/static/media/addPool.3fee944657fea8fe82cb.jpg",
-    "static/media/addWallet.jpg": "/pool/static/media/addWallet.fbb3e60f89e2eeecd031.jpg",
-    "static/media/octopus2.png": "/pool/static/media/octopus2.5ed266a202777e32894b.png",
-    "static/media/osDog.jpg": "/pool/static/media/osDog.e7912fa6653c1370d0c3.jpg",
-    "static/media/octopus1.png": "/pool/static/media/octopus1.37648e3a145e953e361a.png",
-    "static/media/logo56.png": "/pool/static/media/logo56.baf37f57f8007fec1947.png",
-    "static/media/evox-prop.png": "/pool/static/media/evox-prop.ac28b74f9e6ea3693fa4.png",
-    "static/media/evox-solo.png": "/pool/static/media/evox-solo.ac28b74f9e6ea3693fa4.png",
-    "static/media/loader.gif": "/pool/static/media/loader.90527d3e638231a0f785.gif",
-    "index.html": "/pool/index.html",
-    "main.101383e1.css.map": "/pool/static/css/main.101383e1.css.map",
-    "main.1ea8b021.js.map": "/pool/static/js/main.1ea8b021.js.map",
-    "787.49970623.chunk.js.map": "/pool/static/js/787.49970623.chunk.js.map"
+    "main.css": "/static/css/main.065bc1c9.css",
+    "main.js": "/static/js/main.c87aaed2.js",
+    "static/js/787.49970623.chunk.js": "/static/js/787.49970623.chunk.js",
+    "static/media/фон.jpg": "/static/media/фон.9c6a099043c23a626102.jpg",
+    "static/media/DarkGreen.png": "/static/media/DarkGreen.6149066245299e372a7f.png",
+    "static/media/Black.png": "/static/media/Black.d2c50f7c5f2994a2d27c.png",
+    "static/media/Green.png": "/static/media/Green.b9b16ac51584043e7098.png",
+    "static/media/octopus3.png": "/static/media/octopus3.df5b029418e2359f2a05.png",
+    "static/media/Blue.png": "/static/media/Blue.ade98cf49fbb749b7d8c.png",
+    "static/media/Red.png": "/static/media/Red.e2d3c972ef042e03b63a.png",
+    "static/media/octopus2.png": "/static/media/octopus2.5ed266a202777e32894b.png",
+    "static/media/octopus1.png": "/static/media/octopus1.37648e3a145e953e361a.png",
+    "static/media/logo56.png": "/static/media/logo56.baf37f57f8007fec1947.png",
+    "static/media/evox-prop.png": "/static/media/evox-prop.ac28b74f9e6ea3693fa4.png",
+    "static/media/loader.gif": "/static/media/loader.90527d3e638231a0f785.gif",
+    "index.html": "/index.html",
+    "main.065bc1c9.css.map": "/static/css/main.065bc1c9.css.map",
+    "main.c87aaed2.js.map": "/static/js/main.c87aaed2.js.map",
+    "787.49970623.chunk.js.map": "/static/js/787.49970623.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.101383e1.css",
-    "static/js/main.1ea8b021.js"
+    "static/css/main.065bc1c9.css",
+    "static/js/main.c87aaed2.js"
   ]
 }
