@@ -1,0 +1,112 @@
+@mixin addGridElem {
+  padding: 15px;
+  background-color: rgba(127, 127, 127, 0.19);
+  &:nth-child(9) {
+    opacity: 0;
+
+  }
+
+  border-bottom: 3px solid #e4be36;
+  &:hover {
+    border-bottom: 3px solid #ffbf00;
+
+  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  color: rgb(231, 231, 231);
+  font-weight: 400;
+  font-size: 16px;
+
+  @media screen and (max-width: 5100px) {
+    font-size: 24px;
+  }
+
+  @media screen and (max-width: 1920px) {
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 752px) {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 3px 0;
+  }
+
+
+}
+
+
+.stats {
+  @media screen and (min-width: 600px) {
+    display: grid;
+    grid-template-areas: 'm h l' 'he fe ty' 'c min cha';
+    //grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+    grid-gap: 15px 30px;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 10px 2px 0 2px;
+  }
+
+
+  .miners {
+    grid-area: m;
+    @include addGridElem;
+
+  }
+
+  .hashrate {
+    grid-area: h;
+    @include addGridElem;
+  }
+
+  .lastBlockFound {
+    grid-area: l;
+    @include addGridElem;
+  }
+
+  .height {
+    grid-area: he;
+    @include addGridElem;
+  }
+
+  .fee {
+    grid-area: fe;
+    @include addGridElem;
+  }
+
+  .type {
+    grid-area: ty;
+    @include addGridElem;
+  }
+
+
+  .currentEffort {
+    grid-area: c;
+    @include addGridElem;
+  }
+
+  .minPayment {
+    grid-area: min;
+    @include addGridElem;
+  }
+
+  .charts {
+    grid-area: cha;
+    //opacity: 0;
+    @include addGridElem;
+
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+
+  }
+
+}

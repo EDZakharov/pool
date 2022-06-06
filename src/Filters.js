@@ -1,5 +1,4 @@
 import ethLogo from "./img/eth.png";
-// import ethLogo from "../public/eth.png";
 import etcLogo from "./img/etc.png";
 import burstLogo from "./img/burst.png";
 import kevaLogo from "./img/keva-prop.png";

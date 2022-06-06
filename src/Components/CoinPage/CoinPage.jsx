@@ -8,19 +8,20 @@ import PaginatedItems from "../Pagination";
 import DropBtn from "../Account/DropBtn";
 import DropData from "./DropData/DropData";
 import Total from "../Account/Total";
-import addPoolImg from '../../img/addPool.jpg'
-import addWallet from '../../img/addWallet.jpg'
-import osPoolConnect from '../../img/osDog.jpg'
-import Slider from "../Slider/Slider";
+import Stats from "./Stats/Stats";
+import Miners from "./Miners/Miners";
+import Blocks from "./Blocks/Blocks";
+// import Slider from "../Slider/Slider";
+// import {dellMinersData, ShowMinersOnce} from "../../redux/socketMiddleware";
 
 
-let RaveOsImg = [
-    {id: 1, src: addPoolImg},
-    {id: 2, src: addWallet},
-]
-let OsDogImg = [
-    {id: 1, src: osPoolConnect},
-]
+// let RaveOsImg = [
+//     {id: 1, src: addPoolImg},
+//     {id: 2, src: addWallet},
+// ]
+// let OsDogImg = [
+//     {id: 1, src: osPoolConnect},
+// ]
 
 
 export const CoinPage = (props) => {
@@ -28,10 +29,8 @@ export const CoinPage = (props) => {
     let coinLogo = imgFilter(localStorage.getItem('selectedCoin'))
     let luck = props.coinPage.fullStats.currentEffort * 100;
 
-    let [checked, setChecked] = useState(false);
 
     useEffect(() => {
-
         let showRandomBackStyle = () => {
             let x = Math.ceil(Math.random() * 10)
             if (x <= 3) {
@@ -48,9 +47,9 @@ export const CoinPage = (props) => {
         localStorage.setItem('showRandomBackStyle', showRandomBackStyle())
 
         props.showFullStatsOnce()
-        props.ShowMinersOnce(thisPool)
-        props.ShowBlocksOnce(thisPool)
+
         let start = setInterval(() => {
+
             props.showFullStats()
             props.showBlocks(thisPool)
             props.showMiners(thisPool)
@@ -60,16 +59,11 @@ export const CoinPage = (props) => {
         return () => {
             clearInterval(start)
             props.dellFullStats()
-            props.dellMinersData()
-            props.dellBlocksData()
             navigator.clipboard.writeText('').catch(e => e)
             props.addAccountAddress('')
+            // props.clearCashP()
         }
     }, [])
-
-    let showMiners = () => {
-        setChecked(!checked)
-    }
 
     let setAddr = (e) => {
         props.addAccountAddress(e.target.value)
@@ -92,7 +86,6 @@ export const CoinPage = (props) => {
         setToggleMiners(false)
         setToggleBlocks(false)
         setToggleHow(false)
-
     }
     let dropDownMinersToggle = () => {
         setToggleStats(false)
@@ -106,6 +99,7 @@ export const CoinPage = (props) => {
         setToggleMiners(false)
         setToggleBlocks(true)
         setToggleHow(false)
+
     }
     let dropDownHowToggle = () => {
         setToggleStats(false)
@@ -113,8 +107,6 @@ export const CoinPage = (props) => {
         setToggleBlocks(false)
         setToggleHow(true)
     }
-
-
 
 
 
@@ -126,7 +118,7 @@ export const CoinPage = (props) => {
                         <Charts charts={props.coinPage.fullStats.charts} text={`Общая мощность ${thisPool} пула`}/>
                     </div>
                 </div> : <div className={style.graph}><span>Загрузка..</span></div>}
-            {thisPool === 'evox-prop' || thisPool === 'evox-solo' || thisPool === 'keva' ?
+            {props.coinPage.miners && props.coinPage.miners.length === 0 ?
                 <div className={style.inputForm}/> : <div className={style.inputForm}>
                     <img src={coinLogo} alt='logo'/>
                     <input type='text' autoComplete='off' placeholder={`Адрес кошелька`}
@@ -136,7 +128,6 @@ export const CoinPage = (props) => {
                         <div className={style.inputBtn}><i className="fa-solid fa-magnifying-glass"/></div>
                     </Link>
                 </div>}
-
             <div className={style.dropContainer}>
                 <div className={style.flexWrapper}>
                     <div className={style.buttonsWrapper}>
@@ -149,69 +140,39 @@ export const CoinPage = (props) => {
                         </div>
                     </div>
                     <DropData componentContent={<div className={style.dropDown}>
-                        {toggleStats ? <div className={style.stats}>
-                            <div className={style.currentEffort}>Текущая
-                                удача: {isNaN(luck) ? 'not found' : `${luck.toFixed(0)} %`}</div>
-                            <div className={style.fee}>Комиссия пула: {props.coinPage.fullStats.fee} %</div>
-                            <div
-                                className={style.hashrate}>Хэшрейт
-                                пула: {hashFilter(props.coinPage.fullStats.hashrate).hashrate}{hashFilter(props.coinPage.fullStats.hashrate).unit}</div>
-                            <div className={style.height}>Решаем блок: {props.coinPage.fullStats.height}</div>
-                            <div className={style.lastBlockFound}>Последний
-                                блок: {dateFilter(props.coinPage.fullStats.lastBlockFound)}</div>
-                            <div className={style.minPayment}>Минимальный
-                                вывод: {props.coinPage.fullStats.minPayment} {poolChecker(thisPool)}</div>
-                            <div className={style.miners}>Майнеры: {props.coinPage.fullStats.miners}</div>
-                            <div className={style.type}>Тип пула: {props.coinPage.fullStats.type}</div>
-                            <div className={style.charts}>
-                            </div>
-                        </div> : ''}
+                        {toggleStats ? <Stats fee={props.coinPage.fullStats.fee}
+                                              luck={luck}
+                                              hashrate={hashFilter(props.coinPage.fullStats.hashrate).hashrate}
+                                              unit={hashFilter(props.coinPage.fullStats.hashrate).unit}
+                                              height={props.coinPage.fullStats.height}
+                                              lastBlockFound={dateFilter(props.coinPage.fullStats.lastBlockFound)}
+                                              minPayment={props.coinPage.fullStats.minPayment}
+                                              thisPool={thisPool}
+                                              miners={props.coinPage.fullStats.miners}
+                                              type={props.coinPage.fullStats.type}
+                                              clearCashP={props.clearCashP}
+                        /> : ''}
                     </div>}/>
                     <DropData componentContent={<div className={style.dropDown}>
-                        {toggleMiners ? <div className={style.totalHashrate} id='anchorBtn'>
-                            {/*<Total text={`Общий хэшрейт: ${hashFilter(props.coinPage.fullStats.hashrate).hashrate}${hashFilter(props.coinPage.fullStats.hashrate).unit}`}/>*/}
-                            <div className={style.coin_column_grid}>
-                                <div className={style.wallet}>Кошелек</div>
-                                <div className={style.hashrate}>Хэшрейт</div>
-                                <div className={style.shares}>Последняя шара</div>
-                                <div className={style.status}>Статус</div>
-                            </div>
-                            <div className={style.minersWrapper}>
-                                <PaginatedItems itemsPerPage={15} items={props.coinPage.miners}
-                                                type={'coinPage'} addInputValue={props.addInputValue}/>
-                            </div>
-                        </div> : ''}
+                        {toggleMiners ? <Miners miners={props.coinPage.miners}
+                                                addInputValue={props.addInputValue}
+                                                showMinersOnce={props.ShowMinersOnce}
+                                                dellMinersData={props.dellMinersData}
+                                                thisPool={thisPool}
+                                                clearCashP={props.clearCashP}
+                        /> : ''}
                     </div>}/>
                     <DropData componentContent={<div className={style.dropDown}>
-                        {toggleBlocks ? <div className={style.blocks} id='anchorBtn'>
-                            <Total text={props.coinPage.blocks !== undefined ?
-                                <div className={style.effort__grid}>
-                                    <div className={style.effort}>Удача последних 20
-                                        блоков: {(props.coinPage.blocks.effort['20'] * 100).toFixed(0)} %
-                                    </div>
-                                    <div className={style.effort}>Удача последних 50
-                                        блоков: {(props.coinPage.blocks.effort['50'] * 100).toFixed(0)} %
-                                    </div>
-                                    <div className={style.effort}>Удача последних 200
-                                        блоков: {(props.coinPage.blocks.effort['200'] * 100).toFixed(0)} %
-                                    </div>
-                                </div> : ''}
-                            />
-                            <div className={style.blocks_column_grid}>
-                                <div className={style.height}>Высота</div>
-                                <div className={style.summ}>Сумма</div>
-                                <div className={style.effort}>Удача</div>
-                                <div className={style.hash}>Хэш блока</div>
-                                <div className={style.timestamp}>Дата</div>
-                            </div>
-                            <div className={style.blocksWrapper}>
-                                <PaginatedItems itemsPerPage={15} items={props.coinPage.blocks.matured}
-                                                type={'blocks'} addInputValue={props.addInputValue} pool={thisPool}/>
-                                {(thisPool === 'eth' || thisPool === 'eth-solo') ?
-                                    <span className={style.liveViewer}><a
-                                        href='http://www.ethviewer.live/'>EthLiveViewer</a></span> : ''}
-                            </div>
-                        </div> : ''}
+                        {toggleBlocks ? <Blocks blocks={props.coinPage.blocks}
+                                                effort={props.coinPage.blocks ? props.coinPage.blocks.effort : ''}
+                                                matured={props.coinPage.blocks ? props.coinPage.blocks.matured : ''}
+                                                addInputValue={props.addInputValue}
+                                                showBlocksOnce={props.ShowBlocksOnce}
+                                                dellBlocksData={props.dellBlocksData}
+                                                thisPool={thisPool}
+                                                clearCashP={props.clearCashP}
+
+                        /> : ''}
                     </div>}/>
                     <DropData componentContent={<div className={style.dropDown}>
                         {toggleHow
@@ -240,12 +201,11 @@ export const CoinPage = (props) => {
                                     <p><span>lolMiner.exe --algo ETHASH --pool stratum+ssl://eth.e4pool.com:5555 --user YOUR_WALLET_ADDRESS.RIG_ID
                                     pause</span></p>
 
-
                                     <div className={style.RaveImages}>
                                         <h3>Настройка подключения через RaveOs:</h3>
-                                        <Slider items={RaveOsImg}/>
+                                        {/*<Slider items={RaveOsImg}/>*/}
                                         <h3>Настройка подключения через OSdog:</h3>
-                                        <Slider items={OsDogImg}/>
+                                        {/*<Slider items={OsDogImg}/>*/}
                                     </div>
 
                                 </div> : ''}
@@ -272,21 +232,29 @@ export const CoinPage = (props) => {
                                     <h3>Пул ЕТC pplns</h3>
                                     Для подключения к пулу ЕТC используйте следующие параметры:
                                     <h4>Настройки T-Rex:</h4>
-                                    <p><span>t-rex.exe -a etchash -o etc.e4pool.com:9007 -u YOUR_WALLET_ADDRESS -w RIG_ID -p x pause</span></p>
-                                    <p><span>t-rex.exe -a etchash -o stratum+ssl://etc.e4pool.com:9008 -u YOUR_WALLET_ADDRESS -w RIG_ID -p x pause</span></p>
+                                    <p><span>t-rex.exe -a etchash -o etc.e4pool.com:9007 -u YOUR_WALLET_ADDRESS -w RIG_ID -p x pause</span>
+                                    </p>
+                                    <p><span>t-rex.exe -a etchash -o stratum+ssl://etc.e4pool.com:9008 -u YOUR_WALLET_ADDRESS -w RIG_ID -p x pause</span>
+                                    </p>
                                     <h4>Настройки Phoenix miner:</h4>
-                                    <p><span>phoenixminer.exe -a etchash -o etc.e4pool.com:9007 -u YOUR_WALLET_ADDRESS.RIG_ID pause</span></p>
-                                    <p><span>phoenixminer.exe -a etchash -o stratum+ssl://etc.e4pool.com:9008 -u YOUR_WALLET_ADDRESS.RIG_ID pause</span></p>
+                                    <p><span>phoenixminer.exe -a etchash -o etc.e4pool.com:9007 -u YOUR_WALLET_ADDRESS.RIG_ID pause</span>
+                                    </p>
+                                    <p><span>phoenixminer.exe -a etchash -o stratum+ssl://etc.e4pool.com:9008 -u YOUR_WALLET_ADDRESS.RIG_ID pause</span>
+                                    </p>
                                 </div> : ''}
                                 {thisPool === 'etc-solo' ? <div>
                                     <h3>Пул ЕТC solo</h3>
                                     Для подключения к пулу ЕТC используйте следующие параметры:
                                     <h4>Настройки T-Rex:</h4>
-                                    <p><span>t-rex.exe -a etchash -o solo-etc.e4pool.com:8005 -u YOUR_WALLET_ADDRESS -w RIG_ID -p x pause</span></p>
-                                    <p><span>t-rex.exe -a etchash -o stratum+ssl://solo-etc.e4pool.com:8006 -u YOUR_WALLET_ADDRESS -w RIG_ID -p x pause</span></p>
+                                    <p><span>t-rex.exe -a etchash -o solo-etc.e4pool.com:8005 -u YOUR_WALLET_ADDRESS -w RIG_ID -p x pause</span>
+                                    </p>
+                                    <p><span>t-rex.exe -a etchash -o stratum+ssl://solo-etc.e4pool.com:8006 -u YOUR_WALLET_ADDRESS -w RIG_ID -p x pause</span>
+                                    </p>
                                     <h4>Настройки Phoenix miner:</h4>
-                                    <p><span>phoenixminer.exe -a etchash -o solo-etc.e4pool.com:8005 -u YOUR_WALLET_ADDRESS.RIG_ID pause</span></p>
-                                    <p><span>phoenixminer.exe -a etchash -o stratum+ssl://solo-etc.e4pool.com:8006 -u YOUR_WALLET_ADDRESS.RIG_ID pause</span></p>
+                                    <p><span>phoenixminer.exe -a etchash -o solo-etc.e4pool.com:8005 -u YOUR_WALLET_ADDRESS.RIG_ID pause</span>
+                                    </p>
+                                    <p><span>phoenixminer.exe -a etchash -o stratum+ssl://solo-etc.e4pool.com:8006 -u YOUR_WALLET_ADDRESS.RIG_ID pause</span>
+                                    </p>
                                 </div> : ''}
                                 {poolChecker(thisPool) === 'evox' ? <div>
                                     <h3>Пул evox.e4pool.com</h3>
