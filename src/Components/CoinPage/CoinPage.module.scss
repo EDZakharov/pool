@@ -358,7 +358,7 @@
 .coin {
   grid-area: c;
   @include allData;
-  background: url(./../../img/octopus1.png) no-repeat 50% 0;
+  background: url(../../img/octopus1.png) no-repeat 50% 0;
   position: sticky;
   overflow-y: scroll;
   background-size: 1500px;
@@ -368,7 +368,7 @@
 .coin2 {
   grid-area: c;
   @include allData;
-  background: url(./../../img/octopus2.png) no-repeat 50% 0;
+  background: url(../../img/octopus2.png) no-repeat 50% 0;
   position: sticky;
   overflow-y: scroll;
   background-size: 1500px;
@@ -380,7 +380,7 @@
 .coin3 {
   grid-area: c;
   @include allData;
-  background: url(./../../img/octopus3.png) no-repeat 50% 30%;
+  background: url(../../img/octopus3.png) no-repeat 50% 30%;
   position: sticky;
   overflow-y: scroll;
   background-size: 1500px;

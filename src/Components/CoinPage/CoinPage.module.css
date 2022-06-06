@@ -11,7 +11,7 @@
   user-select: none;
   height: 91vh;
   padding-top: 50px;
-  background: url(./../../img/octopus1.png) no-repeat 50% 0;
+  background: url(../../img/octopus1.png) no-repeat 50% 0;
   position: sticky;
   overflow-y: scroll;
   background-size: 1500px;
@@ -303,7 +303,7 @@
   user-select: none;
   height: 91vh;
   padding-top: 50px;
-  background: url(./../../img/octopus2.png) no-repeat 50% 0;
+  background: url(../../img/octopus2.png) no-repeat 50% 0;
   position: sticky;
   overflow-y: scroll;
   background-size: 1500px;
@@ -595,7 +595,7 @@
   user-select: none;
   height: 91vh;
   padding-top: 50px;
-  background: url(./../../img/octopus3.png) no-repeat 50% 30%;
+  background: url(../../img/octopus3.png) no-repeat 50% 30%;
   position: sticky;
   overflow-y: scroll;
   background-size: 1500px;

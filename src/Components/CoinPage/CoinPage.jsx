@@ -4,15 +4,16 @@ import Fetcher from "../Fetcher/Fetcher";
 import {dateFilter, hashFilter, imgFilter, poolChecker} from "../../Filters";
 import Charts from "../Charts/Charts";
 import {Link} from "react-router-dom";
-import PaginatedItems from "../Pagination";
+// import PaginatedItems from "../Pagination";
 import DropBtn from "../Account/DropBtn";
 import DropData from "./DropData/DropData";
-import Total from "../Account/Total";
+// import Total from "../Account/Total";
 import Stats from "./Stats/Stats";
 import Miners from "./Miners/Miners";
 import Blocks from "./Blocks/Blocks";
 // import Slider from "../Slider/Slider";
 // import {dellMinersData, ShowMinersOnce} from "../../redux/socketMiddleware";
+
 
 
 // let RaveOsImg = [
@@ -107,8 +108,6 @@ export const CoinPage = (props) => {
         setToggleBlocks(false)
         setToggleHow(true)
     }
-
-
 
     return (props.coinPage.isFetching ? <Fetcher/> : <div className={localStorage.getItem('showRandomBackStyle')}>
         <div className={style.coinData}>
