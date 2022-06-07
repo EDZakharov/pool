@@ -1,1 +1,7 @@
-{"version":3,"sourceRoot":"","sources":["Fetcher.module.scss"],"names":[],"mappings":"AACA;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA","file":"Fetcher.module.css"}
+{
+"version": 3,
+"mappings": "AACA,QAAS;EACP,SAAS,EAAE,CAAC;EACZ,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,gBAAgB,EAAE,8BAA8B;EAChD,mBAAmB,EAAC,aAAa;EACjC,eAAe,EAAC,KAAK;EACrB,KAAK,EAAC,KAAK;EACX,MAAM,EAAC,KAAK;EACZ,WAAW,EAAE,MAAM;EACnB,MAAM,EAAE,MAAM",
+"sources": ["Fetcher.module.scss"],
+"names": [],
+"file": "Fetcher.module.css"
+}

@@ -1,7 +1,6 @@
 * {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 .account {
   grid-area: c;
@@ -16,141 +15,108 @@
   padding-top: 50px;
   z-index: 2;
   position: relative;
-  gap: 10px;
-}
-.account .coin {
-  position: fixed;
-  width: 100vw;
-  height: 100%;
-  background: url(../../assets/octopus1.png) no-repeat 50% 0;
-  background-size: 1400px;
-}
-.account .coin2 {
-  position: fixed;
-  width: 100vw;
-  height: 100%;
-  background: url(../../assets/octopus2.png) no-repeat 50% 0;
-  background-size: 1400px;
-}
-.account .coin3 {
-  position: fixed;
-  width: 100vw;
-  height: 100%;
-  background: url(../../assets/octopus3.png) no-repeat 50% 0;
-  background-size: 1400px;
-}
-.account .graph {
-  grid-area: g;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-self: center;
-  justify-items: center;
-}
-@media screen and (min-width: 2000px) {
+  gap: 10px; }
+  .account .coin {
+    position: fixed;
+    width: 100vw;
+    height: 100%;
+    background: url(../../assets/octopus1.png) no-repeat 50% 0;
+    background-size: 1400px; }
+  .account .coin2 {
+    position: fixed;
+    width: 100vw;
+    height: 100%;
+    background: url(../../assets/octopus2.png) no-repeat 50% 0;
+    background-size: 1400px; }
+  .account .coin3 {
+    position: fixed;
+    width: 100vw;
+    height: 100%;
+    background: url(../../assets/octopus3.png) no-repeat 50% 0;
+    background-size: 1400px; }
   .account .graph {
-    height: 500px;
-  }
-}
-@media screen and (max-width: 2000px) {
-  .account .graph {
-    height: 300px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .account .graph {
-    display: none;
-  }
-}
-.account .graph .chartsGraph {
-  width: 100%;
-  margin: 10px 0 0 0;
-  border-radius: 15px;
-}
-.account .accountData {
-  grid-area: m;
-  margin: 0 auto;
-}
-@media screen and (min-width: 2000px) {
+    grid-area: g;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    justify-items: center; }
+    @media screen and (min-width: 2000px) {
+      .account .graph {
+        height: 500px; } }
+    @media screen and (max-width: 2000px) {
+      .account .graph {
+        height: 300px; } }
+    @media screen and (max-width: 600px) {
+      .account .graph {
+        display: none; } }
+    .account .graph .chartsGraph {
+      width: 100%;
+      margin: 10px 0 0 0;
+      border-radius: 15px; }
   .account .accountData {
-    width: 90%;
-  }
-}
-@media screen and (max-width: 2000px) {
-  .account .accountData {
-    width: 70%;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .account .accountData {
-    width: 98%;
-  }
-}
-.account .accountData .flexWrapper {
-  display: flex;
-  position: relative;
-  width: 100%;
-}
-.account .accountData .flexWrapper .dropDown {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  height: 60px;
-  color: black;
-  font-weight: 600;
-  font-size: 17px;
-  padding: 0;
-  cursor: pointer;
-  user-select: none;
-}
-@media screen and (max-width: 600px) {
-  .account .accountData .flexWrapper .dropDown {
-    height: 40px;
-  }
-}
-.account .accountData .flexWrapper .dropDown:nth-last-child(1) {
-  border-right: 1px solid white;
-}
-.account .accountData .flexWrapper .dropDown:nth-last-child(4) {
-  border-left: 1px solid white;
-}
-.account .accountData .flexWrapper .dropDown .dropdown__content {
-  display: flex;
-  font-weight: 400;
-  font-size: 16px;
-  align-items: center;
-  cursor: auto;
-  position: absolute;
-  width: 100%;
-  pointer-events: none;
-  top: 62px;
-  left: 0;
-  color: #ffffff;
-}
-@media screen and (max-width: 600px) {
-  .account .accountData .flexWrapper .dropDown .dropdown__content {
-    top: 42px;
-  }
-}
-.account .accountData .flexWrapper .dropDown .dropdown__content .dropText {
-  width: 100%;
-  border-right: 0.2px solid white;
-  border-left: 0.2px solid white;
-  background-color: rgba(29, 29, 29, 0.19);
-  backdrop-filter: blur(15px);
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0.3), -28px 0 25px -23px rgba(0, 0, 0, 0.8), 28px 0 35px -23px rgba(0, 0, 0, 0.8), 0 0 0 rgba(0, 0, 0, 0.1) inset;
-  margin-bottom: 40px;
-}
-.account .accountData .flexWrapper .dropDown .dropdown__content .dropText .dropText__data {
-  padding: 10px;
-}
-.account .accountData .flexWrapper .dropDown .dropdown__content .dropText .dropText__data .pads {
-  padding-top: 70px;
-}
-@media screen and (max-width: 600px) {
-  .account .accountData .flexWrapper .dropDown .dropdown__content .dropText .dropText__data .pads {
-    padding-top: 0;
-  }
-}
+    grid-area: m;
+    margin: 0 auto; }
+    @media screen and (min-width: 2000px) {
+      .account .accountData {
+        width: 90%; } }
+    @media screen and (max-width: 2000px) {
+      .account .accountData {
+        width: 70%; } }
+    @media screen and (max-width: 1000px) {
+      .account .accountData {
+        width: 98%; } }
+    .account .accountData .flexWrapper {
+      display: flex;
+      position: relative;
+      width: 100%; }
+      .account .accountData .flexWrapper .dropDown {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        height: 60px;
+        color: black;
+        font-weight: 600;
+        font-size: 17px;
+        padding: 0;
+        cursor: pointer;
+        user-select: none; }
+        @media screen and (max-width: 600px) {
+          .account .accountData .flexWrapper .dropDown {
+            height: 40px; } }
+        .account .accountData .flexWrapper .dropDown:nth-last-child(1) {
+          border-right: 1px solid white; }
+        .account .accountData .flexWrapper .dropDown:nth-last-child(4) {
+          border-left: 1px solid white; }
+        .account .accountData .flexWrapper .dropDown .dropdown__content {
+          display: flex;
+          font-weight: 400;
+          font-size: 16px;
+          align-items: center;
+          cursor: auto;
+          position: absolute;
+          width: 100%;
+          pointer-events: none;
+          top: 62px;
+          left: 0;
+          color: #ffffff; }
+          @media screen and (max-width: 600px) {
+            .account .accountData .flexWrapper .dropDown .dropdown__content {
+              top: 42px; } }
+          .account .accountData .flexWrapper .dropDown .dropdown__content .dropText {
+            width: 100%;
+            border-right: .2px solid white;
+            border-left: .2px solid white;
+            background-color: rgba(29, 29, 29, 0.19);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0.3), -28px 0 25px -23px rgba(0, 0, 0, 0.8), 28px 0 35px -23px rgba(0, 0, 0, 0.8), 0 0 0 rgba(0, 0, 0, 0.1) inset;
+            margin-bottom: 40px; }
+            .account .accountData .flexWrapper .dropDown .dropdown__content .dropText .dropText__data {
+              padding: 10px; }
+              .account .accountData .flexWrapper .dropDown .dropdown__content .dropText .dropText__data .pads {
+                padding-top: 70px; }
+                @media screen and (max-width: 600px) {
+                  .account .accountData .flexWrapper .dropDown .dropdown__content .dropText .dropText__data .pads {
+                    padding-top: 0; } }
 
 /*# sourceMappingURL=AccountData.module.css.map */

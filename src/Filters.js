@@ -1,4 +1,3 @@
-
 // import ethLogo from "./img/eth.png";
 // import etcLogo from "./img/etc.png";
 // import burstLogo from "./img/burst.png";
@@ -238,20 +237,8 @@ export const coinNamesFilter = (data) => {
 
 
 export const imgFilter = (data) => {
-
-
-
-        try {
-            return require(`/static/media/${data}.png`)
-        } catch (e) {
-            try {
-                return require(`/src/assets/${data}.png`)
-            }catch (e) {
-                return siteLogo
-            }
-        }
+    return `${process.env.PUBLIC_URL}/${data}.png`
 }
-
 
 
 export const showDate = (data) => {

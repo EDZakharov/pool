@@ -20,10 +20,13 @@ body{
     height: 100vh;
 
     z-index: 900;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none;
 
 }::-webkit-scrollbar {
      display: none;
  }
+
 
 
 

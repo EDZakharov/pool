@@ -21,7 +21,7 @@ const Header = () => {
     return (
         <div className={style.header}>
             <div className={style.logo__wrapper}>
-                <Link to="/"><img src={imgFilter('logo')} className={style.logo} alt='#'/></Link>
+                <Link to="/"><img src={process.env.PUBLIC_URL + '/logo56.png' } className={style.logo} alt='#'/></Link>
                 <Link to="/"><span>E4p1k0 mining pools</span></Link>
             </div>
             <div className={style.headerLinks}>
