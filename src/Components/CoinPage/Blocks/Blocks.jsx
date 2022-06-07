@@ -13,9 +13,9 @@ const Blocks = ({
                     thisPool,
                     showBlocksOnce,
                     dellBlocksData,
-                    clearCashP,
                     showBlocks,
-                    fetching
+                    fetching,
+                    symbol
                 }) => {
 
 
@@ -59,7 +59,7 @@ const Blocks = ({
                                     type={'blocks'} addInputValue={addInputValue}
                                     pool={thisPool}/> : <Fetcher/>}
 
-                {(thisPool === 'eth' || thisPool === 'eth-solo') ?
+                {(symbol === 'ETH') ?
                     <span className={style.liveViewer}><a
                         href='http://www.ethviewer.live/'>EthLiveViewer</a></span> : ''}
             </div>

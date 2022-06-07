@@ -15,7 +15,6 @@ import {CoinPageData} from "./CoinPage/CoinPageData/CoinPageData";
 
 
 function effortFilter(effort) {
-    console.log(effort)
     if(effort < 100){
         return <div className={style.easy}>{effort} %</div>
     }

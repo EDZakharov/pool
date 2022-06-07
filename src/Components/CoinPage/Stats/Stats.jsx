@@ -1,6 +1,5 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import style from './Stats.module.scss'
-import {poolChecker} from "../../../Filters";
 import Charts from "../../Charts/Charts";
 import Fetcher from "../../Fetcher/Fetcher";
 
@@ -12,10 +11,11 @@ const Stats = ({
                    height,
                    lastBlockFound,
                    minPayment,
-                   thisPool,
                    miners,
                    type,
                    charts,
+                   text,
+                   symbol
                }) => {
 
     return (
@@ -23,7 +23,7 @@ const Stats = ({
             {charts && charts.length !== 0 ?
                 <div className={style.graph}>
                     <div className={style.chartsGraph}>
-                        <Charts charts={charts} text={`Общая мощность ${thisPool} пула`}/>
+                        <Charts charts={charts} text={`Общая мощность ${text} пула`}/>
                     </div>
                 </div> : <div className={style.graph}><Fetcher/></div>}
                 <div className={style.items}>
@@ -32,7 +32,7 @@ const Stats = ({
                     <div className={style.item}>Хэшрейт пула: {hashrate}{unit}</div>
                     <div className={style.item}>Решаем блок: {height}</div>
                     <div className={style.item}>Последний блок: {lastBlockFound}</div>
-                    <div className={style.item}>Минимальный вывод: {minPayment} {poolChecker(thisPool)}</div>
+                    <div className={style.item}>Минимальный вывод: {minPayment} {symbol}</div>
                     <div className={style.item}>Майнеры: {miners}</div>
                     <div className={style.item}>Тип пула: {type}</div>
                 </div>

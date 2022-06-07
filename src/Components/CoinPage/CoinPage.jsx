@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import style from './CoinPage.module.scss'
 import Fetcher from "../Fetcher/Fetcher";
-import {dateFilter, hashFilter, imgFilter, poolChecker} from "../../Filters";
+import {dateFilter, hashFilter, imgFilter} from "../../Filters";
 import DropBtn from "../Account/DropBtn";
 import DropData from "./DropData/DropData";
 import Stats from "./Stats/Stats";
 import Miners from "./Miners/Miners";
 import Blocks from "./Blocks/Blocks";
-import {fetching} from "../../redux/coinPageReducer";
+// import {fetching} from "../../redux/coinPageReducer";
 // import Slider from "../Slider/Slider";
 
 // let RaveOsImg = [
@@ -108,6 +108,8 @@ export const CoinPage = (props) => {
                                        lastBlockFound={dateFilter(props.coinPage.fullStats.lastBlockFound)}
                                        minPayment={props.coinPage.fullStats.minPayment}
                                        thisPool={thisPool}
+                                       text={props.coinPage.fullStats.name}
+                                       symbol={props.coinPage.fullStats.symbol}
                                        miners={props.coinPage.fullStats.miners}
                                        type={props.coinPage.fullStats.type}
                                        clearCashP={props.clearCashP}
@@ -141,6 +143,7 @@ export const CoinPage = (props) => {
                                                 showBlocksOnce={props.ShowBlocksOnce}
                                                 dellBlocksData={props.dellBlocksData}
                                                 thisPool={thisPool}
+                                                symbol={props.coinPage.fullStats.symbol}
                                                 clearCashP={props.clearCashP}
                                                 fetching={props.fetching}
                                                 showBlocks={props.showBlocks}
@@ -229,7 +232,7 @@ export const CoinPage = (props) => {
                                     <p><span>phoenixminer.exe -a etchash -o stratum+ssl://solo-etc.e4pool.com:8006 -u YOUR_WALLET_ADDRESS.RIG_ID pause</span>
                                     </p>
                                 </div> : ''}
-                                {poolChecker(thisPool) === 'evox' ? <div>
+                                {thisPool === 'evox-prop' || thisPool === 'evox-solo' ? <div>
                                     <h3>Пул evox.e4pool.com</h3>
                                     <div>evox.e4pool.com:4488 - стартовая сложность 50 000</div>
                                     <h3>Для подключения к пулу evox используйте следующие параметры:</h3>
@@ -266,7 +269,7 @@ export const CoinPage = (props) => {
                                         майнера, более еподробно про найстройку можно почитать: *более подробно об общей
                                         настройке конфига: https://bytwork.com/soft/xmrig?ysclid=l3lgbgoqmw</p>
                                 </div> : ''}
-                                {poolChecker(thisPool) === 'keva' ? <div>
+                                {thisPool === 'keva' ? <div>
                                     <h3>Пул keva.e4pool.com</h3>
                                     <div>keva.e4pool.com:8000 - стартовая сложность 8000</div>
                                     <h3>Для подключения к пулу keva используйте следующие параметры:</h3>

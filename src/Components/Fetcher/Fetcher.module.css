@@ -1,15 +1,14 @@
 .fetcher {
   grid-area: c;
   display: flex;
-  justify-content: center; }
-  .fetcher img {
-    width: 450px;
-    height: 250px; }
-  @media screen and (max-width: 600px) {
-    .fetcher {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      width: 90%; } }
+  justify-content: center;
+  background-image: url("../../assets/loader.gif");
+  background-position: center center;
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  align-items: center;
+  margin: 0 auto;
+}
 
 /*# sourceMappingURL=Fetcher.module.css.map */

@@ -161,6 +161,14 @@
 
             .dropText__data {
               padding: 10px;
+
+              .pads{
+                padding-top: 70px;
+                @media screen and (max-width: 600px) {
+                  padding-top: 0;
+                }
+              }
+
             }
           }
         }
