@@ -8,7 +8,6 @@ import {
     convertTimestamp,
     dateFilter, getTruncatedName,
     hashFilter,
-    poolChecker,
     txChecker
 } from "../Filters";
 import {CoinPageData} from "./CoinPage/CoinPageData/CoinPageData";
@@ -35,7 +34,7 @@ function Items({currentItems, type, addInputValue, pool}) {
                 if (type === 'payments') {
                     return <InnerData
                         key={el.tx}
-                        el1={(el.amount / 1000000000).toFixed(3) + ' ' + poolChecker(pool)}
+                        el1={(el.amount / 1000000000).toFixed(3) + ' ' + pool.toUpperCase()}
                         el2={<a onClick={event => event.stopPropagation()} href={txChecker(el.tx, pool)}>{getTruncatedName(el.tx, 'tx')}</a>}
                         el3={convertTimestamp(el.timestamp)}
                         type={'payments'}
@@ -44,7 +43,7 @@ function Items({currentItems, type, addInputValue, pool}) {
                 if (type === 'rewards') {
                     return <InnerData
                         key={el.blockHash}
-                        el1={(el.amount / 1000000000).toFixed(5) + ' ' + poolChecker(pool)}
+                        el1={(el.amount / 1000000000).toFixed(5) + ' ' + pool.toUpperCase()}
                         el2={convertTimestamp(el.timestamp)}
                         el3={<a onClick={event => event.stopPropagation()}
                                 href={blockHashChecker(el.blockHash, pool)}>{getTruncatedName(el.blockHash, 'tx')}</a>}
@@ -67,12 +66,12 @@ function Items({currentItems, type, addInputValue, pool}) {
                         key={el.hash}
                         el1={el.height}
                         el2={el.rewardMev
-                            ? <span className={style.reward}>{(el.reward / 1000000000000000000).toFixed(3)} {poolChecker(pool)}
+                            ? <span className={style.reward}>{(el.reward / 1000000000000000000).toFixed(3)} {pool.toUpperCase()}
                                 <span className={style.mev}> +{(el.rewardMev / 1000000000000000000).toFixed(3)} MEV</span>
                             </span>
-                            : poolChecker(pool) !== 'evox' && poolChecker(pool) !== 'keva'
-                                ? (el.reward / 1000000000000000000).toFixed(3) + ' ' + poolChecker(pool)
-                                : el.reward + ' ' +poolChecker(pool)}
+                            : pool !== 'evox-prop' && pool !== 'keva' && pool !== 'evox-solo'
+                                ? (el.reward / 1000000000000000000).toFixed(3) + ' ' + pool.toUpperCase()
+                                : el.reward + ' ' + pool.toUpperCase()}
                         el3={effortFilter((el.effort * 100).toFixed(0))}
                         el4={!el.orphan ?
                             <a href={blockHashChecker(el.hash, pool)}>{getTruncatedName(el.hash, 'tx')}</a> :
