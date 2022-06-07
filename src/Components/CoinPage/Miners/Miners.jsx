@@ -10,7 +10,6 @@ const Miners = ({
                     dellMinersData,
                     showMinersOnce,
                     thisPool,
-                    clearCashP,
                     showMiners,
                     fetching,
                     accountAddress,

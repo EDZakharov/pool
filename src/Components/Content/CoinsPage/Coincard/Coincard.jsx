@@ -2,6 +2,7 @@ import React from "react";
 import style from "./Coincard.module.scss"
 import {NavLink} from "react-router-dom";
 import {dateFilter, hashFilter, imgFilter} from "../../../../Filters";
+import CoinImage from "../../../CoinImage/CoinImage";
 
 
 const CoinCard = ({
@@ -32,9 +33,7 @@ const CoinCard = ({
             <div className={style.coinCard_header}>
                 <div className={style.wrapper}>
                     <span className={style.poolName}>{coinName}<span className={style.poolType}>{poolType}</span></span>
-
-                    <img src={image} alt='logo'
-                         className={style.logo}/>
+                    <CoinImage path={image}/>
                 </div>
             </div>
             <div className={style.coinCard_main}>

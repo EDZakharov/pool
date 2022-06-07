@@ -28,6 +28,7 @@ let storage = {
 
 
 socket.on('update', res => {
+
     if (res.method === 'stats') {
         let index = storage.coins.findIndex(el => el.pool === res.data.pool);
         if (index === -1) {

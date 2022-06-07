@@ -23,9 +23,7 @@ const Fetcher = () => {
     }, [])
 
 
-    return (<div className={style.fetcher}>
-                <img src={loaderGif} alt='loader'/>
-            </div>
+    return (<div className={style.fetcher}/>
     );
 };
 

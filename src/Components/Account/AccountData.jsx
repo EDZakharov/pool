@@ -102,13 +102,6 @@ const AccountData = (props) => {
     return (!props.account.accountData ? <Fetcher/> :
         <div className={style.account}>
             <div className={localStorage.getItem('showRandomAccBGCStyle')}/>
-            <div className={style.graph}>
-                <div className={style.chartsGraph}>
-                    <Charts text={`Кошелек: ${localStorage.getItem('account')}`}
-                            charts={props.account.accountData.charts}/>
-                </div>
-            </div>
-
             {props.account.accountData.workers.length !== 0 ?
                 <div className={style.accountData}>
                     <div className={style.flexWrapper}>
@@ -117,7 +110,13 @@ const AccountData = (props) => {
                             {toggleHashrate ? <div className={style.dropdown__content}>
                                 <div className={style.dropText}>
                                     <div className={style.dropText__data}>
-                                        <Total text={<div><div>{`Воркеров онлайн: ${props.account.accountData.workers.length}`}</div><div>{`Хэшрейт: ${hashFilter(summHashrate()).hashrate} ${hashFilter(summHashrate()).unit}`}</div></div>}/>
+                                        <div className={style.graph}>
+                                            <div className={style.chartsGraph}>
+                                                <Charts text={`Кошелек: ${localStorage.getItem('account')}`}
+                                                        charts={props.account.accountData.charts}/>
+                                            </div>
+                                        </div>
+                                        <Total text={<div className={style.pads}><div>{`Воркеров онлайн: ${props.account.accountData.workers.length}`}</div><div>{`Хэшрейт: ${hashFilter(summHashrate()).hashrate} ${hashFilter(summHashrate()).unit}`}</div></div>}/>
                                         <HeaderData
                                             el1={'Имя воркера'}
                                             el2={'Хэшрейт'}

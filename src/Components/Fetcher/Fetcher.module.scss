@@ -3,22 +3,12 @@
   grid-area: c;
   display: flex;
   justify-content: center;
-
-  img{
-    width: 450px;
-    height: 250px;
-  }
-
-
-  @media screen and (max-width: 600px){
-      //position: initial;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    //margin: 50px auto;
-    width: 90%;
-
-  }
-
+  background-image: url('../../assets/loader.gif');
+  background-position:center center;
+  background-size:cover;
+  width:200px;
+  height:200px;
+  align-items: center;
+  margin: 0 auto;
 }
 

@@ -43,7 +43,6 @@ const coinPageReducer = (state = initialState, action) => {
 
         }
         case CLEAR_CASHP: {
-            console.log('4')
             stateCopy.fullStats = undefined
             stateCopy.miners = undefined
             stateCopy.blocks = undefined
