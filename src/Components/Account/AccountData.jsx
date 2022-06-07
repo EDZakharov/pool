@@ -15,7 +15,6 @@ const AccountData = (props) => {
 
     let [togglePayments, setTogglePayments] = useState(false)
     let [toggleHashrate, setToggleHashrate] = useState(true)
-    let [toggleBalance, setToggleBalance] = useState(false)
     let [toggleRewards, setToggleRewards] = useState(false)
 
 
@@ -70,7 +69,6 @@ const AccountData = (props) => {
 
     let dropDownPaymentsToggle = () => {
         setTogglePayments(true)
-        setToggleBalance(false)
         setToggleHashrate(false)
         setToggleRewards(false)
     }
@@ -78,27 +76,17 @@ const AccountData = (props) => {
     let dropDownHashrateToggle = () => {
         setTogglePayments(false)
         setToggleHashrate(true)
-        setToggleBalance(false)
         setToggleRewards(false)
     }
 
-    let dropDownBalanceToggle = () => {
-        setTogglePayments(false)
-        setToggleHashrate(false)
-        setToggleBalance(true)
-        setToggleRewards(false)
-    }
     let dropDownRewardsToggle = () => {
         setTogglePayments(false)
         setToggleHashrate(false)
-        setToggleBalance(false)
         setToggleRewards(true)
     }
 
-
+    console.log(props.account.accountData)
     // console.log(localStorage.getItem('showRandomAccBgcStyle'))
-
-
     return (!props.account.accountData ? <Fetcher/> :
         <div className={style.account}>
             <div className={localStorage.getItem('showRandomAccBGCStyle')}/>
@@ -116,7 +104,7 @@ const AccountData = (props) => {
                                                         charts={props.account.accountData.charts}/>
                                             </div>
                                         </div>
-                                        <Total text={<div className={style.pads}><div>{`Воркеров онлайн: ${props.account.accountData.workers.length}`}</div><div>{`Хэшрейт: ${hashFilter(summHashrate()).hashrate} ${hashFilter(summHashrate()).unit}`}</div></div>}/>
+                                        <Total text={<div className={style.pads}><div>{`Воркеров онлайн: ${props.account.accountData.workers.length}`}</div><div>{`Хэшрейт: ${hashFilter(summHashrate()).hashrate} ${hashFilter(summHashrate()).unit}`}</div><div>{`Текущий баланс: ${(props.account.accountData.balance / 1000000000).toFixed(3)} ${pool.toUpperCase()}`}</div></div>}/>
                                         <HeaderData
                                             el1={'Имя воркера'}
                                             el2={'Хэшрейт'}
@@ -137,24 +125,24 @@ const AccountData = (props) => {
                                 </div>
                             </div> : ''}
                         </div>
-                        <div className={style.dropDown} onClick={dropDownBalanceToggle}>
-                            <DropBtn status={toggleBalance} text={'Баланс'}/>
-                            {toggleBalance ? <div className={style.dropdown__content}>
-                                <div className={style.dropText}>
-                                    <div className={style.dropText__data}>
-                                        <Total
-                                            text={<div><div>{`Текущий баланс: ${(props.account.accountData.balance / 1000000000).toFixed(3)} ${poolChecker(pool)}`}</div></div>}/>
-                                    </div>
-                                </div>
-                            </div> : ''}
-                        </div>
+                        {/*<div className={style.dropDown} onClick={dropDownBalanceToggle}>*/}
+                        {/*    <DropBtn status={toggleBalance} text={'Баланс'}/>*/}
+                        {/*    {toggleBalance ? <div className={style.dropdown__content}>*/}
+                        {/*        <div className={style.dropText}>*/}
+                        {/*            <div className={style.dropText__data}>*/}
+                        {/*                <Total*/}
+                        {/*                    text={<div></div>}/>*/}
+                        {/*            </div>*/}
+                        {/*        </div>*/}
+                        {/*    </div> : ''}*/}
+                        {/*</div>*/}
 
                         <div className={style.dropDown} onClick={dropDownPaymentsToggle}>
                             <DropBtn status={togglePayments} text={'Выплаты'}/>
                             {togglePayments ? <div className={style.dropdown__content}>
                                 <div className={style.dropText}>
                                     <div className={style.dropText__data}>
-                                        <Total text={<div><div>{`Всего выплачено: ${(summPayments() / 1000000000).toFixed(3)} ${poolChecker(pool)}`}</div></div>}/>
+                                        <Total text={<div><div>{`Всего выплачено: ${(summPayments() / 1000000000).toFixed(3)} ${pool.toUpperCase()}`}</div></div>}/>
                                         <HeaderData
                                             el1={'Cумма'}
                                             el2={'Номер транзакции'}
