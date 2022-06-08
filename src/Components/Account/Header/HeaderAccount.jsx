@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import style from './HeaderAccount.module.scss'
-import { imgFilter} from "../../../Filters";
 import {Link, NavLink} from "react-router-dom";
 import BurgerMenu from "../../BurgerMenu/BurgerMenu";
+import logo from '../../../assets/logo56.png'
 
 const HeaderAccount = () => {
-    let selectedCoin = localStorage.getItem('selectedCoin')
+    let middleWarePath = localStorage.getItem('middleWarePath')
     // let account = localStorage.getItem('account')
 
     let onClickActiveStatus = ({isActive}) => (isActive ? style.active : 'inactive');
@@ -17,18 +17,28 @@ const HeaderAccount = () => {
         {href: '/e4pizor', icon: <i className="fa-solid fa-basket-shopping"/>, text: 'E4pizor'},
     ]
 
+    let historyBack = () => {
+        if (window.history.length > 2) {
+            try {
+                window.history.go(-1)
+            } catch (e) {
+                console.log('no')
+            }
+        } else return 0
+    }
+
 
     return (
         <div className={style.header}>
             <div className={style.logo__wrapper}>
-                <Link to={`/${selectedCoin}`}><img src={imgFilter(selectedCoin)} alt='logo' className={style.siteLogo}/></Link>
-                <Link to={`/${selectedCoin}`}><span className={style.currentCoin}>Назад</span></Link>
+                <Link to={`/`}><img src={logo} alt='logo' className={style.siteLogo}/></Link>
+                <span className={style.currentCoin} onClick={historyBack}>Назад</span>
             </div>
             <div className={style.headerLinks}>
                 {menuList ? menuList.map(item => {
 
-                    if(item.href === 'https://t.me/e4pool_howto'){
-                        return  <a key={item.text} href={item.href}>{item.icon} {item.text}</a>
+                    if (item.href === 'https://t.me/e4pool_howto') {
+                        return <a key={item.text} href={item.href}>{item.icon} {item.text}</a>
                     }
 
                     if (item.href === 'https://forum.e4pool.com/') {

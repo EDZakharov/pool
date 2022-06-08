@@ -22,7 +22,7 @@ let OsDogImg = [
 
 export const CoinPage = (props) => {
     let thisPool = localStorage.getItem('selectedCoin')
-    let coinLogo = imgFilter(localStorage.getItem('selectedCoin'))
+    let coinLogo = imgFilter(thisPool)
     let luck = props.coinPage.fullStats? props.coinPage.fullStats.currentEffort * 100 : 0
 
     useEffect(() => {

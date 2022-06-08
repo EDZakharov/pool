@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
 .header {
-  font-family: "Sriracha", cursive;
+  font-family: 'Sriracha', cursive;
   grid-area: h;
   background-color: #727270;
   color: #d7d7d7;
@@ -8,168 +8,125 @@
   width: 100%;
   user-select: none;
   display: grid;
-  grid-template-areas: "l s n";
-  grid-template-columns: 0.01fr 1fr auto;
+  grid-template-areas: 'l s n';
+  grid-template-columns: .01fr 1fr auto;
   align-items: center;
-  z-index: 300;
-}
-.header a {
-  text-decoration: none;
-}
-.header a:hover {
-  text-decoration: none;
-}
-.header .logo__wrapper {
-  grid-area: l;
-  display: flex;
-  white-space: nowrap;
-  flex-direction: row;
-  align-items: center;
-  z-index: 300;
-}
-.header .logo__wrapper a {
-  background-color: rgba(255, 255, 255, 0);
-}
-.header .logo__wrapper .siteLogo {
-  height: 45px;
-  margin: 5px 10px 4px 10px;
-}
-.header .logo__wrapper .currentCoin {
-  grid-area: s;
-  color: white;
-  background-color: #727270;
-  font-size: 26px;
-  cursor: pointer;
-}
-@media (min-width: 0px) {
-  .header .logo__wrapper .currentCoin {
-    font-size: 12px;
-  }
-}
-@media (min-width: 560px) {
-  .header .logo__wrapper .currentCoin {
-    font-size: 12px;
-  }
-}
-@media (min-width: 650px) {
-  .header .logo__wrapper .currentCoin {
-    font-size: 15px;
-  }
-}
-@media (min-width: 820px) {
-  .header .logo__wrapper .currentCoin {
-    font-size: 20px;
-  }
-}
-@media (min-width: 1000px) {
-  .header .logo__wrapper .currentCoin {
-    font-size: 25px;
-  }
-}
-.header .headerLinks {
-  grid-area: n;
-}
-.header .headerLinks .active {
-  color: #f7a81a;
-}
-.header .headerLinks .active:hover {
-  color: #f7a81a;
-  transition: 0.2s ease-in-out;
-}
-.header .headerLinks i {
-  margin-left: 5px;
-}
-.header .headerLinks a {
-  margin-left: 50px;
-  color: #c9c9c9;
-  text-decoration: none;
-  font-size: 22px;
-}
-@media (min-width: 1px) {
-  .header .headerLinks a {
-    z-index: 100;
-    display: none;
-  }
-}
-@media (min-width: 560px) {
-  .header .headerLinks a {
-    display: inline-block;
-    font-size: 12px;
-    margin: 0 3px;
-  }
-}
-@media (min-width: 650px) {
-  .header .headerLinks a {
-    display: inline-block;
-    font-size: 15px;
-    margin: 0 5px;
-  }
-}
-@media (min-width: 820px) {
-  .header .headerLinks a {
-    display: inline-block;
-    font-size: 20px;
-    margin: 0 10px;
-  }
-}
-@media (min-width: 1000px) {
-  .header .headerLinks a {
-    display: inline-block;
-    z-index: 100;
-    font-size: 22px;
-    margin: 0 20px;
-  }
-}
-.header .headerLinks a:hover {
-  color: #ffffff;
-  transition: 0.2s ease-in-out;
-}
-.header .burger_show {
-  position: absolute;
-  top: 16px;
-  right: 25px;
-  height: 30px;
-  width: 30px;
-}
-.header .burger_show:hover {
-  cursor: pointer;
-}
-.header .burger_show nav {
-  height: 30px;
-  position: relative;
-}
-.header .burger_show nav .burger:before {
-  content: "";
-  position: absolute;
-  background-color: black;
-  top: 0;
-  width: 30px;
-  height: 5px;
-}
-.header .burger_show nav .burger span {
-  position: absolute;
-  background-color: black;
-  top: 12.5px;
-  width: 30px;
-  height: 5px;
-}
-.header .burger_show nav .burger:after {
-  content: "";
-  position: absolute;
-  background-color: black;
-  bottom: 0;
-  width: 30px;
-  height: 5px;
-}
-@media (max-width: 560px) {
+  z-index: 300; }
+  .header a {
+    text-decoration: none; }
+    .header a:hover {
+      text-decoration: none; }
+  .header .logo__wrapper {
+    grid-area: l;
+    display: flex;
+    white-space: nowrap;
+    flex-direction: row;
+    align-items: center;
+    z-index: 300; }
+    .header .logo__wrapper a {
+      background-color: rgba(255, 255, 255, 0); }
+    .header .logo__wrapper .siteLogo {
+      height: 50px;
+      margin: 4px 10px 0 10px; }
+    .header .logo__wrapper .currentCoin {
+      grid-area: s;
+      color: white;
+      background-color: #727270;
+      font-size: 26px;
+      cursor: pointer; }
+      @media (min-width: 0px) {
+        .header .logo__wrapper .currentCoin {
+          font-size: 12px; } }
+      @media (min-width: 560px) {
+        .header .logo__wrapper .currentCoin {
+          font-size: 12px; } }
+      @media (min-width: 650px) {
+        .header .logo__wrapper .currentCoin {
+          font-size: 15px; } }
+      @media (min-width: 820px) {
+        .header .logo__wrapper .currentCoin {
+          font-size: 20px; } }
+      @media (min-width: 1000px) {
+        .header .logo__wrapper .currentCoin {
+          font-size: 25px; } }
+  .header .headerLinks {
+    grid-area: n; }
+    .header .headerLinks .active {
+      color: #f7a81a; }
+      .header .headerLinks .active:hover {
+        color: #f7a81a;
+        transition: 0.2s ease-in-out; }
+    .header .headerLinks i {
+      margin-left: 5px; }
+    .header .headerLinks a {
+      margin-left: 50px;
+      color: #c9c9c9;
+      text-decoration: none;
+      font-size: 22px; }
+      @media (min-width: 1px) {
+        .header .headerLinks a {
+          z-index: 100;
+          display: none; } }
+      @media (min-width: 560px) {
+        .header .headerLinks a {
+          display: inline-block;
+          font-size: 12px;
+          margin: 0 3px; } }
+      @media (min-width: 650px) {
+        .header .headerLinks a {
+          display: inline-block;
+          font-size: 15px;
+          margin: 0 5px; } }
+      @media (min-width: 820px) {
+        .header .headerLinks a {
+          display: inline-block;
+          font-size: 20px;
+          margin: 0 10px; } }
+      @media (min-width: 1000px) {
+        .header .headerLinks a {
+          display: inline-block;
+          z-index: 100;
+          font-size: 22px;
+          margin: 0 20px; } }
+      .header .headerLinks a:hover {
+        color: #ffffff;
+        transition: 0.2s ease-in-out; }
   .header .burger_show {
-    display: inline-block;
-  }
-}
-@media (min-width: 560px) {
-  .header .burger_show {
-    display: none;
-  }
-}
+    position: absolute;
+    top: 16px;
+    right: 25px;
+    height: 30px;
+    width: 30px; }
+    .header .burger_show:hover {
+      cursor: pointer; }
+    .header .burger_show nav {
+      height: 30px;
+      position: relative; }
+      .header .burger_show nav .burger:before {
+        content: '';
+        position: absolute;
+        background-color: black;
+        top: 0;
+        width: 30px;
+        height: 5px; }
+      .header .burger_show nav .burger span {
+        position: absolute;
+        background-color: black;
+        top: 12.5px;
+        width: 30px;
+        height: 5px; }
+      .header .burger_show nav .burger:after {
+        content: '';
+        position: absolute;
+        background-color: black;
+        bottom: 0;
+        width: 30px;
+        height: 5px; }
+    @media (max-width: 560px) {
+      .header .burger_show {
+        display: inline-block; } }
+    @media (min-width: 560px) {
+      .header .burger_show {
+        display: none; } }
 
 /*# sourceMappingURL=HeaderAccount.module.css.map */

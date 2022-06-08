@@ -15,9 +15,10 @@ const Miners = ({
                     accountAddress,
                     addAccountAddress,
                     coinLogo
+
                 }) => {
 
-
+    console.log(thisPool)
     let setAddr = (e) => {
         if(e.target.value.length > 0){
             addAccountAddress(e.target.value.trim())
@@ -27,8 +28,8 @@ const Miners = ({
 
     let addrFilter = (coinName) => {
         if (accountAddress === null) {
-            return `/${coinName}`
-        } else return `/${coinName}/account/${accountAddress}`
+            return `pool/${coinName}`
+        } else return `account/${accountAddress}`
     }
 
     useEffect(() => {
@@ -70,7 +71,6 @@ const Miners = ({
                                     items={miners}
                                     type={'coinPage'}
                                     addInputValue={addInputValue}
-
                     /> : <Fetcher/>}
             </div>
         </div>

@@ -10,7 +10,8 @@ import DropBtn from "./DropBtn";
 import PaginatedItems from "../Pagination";
 
 const AccountData = (props) => {
-    let pool = localStorage.getItem('selectedCoin')
+
+    let pool = localStorage.getItem('pool')
     let account = localStorage.getItem('account')
 
     let [togglePayments, setTogglePayments] = useState(false)
@@ -19,6 +20,7 @@ const AccountData = (props) => {
 
 
     useEffect(() => {
+        console.log('1')
         let showRandomAccBGCStyle = () => {
             let x = Math.ceil(Math.random() * 10)
             if (x <= 3) {

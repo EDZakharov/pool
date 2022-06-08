@@ -53,7 +53,6 @@ const coinPageReducer = (state = initialState, action) => {
                 stateCopy.accountAddress = action.payload
                 if (action.payload !== '') {
                     if (action.payload.length > 20) {
-                        localStorage.setItem('account', action.payload)
                     }
                 }
             } else {
@@ -63,7 +62,6 @@ const coinPageReducer = (state = initialState, action) => {
         }
         case ADD_INPUT_DATA: {
             stateCopy.accountAddress = action.payload
-            localStorage.setItem('account', action.payload)
             return stateCopy
 
         }

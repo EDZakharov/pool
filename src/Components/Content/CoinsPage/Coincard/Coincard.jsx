@@ -24,11 +24,6 @@ const CoinCard = ({
     let hashes = hashFilter(hashrate);
     let image = imgFilter(`${fullName}`);
 
-    const onButtonLinkClick = () => {
-        localStorage.setItem('selectedCoin', adr)
-        selectCoin(adr)
-    }
-
     return (
 
         <div className={style.coinCard}>
@@ -47,7 +42,7 @@ const CoinCard = ({
                 <div><span className={style.line}/> Минимальный вывод: <span className={style.text}>{minPayment} {symbol}</span></div>
             </div>
             <div className={style.coinCard_footer}>
-                <NavLink className={style.start_btn} onClick={onButtonLinkClick} to={`${adr}`}>
+                <NavLink className={style.start_btn} to={`pool/${adr}`}>
                     Перейти на пул
                 </NavLink>
 
