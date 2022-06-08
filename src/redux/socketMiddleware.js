@@ -28,7 +28,7 @@ let storage = {
 
 
 socket.on('update', res => {
-
+    // console.log(res)
     if (res.method === 'stats') {
         let index = storage.coins.findIndex(el => el.pool === res.data.pool);
         if (index === -1) {
@@ -49,6 +49,13 @@ socket.on('update', res => {
         if (res.error !== 'Method not allowed') {
             if (res.data !== undefined) {
                 storage.accountData = {...res.data}
+                if(storage.accountData.workers && storage.accountData.workers.length !== 0) {
+                    storage.accountData.workers.sort((a,b)=>{
+                        if (a.hr < b.hr){
+                            return 1
+                        } else return -1
+                    })
+                }
             }
 
         } else {
@@ -155,11 +162,11 @@ export let dellBlocksData = () => {
 }
 
 //FULL STATS
-export let showFullStatsOnce = () => {
+export let showFullStatsOnce = (coinName) => {
     storage.fullStats = undefined
-    let CoinName = localStorage.getItem('selectedCoin')
+
     socket.emit('startPoolStats', {
-        pool: CoinName,
+        pool: coinName,
         method: 'fullStats'
     })
     return {type: SHOW_FULL_STATS}

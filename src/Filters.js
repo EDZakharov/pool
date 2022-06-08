@@ -1,10 +1,3 @@
-// import ethLogo from "./img/eth.png";
-// import etcLogo from "./img/etc.png";
-// import burstLogo from "./img/burst.png";
-// import kevaLogo from "./img/keva.png";
-// import evoxLogo from "./img/evox-prop.png";
-// import ergoLogo from "./img/ergo.png";
-import siteLogo from "./assets/logo56.png";
 
 import style from "./Components/Content/ContentComponent.module.scss";
 
@@ -121,17 +114,6 @@ export let poolChecker = (pool) => {
     return 'Coin'
 }
 
-
-export let getLastBeat = (lastBeat) => {
-    let d = new Date(lastBeat * 1000),
-        h = d.getUTCHours(),
-        min = d.getUTCMinutes(),
-        time;
-    time = h + ':' + min
-
-    return time
-}
-
 export let blockHashChecker = (blochHash, pool) => {
     if (pool === 'eth') {
         return `https://etherscan.io/block/${blochHash}`
@@ -179,60 +161,6 @@ export let hashFilter = (data) => {
         } else return {hashrate: 'n/a', unit: ' '}
     } else return {hashrate: 'n/a', unit: ' '}
 
-}
-
-
-export let checkEnd = (setEnd) => {
-    switch (setEnd) {
-        case '0':
-            return 'д'
-        case '1':
-            return 'ду'
-        case '2':
-            return 'ды'
-        case '3':
-            return 'ды'
-        case '4':
-            return 'ды'
-        case '5':
-            return 'д'
-        case '6':
-            return 'д'
-        case '7':
-            return 'д'
-        case '8':
-            return 'д'
-        case '9':
-            return 'д'
-        default:
-            return 'д'
-
-    }
-
-}
-
-
-export const coinNamesFilter = (data) => {
-    switch (data) {
-        case 'eth':
-            return 'ETH'
-        case 'eth-solo':
-            return 'ETH'
-        case 'etc':
-            return 'ETC'
-        case 'etc-solo':
-            return 'ETC'
-        case 'burst':
-            return 'Burst'
-        case 'keva':
-            return 'Keva'
-        case 'evox-solo':
-            return 'Evox'
-        case 'evox-prop':
-            return 'Evox'
-        case 'ergo':
-            return 'Ergo'
-    }
 }
 
 

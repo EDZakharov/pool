@@ -6,7 +6,7 @@ import BurgerMenu from "../../BurgerMenu/BurgerMenu";
 
 const HeaderAccount = () => {
     let selectedCoin = localStorage.getItem('selectedCoin')
-    let account = localStorage.getItem('account')
+    // let account = localStorage.getItem('account')
 
     let onClickActiveStatus = ({isActive}) => (isActive ? style.active : 'inactive');
     let [menuActive, setMenuActive] = useState(false)

@@ -8,14 +8,12 @@ import {
 } from "../../redux/socketMiddleware";
 import {addAccountAddress, addInputValue, clearCashP, fetching} from "../../redux/coinPageReducer";
 import {fetchingAccount} from "../../redux/accountReducer";
-import {} from "../../redux/socket2Middleware";
-
 
 let mapStateToProps = (state) => {
     return {
         coinPage: state.coinPage,
         content: state.content,
-        account: state.account
+        account: state.account,
     }
 }
 
