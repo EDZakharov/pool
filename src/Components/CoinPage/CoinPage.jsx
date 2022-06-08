@@ -7,23 +7,23 @@ import DropData from "./DropData/DropData";
 import Stats from "./Stats/Stats";
 import Miners from "./Miners/Miners";
 import Blocks from "./Blocks/Blocks";
-// import {fetching} from "../../redux/coinPageReducer";
-// import Slider from "../Slider/Slider";
+import Slider from "../Slider/Slider";
+import addPoolImg from '../../assets/addPool.jpg'
+import addWallet from '../../assets/addWallet.jpg'
+import osPoolConnect from '../../assets/osDog.jpg'
 
-// let RaveOsImg = [
-//     {id: 1, src: addPoolImg},
-//     {id: 2, src: addWallet},
-// ]
-// let OsDogImg = [
-//     {id: 1, src: osPoolConnect},
-// ]
-
+let RaveOsImg = [
+    {id: 1, src: addPoolImg},
+    {id: 2, src: addWallet},
+]
+let OsDogImg = [
+    {id: 1, src: osPoolConnect},
+]
 
 export const CoinPage = (props) => {
     let thisPool = localStorage.getItem('selectedCoin')
     let coinLogo = imgFilter(localStorage.getItem('selectedCoin'))
     let luck = props.coinPage.fullStats? props.coinPage.fullStats.currentEffort * 100 : 0
-
 
     useEffect(() => {
         let showRandomBackStyle = () => {
@@ -40,7 +40,7 @@ export const CoinPage = (props) => {
         }
 
         localStorage.setItem('showRandomBackStyle', showRandomBackStyle())
-        props.showFullStatsOnce()
+        props.showFullStatsOnce(thisPool)
         let start = setInterval(()=>{
             props.showFullStats()
         },1000)
@@ -50,8 +50,6 @@ export const CoinPage = (props) => {
             props.fetching(true)
         }
     }, [])
-
-
 
     let [toggleStats, setToggleStats] = useState(true)
     let [toggleMiners, setToggleMiners] = useState(false)
@@ -179,9 +177,9 @@ export const CoinPage = (props) => {
 
                                     <div className={style.RaveImages}>
                                         <h3>Настройка подключения через RaveOs:</h3>
-                                        {/*<Slider items={RaveOsImg}/>*/}
+                                        <Slider items={RaveOsImg}/>
                                         <h3>Настройка подключения через OSdog:</h3>
-                                        {/*<Slider items={OsDogImg}/>*/}
+                                        <Slider items={OsDogImg}/>
                                     </div>
 
                                 </div> : ''}

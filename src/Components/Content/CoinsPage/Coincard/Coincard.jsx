@@ -13,7 +13,9 @@ const CoinCard = ({
                       poolType,
                       minersTotal,
                       fee,
-                      lastBlockFound
+                      lastBlockFound,
+                      minPayment,
+                      symbol
                   }) => {
 
 
@@ -41,8 +43,8 @@ const CoinCard = ({
                     className={style.text}>{!hashes ? '' : hashes.hashrate} {!hashes ? '' : hashes.unit}</span></div>
                 <div><span className={style.line}/> Майнеры: <span className={style.text}>{minersTotal}</span></div>
                 <div><span className={style.line}/> Комиссия пула: <span className={style.text}>{fee} %</span></div>
-                <div><span className={style.line}/> Последний блок: <span
-                    className={style.text}>{dateFilter(lastBlockFound)}</span></div>
+                <div><span className={style.line}/> Последний блок: <span className={style.text}>{dateFilter(lastBlockFound)}</span></div>
+                <div><span className={style.line}/> Минимальный вывод: <span className={style.text}>{minPayment} {symbol}</span></div>
             </div>
             <div className={style.coinCard_footer}>
                 <NavLink className={style.start_btn} onClick={onButtonLinkClick} to={`${adr}`}>

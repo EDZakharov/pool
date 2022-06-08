@@ -4,6 +4,154 @@
 }
 
 
+@mixin data {
+  grid-area: c;
+  background-color: #544c4d;
+  display: grid;
+  grid-template-areas: 'g''m';
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  color: white;
+  overflow: auto;
+  height: 91vh;
+  padding-top: 50px;
+  z-index: 2;
+  position: relative;
+  gap: 10px;
+  overflow-x: hidden;
+  .graph{
+    grid-area: g;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    justify-items: center;
+    pointer-events: all;
+
+    @media screen and (min-width: 2000px){
+      height: 500px;
+    }
+    @media screen and (max-width: 2000px){
+      height: 300px;
+    }
+
+    @media screen and (max-width: 600px){
+      display: none;
+    }
+
+    .chartsGraph{
+      width: 100%;
+      margin: 10px 0 0 0;
+      border-radius: 15px;
+    }
+  }
+
+  .accountData{
+    grid-area: m;
+    margin: 0 auto;
+
+    @media screen and (min-width: 2000px){
+      width: 90%;
+    }
+    @media screen and (max-width: 2000px){
+      width: 70%;
+    }
+    @media screen and (max-width: 1000px){
+      width: 98%;
+    }
+
+
+
+    .flexWrapper{
+      display: flex;
+      position: relative;
+      width: 100%;
+
+
+
+      .dropDown{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        height: 60px;
+        color: black;
+        font-weight: 600;
+        font-size: 17px;
+        padding: 0;
+        cursor: pointer;
+        user-select: none;
+
+        @media screen and (max-width: 600px) {
+          //width: 100%;
+          height: 40px;
+        }
+
+        //&:hover{
+        //  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(228, 190, 54, 0.8));
+        //  transition: .2s ease-in-out;
+        //}
+
+        &:active{
+
+        }
+
+        &:nth-last-child(1){
+          border-right: 1px solid white;
+        }
+
+        &:nth-last-child(4){
+          border-left: 1px solid white;
+        }
+
+        .dropdown__content {
+          display: flex;
+          font-weight: 400;
+          font-size: 16px;
+          align-items: center;
+          cursor: auto;
+          position: absolute;
+          width: 100%;
+          pointer-events: none;
+          top: 62px;
+          left: 0;
+          color: #ffffff;
+          //border: .1px solid white;
+
+          @media screen and (max-width: 600px) {
+            top: 42px;
+          }
+          .dropText {
+            width: 100%;
+            border-right: .2px solid white;
+            border-left: .2px solid white;
+            background-color: rgba(29, 29, 29, 0.19);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 0 0 rgba(0, 0, 0, .3),
+            -28px 0 25px -23px rgba(0, 0, 0, .8),
+            28px 0 35px -23px rgba(0, 0, 0, .8),
+            0 0 0 rgba(0, 0, 0, 0.1) inset;
+
+            //padding: 0 10px 40px 10px;
+            margin-bottom: 40px;
+
+            .dropText__data {
+              padding: 10px;
+
+              .pads{
+                padding-top: 70px;
+                @media screen and (max-width: 600px) {
+                  padding-top: 0;
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 
 .account{
   grid-area: c;
@@ -19,32 +167,7 @@
   z-index: 2;
   position: relative;
   gap: 10px;
-
-  .coin{
-    position: fixed;
-    width: 100vw;
-    height: 100%;
-
-    background: url(../../assets/octopus1.png) no-repeat 50% 0;
-    background-size: 1400px;
-  }
-  .coin2{
-    position: fixed;
-    width: 100vw;
-    height: 100%;
-
-    background: url(../../assets/octopus2.png) no-repeat 50% 0;
-    background-size: 1400px;
-  }
-  .coin3{
-    position: fixed;
-    width: 100vw;
-    height: 100%;
-
-    background: url(../../assets/octopus3.png) no-repeat 50% 0;
-    background-size: 1400px;
-  }
-
+  overflow-x: hidden;
   .graph{
     grid-area: g;
     width: 100%;
@@ -175,4 +298,35 @@
       }
     }
   }
+}
+
+.account.coin{
+  //position: fixed;
+  //overflow-x: hidden;
+  //width: 100vw;
+  //height: 100%;
+  background-image: url(../../assets/octopus1.png);
+  background-position: center center;
+  background-size:cover;
+  @include data;
+}
+.account.coin2{
+  //position: fixed;
+  //width: 100vw;
+  //height: 100%;
+  //overflow-x: hidden;
+  background-image: url(../../assets/octopus2.png);
+  background-position: center center;
+  background-size:cover;
+  @include data;
+}
+.account.coin3{
+  //position: fixed;
+  //width: 100vw;
+  //height: 100%;
+  //overflow-x: hidden;
+  background-image: url(../../assets/octopus3.png);
+  background-position: center center;
+  background-size:cover;
+  @include data;
 }

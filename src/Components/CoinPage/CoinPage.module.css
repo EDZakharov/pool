@@ -12,8 +12,6 @@
   height: 91vh;
   padding-top: 50px;
   background: url(../../assets/octopus1.png) no-repeat 50% 0;
-  position: sticky;
-  overflow-y: scroll;
   background-size: 1500px;
   z-index: 1;
 }
@@ -166,8 +164,6 @@
   height: 91vh;
   padding-top: 50px;
   background: url(../../assets/octopus2.png) no-repeat 50% 0;
-  position: sticky;
-  overflow-y: scroll;
   background-size: 1500px;
   z-index: 1;
 }
@@ -320,8 +316,6 @@
   height: 91vh;
   padding-top: 50px;
   background: url(../../assets/octopus3.png) no-repeat 50% 30%;
-  position: sticky;
-  overflow-y: scroll;
   background-size: 1500px;
   z-index: 1;
 }

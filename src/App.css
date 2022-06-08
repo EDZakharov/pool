@@ -2,6 +2,7 @@
 
 *{
     font-family: 'Montserrat', sans-serif;
+
 }
 
 body{
@@ -21,11 +22,11 @@ body{
 
     z-index: 900;
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
-    scrollbar-width: none;
 
 }::-webkit-scrollbar {
      display: none;
  }
+
 
 
 
