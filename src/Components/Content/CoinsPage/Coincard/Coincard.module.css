@@ -31,7 +31,6 @@
         position: relative;
         grid-area: name;
         font-size: 18px;
-        text-transform: uppercase;
         text-align: center;
         margin: 0 10px; }
         @media screen and (max-width: 1500px) {

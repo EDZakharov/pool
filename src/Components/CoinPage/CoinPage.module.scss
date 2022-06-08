@@ -59,6 +59,7 @@
       margin: 10px auto;
       //margin-bottom: 10px;
       grid-area: stats;
+      //overflow: hidden;
 
       @media screen and (min-width: 2000px) {
         font-size: 28px;
@@ -204,8 +205,8 @@
   grid-area: c;
   @include allData;
   background: url(../../assets/octopus1.png) no-repeat 50% 0;
-  position: sticky;
-  overflow-y: scroll;
+  //position: sticky;
+  //overflow-y: scroll;
   background-size: 1500px;
   z-index: 1;
 }
@@ -214,8 +215,8 @@
   grid-area: c;
   @include allData;
   background: url(../../assets/octopus2.png) no-repeat 50% 0;
-  position: sticky;
-  overflow-y: scroll;
+  //position: sticky;
+  //overflow-y: scroll;
   background-size: 1500px;
   z-index: 1;
 
@@ -226,8 +227,8 @@
   grid-area: c;
   @include allData;
   background: url(../../assets/octopus3.png) no-repeat 50% 30%;
-  position: sticky;
-  overflow-y: scroll;
+  //position: sticky;
+  //overflow-y: scroll;
   background-size: 1500px;
   z-index: 1;
 }

@@ -2,16 +2,13 @@
   width: 95%;
   margin: 0 auto;
   padding: 80px 0 30px 0;
-  overflow-y: scroll;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
-}
-@media screen and (max-width: 600px) {
-  .coinCardWrapper {
-    padding: 80px 0 55px 0;
-  }
-}
+  gap: 15px; }
+  @media screen and (max-width: 600px) {
+    .coinCardWrapper {
+      padding: 80px 0 55px 0; } }
 
 /*# sourceMappingURL=CoinsPage.module.css.map */

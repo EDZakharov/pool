@@ -19,14 +19,16 @@ const Miners = ({
 
 
     let setAddr = (e) => {
-        addAccountAddress(e.target.value)
+        if(e.target.value.length > 0){
+            addAccountAddress(e.target.value.trim())
+        } else addAccountAddress(null)
+
     }
 
     let addrFilter = (coinName) => {
         if (accountAddress === null) {
             return `/${coinName}`
-        }
-        return `/${coinName}/account/${accountAddress}`
+        } else return `/${coinName}/account/${accountAddress}`
     }
 
     useEffect(() => {
@@ -39,7 +41,7 @@ const Miners = ({
             clearInterval(start)
             dellMinersData()
             navigator.clipboard.writeText('').catch(e => e)
-            addAccountAddress('')
+            addAccountAddress(null)
         }
     }, [])
 

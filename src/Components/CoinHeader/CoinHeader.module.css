@@ -11,7 +11,7 @@
   grid-template-areas: 'l s n';
   grid-template-columns: .01fr 1fr auto;
   align-items: center;
-  z-index: 300; }
+  z-index: 10000; }
   .coin_header a {
     text-decoration: none;
     color: #c9c9c9; }

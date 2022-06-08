@@ -1,10 +1,3 @@
-// import ethLogo from "./img/eth.png";
-// import etcLogo from "./img/etc.png";
-// import burstLogo from "./img/burst.png";
-// import kevaLogo from "./img/keva.png";
-// import evoxLogo from "./img/evox-prop.png";
-// import ergoLogo from "./img/ergo.png";
-import siteLogo from "./assets/logo56.png";
 
 import style from "./Components/Content/ContentComponent.module.scss";
 
@@ -121,17 +114,6 @@ export let poolChecker = (pool) => {
     return 'Coin'
 }
 
-
-export let getLastBeat = (lastBeat) => {
-    let d = new Date(lastBeat * 1000),
-        h = d.getUTCHours(),
-        min = d.getUTCMinutes(),
-        time;
-    time = h + ':' + min
-
-    return time
-}
-
 export let blockHashChecker = (blochHash, pool) => {
     if (pool === 'eth') {
         return `https://etherscan.io/block/${blochHash}`
@@ -180,6 +162,7 @@ export let hashFilter = (data) => {
     } else return {hashrate: 'n/a', unit: ' '}
 
 }
+
 
 
 export let checkEnd = (setEnd) => {
@@ -234,6 +217,7 @@ export const coinNamesFilter = (data) => {
             return 'Ergo'
     }
 }
+
 
 export const imgFilter = (data) => {
     return `${process.env.PUBLIC_URL}/${data}.png`

@@ -85,11 +85,9 @@ const AccountData = (props) => {
         setToggleRewards(true)
     }
 
-    console.log(props.account.accountData)
-    // console.log(localStorage.getItem('showRandomAccBgcStyle'))
     return (!props.account.accountData ? <Fetcher/> :
-        <div className={style.account}>
-            <div className={localStorage.getItem('showRandomAccBGCStyle')}/>
+        <div className={`${style.account} ${localStorage.getItem('showRandomAccBGCStyle')}`}>
+            {/*<div className={localStorage.getItem('showRandomAccBGCStyle')}/>*/}
             {props.account.accountData.workers.length !== 0 ?
                 <div className={style.accountData}>
                     <div className={style.flexWrapper}>
@@ -125,18 +123,6 @@ const AccountData = (props) => {
                                 </div>
                             </div> : ''}
                         </div>
-                        {/*<div className={style.dropDown} onClick={dropDownBalanceToggle}>*/}
-                        {/*    <DropBtn status={toggleBalance} text={'Баланс'}/>*/}
-                        {/*    {toggleBalance ? <div className={style.dropdown__content}>*/}
-                        {/*        <div className={style.dropText}>*/}
-                        {/*            <div className={style.dropText__data}>*/}
-                        {/*                <Total*/}
-                        {/*                    text={<div></div>}/>*/}
-                        {/*            </div>*/}
-                        {/*        </div>*/}
-                        {/*    </div> : ''}*/}
-                        {/*</div>*/}
-
                         <div className={style.dropDown} onClick={dropDownPaymentsToggle}>
                             <DropBtn status={togglePayments} text={'Выплаты'}/>
                             {togglePayments ? <div className={style.dropdown__content}>
