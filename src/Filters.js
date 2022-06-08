@@ -235,7 +235,6 @@ export const coinNamesFilter = (data) => {
     }
 }
 
-
 export const imgFilter = (data) => {
     return `${process.env.PUBLIC_URL}/${data}.png`
 }
