@@ -10,6 +10,7 @@
 .total div {
   display: flex;
   gap: 0 30px;
+  white-space: pre-wrap;
 }
 .total div div {
   background-color: rgba(127, 127, 127, 0.19);
@@ -33,6 +34,17 @@
 @media screen and (max-width: 750px) {
   .total div div {
     font-size: 12px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .total div div {
+    padding: 0 10px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .total div {
+    font-size: 10px;
+    gap: 0 5px;
   }
 }
 

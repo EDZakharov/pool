@@ -20,7 +20,7 @@ const AccountData = (props) => {
 
 
     useEffect(() => {
-        console.log('1')
+        // console.log('1')
         let showRandomAccBGCStyle = () => {
             let x = Math.ceil(Math.random() * 10)
             if (x <= 3) {

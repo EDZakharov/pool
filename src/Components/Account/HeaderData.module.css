@@ -48,6 +48,14 @@
   padding-right: 35px;
 }
 @media screen and (max-width: 750px) {
+  .headerData__grid__payments div {
+    width: 40px;
+  }
+  .headerData__grid__payments .headerData__el2 {
+    white-space: initial;
+  }
+}
+@media screen and (max-width: 750px) {
   .headerData__grid__payments {
     font-size: 13px;
   }
@@ -73,6 +81,17 @@
     font-size: 11px;
   }
 }
+@media screen and (max-width: 600px) {
+  .headerData__grid__workers {
+    font-size: 11px;
+  }
+  .headerData__grid__workers div {
+    width: 80px;
+  }
+  .headerData__grid__workers .el3_gr {
+    white-space: pre-wrap;
+  }
+}
 
 .headerData__grid__rewards {
   display: flex;
@@ -91,6 +110,11 @@
 @media screen and (max-width: 750px) {
   .headerData__grid__rewards {
     font-size: 11px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .headerData__grid__rewards div {
+    width: 50px;
   }
 }
 

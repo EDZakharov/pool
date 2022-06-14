@@ -52,6 +52,14 @@
       padding-right: 35px;
     }
   }
+  @media screen and (max-width: 750px){
+    div{
+      width: 40px;
+    }
+    .headerData__el2{
+      white-space: initial;
+    }
+  }
 
   @media screen and (max-width: 750px){
     font-size: 13px;
@@ -78,6 +86,15 @@
   @media screen and (max-width: 750px){
     font-size: 11px;
   }
+  @media screen and (max-width: 600px){
+    font-size: 11px;
+    div{
+      width: 80px;
+    }
+    .el3_gr{
+      white-space: pre-wrap;
+    }
+  }
 
 }
 
@@ -99,6 +116,11 @@
 
   @media screen and (max-width: 750px){
     font-size: 11px;
+  }
+  @media screen and (max-width: 600px){
+    div{
+      width: 50px;
+    }
   }
 
 }
