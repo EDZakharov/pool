@@ -34,7 +34,7 @@ function Items({currentItems, type, addInputValue, pool}) {
                 if (type === 'payments') {
                     return <InnerData
                         key={el.tx}
-                        el1={(el.amount / 1000000000).toFixed(3) + ' ' + pool.toUpperCase()}
+                        el1={el.amount + ' ' + pool.toUpperCase()}
                         el2={<a onClick={event => event.stopPropagation()} href={txChecker(el.tx, pool)}>{getTruncatedName(el.tx, 'tx')}</a>}
                         el3={convertTimestamp(el.timestamp)}
                         type={'payments'}
@@ -43,7 +43,7 @@ function Items({currentItems, type, addInputValue, pool}) {
                 if (type === 'rewards') {
                     return <InnerData
                         key={el.blockHash}
-                        el1={(el.amount / 1000000000).toFixed(5) + ' ' + pool.toUpperCase()}
+                        el1={el.amount + ' ' + pool.toUpperCase()}
                         el2={convertTimestamp(el.timestamp)}
                         el3={<a onClick={event => event.stopPropagation()}
                                 href={blockHashChecker(el.blockHash, pool)}>{getTruncatedName(el.blockHash, 'tx')}</a>}

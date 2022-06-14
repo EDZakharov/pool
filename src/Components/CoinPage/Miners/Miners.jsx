@@ -17,8 +17,6 @@ const Miners = ({
                     coinLogo
 
                 }) => {
-
-    console.log(thisPool)
     let setAddr = (e) => {
         if(e.target.value.length > 0){
             addAccountAddress(e.target.value.trim())

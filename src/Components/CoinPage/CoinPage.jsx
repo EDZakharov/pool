@@ -309,6 +309,28 @@ export const CoinPage = (props) => {
                                         майнера, более еподробно про найстройку можно почитать: *более подробно об общей
                                         настройке конфига: https://bytwork.com/soft/xmrig?ysclid=l3lgbgoqmw</p>
                                 </div> : ''}
+                                {thisPool === 'xeq-solo' || thisPool === 'xeq-prop'? <div>
+                                    <h3>Настройки XMRig строго верcия не выше 5.9*</h3>
+                                    <p>@echo off</p>
+                                    <p>xmrig.exe --donate-level 0 --no-cpu --opencl -o xeq.e4pool.com:4499 -u YOUR_EQUILIBRIA_WALLET_ADDRESS -p YOUR_WORKER_NAME -a cn/gpu -k</p>
+                                    <p>pause</p>
+                                    <p>* скачать можно по ссылке https://github.com/xmrig/xmrig/releases/tag/v5.9.0
+                                    </p>
+                                    <h4>Настройки SRBminer-Multi</h4>
+                                    <p>setx GPU_MAX_HEAP_SIZE 100</p>
+                                    <p>setx GPU_MAX_USE_SYNC_OBJECTS 1</p>
+                                    <p>setx GPU_SINGLE_ALLOC_PERCENT 100</p>
+                                    <p>setx GPU_MAX_ALLOC_PERCENT 100</p>
+                                    <p>setx GPU_MAX_SINGLE_ALLOC_PERCENT 100</p>
+                                    <p>setx GPU_ENABLE_LARGE_ALLOCATION 100</p>
+                                    <p>setx GPU_MAX_WORKGROUP_SIZE 1024</p>
+                                    <p> </p>
+                                    <p>@echo off</p>
+                                    <p>cd %~dp0</p>
+                                    <p>cls</p>
+                                    <p>SRBMiner-MULTI.exe --algorithm cryptonight_gpu --pool xeq.e4pool.com:4499 --wallet YOUR_EQUILIBRIA_WALLET_ADDRESS --password YOUR_WORKER_NAME</p>
+                                    <p>pause</p>
+                                </div> : ''}
                             </div>
                             : ''}
                     </div>}/>
