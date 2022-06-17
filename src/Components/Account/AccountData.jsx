@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import style from './AccountData.module.scss'
 import Fetcher from "../Fetcher/Fetcher";
-import {dateFilter, hashFilter, poolChecker} from "../../Filters";
+import {dateFilter, hashFilter} from "../../Filters";
 import Charts from "../Charts/Charts";
 import InnerData from "./InnerData";
 import HeaderData from "./HeaderData";
 import Total from "./Total";
 import DropBtn from "./DropBtn";
 import PaginatedItems from "../Pagination";
+
 
 const AccountData = (props) => {
 
@@ -17,6 +18,7 @@ const AccountData = (props) => {
     let [togglePayments, setTogglePayments] = useState(false)
     let [toggleHashrate, setToggleHashrate] = useState(true)
     let [toggleRewards, setToggleRewards] = useState(false)
+
 
 
     useEffect(() => {
@@ -104,7 +106,18 @@ const AccountData = (props) => {
                                                         charts={props.account.accountData.charts}/>
                                             </div>
                                         </div>
-                                        <Total text={<div className={style.pads}><div>{`Воркеров онлайн: ${props.account.accountData.workers.length}`}</div><div>{`Хэшрейт: ${hashFilter(summHashrate()).hashrate} ${hashFilter(summHashrate()).unit}`}</div><div>{`Текущий баланс: ${(props.account.accountData.balance / 1000000000).toFixed(3)} ${pool.toUpperCase()}`}</div></div>}/>
+                                        <Total text={<div className={style.pads}>
+                                            <div className={style.notify}>
+                                                <a href='https://t.me/e4_eth_status_bot'>
+                                                    <i className="fa-brands fa-telegram">
+                                                        <span> Notify Bot</span>
+                                                    </i>
+                                                </a>
+                                            </div>
+                                            <div>{`Воркеров онлайн: ${props.account.accountData.workers.length}`}</div>
+                                            <div>{`Хэшрейт: ${hashFilter(summHashrate()).hashrate} ${hashFilter(summHashrate()).unit}`}</div>
+                                            <div>{`Текущий баланс: ${props.account.accountData.prettyBalance}`}</div>
+                                        </div>}/>
                                         <HeaderData
                                             el1={'Имя воркера'}
                                             el2={'Хэшрейт'}

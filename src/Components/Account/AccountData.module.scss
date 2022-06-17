@@ -286,10 +286,33 @@
               padding: 10px;
 
               .pads{
+                //position: relative;
                 padding-top: 70px;
                 @media screen and (max-width: 600px) {
                   padding-top: 0;
                 }
+
+                .notify{
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  white-space: nowrap;
+                  padding: 0 10px;
+                  @media screen and (max-width: 600px) {
+                    span{
+                      display: none;
+                    }
+                  }
+
+                }
+                a{
+                  i{
+                    cursor: pointer;
+
+                  }
+                }
+
+
               }
 
             }

@@ -3,6 +3,7 @@ import contentReducer from "./contentReducer";
 import coinPageReducer from "./coinPageReducer";
 import {socketMiddleware} from "./socketMiddleware";
 import accountReducer from "./accountReducer";
+import thunk from "redux-thunk";
 
 
 let reducers = combineReducers({
@@ -12,6 +13,6 @@ let reducers = combineReducers({
 
 });
 
-let store = createStore(reducers, applyMiddleware(socketMiddleware));
+let store = createStore(reducers, applyMiddleware(thunk,socketMiddleware));
 
 export default store;

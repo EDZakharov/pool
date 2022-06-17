@@ -5,6 +5,7 @@ const ADD_INPUT_DATA = 'ADD_INPUT_DATA';
 const ADD_ACCOUNT_ADDRESS = 'ADD_ACCOUNT_ADDRESS';
 const ADD_BLOCKS = 'ADD_BLOCKS';
 const CLEAR_CASHP = 'CLEAR_CASHP';
+const ADD_DESCRIPTION = 'ADD_DESCRIPTION';
 
 
 let initialState = {
@@ -13,7 +14,8 @@ let initialState = {
     fullStats: undefined,
     isFetching: true,
     inputData: undefined,
-    accountAddress: null
+    accountAddress: null,
+    description: null
 }
 
 const coinPageReducer = (state = initialState, action) => {
@@ -23,6 +25,10 @@ const coinPageReducer = (state = initialState, action) => {
             if (action.payload !== undefined) {
                 stateCopy.miners = [...action.payload]
             }
+            return stateCopy
+        }
+        case ADD_DESCRIPTION: {
+            stateCopy.description = action.payload
             return stateCopy
         }
         case ADD_BLOCKS: {
@@ -86,5 +92,8 @@ export const addAccountAddress = (payload) => {
 
 export const clearCashP = () => {
     return {type: CLEAR_CASHP}
+}
+export const addDesc = (payload) => {
+    return {type: ADD_DESCRIPTION, payload}
 }
 export default coinPageReducer;

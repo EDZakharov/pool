@@ -8,6 +8,7 @@ import {
 } from "../../redux/socketMiddleware";
 import {addAccountAddress, addInputValue, clearCashP, fetching} from "../../redux/coinPageReducer";
 import {fetchingAccount} from "../../redux/accountReducer";
+import {getCoinGuideThunk} from "../../redux/getCoinGuideThunk";
 
 let mapStateToProps = (state) => {
     return {
@@ -24,6 +25,6 @@ let CoinPageContainer = connect(mapStateToProps,
         ShowMinersOnce,showFullStatsOnce,showFullStats,
         dellFullStats,addAccountAddress,addInputValue,
         fetchingAccount, ShowBlocksOnce, showBlocks,
-        dellBlocksData,clearCashP})(CoinPage)
+        dellBlocksData,clearCashP,getCoinGuideThunk})(CoinPage)
 
 export default CoinPageContainer;
